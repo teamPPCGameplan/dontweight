@@ -4,7 +4,9 @@
  * Include in page templates: <?php include(get_template_directory() . '/header.php'); ?>
  */
 ?>
+<div class="dw-lpug-bar" style="height:auto;padding:6px 20px;background:#1A1A2E;color:#fff;font-size:12px;text-align:center;letter-spacing:0.5px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.4;box-sizing:border-box;width:100%;">A <strong>London Private Ultrasound Group</strong> clinic <span style="display:inline-block;margin:0 10px;opacity:0.4;">&middot;</span> Established healthcare provider</div>
 <style>
+@media(max-width:768px){.dw-lpug-bar{font-size:11px!important;}}
 .nav-login,.nav-cta{font-size:13px;font-weight:600;padding:8px 20px;border-radius:999px;text-decoration:none;transition:all .2s}
 .nav-login{color:#0c0a09;border:1.5px solid #0c0a09;background:#fff}
 .nav-login:hover{background:#0c0a09;color:#fff}

@@ -79,6 +79,7 @@
 </style>
 </head>
 <body>
+<div class="dw-lpug-bar" style="height:auto;padding:6px 20px;background:#1A1A2E;color:#fff;font-size:12px;text-align:center;letter-spacing:0.5px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.4;box-sizing:border-box;width:100%;">A <strong>London Private Ultrasound Group</strong> clinic <span style="display:inline-block;margin:0 10px;opacity:0.4;">&middot;</span> Established healthcare provider</div>
 <nav class="lp-nav"><a href="<?php echo home_url(); ?>" class="lp-logo">don't <i>weight</i></a><a href="#checker" class="lp-nav-cta">Check eligibility</a></nav>
 
 <section class="lp-hero">

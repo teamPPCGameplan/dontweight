@@ -473,7 +473,7 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
 
     <div class="hero-cta-row fu" style="justify-content:center;margin-bottom:0;gap:16px">
       <button class="cta-main" onclick="openQ()">Am I eligible? &rarr;</button>
-      <a href="#treatments" class="cta-sub" onclick="document.getElementById('treatments').scrollIntoView({behavior:'smooth'});return false;">View available treatments</a>
+      <a href="<?php echo home_url('/treatments/'); ?>" class="cta-sub">View available treatments</a>
     </div>
 
     <div class="fu hero-trust-bottom" style="font-size:12px;color:var(--slate);font-weight:500;margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap">

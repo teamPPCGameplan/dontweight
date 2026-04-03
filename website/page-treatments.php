@@ -228,34 +228,34 @@
     <p style="font-size:14px;color:var(--slate);max-width:560px;margin:0 auto 12px;line-height:1.6">We believe medication and monitoring belong together. Track what matters inside your body, not just the number on the scale.</p>
     <p style="font-size:12px;color:var(--sky-deep);font-weight:600;margin-bottom:36px">Results within 48 hours on all packages</p>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:800px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:800px;margin:0 auto;align-items:stretch">
       <!-- Baseline -->
-      <div style="background:var(--white);border:1.5px solid var(--sky);border-radius:16px;padding:28px 20px;text-align:center;position:relative">
-        <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--sky);color:#fff;padding:3px 14px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:.5px">Recommended</div>
+      <div style="background:var(--white);border:1.5px solid var(--stone);border-radius:16px;padding:28px 20px;text-align:center;display:flex;flex-direction:column">
         <div style="width:44px;height:44px;border-radius:12px;background:var(--sky-wash);display:flex;align-items:center;justify-content:center;margin:0 auto 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sky-deep)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8m8 4H8m2-8H8"/></svg></div>
         <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">Baseline</h3>
         <div style="font-family:var(--display);font-size:28px;font-weight:700;letter-spacing:-1px;margin-bottom:4px">&pound;149</div>
-        <p style="font-size:11px;color:var(--slate);line-height:1.5;margin-bottom:4px">Home blood kit + personalised GP report</p>
+        <p style="font-size:11px;color:var(--slate);line-height:1.5;margin-bottom:4px">London or St Albans clinic + personalised GP report</p>
         <p style="font-size:10px;color:var(--sky-deep);font-weight:600;margin-bottom:16px">Ideal before starting treatment</p>
-        <a href="<?php echo home_url('/dw360/#pricing'); ?>" style="display:block;background:var(--ink);color:#fff;border-radius:100px;padding:12px;font-size:13px;font-weight:700;text-decoration:none">Book &rarr;</a>
+        <a href="<?php echo home_url('/dw360/#pricing'); ?>" style="display:block;background:var(--ink);color:#fff;border-radius:100px;padding:12px;font-size:13px;font-weight:700;text-decoration:none;margin-top:auto">Book &rarr;</a>
       </div>
       <!-- Standard -->
-      <div style="background:var(--white);border:1.5px solid var(--stone);border-radius:16px;padding:28px 20px;text-align:center">
+      <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:28px 20px;text-align:center;position:relative;display:flex;flex-direction:column">
+        <div style="position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--sky);color:#fff;padding:3px 14px;border-radius:100px;font-size:9px;font-weight:700;letter-spacing:.5px">Recommended</div>
         <div style="width:44px;height:44px;border-radius:12px;background:var(--sky-wash);display:flex;align-items:center;justify-content:center;margin:0 auto 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sky-deep)" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
         <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">Standard</h3>
         <div style="font-family:var(--display);font-size:28px;font-weight:700;letter-spacing:-1px;margin-bottom:4px">&pound;599</div>
         <p style="font-size:11px;color:var(--slate);line-height:1.5;margin-bottom:4px">Ultrasound, ECG, bloods + GP consultation</p>
-        <p style="font-size:10px;color:var(--sky-deep);font-weight:600;margin-bottom:16px">In-person or video &middot; London clinic</p>
-        <a href="<?php echo home_url('/dw360/#pricing'); ?>" style="display:block;background:var(--white);color:var(--ink);border:1.5px solid var(--stone);border-radius:100px;padding:12px;font-size:13px;font-weight:700;text-decoration:none">Learn more &rarr;</a>
+        <p style="font-size:10px;color:var(--sky-deep);font-weight:600;margin-bottom:16px">In-person or video &middot; London or St Albans clinic</p>
+        <a href="<?php echo home_url('/dw360/#pricing'); ?>" style="display:block;background:var(--sky);color:#fff;border-radius:100px;padding:12px;font-size:13px;font-weight:700;text-decoration:none;margin-top:auto">Book &rarr;</a>
       </div>
       <!-- Premium -->
-      <div style="background:var(--white);border:1.5px solid var(--stone);border-radius:16px;padding:28px 20px;text-align:center">
+      <div style="background:var(--white);border:1.5px solid var(--stone);border-radius:16px;padding:28px 20px;text-align:center;display:flex;flex-direction:column">
         <div style="width:44px;height:44px;border-radius:12px;background:var(--sky-wash);display:flex;align-items:center;justify-content:center;margin:0 auto 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sky-deep)" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3 style="font-size:15px;font-weight:700;margin-bottom:4px">Premium</h3>
         <div style="font-family:var(--display);font-size:28px;font-weight:700;letter-spacing:-1px;margin-bottom:4px">&pound;999</div>
         <p style="font-size:11px;color:var(--slate);line-height:1.5;margin-bottom:4px">Everything in Standard + full lipid, inflammation &amp; nutrition</p>
-        <p style="font-size:10px;color:var(--sky-deep);font-weight:600;margin-bottom:16px">In-person or video &middot; London clinic</p>
-        <a href="<?php echo home_url('/dw360/#pricing'); ?>" style="display:block;background:var(--white);color:var(--ink);border:1.5px solid var(--stone);border-radius:100px;padding:12px;font-size:13px;font-weight:700;text-decoration:none">Learn more &rarr;</a>
+        <p style="font-size:10px;color:var(--sky-deep);font-weight:600;margin-bottom:16px">In-person or video &middot; London or St Albans clinic</p>
+        <a href="<?php echo home_url('/dw360/#pricing'); ?>" style="display:block;background:var(--ink);color:#fff;border-radius:100px;padding:12px;font-size:13px;font-weight:700;text-decoration:none;margin-top:auto">Book &rarr;</a>
       </div>
     </div>
 
@@ -266,10 +266,10 @@
 <!-- TRUST -->
 <div class="tx-trust">
   <div class="tx-trust-inner">
-    <div class="tx-trust-item"><h3>&lt;24h</h3><p>Approval time</p></div>
-    <div class="tx-trust-item"><h3>14k+</h3><p>Members</p></div>
-    <div class="tx-trust-item"><h3>23%</h3><p>Avg. loss (Mounjaro)</p></div>
-    <div class="tx-trust-item"><h3>4.8</h3><p>Google rating</p></div>
+    <div class="tx-trust-item"><h3>CQC</h3><p>Registered clinic</p></div>
+    <div class="tx-trust-item"><h3>MHRA</h3><p>Approved medications</p></div>
+    <div class="tx-trust-item"><h3>UK</h3><p>Clinician-prescribed</p></div>
+    <div class="tx-trust-item"><h3>Free</h3><p>Next-day delivery</p></div>
   </div>
 </div>
 

@@ -37,7 +37,7 @@ footer.dw-footer .ft-badge{font-size:10px;color:rgba(255,255,255,.3);border:1px 
           <li><a href="/health-checks/">Health Checks</a></li>
           <li><a href="/about/">About Us</a></li>
           <li><a href="/#calculator">Weight Calculator</a></li>
-          <li><a href="/blog/">The Journal</a></li>
+          <li><a href="/blog/">Blog</a></li>
         </ul>
       </div>
       <div class="ft-col">

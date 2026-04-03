@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 <style>
+.dw-lpug-bar{display:none!important;}
 :root{
   --white:#FFFFFF;--cream:#FAFAF9;--warm:#F0EDE8;--stone:#E7E5E4;
   --sky:#38BDF8;--sky-deep:#0EA5E9;--sky-dark:#0284C7;--sky-pale:#E0F2FE;--sky-wash:#F0F9FF;
@@ -110,7 +111,6 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
 <?php wp_head(); ?>
 </head>
 <body>
-<div class="dw-lpug-bar" style="height:auto;padding:6px 20px;background:#1A1A2E;color:#fff;font-size:12px;text-align:center;letter-spacing:0.5px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.4;box-sizing:border-box;width:100%;">A <strong>London Private Ultrasound Group</strong> clinic <span style="display:inline-block;margin:0 10px;opacity:0.4;">&middot;</span> Established healthcare provider</div>
 
 <div class="top-bar">
   <a href="<?php echo esc_url(home_url('/')); ?>" class="top-logo">don't <i>weight</i></a>

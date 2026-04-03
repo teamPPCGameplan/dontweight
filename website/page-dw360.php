@@ -12,7 +12,8 @@
 <title>Weight Loss Health Check — Clinical Screening | Don't Weight</title>
 <meta name="description" content="Comprehensive health screening designed for your weight loss programme. Ultrasound, blood tests, and body composition analysis. Biannual monitoring with your treatment. Baseline from £149, Standard £599.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 <?php wp_head(); ?>
 <style>
 :root{

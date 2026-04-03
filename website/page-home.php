@@ -12,8 +12,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Don't Weight — Clinician-Led Weight Loss | Free Consultation</title>
 <meta name="description" content="UK's clinician-led weight management service. Free 2-minute eligibility check, personalised treatment plans, and ongoing medical support. CQC registered. Every body welcome.">
+<script>document.documentElement.classList.add('js-anim')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 <style>
 :root{
   /* THE BLUE — bright, alive, sky */
@@ -1274,7 +1276,7 @@ function closeMobileMenu(){
   document.body.style.overflow='';
 }
 
-document.body.classList.add('js-anim');const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.08});
 document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
 setTimeout(()=>document.querySelectorAll('.hero .fu').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),300+i*100)),0);
 

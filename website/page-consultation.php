@@ -13,7 +13,8 @@
 <title>Medical Consultation — Check Your Eligibility | Don't Weight</title>
 <meta name="description" content="Complete your free weight loss consultation in minutes. Reviewed by UK-registered clinicians within 24 hours. Confidential, secure, and no obligation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 <style>
 :root{
   --white:#FFFFFF;--cream:#FAFAF9;--warm:#F0EDE8;--stone:#E7E5E4;
@@ -753,8 +754,7 @@ function submitAll(){
   fd.append('conditions',allData.conditions||'');
   fd.append('medications',allData.medications||'');
   fd.append('prev_medication',allData.prevMed||'');
-  fd.append('answers',answerLines.join('
-'));
+  fd.append('answers',answerLines.join('\n'));
   
   const ajaxUrl=typeof dwAjax!=='undefined'?dwAjax.url:'/wp-admin/admin-ajax.php';
   fetch(ajaxUrl,{method:'POST',body:fd}).catch(()=>{});

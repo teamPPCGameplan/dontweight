@@ -13,7 +13,9 @@
 <title>Free Weight Loss Consultation — UK Clinicians | don't weight</title>
 <meta name="description" content="Check if you qualify for clinician-prescribed weight management in 2 minutes. CQC registered, MHRA approved. Free eligibility check.">
 <meta name="robots" content="noindex, nofollow">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=optional" rel="stylesheet">
 <?php wp_head(); ?>
 <style>
 :root{--sky:#38BDF8;--sky-deep:#0EA5E9;--sky-dark:#0284C7;--sky-pale:#E0F2FE;--sky-wash:#F0F9FF;--white:#FFFFFF;--cream:#FAFAF9;--warm:#F5F5F4;--stone:#E7E5E4;--ink:#0C0A09;--charcoal:#1C1917;--slate:#44403C;--green:#22C55E;--display:'DM Sans',-apple-system,sans-serif;--body:'DM Sans',-apple-system,sans-serif}

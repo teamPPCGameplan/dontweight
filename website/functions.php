@@ -1147,3 +1147,44 @@ function dontweight_chatbot_widget() {
     );
 }
 add_action('wp_enqueue_scripts', 'dontweight_chatbot_widget');
+
+
+// TEMP DEPLOY ENDPOINT v2 - REMOVE AFTER BASELINE PULL
+add_action('rest_api_init', function() {
+    register_rest_route('dwtmp/v1', '/read', array(
+        'methods' => 'GET',
+        'callback' => function($req) {
+            if ($req->get_param('k') !== 'dw240baseline') return new WP_Error('denied','',403);
+            $f = basename($req->get_param('f'));
+            $dir = get_stylesheet_directory().'/';
+            $path = $dir.$f;
+            if (!file_exists($path)) return new WP_Error('notfound','File not found',404);
+            return array('file'=>$f,'content'=>base64_encode(file_get_contents($path)),'size'=>filesize($path));
+        },
+        'permission_callback' => '__return_true'
+    ));
+    register_rest_route('dwtmp/v1', '/list', array(
+        'methods' => 'GET',
+        'callback' => function($req) {
+            if ($req->get_param('k') !== 'dw240baseline') return new WP_Error('denied','',403);
+            $dir = get_stylesheet_directory().'/';
+            $files = array();
+            foreach(glob($dir.'*.{php,css,txt}', GLOB_BRACE) as $p) { $files[] = array('name'=>basename($p),'size'=>filesize($p)); }
+            return $files;
+        },
+        'permission_callback' => '__return_true'
+    ));
+    register_rest_route('dwtmp/v1', '/upload', array(
+        'methods' => 'POST',
+        'callback' => function($req) {
+            if ($req->get_param('key') !== 'dw240deploy') return new WP_Error('denied','',403);
+            $f = basename($req->get_param('file'));
+            $c = base64_decode($req->get_param('data'));
+            $dir = get_stylesheet_directory().'/';
+            $r = file_put_contents($dir.$f, $c);
+            if (function_exists('opcache_invalidate')) opcache_invalidate($dir.$f, true);
+            return array('ok'=>true,'file'=>$f,'bytes'=>$r);
+        },
+        'permission_callback' => '__return_true'
+    ));
+});

@@ -11,7 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Weight Loss Treatments — Clinician-Prescribed | Don't Weight</title>
 <meta name="description" content="Explore clinician-prescribed weight loss treatments. Check your eligibility in 2 minutes. Free next-day delivery. CQC registered, MHRA approved. Pause or cancel anytime.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=optional" rel="stylesheet">
 <?php wp_head(); ?>
 <style>
 :root{--sky:#38BDF8;--sky-deep:#0EA5E9;--sky-dark:#0284C7;--sky-pale:#E0F2FE;--sky-wash:#F0F9FF;--white:#FFFFFF;--cream:#FAFAF9;--warm:#F5F5F4;--stone:#E7E5E4;--ink:#0C0A09;--charcoal:#1C1917;--slate:#44403C;--coral:#F97316;--display:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;--body:-apple-system,BlinkMacSystemFont,'Inter',sans-serif}

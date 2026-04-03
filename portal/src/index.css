@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DON'T WEIGHT — Brand Guidelines v1.0
+   LIGHT theme with Sky Blue (#38BDF8) as hero colour
+   Matching dontweight.co.uk — DO NOT change to dark theme
+   Per brand-guidelines PDF: Sky Blue is hero colour, light BGs
+   ============================================================ */
+
+@theme {
+  --color-sky: #38BDF8;
+  --color-sky-deep: #0EA5E9;
+  --color-sky-dark: #0284C7;
+  --color-sky-pale: #E0F2FE;
+  --color-sky-wash: #F0F9FF;
+
+  --color-ink: #0C0A09;
+  --color-charcoal: #1C1917;
+  --color-slate: #44403C;
+  --color-stone: #E7E5E4;
+  --color-warm: #F5F5F4;
+  --color-cream: #FAFAF9;
+  --color-coral: #F97316;
+  --color-border: #E7E5E4;
+
+  --color-dark: #FAFAF9;
+  --color-dark-card: #FFFFFF;
+  --color-dark-hover: #F5F5F4;
+
+  --color-gold: #0EA5E9;
+  --color-gold-light: #38BDF8;
+  --color-gold-dark: #0284C7;
+  --color-gold-pale: #E0F2FE;
+  --color-gold-wash: #F0F9FF;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  --radius-card: 16px;
+  --radius-pill: 100px;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  background-color: #FAFAF9;
+  color: #0C0A09;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, select, textarea {
+  background-color: #FFFFFF;
+  color: #0C0A09;
+  border-color: #E7E5E4;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #A8A29E;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: none;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #F5F5F4 25%, #E7E5E4 50%, #F5F5F4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-pulse-gold {
+  animation: pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D6D3D1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0EA5E9; }
+
+*:focus-visible {
+  outline: 2px solid #0EA5E9;
+  outline-offset: 2px;
+}
+
+::selection {
+  background-color: rgba(56, 189, 248, 0.2);
+  color: #0C0A09;
+}
+
+button, a, input, select, textarea {
+  transition: all 0.2s ease;
+}
+
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+iframe[title*="consultation"] {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+}

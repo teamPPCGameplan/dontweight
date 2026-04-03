@@ -1,0 +1,16 @@
+# Dependencies
+portal/node_modules/
+portal/dist/
+
+# Environment files (contain secrets)
+portal/.env
+portal/.netlify/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~

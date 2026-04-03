@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weight Loss That Works | Don't Weight</title>
+  <meta name="description" content="Join a fun, clinician-led weight loss programme. Unlimited video consultations, next-day delivery and a 30-day money-back guarantee. CQC registered.">
+  <link rel="canonical" href="https://app.dontweight.co.uk/join-c">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Weight Loss That Works | Don't Weight">
+  <meta property="og:description" content="Join a fun, clinician-led weight loss programme. Unlimited video consultations, next-day delivery and a 30-day money-back guarantee. CQC registered.">
+  <meta property="og:image" content="/img/og-share.png">
+  <meta property="og:url" content="https://app.dontweight.co.uk/join-c">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #38BDF8;
+      --blue-light: #E0F2FE;
+      --blue-bg: #F0F9FF;
+      --ink: #0F172A;
+      --slate: #64748B;
+      --white: #FFFFFF;
+      --green: #22C55E;
+      --warm: #FFFBEB;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--white); color: var(--ink); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    .hand { font-family: 'Caveat', cursive; }
+
+    /* ===== BLOBS ===== */
+    .blob-1, .blob-2, .blob-3 { position: absolute; border-radius: 50%; pointer-events: none; z-index: 0; }
+    .blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(56,189,248,0.08) 0%, transparent 70%); top: -100px; right: -150px; }
+    .blob-2 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(56,189,248,0.06) 0%, transparent 70%); top: 40%; left: -200px; }
+    .blob-3 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(251,191,36,0.06) 0%, transparent 70%); bottom: 10%; right: -100px; }
+
+    section { position: relative; z-index: 1; }
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+    .container-wide { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+    /* ===== HEADER ===== */
+    .top-header {
+      position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 14px 24px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .top-logo { text-decoration: none; font-size: 20px; font-weight: 900; color: var(--ink); letter-spacing: -0.03em; }
+    .top-logo i { font-style: italic; color: var(--blue); }
+    .header-cta {
+      background: var(--blue); color: white; padding: 10px 22px; border-radius: 999px;
+      font-size: 13px; font-weight: 700; text-decoration: none; transition: all 0.2s;
+      box-shadow: 0 2px 10px rgba(56,189,248,0.3);
+    }
+    .header-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(56,189,248,0.4); }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding: 60px 20px 40px; text-align: center; position: relative; overflow: hidden;
+      background: linear-gradient(180deg, var(--blue-bg) 0%, var(--white) 100%);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--white); border: 1px solid rgba(56,189,248,0.2);
+      padding: 6px 16px; border-radius: 999px; font-size: 12px; font-weight: 600;
+      color: var(--blue); margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 80px); font-weight: 700; line-height: 1.06;
+      letter-spacing: -2.5px; margin-bottom: 16px; color: var(--ink);
+      text-shadow: 1px 1px 0 rgba(0,0,0,.06), 2px 2px 0 rgba(0,0,0,.04), 3px 3px 6px rgba(0,0,0,.06);
+    }
+    .hero h1 .blue { color: var(--blue); }
+    .hero-hand {
+      font-family: 'Caveat', cursive; font-size: clamp(20px, 3vw, 28px);
+      color: var(--blue); transform: rotate(-2deg); display: inline-block;
+      margin-bottom: 20px; font-weight: 700;
+    }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px); color: var(--slate); max-width: 520px;
+      margin: 0 auto 32px; line-height: 1.6;
+    }
+    .hero-sub strong { color: var(--ink); }
+
+    .cta-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--blue); color: white; padding: 16px 36px; border-radius: 999px;
+      font-size: 16px; font-weight: 800; text-decoration: none;
+      transition: all 0.25s; box-shadow: 0 4px 20px rgba(56,189,248,0.35);
+    }
+    .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(56,189,248,0.4); }
+    .cta-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--ink); padding: 16px 24px; font-size: 14px; font-weight: 600;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .cta-secondary:hover { color: var(--blue); }
+
+    .hero-trust { margin-top: 20px; font-size: 12px; color: var(--slate); }
+    .hero-trust span { margin: 0 8px; }
+
+    /* ===== STORYBOARD CAROUSEL ===== */
+    .story-section {
+      padding: 60px 0; background: var(--white); overflow: hidden;
+    }
+    .story-section h2 { text-align: center; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--slate); margin-bottom: 8px; }
+    .story-section .story-title { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 40px; letter-spacing: -0.02em; }
+
+    .story-track-wrapper { position: relative; }
+    .story-track {
+      display: flex; gap: 20px; padding: 0 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch; scrollbar-width: none; scroll-behavior: smooth;
+    }
+    .story-track::-webkit-scrollbar { display: none; }
+
+    .story-card {
+      min-width: 280px; max-width: 300px; flex-shrink: 0; scroll-snap-align: center;
+      background: var(--white); border: 2px solid #E2E8F0; border-radius: 24px;
+      padding: 32px 24px; text-align: center; position: relative;
+      transition: all 0.3s; overflow: hidden;
+    }
+    .story-card:hover { border-color: var(--blue); transform: translateY(-6px); box-shadow: 0 16px 48px rgba(56,189,248,0.12); }
+    .story-card .card-step {
+      position: absolute; top: 16px; left: 16px; width: 28px; height: 28px;
+      border-radius: 50%; background: var(--blue); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800;
+    }
+    .story-card .card-icon {
+      width: 52px; height: 52px; border-radius: 16px; margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--blue-light); color: var(--blue);
+    }
+    .story-card .card-icon svg { width: 26px; height: 26px; }
+    .story-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 6px; }
+    .story-card p { font-size: 13px; color: var(--slate); line-height: 1.5; }
+    .story-card .card-doodle {
+      font-family: 'Caveat', cursive; font-size: 15px; color: var(--blue);
+      transform: rotate(-3deg); margin-top: 12px; font-weight: 700;
+    }
+
+    /* ===== MEMBERS ===== */
+    .members-section { padding: 60px 0; background: var(--blue-bg); overflow: hidden; }
+    .members-section h2 { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.02em; }
+    .members-section .sub { text-align: center; font-size: 14px; color: var(--slate); margin-bottom: 32px; }
+    .members-track {
+      display: flex; gap: 16px; animation: scrollMembers 30s linear infinite; width: max-content;
+    }
+    .members-track:hover { animation-play-state: paused; }
+    @keyframes scrollMembers { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .member-card {
+      width: 160px; height: 200px; border-radius: 20px; overflow: hidden;
+      position: relative; flex-shrink: 0; border: 3px solid white;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: all 0.3s;
+    }
+    .member-card:hover { transform: scale(1.05); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+    .member-card img { width: 100%; height: 100%; object-fit: cover; }
+    .member-card .badge {
+      position: absolute; top: 10px; left: 10px;
+      background: var(--blue); color: white; font-size: 12px; font-weight: 800;
+      padding: 3px 10px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .member-card .info {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.65));
+      padding: 28px 12px 10px; color: white;
+    }
+    .member-card .info .name { font-size: 13px; font-weight: 700; }
+    .member-card .info .loc { font-size: 10px; opacity: 0.7; }
+    .members-note { text-align: center; font-size: 11px; color: var(--slate); margin-top: 20px; }
+
+    /* ===== QUIZ ===== */
+    .quiz-section { padding: 80px 0; background: var(--white); position: relative; }
+    .quiz-card {
+      background: var(--white); border: 2px solid #E2E8F0; border-radius: 28px;
+      padding: 48px 40px; max-width: 540px; margin: 0 auto; position: relative;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.06), 0 0 0 1px rgba(56,189,248,0.05);
+      transition: all 0.3s;
+    }
+    .quiz-card:hover { box-shadow: 0 16px 60px rgba(56,189,248,0.1), 0 0 0 2px rgba(56,189,248,0.1); }
+    .quiz-card::before {
+      content: ''; position: absolute; top: -2px; left: 20%; right: 20%; height: 4px;
+      background: linear-gradient(90deg, var(--blue), #7DD3FC, var(--blue));
+      border-radius: 0 0 4px 4px;
+    }
+    .quiz-doodle {
+      font-family: 'Caveat', cursive; font-size: 18px; color: var(--blue);
+      text-align: center; margin-bottom: 16px; transform: rotate(-1deg);
+    }
+    .quiz-progress { height: 4px; background: #F1F5F9; border-radius: 4px; margin-bottom: 28px; overflow: hidden; }
+    .quiz-progress-fill { height: 100%; background: var(--blue); border-radius: 4px; transition: width 0.4s ease; width: 0%; }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; animation: fadeUp 0.35s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .quiz-step h3 { font-size: 22px; font-weight: 800; margin-bottom: 6px; letter-spacing: -0.01em; }
+    .quiz-step .q-sub { font-size: 14px; color: var(--slate); margin-bottom: 20px; }
+    .quiz-back {
+      display: inline-flex; align-items: center; gap: 4px; background: none; border: none;
+      color: var(--slate); font-size: 13px; font-weight: 500; cursor: pointer;
+      font-family: inherit; padding: 6px 0; margin-bottom: 12px; transition: color 0.2s;
+    }
+    .quiz-back:hover { color: var(--blue); }
+    .quiz-option {
+      display: flex; align-items: center; gap: 12px;
+      width: 100%; padding: 16px 20px; margin-bottom: 10px;
+      background: #FAFBFC; border: 2px solid #E2E8F0; border-radius: 14px;
+      color: var(--ink); font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; text-align: left; font-family: inherit;
+    }
+    .quiz-option:hover { border-color: var(--blue); background: var(--blue-light); transform: translateX(4px); }
+    .quiz-option.selected { border-color: var(--blue); background: var(--blue-light); }
+    .quiz-input {
+      width: 100%; padding: 14px 18px; border-radius: 14px;
+      border: 2px solid #E2E8F0; background: #FAFBFC;
+      color: var(--ink); font-size: 16px; font-family: inherit; outline: none;
+      transition: border-color 0.2s; margin-bottom: 10px;
+    }
+    .quiz-input:focus { border-color: var(--blue); background: white; }
+    .quiz-input::placeholder { color: #94A3B8; }
+    .quiz-next {
+      width: 100%; padding: 14px; border-radius: 14px; border: none;
+      background: var(--blue); color: white; font-size: 15px; font-weight: 700;
+      cursor: pointer; font-family: inherit; transition: all 0.2s; margin-top: 8px;
+      opacity: 0.35; pointer-events: none; box-shadow: 0 4px 16px rgba(56,189,248,0.25);
+    }
+    .quiz-next.enabled { opacity: 1; pointer-events: auto; }
+    .quiz-next.enabled:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(56,189,248,0.35); }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-section { padding: 60px 0; background: var(--blue-bg); }
+    .how-section h2 { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .how-section .sub { text-align: center; color: var(--slate); font-size: 14px; margin-bottom: 40px; }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    @media (max-width: 768px) { .how-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .how-grid { grid-template-columns: 1fr; } }
+    .how-card {
+      background: var(--white); border: 2px solid #E2E8F0; border-radius: 20px;
+      padding: 28px 20px; text-align: center; transition: all 0.3s;
+    }
+    .how-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 12px 36px rgba(56,189,248,0.08); }
+    .how-card .h-icon { width: 48px; height: 48px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; background: var(--blue-light); border-radius: 14px; }
+    .how-card .h-icon svg { width: 24px; height: 24px; }
+    .how-card .num { font-size: 11px; font-weight: 800; color: var(--blue); margin-bottom: 6px; letter-spacing: 1px; }
+    .how-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .how-card p { font-size: 12px; color: var(--slate); line-height: 1.5; }
+
+    /* ===== BENEFITS ===== */
+    .benefits-section { padding: 60px 0; }
+    .benefits-section h2 { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 36px; }
+    .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .benefits-grid { grid-template-columns: 1fr; } }
+    .benefit-card {
+      display: flex; gap: 14px; padding: 20px;
+      background: var(--white); border: 1px solid #F1F5F9; border-radius: 16px;
+      transition: all 0.3s;
+    }
+    .benefit-card:hover { border-color: var(--blue); box-shadow: 0 8px 24px rgba(56,189,248,0.06); }
+    .benefit-card .b-icon { flex-shrink: 0; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--blue-light); border-radius: 12px; }
+    .benefit-card h3 { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+    .benefit-card p { font-size: 12px; color: var(--slate); }
+
+    /* ===== GUARANTEE ===== */
+    .guarantee-section { padding: 60px 0; }
+    .guarantee-card {
+      background: linear-gradient(135deg, #F0FDF4 0%, var(--blue-bg) 100%);
+      border: 2px solid #BBF7D0; border-radius: 24px; padding: 40px;
+      text-align: center; position: relative;
+    }
+    .guarantee-card .g-icon { margin-bottom: 12px; }
+    .guarantee-card h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .guarantee-card p { font-size: 14px; color: var(--slate); max-width: 460px; margin: 0 auto; }
+    .guarantee-card .hand-note {
+      font-family: 'Caveat', cursive; font-size: 18px; color: var(--blue);
+      margin-top: 12px; transform: rotate(-1deg); display: inline-block;
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-section { padding: 80px 0; text-align: center; background: var(--blue-bg); }
+    .final-section h2 { font-size: clamp(26px, 5vw, 38px); font-weight: 900; margin-bottom: 8px; }
+    .final-section .blue { color: var(--blue); }
+    .final-section p { color: var(--slate); font-size: 15px; margin-bottom: 28px; }
+
+    /* ===== DISCLAIMER & FOOTER ===== */
+    .disclaimer {
+      max-width: 700px; margin: 0 auto; padding: 16px 20px;
+      background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 12px;
+      font-size: 11px; color: #92400E; line-height: 1.6;
+    }
+    .lp-footer {
+      padding: 32px 0; text-align: center; font-size: 11px; color: #94A3B8;
+      border-top: 1px solid #F1F5F9;
+    }
+    .lp-footer a { color: var(--slate); text-decoration: none; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 640px) {
+      .hero { padding: 40px 20px 30px; }
+      .quiz-card { padding: 32px 20px; }
+      .story-card { min-width: 250px; }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18056464608"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18056464608');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "don't weight",
+  "description": "Clinician-led weight management programme with GLP-1 treatments",
+  "url": "https://dontweight.co.uk",
+  "logo": "https://dontweight.co.uk/wp-content/uploads/dontweight-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB"
+  },
+  "medicalSpecialty": "Weight Management",
+  "isAcceptingNewPatients": true,
+  "availableService": {
+    "@type": "MedicalTherapy",
+    "name": "GLP-1 Weight Loss Treatment",
+    "description": "Clinician-prescribed GLP-1 medication for weight management"
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="blob-1"></div>
+<div class="blob-2"></div>
+<div class="blob-3"></div>
+
+<!-- HEADER -->
+<header class="top-header">
+  <a href="https://dontweight.co.uk" class="top-logo">don't <i>weight</i></a>
+  <a href="#quiz" class="header-cta">Am I eligible?</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><div class="dot"></div> CQC Registered &middot; MHRA Approved &middot; UK Clinicians</div>
+    <h1>Your weight loss<br>journey <span class="blue">starts here</span></h1>
+    <p class="hero-hand">~ every body welcome ~</p>
+    <p class="hero-sub">Clinician-prescribed medication, delivered to your door. Real doctors. Real results. From <strong>&pound;3.80/day</strong>.</p>
+    <div>
+      <a href="#quiz" class="cta-primary">
+        Am I eligible?
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#how" class="cta-secondary">How does it work?</a>
+    </div>
+    <p class="hero-trust">4.8&#9733; Google <span>&middot;</span> Trusted by thousands <span>&middot;</span> Free delivery</p>
+  </div>
+</section>
+
+<!-- STORYBOARD JOURNEY -->
+<section class="story-section">
+  <div class="container-wide">
+    <h2>YOUR JOURNEY</h2>
+    <div class="story-title">How it actually works <span class="hand" style="font-size:24px;color:var(--blue);"> (spoiler: it's easy!)</span></div>
+    <div class="story-track-wrapper">
+      <div class="story-track">
+        <div class="story-card">
+          <div class="card-step">1</div>
+          <div class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
+          <h3>Quick quiz</h3>
+          <p>Answer a few health questions. Takes 30 seconds, not 30 minutes.</p>
+          <div class="card-doodle">^ you are here!</div>
+        </div>
+        <div class="story-card">
+          <div class="card-step">2</div>
+          <div class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+          <h3>Video consultation</h3>
+          <p>Chat with a real UK clinician from your sofa. They'll find the right treatment for you.</p>
+          <div class="card-doodle">no awkward waiting rooms</div>
+        </div>
+        <div class="story-card">
+          <div class="card-step">3</div>
+          <div class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg></div>
+          <h3>Delivered next day</h3>
+          <p>Your medication arrives in discreet packaging. Royal Mail tracked.</p>
+          <div class="card-doodle">hello, new you!</div>
+        </div>
+        <div class="story-card">
+          <div class="card-step">4</div>
+          <div class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+          <h3>Ongoing support</h3>
+          <p>Unlimited video calls with your clinician. They'll adjust your plan as you progress.</p>
+          <div class="card-doodle">we've got your back</div>
+        </div>
+        <div class="story-card">
+          <div class="card-step">5</div>
+          <div class="card-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3>See real results</h3>
+          <p>Join thousands of members who've transformed their health and confidence.</p>
+          <div class="card-doodle">the best is yet to come!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERS CAROUSEL -->
+<section class="members-section">
+  <h2>They didn't <i style="color:var(--blue);">weight</i></h2>
+  <p class="sub">Neither should you.</p>
+  <div class="members-track">
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/tom-28-manchester.jpg" alt="Tom" loading="lazy"><div class="badge">-26kg</div><div class="info"><div class="name">Tom, 28</div><div class="loc">Manchester</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/charlotte-31-brighton.jpg" alt="Charlotte" loading="lazy"><div class="badge">-18kg</div><div class="info"><div class="name">Charlotte, 31</div><div class="loc">Brighton</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/marcus-55-london.jpg" alt="Marcus" loading="lazy"><div class="badge">-22kg</div><div class="info"><div class="name">Marcus, 45</div><div class="loc">London</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/lisa-42-reading.jpg" alt="Lisa" loading="lazy"><div class="badge">-20kg+</div><div class="info"><div class="name">Lisa, 42</div><div class="loc">Reading</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/brian-63-exeter.jpg" alt="Brian" loading="lazy"><div class="badge">-19kg</div><div class="info"><div class="name">Brian, 63</div><div class="loc">Exeter</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/mei-39-edinburgh.jpg" alt="Mei" loading="lazy"><div class="badge">-15kg</div><div class="info"><div class="name">Mei, 39</div><div class="loc">Edinburgh</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/hannah-35-oxford.jpg" alt="Hannah" loading="lazy"><div class="badge">-21kg</div><div class="info"><div class="name">Hannah, 35</div><div class="loc">Oxford</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/sarah-34-bristol.jpg" alt="Sarah" loading="lazy"><div class="badge">-17kg</div><div class="info"><div class="name">Sarah, 34</div><div class="loc">Bristol</div></div></div>
+    <!-- Duplicate for infinite scroll -->
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/tom-28-manchester.jpg" alt="Tom" loading="lazy"><div class="badge">-26kg</div><div class="info"><div class="name">Tom, 28</div><div class="loc">Manchester</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/charlotte-31-brighton.jpg" alt="Charlotte" loading="lazy"><div class="badge">-18kg</div><div class="info"><div class="name">Charlotte, 31</div><div class="loc">Brighton</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/marcus-55-london.jpg" alt="Marcus" loading="lazy"><div class="badge">-22kg</div><div class="info"><div class="name">Marcus, 45</div><div class="loc">London</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/lisa-42-reading.jpg" alt="Lisa" loading="lazy"><div class="badge">-20kg+</div><div class="info"><div class="name">Lisa, 42</div><div class="loc">Reading</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/brian-63-exeter.jpg" alt="Brian" loading="lazy"><div class="badge">-19kg</div><div class="info"><div class="name">Brian, 63</div><div class="loc">Exeter</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/mei-39-edinburgh.jpg" alt="Mei" loading="lazy"><div class="badge">-15kg</div><div class="info"><div class="name">Mei, 39</div><div class="loc">Edinburgh</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/hannah-35-oxford.jpg" alt="Hannah" loading="lazy"><div class="badge">-21kg</div><div class="info"><div class="name">Hannah, 35</div><div class="loc">Oxford</div></div></div>
+    <div class="member-card"><img src="https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/sarah-34-bristol.jpg" alt="Sarah" loading="lazy"><div class="badge">-17kg</div><div class="info"><div class="name">Sarah, 34</div><div class="loc">Bristol</div></div></div>
+  </div>
+  <p class="members-note">Individual results vary. All members completed a clinician-supervised programme.</p>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="quiz-card">
+      <div class="quiz-doodle">let's find out if you're a match!</div>
+      <div class="quiz-progress"><div class="quiz-progress-fill" id="quizProgress"></div></div>
+
+      <div class="quiz-step active" data-step="1">
+        <h3>What's your main goal?</h3>
+        <p class="q-sub">Pick the one that resonates most</p>
+        <button class="quiz-option" onclick="selectOption(this)">Improve my overall health</button>
+        <button class="quiz-option" onclick="selectOption(this)">Feel more confident</button>
+        <button class="quiz-option" onclick="selectOption(this)">Have more energy</button>
+        <button class="quiz-option" onclick="selectOption(this)">All of the above!</button>
+      </div>
+
+      <div class="quiz-step" data-step="2">
+        <button class="quiz-back" onclick="prevStep()">&#8592; Back</button>
+        <h3>Tried losing weight before?</h3>
+        <p class="q-sub">No judgement here, promise</p>
+        <button class="quiz-option" onclick="selectOption(this)">Yes, but it keeps coming back</button>
+        <button class="quiz-option" onclick="selectOption(this)">Yes, with some success</button>
+        <button class="quiz-option" onclick="selectOption(this)">This is my first real go</button>
+      </div>
+
+      <div class="quiz-step" data-step="3">
+        <button class="quiz-back" onclick="prevStep()">&#8592; Back</button>
+        <h3>Let's check your eligibility</h3>
+        <p class="q-sub">Pop in your details and we'll do the maths</p>
+        <div style="display:flex;gap:12px;margin-bottom:10px;">
+          <input type="text" class="quiz-input" id="quizName" placeholder="Your name" style="flex:1" oninput="checkWeightStep()">
+          <input type="email" class="quiz-input" id="quizEmail" placeholder="Email address" style="flex:1" oninput="checkWeightStep()">
+        </div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;">
+          <input type="number" class="quiz-input" id="quizWeight" placeholder="Weight (kg)" style="flex:1" oninput="checkWeightStep()">
+          <input type="number" class="quiz-input" id="quizHeight" placeholder="Height (cm)" style="flex:1" oninput="checkWeightStep()">
+        </div>
+        <button class="quiz-next" id="weightNext" onclick="showQuizResult()">See my results</button>
+      </div>
+
+      <div class="quiz-step" data-step="4">
+        <div id="quizResultBox" style="text-align:center;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-section">
+  <div class="container-wide">
+    <h2>Everything included</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card"><div class="b-icon"><svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div><div><h3>Unlimited video consultations</h3><p>Chat with your clinician as often as you need. Always included.</p></div></div>
+      <div class="benefit-card"><div class="b-icon"><svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div><h3>30-day money-back guarantee</h3><p>Not happy? Full refund, no questions asked.</p></div></div>
+      <div class="benefit-card"><div class="b-icon"><svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><div><h3>Next-day delivery</h3><p>Prescribed today, at your door tomorrow. Royal Mail tracked.</p></div></div>
+      <div class="benefit-card"><div class="b-icon"><svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div><div><h3>Health monitoring</h3><p>Optional blood tests and ultrasound screenings. Unique to us.</p></div></div>
+      <div class="benefit-card"><div class="b-icon"><svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div><div><h3>Real clinicians, not bots</h3><p>Every prescription reviewed by a UK-registered prescriber.</p></div></div>
+      <div class="benefit-card"><div class="b-icon"><svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div><div><h3>No hidden costs</h3><p>Consultations, prescriptions, delivery, support — all included.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="guarantee-section">
+  <div class="container">
+    <div class="guarantee-card">
+      <div class="g-icon"><svg width="48" height="48" fill="none" stroke="var(--green)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+      <h2>30-Day Money-Back Guarantee</h2>
+      <p>Not satisfied within 30 days? Full refund, no questions, no drama. Your health is our priority.</p>
+      <div class="hand-note">~ because you deserve zero risk ~</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-section">
+  <div class="container">
+    <h2>Ready to start?<br><span class="blue">Let's do this.</span></h2>
+    <p>Join thousands already on their weight loss journey with Don't Weight</p>
+    <a href="#quiz" class="cta-primary">
+      Am I eligible?
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p style="font-size:12px;color:var(--slate);margin-top:16px;">30 seconds &middot; No payment required &middot; CQC registered</p>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div style="padding:20px 20px 40px;">
+  <div class="disclaimer">
+    <strong>Important:</strong> This is a prescription-only treatment. It is only available following a video consultation with a registered prescriber who will assess your suitability. Treatment is not guaranteed and will only be prescribed if clinically appropriate. Individual results vary. Don't Weight is a CQC-registered service.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+  <div class="container">
+    <p>&copy; 2026 Don't Weight Ltd. All rights reserved. | <a href="https://dontweight.co.uk/privacy-policy/">Privacy</a> | <a href="https://dontweight.co.uk/terms/">Terms</a></p>
+    <p style="margin-top:6px;font-size:10px;">Don't Weight is part of Ultrasound London Limited &middot; CQC registered &middot; GPhC-registered prescribers</p>
+  </div>
+</footer>
+
+<script>
+var currentStep = 1;
+var totalSteps = 4;
+
+function selectOption(btn) {
+  var siblings = btn.parentElement.querySelectorAll('.quiz-option');
+  siblings.forEach(function(s) { s.classList.remove('selected'); });
+  btn.classList.add('selected');
+  setTimeout(function() { nextStep(); }, 300);
+}
+
+function prevStep() {
+  if (currentStep <= 1) return;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.remove('active');
+  currentStep--;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.add('active');
+  document.getElementById('quizProgress').style.width = ((currentStep - 1) / (totalSteps - 1) * 100) + '%';
+}
+
+function nextStep() {
+  if (currentStep >= totalSteps) return;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.remove('active');
+  currentStep++;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.add('active');
+  document.getElementById('quizProgress').style.width = ((currentStep - 1) / (totalSteps - 1) * 100) + '%';
+}
+
+function checkWeightStep() {
+  var w = document.getElementById('quizWeight').value;
+  var h = document.getElementById('quizHeight').value;
+  var n = document.getElementById('quizName').value.trim();
+  var e = document.getElementById('quizEmail').value.trim();
+  var btn = document.getElementById('weightNext');
+  btn.classList.toggle('enabled', w > 0 && h > 0 && n.length > 0 && e.length > 2 && e.includes('@'));
+}
+
+function showQuizResult() {
+  var w = parseFloat(document.getElementById('quizWeight').value);
+  var h = parseFloat(document.getElementById('quizHeight').value);
+  var userName = document.getElementById('quizName').value.trim();
+  var userEmail = document.getElementById('quizEmail').value.trim();
+  if (!w || !h || !userName || !userEmail) return;
+
+  // Capture lead data
+  var nameParts = userName.split(' ');
+  fetch('/.netlify/functions/capture-lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      first_name: nameParts[0] || userName,
+      last_name: nameParts.slice(1).join(' ') || '',
+      email: userEmail,
+      source: 'quiz',
+      page_url: window.location.href,
+      utm_source: new URLSearchParams(window.location.search).get('utm_source') || '',
+      utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
+      utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+      bmi: (w / ((h / 100) * (h / 100))).toFixed(1),
+      weight_kg: w,
+      height_cm: h
+    })
+  }).catch(function(){});
+
+  var bmi = (w / ((h / 100) * (h / 100))).toFixed(1);
+  var eligible = bmi >= 27;
+  var box = document.getElementById('quizResultBox');
+
+  if (eligible) {
+    box.innerHTML =
+      '<div style="margin-bottom:16px;"><svg width="56" height="56" fill="none" stroke="var(--blue)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>' +
+      '<h3 style="font-size:24px;font-weight:800;margin-bottom:8px;">Great news!</h3>' +
+      '<p style="color:var(--slate);font-size:14px;margin-bottom:4px;">Your BMI: <strong style="color:var(--ink);">' + bmi + '</strong></p>' +
+      '<p style="color:var(--slate);font-size:13px;margin-bottom:24px;">Based on your BMI, you may be a great candidate for our clinician-led programme. Let\'s get you started!</p>' +
+      '<a href="https://dontweight.co.uk/consultation/" class="cta-primary" style="margin-bottom:12px;">Proceed <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>' +
+      '<p style="font-size:11px;color:var(--slate);margin-top:12px;">Subject to clinician approval. Individual results vary.</p>';
+  } else {
+    box.innerHTML =
+      '<div style="margin-bottom:16px;"><svg width="56" height="56" fill="none" stroke="var(--slate)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>' +
+      '<h3 style="font-size:24px;font-weight:800;margin-bottom:8px;">Let\'s chat!</h3>' +
+      '<p style="color:var(--slate);font-size:14px;margin-bottom:4px;">Your BMI: <strong style="color:var(--ink);">' + bmi + '</strong></p>' +
+      '<p style="color:var(--slate);font-size:13px;margin-bottom:24px;">Prescription treatment is typically for BMI 27+. Our clinicians can discuss what\'s right for you.</p>' +
+      '<a href="https://dontweight.co.uk/consultation/" class="cta-secondary" style="border:2px solid #E2E8F0;border-radius:999px;padding:14px 28px;">Speak to a clinician <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>';
+  }
+
+  document.querySelector('.quiz-step[data-step="3"]').classList.remove('active');
+  currentStep = 4;
+  document.querySelector('.quiz-step[data-step="4"]').classList.add('active');
+  document.getElementById('quizProgress').style.width = '100%';
+}
+</script>
+
+</body>
+</html>

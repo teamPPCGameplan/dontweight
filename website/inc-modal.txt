@@ -1,0 +1,168 @@
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2 class="fu">Don&rsquo;t weight.</h2>
+  <p class="fu">2-minute application. Approved by tomorrow. Medication at your door the next day.</p>
+  <button class="cta-white fu" onclick="openQ()">Start your programme &rarr;</button>
+  <p class="final-note fu">100% money-back guarantee if not approved.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div class="ft-top">
+      <div><div class="ft-brand">don't <i>weight</i></div><p style="font-size:12px;color:var(--sky);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px">Every body welcome</p><p class="ft-tag">Clinician-led weight management. Personalised for you at every stage.</p></div>
+      <div class="ft-col"><h5>Programme</h5><ul><li><a href="#treatments" onclick="document.getElementById('treatments').scrollIntoView({behavior:'smooth'});return false;">Treatments</a></li><li><a href="#how" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'});return false;">How It Works</a></li><li><a href="#calculator" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'});return false;">Weight Calculator</a></li><li><a href="/blog/">Blog</a></li><li><a href="/dw360/">Health Check</a></li></ul></div>
+      <div class="ft-col"><h5>Legal</h5><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms &amp; Conditions</a></li><li><a href="/complaints/">Complaints Procedure</a></li><li><a href="/cookie-policy/">Cookie Policy</a></li></ul></div>
+      <div class="ft-col"><h5>Contact</h5><ul><li><a href="mailto:hello@dontweight.co.uk">hello@dontweight.co.uk</a></li><li><a href="mailto:support@dontweight.co.uk">support@dontweight.co.uk</a></li><li><a href="mailto:pharmacy@dontweight.co.uk">pharmacy@dontweight.co.uk</a></li></ul></div>
+    </div>
+    <div class="ft-bot"><p>&copy; 2026 Don't Weight Ltd. Registered in England &amp; Wales. GPhC-registered prescribing pharmacists.</p><div class="ft-badges"><span class="ft-badge">CQC Registered</span><span class="ft-badge">MHRA Approved</span><span class="ft-badge">ICO Compliant</span></div></div>
+  </div>
+</footer>
+
+<!-- ELIGIBILITY SCREENER -->
+<div class="ov" id="ov" onclick="if(event.target===this)closeQ()">
+  <div class="qm">
+    <button class="qx" onclick="closeQ()">&times;</button>
+    <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky-deep);font-weight:700;margin-bottom:6px">Eligibility Check</div>
+    <div style="font-size:13px;color:var(--charcoal);margin-bottom:20px">2-minute assessment &middot; 100% confidential</div>
+    <div class="qprog" id="qp"><div class="qd done"></div><div class="qd"></div><div class="qd"></div><div class="qd"></div><div class="qd"></div></div>
+
+    <!-- Step 1: Age + Gender -->
+    <div class="qs on" id="q1">
+      <div class="qsl">Step 1 of 5</div>
+      <div class="qq">Let&rsquo;s start with a few basics</div>
+      <div style="font-size:13px;color:var(--charcoal);margin-bottom:10px;font-weight:500">Date of birth</div>
+      <div class="qir" style="margin-bottom:20px">
+        <input class="qi" id="iDobD" type="number" placeholder="DD" min="1" max="31" style="flex:.8">
+        <input class="qi" id="iDobM" type="number" placeholder="MM" min="1" max="12" style="flex:.8">
+        <input class="qi" id="iDobY" type="number" placeholder="YYYY" min="1930" max="2010" style="flex:1.4">
+      </div>
+      <div style="font-size:13px;color:var(--charcoal);margin-bottom:10px;font-weight:500">Biological sex (required for clinical assessment)</div>
+      <div class="qopts" id="q1sex">
+        <div class="qo" onclick="sel(this)"><span>Female</span><div class="qchk"></div></div>
+        <div class="qo" onclick="sel(this)"><span>Male</span><div class="qchk"></div></div>
+      </div>
+      <div class="qerr" id="e1"></div>
+      <div class="qnav"><button class="qnext" onclick="goStep1()">Continue &rarr;</button></div>
+    </div>
+
+    <!-- Step 2: Height + Weight -->
+    <div class="qs" id="q2">
+      <div class="qsl">Step 2 of 5</div>
+      <div class="qq">Your height and weight</div>
+      <p style="color:var(--charcoal);font-size:13px;margin-bottom:16px">We use this to calculate your BMI and assess clinical eligibility.</p>
+      <div style="display:flex;gap:4px;margin-bottom:18px;background:var(--warm);border-radius:100px;padding:3px;width:fit-content">
+        <button class="unit-btn active" id="ubMetric" onclick="setUnits('metric')" type="button">Metric (cm/kg)</button>
+        <button class="unit-btn" id="ubImperial" onclick="setUnits('imperial')" type="button">Imperial (ft/st)</button>
+      </div>
+      <div id="metricFields" class="qir">
+        <input class="qi" id="iHeight" type="number" placeholder="Height (cm)" min="100" max="250">
+        <input class="qi" id="iWeight" type="number" placeholder="Weight (kg)" min="40" max="350">
+      </div>
+      <div id="imperialFields" class="qir" style="display:none;flex-wrap:wrap;gap:10px">
+        <div style="display:flex;gap:8px;flex:1;min-width:140px">
+          <input class="qi" id="iFt" type="number" placeholder="Feet" min="4" max="7" style="flex:1">
+          <input class="qi" id="iIn" type="number" placeholder="Inches" min="0" max="11" style="flex:1">
+        </div>
+        <div style="display:flex;gap:8px;flex:1;min-width:140px">
+          <input class="qi" id="iSt" type="number" placeholder="Stone" min="5" max="50" style="flex:1">
+          <input class="qi" id="iLbs" type="number" placeholder="Lbs" min="0" max="13" style="flex:1">
+        </div>
+      </div>
+      <div id="bmiDisplay" style="margin-top:12px;font-size:14px;color:var(--sky-deep);font-weight:600;display:none"></div>
+      <div class="qerr" id="e2"></div>
+      <div class="qnav"><button class="qback" onclick="go(1)">&larr;</button><button class="qnext" onclick="goStep2()">Continue &rarr;</button></div>
+    </div>
+
+    <!-- Step 3: Ethnicity -->
+    <div class="qs" id="q3">
+      <div class="qsl">Step 3 of 5</div>
+      <div class="qq">What is your ethnic background?</div>
+      <p style="color:var(--charcoal);font-size:13px;margin-bottom:16px">UK clinical guidelines use adjusted BMI thresholds for certain ethnic groups who face higher health risks at lower BMIs.</p>
+      <div class="qopts" id="q3eth">
+        <div class="qo" onclick="sel(this)" data-adj="0"><span>White</span><div class="qchk"></div></div>
+        <div class="qo" onclick="sel(this)" data-adj="1"><span>South Asian</span><div class="qchk"></div></div>
+        <div class="qo" onclick="sel(this)" data-adj="1"><span>Chinese or other Asian</span><div class="qchk"></div></div>
+        <div class="qo" onclick="sel(this)" data-adj="1"><span>Black African or African-Caribbean</span><div class="qchk"></div></div>
+        <div class="qo" onclick="sel(this)" data-adj="1"><span>Middle Eastern</span><div class="qchk"></div></div>
+        <div class="qo" onclick="sel(this)" data-adj="0"><span>Mixed or other</span><div class="qchk"></div></div>
+      </div>
+      <div class="qerr" id="e3"></div>
+      <div class="qnav"><button class="qback" onclick="go(2)">&larr;</button><button class="qnext" onclick="goStep3()">Continue &rarr;</button></div>
+    </div>
+
+    <!-- Step 4: Weight-related conditions -->
+    <div class="qs" id="q4">
+      <div class="qsl">Step 4 of 5</div>
+      <div class="qq">Do you have any of the following conditions?</div>
+      <p style="color:var(--charcoal);font-size:13px;margin-bottom:16px">Select all that apply. This information is confidential and helps determine your eligibility.</p>
+      <div class="qopts" id="q4opts">
+        <div class="qo" onclick="selCondition(this)" data-comorbid="1"><span>Type 2 diabetes</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selCondition(this)" data-comorbid="1"><span>High blood pressure (hypertension)</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selCondition(this)" data-comorbid="1"><span>High cholesterol (dyslipidaemia)</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selCondition(this)" data-comorbid="1"><span>Obstructive sleep apnoea</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selCondition(this)" data-comorbid="1"><span>Non-alcoholic fatty liver disease</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selCondition(this)" data-comorbid="1"><span>Polycystic ovary syndrome (PCOS)</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selNone(this,'q4opts')" data-comorbid="0"><span>None of the above</span><div class="qchk"></div></div>
+      </div>
+      <div class="qerr" id="e4"></div>
+      <div class="qnav"><button class="qback" onclick="go(3)">&larr;</button><button class="qnext" onclick="goStep4()">Continue &rarr;</button></div>
+    </div>
+
+    <!-- Step 5: Contraindications -->
+    <div class="qs" id="q5">
+      <div class="qsl">Step 5 of 5</div>
+      <div class="qq">Important safety questions</div>
+      <p style="color:var(--charcoal);font-size:13px;margin-bottom:16px">Do any of the following apply to you?</p>
+      <div class="qopts" id="q5contra">
+        <div class="qo" onclick="selCondition(this)" data-block="1"><span>Pregnant, breastfeeding, or planning pregnancy</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selCondition(this)" data-block="1"><span>Personal or family history of medullary thyroid cancer</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selCondition(this)" data-block="1"><span>History of pancreatitis</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selCondition(this)" data-block="1"><span>Current or recent eating disorder</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selCondition(this)" data-block="1"><span>Type 1 diabetes</span><div class="qchk"></div></div>
+        <div class="qo" onclick="selNone(this,'q5contra')" data-block="0"><span>None of the above</span><div class="qchk"></div></div>
+      </div>
+      <div class="qerr" id="e5"></div>
+      <div class="qnav"><button class="qback" onclick="go(4)">&larr;</button><button class="qnext" onclick="goStep5()">Check my eligibility &rarr;</button></div>
+    </div>
+
+    <!-- Result: ELIGIBLE -->
+    <div class="qs" id="qR">
+      <div class="qres">
+        <div class="qring" style="border-color:var(--sky);color:var(--sky-dark)">&#10003;</div>
+        <div class="qrt">Great news &mdash; you may be eligible.</div>
+        <p class="qrsub">Your BMI is <strong id="rBmi"></strong>. Based on your answers, you meet the initial criteria for GLP-1 treatment.</p>
+        <div style="background:var(--sky-wash);border-radius:12px;padding:16px;margin-bottom:24px;font-size:13px;color:var(--charcoal);line-height:1.8;text-align:left">
+          <strong>To proceed, enter your details below and continue to the full medical consultation:</strong><br>
+          &bull; Personal details and medical history<br>
+          &bull; Safety screening and consent<br>
+          &bull; ID verification and GP details<br><br>
+          A GPhC-registered pharmacist will review everything within 24 hours. If your application is not approved, you will receive a full refund.
+        </div>
+        <input class="qi" id="leadFname" type="text" placeholder="First name" style="margin-bottom:8px">
+        <input class="qi" id="leadLname" type="text" placeholder="Last name" style="margin-bottom:8px">
+        <input class="qi" id="leadEmail" type="email" placeholder="Email address" style="margin-bottom:4px">
+        <div style="font-size:11px;color:var(--slate);margin-bottom:16px;line-height:1.5">By continuing, you agree to receive communication from don&rsquo;t weight about your consultation. We never share your data.</div>
+        <div class="qerr" id="eR"></div>
+        <button class="qrcta" onclick="goToConsultation()">Continue to consultation &rarr;</button>
+      </div>
+    </div>
+
+    <!-- Result: NOT ELIGIBLE -->
+    <div class="qs" id="qX">
+      <div class="qres">
+        <div class="qring" style="border-color:#EF4444;background:#FEF2F2">&#10007;</div>
+        <div class="qrt">We&rsquo;re unable to proceed at this time.</div>
+        <p class="qrsub" id="rejectMsg"></p>
+        <div style="background:var(--cream);border-radius:12px;padding:16px;margin-bottom:20px;font-size:13px;color:var(--charcoal);line-height:1.7;text-align:left">
+          <strong>What you can do:</strong><br>
+          &bull; Speak with your GP about weight management options<br>
+          &bull; Ask about NHS specialist weight management services<br>
+          &bull; Contact us if you believe your circumstances have changed
+        </div>
+        <button class="qrcta" onclick="closeQ()" style="background:var(--charcoal)">Close</button>
+        <button class="qrcta" onclick="goBack()" style="background:var(--sky);margin-top:8px">&larr; Go back</button>
+      </div>
+    </div>
+  </div>

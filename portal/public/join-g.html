@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simple. Medical. For Every Body. | Don't Weight</title>
+<meta name="description" content="Clinician-led weight loss programme with personalised plans, ongoing support and discreet UK delivery. No judgement, just results. CQC registered.">
+<link rel="canonical" href="https://app.dontweight.co.uk/join-g">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Simple. Medical. For Every Body. | Don't Weight">
+<meta property="og:description" content="Clinician-led weight loss programme with personalised plans, ongoing support and discreet UK delivery. No judgement, just results. CQC registered.">
+<meta property="og:image" content="/img/og-share.png">
+<meta property="og:url" content="https://app.dontweight.co.uk/join-g">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--sky:#38BDF8;--ink:#0F172A;--slate:#64748B;--bg:#FFFFFF;--light:#F8FAFC;--border:#E2E8F0;--radius:16px;--radius-sm:10px}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* LOGO */
+.logo{font-family:'Inter',sans-serif;font-size:1.35rem;font-weight:700;letter-spacing:-.5px;color:var(--ink);text-decoration:none}
+.logo i{font-style:italic;color:var(--sky)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+nav .nav-cta{background:var(--sky);color:#fff;font-weight:600;font-size:.875rem;padding:10px 22px;border-radius:50px;text-decoration:none;transition:background .2s}
+nav .nav-cta:hover{background:#0ea5e9}
+
+/* HERO */
+.hero{margin-top:64px;padding:80px 24px 60px;max-width:1100px;margin-left:auto;margin-right:auto;display:flex;align-items:center;gap:60px}
+.hero-text{flex:1;min-width:0}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky);margin-bottom:12px}
+.hero-text h1{font-size:clamp(2.4rem,5.5vw,3.6rem);font-weight:700;line-height:1.06;letter-spacing:-2.5px;color:var(--ink);margin-bottom:20px}
+.hero-text h1 span{color:var(--sky)}
+.hero-text .sub{font-size:1.15rem;color:var(--slate);max-width:420px;margin-bottom:32px;line-height:1.55}
+.hero-img{flex:0 0 auto;max-width:380px;width:100%}
+.hero-img img{width:100%;max-width:400px;height:auto;object-fit:contain;border-radius:var(--radius);background:#fff;padding:12px;box-shadow:0 4px 6px rgba(0,0,0,.04),0 12px 28px rgba(0,0,0,.08),0 20px 40px rgba(56,189,248,.1);transform:perspective(800px) rotateY(-2deg);transition:transform .3s ease,box-shadow .3s ease}
+.hero-img img:hover{transform:perspective(800px) rotateY(0deg) translateY(-4px);box-shadow:0 8px 16px rgba(0,0,0,.06),0 20px 40px rgba(0,0,0,.1),0 28px 50px rgba(56,189,248,.15)}
+.btn{display:inline-block;background:var(--sky);color:#fff;font-weight:600;font-size:1.05rem;padding:16px 36px;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:all .2s}
+.btn:hover{background:#0ea5e9;transform:translateY(-1px);box-shadow:0 6px 20px rgba(56,189,248,.35)}
+.btn-outline{background:transparent;border:2px solid var(--border);color:var(--ink)}
+.btn-outline:hover{border-color:var(--sky);color:var(--sky);background:transparent;box-shadow:none;transform:none}
+
+/* TRUST BAR */
+.trust-bar{background:var(--light);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 24px;text-align:center}
+.trust-bar p{font-size:.875rem;color:var(--slate);letter-spacing:.3px}
+.trust-bar p+p{margin-top:4px;font-weight:600;color:var(--ink)}
+
+/* SECTIONS */
+.section{padding:80px 24px;max-width:1000px;margin:0 auto}
+.section-alt{background:var(--light)}
+
+/* STORY ROWS */
+.story-row{display:flex;align-items:center;gap:48px;margin-bottom:64px}
+.story-row.reverse{flex-direction:row-reverse}
+.story-img{flex:0 0 auto;max-width:340px;width:100%}
+.story-img img{width:100%;max-width:400px;height:auto;object-fit:contain;border-radius:var(--radius);background:#fff;padding:10px;box-shadow:0 4px 6px rgba(0,0,0,.04),0 12px 28px rgba(0,0,0,.08),0 20px 40px rgba(56,189,248,.1);transition:transform .3s ease,box-shadow .3s ease}
+.story-row:nth-child(odd) .story-img img{transform:perspective(800px) rotateY(-2deg)}
+.story-row:nth-child(even) .story-img img{transform:perspective(800px) rotateY(2deg)}
+.story-img img:hover{transform:perspective(800px) rotateY(0deg) translateY(-4px)!important;box-shadow:0 8px 16px rgba(0,0,0,.06),0 20px 40px rgba(0,0,0,.1),0 28px 50px rgba(56,189,248,.15)}
+.story-content{flex:1;min-width:0}
+.story-content h2{font-size:1.75rem;font-weight:700;letter-spacing:-1.2px;margin-bottom:12px;line-height:1.15}
+.story-content p{font-size:1.05rem;color:var(--slate);line-height:1.6;max-width:400px}
+
+/* DIVIDER */
+.divider-text{text-align:center;padding:48px 24px;font-family:'Caveat',cursive;font-size:1.75rem;color:var(--sky);position:relative}
+.divider-text::before{content:'';display:block;width:48px;height:3px;background:var(--sky);border-radius:3px;margin:0 auto 16px}
+
+/* QUIZ */
+.quiz-section{background:var(--light);padding:80px 24px}
+.quiz-wrap{max-width:560px;margin:0 auto;text-align:center}
+.quiz-wrap h2{font-size:2rem;font-weight:700;letter-spacing:-1.5px;margin-bottom:8px}
+.quiz-wrap .quiz-sub{color:var(--slate);margin-bottom:36px;font-size:1rem}
+.quiz-step{display:none}
+.quiz-step.active{display:block}
+.quiz-progress{display:flex;gap:6px;justify-content:center;margin-bottom:28px}
+.quiz-progress span{width:40px;height:4px;border-radius:4px;background:var(--border);transition:background .3s}
+.quiz-progress span.filled{background:var(--sky)}
+.quiz-options{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.quiz-opt{padding:16px 20px;border:2px solid var(--border);border-radius:var(--radius-sm);background:#fff;font-size:1rem;cursor:pointer;transition:all .15s;text-align:left;font-family:'Inter',sans-serif;color:var(--ink)}
+.quiz-opt:hover{border-color:var(--sky)}
+.quiz-opt.selected{border-color:var(--sky);background:rgba(56,189,248,.06);font-weight:600}
+.quiz-nav{display:flex;gap:12px;justify-content:center;margin-top:20px}
+.quiz-nav button{padding:12px 28px;border-radius:50px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.quiz-input-row{display:flex;gap:12px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+.quiz-input{width:140px;padding:14px 16px;border:2px solid var(--border);border-radius:var(--radius-sm);font-size:1rem;text-align:center;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
+.quiz-input:focus{border-color:var(--sky)}
+.quiz-result{padding:32px;border-radius:var(--radius);background:#fff;border:2px solid var(--sky)}
+.quiz-result h3{font-size:1.3rem;font-weight:700;margin-bottom:8px;letter-spacing:-.5px}
+.quiz-result p{color:var(--slate);margin-bottom:20px}
+
+/* CAROUSEL */
+.carousel-section{padding:60px 0;overflow:hidden}
+.carousel-section h2{text-align:center;font-size:2rem;font-weight:700;letter-spacing:-1.5px;margin-bottom:8px;padding:0 24px}
+.carousel-section .carousel-sub{text-align:center;color:var(--slate);margin-bottom:40px;padding:0 24px}
+.carousel-track{display:flex;gap:16px;width:max-content}
+.carousel-row{margin-bottom:16px;overflow:hidden}
+.carousel-card{flex:0 0 auto;width:200px;border-radius:var(--radius);overflow:hidden;background:#fff;border:1px solid var(--border);transition:transform .2s}
+.carousel-card img{width:200px;height:200px;object-fit:cover;display:block}
+.carousel-card .card-info{padding:10px 14px}
+.carousel-card .card-info strong{font-size:.85rem;display:block;margin-bottom:2px}
+.carousel-card .card-info span{font-size:.8rem;color:var(--sky);font-weight:600}
+@keyframes drift-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes drift-right{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.drift-left .carousel-track{animation:drift-left 40s linear infinite}
+.drift-right .carousel-track{animation:drift-right 40s linear infinite}
+
+/* FINAL CTA */
+.final-cta{text-align:center;padding:80px 24px;max-width:700px;margin:0 auto}
+.final-cta img{max-width:260px;margin:0 auto 32px;display:block;object-fit:contain}
+.final-cta h2{font-size:2.2rem;font-weight:700;letter-spacing:-1.8px;margin-bottom:12px;line-height:1.1}
+.final-cta p{color:var(--slate);margin-bottom:32px;font-size:1.05rem}
+
+/* DISCLAIMER / FOOTER */
+.disclaimer{background:var(--light);border-top:1px solid var(--border);padding:32px 24px;text-align:center;font-size:.75rem;color:var(--slate);line-height:1.7}
+footer{padding:24px;text-align:center;font-size:.8rem;color:var(--slate);border-top:1px solid var(--border)}
+footer a{color:var(--sky);text-decoration:none}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero{flex-direction:column-reverse;padding:40px 20px 40px;gap:32px;text-align:center}
+  .hero-text .sub{margin-left:auto;margin-right:auto}
+  .hero-text h1{font-size:2.2rem;letter-spacing:-1.5px}
+  .hero-img{max-width:280px}
+  .story-row,.story-row.reverse{flex-direction:column;text-align:center;gap:24px}
+  .story-img{max-width:260px;margin:0 auto}
+  .story-content p{margin:0 auto}
+  .section{padding:48px 20px}
+  .quiz-section{padding:48px 20px}
+  .final-cta{padding:48px 20px}
+  .carousel-card{width:170px}
+  .carousel-card img{width:170px;height:170px}
+}
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18056464608"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18056464608');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "don't weight",
+  "description": "Clinician-led weight management programme with GLP-1 treatments",
+  "url": "https://dontweight.co.uk",
+  "logo": "https://dontweight.co.uk/wp-content/uploads/dontweight-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB"
+  },
+  "medicalSpecialty": "Weight Management",
+  "isAcceptingNewPatients": true,
+  "availableService": {
+    "@type": "MedicalTherapy",
+    "name": "GLP-1 Weight Loss Treatment",
+    "description": "Clinician-prescribed GLP-1 medication for weight management"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="https://dontweight.co.uk" class="logo">don't <i>weight</i></a>
+  <a href="#quiz" class="nav-cta">Start your plan</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Weight loss programme</p>
+    <h1>Simple. Medical.<br>For <span>every body.</span></h1>
+    <p class="sub">Clinician-led weight loss that actually works. Personalised plans, ongoing support and discreet UK delivery. No judgement, just results.</p>
+    <a href="#quiz" class="btn">See if you're eligible</a>
+  </div>
+  <div class="hero-img">
+    <img src="img/panel-1a.png" alt="Feeling stuck on the same road? Illustration of person on a scale" width="400" height="400">
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <p>CQC Registered &middot; MHRA Approved &middot; UK Clinicians</p>
+  <p>4.8&#9733; Google &middot; Trusted by thousands</p>
+</div>
+
+<!-- PROBLEM / SOLUTION STORY -->
+<section class="section">
+
+  <!-- Problem acknowledgement -->
+  <div class="story-row">
+    <div class="story-content">
+      <h2>We know the feeling.</h2>
+      <p>You've tried everything. The diets, the apps, the willpower. And yet the scale barely moves. You're not broken &mdash; you just haven't had the right support. Until now.</p>
+    </div>
+    <div class="story-img">
+      <!-- Hero image reused contextually is already above; this section is text-only to avoid repetition -->
+    </div>
+  </div>
+
+</section>
+
+<!-- TRANSITION -->
+<div class="divider-text">here's where everything changes...</div>
+
+<!-- DELIVERY -->
+<section class="section">
+  <div class="story-row reverse">
+    <div class="story-img">
+      <img src="img/panel-3a.png" alt="Everything you need, in this box - discreet delivery illustration" width="400" height="400">
+    </div>
+    <div class="story-content">
+      <h2>Everything arrives discreetly.</h2>
+      <p>Next-day tracked delivery. Plain packaging. Everything you need in one box &mdash; prescribed by real UK clinicians and delivered to your door.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRESSION -->
+<section class="section-alt">
+  <div class="section">
+    <div class="story-row">
+      <div class="story-img">
+        <img src="img/panel-3b.png" alt="Re-climb with confidence - calendar and weight progression illustration" width="400" height="400">
+      </div>
+      <div class="story-content">
+        <h2>Week by week. Real results.</h2>
+        <p>Track your progress with confidence. Our clinicians check in regularly, adjusting your plan as you go. No guesswork. Just steady, sustainable change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENJOY LIFE -->
+<section class="section">
+  <div class="story-row reverse">
+    <div class="story-img">
+      <img src="img/panel-4a.png" alt="Enjoy life again - dashboard app and happy family" width="400" height="400">
+    </div>
+    <div class="story-content">
+      <h2>Get your life back.</h2>
+      <p>More energy. More confidence. Clothes that fit again. This isn't just about numbers on a scale &mdash; it's about feeling like yourself again.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-wrap">
+    <h2>Find your plan</h2>
+    <p class="quiz-sub">Answer 3 quick questions. Takes 30 seconds.</p>
+
+    <div class="quiz-progress">
+      <span class="filled"></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Step 1: Goal -->
+    <div class="quiz-step active" data-step="1">
+      <p style="font-weight:600;margin-bottom:16px">What's your main goal?</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" onclick="selectOption(this)">Lose a significant amount of weight</button>
+        <button class="quiz-opt" onclick="selectOption(this)">Lose a moderate amount and keep it off</button>
+        <button class="quiz-opt" onclick="selectOption(this)">I've tried everything else</button>
+        <button class="quiz-opt" onclick="selectOption(this)">Improve my overall health</button>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn" onclick="nextStep()" id="next1" disabled>Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 2: History -->
+    <div class="quiz-step" data-step="2">
+      <p style="font-weight:600;margin-bottom:16px">Have you tried to lose weight before?</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" onclick="selectOption(this)">Yes, many times</button>
+        <button class="quiz-opt" onclick="selectOption(this)">A couple of attempts</button>
+        <button class="quiz-opt" onclick="selectOption(this)">This is my first serious attempt</button>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn-outline" onclick="prevStep()">Back</button>
+        <button class="btn" onclick="nextStep()" id="next2" disabled>Continue</button>
+      </div>
+    </div>
+
+    <!-- Step 3: BMI -->
+    <div class="quiz-step" data-step="3">
+      <p style="font-weight:600;margin-bottom:16px">Let's check your BMI</p>
+      <div class="quiz-input-row">
+        <input type="text" class="quiz-input" id="quizName" placeholder="Your name" oninput="checkWeightStep()">
+        <input type="email" class="quiz-input" id="quizEmail" placeholder="Email address" oninput="checkWeightStep()">
+      </div>
+      <div class="quiz-input-row">
+        <input type="number" class="quiz-input" id="weightInput" placeholder="Weight (kg)" min="30" max="300" oninput="checkWeightStep()">
+        <input type="number" class="quiz-input" id="heightInput" placeholder="Height (cm)" min="100" max="250" oninput="checkWeightStep()">
+      </div>
+      <div class="quiz-nav">
+        <button class="btn btn-outline" onclick="prevStep()">Back</button>
+        <button class="btn" onclick="showQuizResult()" id="next3" disabled>See my result</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Result -->
+    <div class="quiz-step" data-step="4">
+      <div class="quiz-result" id="quizResult"></div>
+      <div class="quiz-nav" style="margin-top:24px">
+        <button class="btn btn-outline" onclick="prevStep()">Back</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MEMBERS CAROUSEL -->
+<section class="carousel-section">
+  <h2>Real people. Real results.</h2>
+  <p class="carousel-sub">Join thousands who've already started their journey.</p>
+
+  <!-- Row 1: drift left -->
+  <div class="carousel-row drift-left">
+    <div class="carousel-track" id="row1"></div>
+  </div>
+  <!-- Row 2: drift right -->
+  <div class="carousel-row drift-right">
+    <div class="carousel-track" id="row2"></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <img src="img/panel-4c.png" alt="don't weight. every body welcome. brand illustration" width="260" height="260">
+  <h2>Your journey starts with<br>one simple step.</h2>
+  <p>No commitment. No judgement. Just a quick check to see if we can help.</p>
+  <a href="#quiz" class="btn">Check your eligibility</a>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <p>Treatment is subject to clinical suitability. All prescriptions are reviewed and approved by UK-registered clinicians. Results vary between individuals. This service does not replace advice from your GP.</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="logo" style="margin-bottom:8px;display:inline-block">don't <i>weight</i></p><br>
+  <p>Don't Weight is part of Ultrasound London Limited &middot; CQC registered &middot; GPhC-registered prescribers</p>
+  <p style="margin-top:8px"><a href="https://dontweight.co.uk/privacy-policy/">Privacy</a> &middot; <a href="https://dontweight.co.uk/terms/">Terms</a></p>
+</footer>
+
+<script>
+/* ========== QUIZ ========== */
+let currentStep = 1;
+const totalSteps = 4;
+
+function selectOption(btn) {
+  const step = btn.closest('.quiz-step');
+  step.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const nextBtn = step.querySelector('.quiz-nav .btn:not(.btn-outline)');
+  if (nextBtn) nextBtn.disabled = false;
+}
+
+function prevStep() {
+  if (currentStep <= 1) return;
+  document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.remove('active');
+  currentStep--;
+  document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.add('active');
+  updateProgress();
+}
+
+function nextStep() {
+  if (currentStep >= totalSteps) return;
+  document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.remove('active');
+  currentStep++;
+  document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.add('active');
+  updateProgress();
+}
+
+function updateProgress() {
+  document.querySelectorAll('.quiz-progress span').forEach((dot, i) => {
+    dot.classList.toggle('filled', i < currentStep);
+  });
+}
+
+function checkWeightStep() {
+  const w = parseFloat(document.getElementById('weightInput').value);
+  const h = parseFloat(document.getElementById('heightInput').value);
+  var n = document.getElementById('quizName').value.trim();
+  var e = document.getElementById('quizEmail').value.trim();
+  const btn = document.getElementById('next3');
+  btn.disabled = !(w >= 30 && w <= 300 && h >= 100 && h <= 250 && n.length > 0 && e.length > 2 && e.includes('@'));
+}
+
+function showQuizResult() {
+  const w = parseFloat(document.getElementById('weightInput').value);
+  const h = parseFloat(document.getElementById('heightInput').value);
+  var userName = document.getElementById('quizName').value.trim();
+  var userEmail = document.getElementById('quizEmail').value.trim();
+  if (!w || !h || !userName || !userEmail) return;
+
+  // Capture lead data
+  var nameParts = userName.split(' ');
+  fetch('/.netlify/functions/capture-lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      first_name: nameParts[0] || userName,
+      last_name: nameParts.slice(1).join(' ') || '',
+      email: userEmail,
+      source: 'quiz',
+      page_url: window.location.href,
+      utm_source: new URLSearchParams(window.location.search).get('utm_source') || '',
+      utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
+      utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+      bmi: (w / ((h / 100) * (h / 100))).toFixed(1),
+      weight_kg: w,
+      height_cm: h
+    })
+  }).catch(function(){});
+
+  const bmi = w / ((h / 100) ** 2);
+  const resultDiv = document.getElementById('quizResult');
+
+  document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.remove('active');
+  currentStep = 4;
+  document.querySelector(`.quiz-step[data-step="4"]`).classList.add('active');
+  updateProgress();
+
+  if (bmi >= 27) {
+    resultDiv.innerHTML = `
+      <h3>Great news - you may be eligible</h3>
+      <p>Based on your BMI of ${bmi.toFixed(1)}, you could benefit from our clinician-led programme. The next step is a quick online consultation.</p>
+      <a href="https://dontweight.co.uk/consultation/" class="btn">Proceed</a>
+    `;
+  } else {
+    resultDiv.innerHTML = `
+      <h3>Let's have a chat</h3>
+      <p>Your BMI is ${bmi.toFixed(1)}. Our medical treatments are designed for BMI 27+, but we may still be able to help. Get in touch and we'll find the right path for you.</p>
+      <a href="https://dontweight.co.uk/contact/" class="btn">Get in touch</a>
+    `;
+  }
+}
+
+/* ========== MEMBERS CAROUSEL ========== */
+const BASE = 'https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/';
+const members = [
+  { img: 'tom-28-manchester.jpg',     name: 'Tom, 28',       loc: 'Manchester', lost: '-26kg' },
+  { img: 'charlotte-31-brighton.jpg',  name: 'Charlotte, 31', loc: 'Brighton',   lost: '-18kg' },
+  { img: 'marcus-55-london.jpg',       name: 'Marcus, 55',    loc: 'London',     lost: '-22kg' },
+  { img: 'lisa-42-reading.jpg',        name: 'Lisa, 42',      loc: 'Reading',    lost: '-20kg+' },
+  { img: 'brian-63-exeter.jpg',        name: 'Brian, 63',     loc: 'Exeter',     lost: '-19kg' },
+  { img: 'mei-39-edinburgh.jpg',       name: 'Mei, 39',       loc: 'Edinburgh',  lost: '-15kg' },
+  { img: 'hannah-35-oxford.jpg',       name: 'Hannah, 35',    loc: 'Oxford',     lost: '-21kg' },
+  { img: 'sarah-34-bristol.jpg',       name: 'Sarah, 34',     loc: 'Bristol',    lost: '-17kg' }
+];
+
+function cardHTML(m) {
+  return `<div class="carousel-card">
+    <img src="${BASE}${m.img}" alt="${m.name} from ${m.loc}" width="200" height="200" loading="lazy">
+    <div class="card-info"><strong>${m.name} &middot; ${m.loc}</strong><span>${m.lost}</span></div>
+  </div>`;
+}
+
+// Row 1: first 4 + duplicate
+const row1 = members.slice(0, 4);
+const row1Dup = [...row1, ...row1, ...row1];
+document.getElementById('row1').innerHTML = row1Dup.map(cardHTML).join('');
+
+// Row 2: last 4 + duplicate
+const row2 = members.slice(4, 8);
+const row2Dup = [...row2, ...row2, ...row2];
+document.getElementById('row2').innerHTML = row2Dup.map(cardHTML).join('');
+</script>
+
+</body>
+</html>

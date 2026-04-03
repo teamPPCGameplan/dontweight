@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Origin Story | Don't Weight</title>
+  <meta name="description" content="Start your weight loss origin story with Don't Weight. Clinician-led programme with video consultations, next-day delivery and ongoing support. CQC registered.">
+  <link rel="canonical" href="https://app.dontweight.co.uk/join-f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Origin Story | Don't Weight">
+  <meta property="og:description" content="Start your weight loss origin story with Don't Weight. Clinician-led programme with video consultations, next-day delivery and ongoing support. CQC registered.">
+  <meta property="og:image" content="/img/og-share.png">
+  <meta property="og:url" content="https://app.dontweight.co.uk/join-f">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #38BDF8;
+      --ink: #0F172A;
+      --slate: #64748B;
+      --white: #FFFFFF;
+      --border: #E2E8F0;
+      --cream: #FFF8E7;
+      --panel-border: 4px solid var(--ink);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hand { font-family: 'Caveat', cursive; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== REVEAL SYSTEM ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-80px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(80px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* ===== COVER PAGE ===== */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(circle, var(--ink) 1px, transparent 1px),
+        var(--white);
+      background-size: 24px 24px;
+      padding: 40px 20px;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 30%, var(--white) 70%);
+      pointer-events: none;
+    }
+    .cover-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .cover-logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 48px;
+      color: var(--ink);
+    }
+    .cover-logo i {
+      font-style: italic;
+      color: var(--blue);
+    }
+    .cover-title {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(42px, 10vw, 80px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+    .cover-title span {
+      display: block;
+      color: var(--blue);
+    }
+    .cover-sub {
+      font-size: 16px;
+      color: var(--slate);
+      margin-bottom: 48px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .scroll-cue {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      color: var(--blue);
+      font-weight: 600;
+      animation: bobble 2s ease-in-out infinite;
+    }
+    .scroll-hook {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+    .scroll-cue svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--blue);
+      stroke-width: 2;
+      fill: none;
+    }
+    @keyframes bobble {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* ===== CHAPTER HEADERS ===== */
+    .chapter-header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+    .chapter-num {
+      font-family: 'Caveat', cursive;
+      font-size: 18px;
+      color: var(--blue);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .chapter-title {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(36px, 8vw, 60px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    /* ===== COMIC PANELS ===== */
+    .comic-strip {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .panel-row {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    .panel-row.three { grid-template-columns: 1fr 1fr 1fr; }
+    .panel-row.two { grid-template-columns: 1fr 1fr; }
+    .panel-row.one { grid-template-columns: 1fr; }
+
+    .comic-panel {
+      border: var(--panel-border);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,.06), 0 12px 24px rgba(0,0,0,.08);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .comic-panel:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.08), 0 20px 36px rgba(0,0,0,.12);
+    }
+    .comic-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Comic caption box */
+    .caption-box {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--cream);
+      border: 2px solid var(--ink);
+      border-radius: 2px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--ink);
+      transform: rotate(-1deg);
+      max-width: 80%;
+      line-height: 1.3;
+      z-index: 2;
+    }
+    .caption-box.bottom {
+      top: auto;
+      bottom: 8px;
+      left: 8px;
+      transform: rotate(0.5deg);
+    }
+
+    /* ===== SPEECH BUBBLES ===== */
+    .speech-bubble-wrap {
+      max-width: 500px;
+      margin: 32px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .speech-bubble {
+      display: inline-block;
+      background: var(--white);
+      border: 3px solid var(--ink);
+      border-radius: 24px;
+      padding: 20px 32px;
+      font-family: 'Caveat', cursive;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink);
+      position: relative;
+    }
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 16px solid var(--ink);
+    }
+    .speech-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 14px solid var(--white);
+      z-index: 1;
+    }
+
+    /* ===== THOUGHT BUBBLES ===== */
+    .thought-bubble {
+      display: inline-block;
+      background: var(--white);
+      border: 3px solid var(--ink);
+      border-radius: 40px;
+      padding: 16px 28px;
+      font-family: 'Caveat', cursive;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      position: relative;
+    }
+    .thought-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 30%;
+      width: 14px;
+      height: 14px;
+      background: var(--white);
+      border: 3px solid var(--ink);
+      border-radius: 50%;
+    }
+    .thought-dots {
+      position: absolute;
+      bottom: -34px;
+      left: 24%;
+    }
+    .thought-dots::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: var(--white);
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+    }
+
+    /* ===== KAPOW TRANSITION ===== */
+    .kapow-band {
+      background: var(--blue);
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin: 40px 0;
+      clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    }
+    .kapow-text {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(48px, 12vw, 100px);
+      font-weight: 700;
+      color: var(--white);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 4px 4px 0 rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 2;
+    }
+    .kapow-sub {
+      font-family: 'Caveat', cursive;
+      font-size: 28px;
+      color: var(--white);
+      margin-top: 4px;
+      opacity: 0.9;
+    }
+    /* Starburst behind kapow */
+    .kapow-band::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    /* ===== SPOTLIGHT PANEL ===== */
+    .spotlight-section {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .spotlight-panel {
+      border: 5px solid var(--ink);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 8px 8px 0 var(--ink);
+    }
+    .spotlight-panel img {
+      width: 100%;
+      display: block;
+    }
+    .spotlight-panel .caption-box {
+      font-size: 14px;
+      padding: 10px 18px;
+    }
+
+    /* ===== THOUGHT PAIR ===== */
+    .thought-pair {
+      max-width: 800px;
+      margin: 32px auto;
+      padding: 0 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .thought-card {
+      position: relative;
+    }
+    .thought-card .comic-panel {
+      border-width: 3px;
+    }
+    .thought-card .thought-bubble {
+      position: absolute;
+      top: -24px;
+      right: 16px;
+      font-size: 16px;
+      padding: 10px 18px;
+      z-index: 3;
+      white-space: nowrap;
+    }
+
+    /* ===== TIMELINE ===== */
+    .timeline-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 16px;
+      position: relative;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--blue);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 60px;
+      position: relative;
+    }
+    .timeline-item:nth-child(odd) {
+      flex-direction: row;
+      padding-right: calc(50% + 40px);
+    }
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+      padding-left: calc(50% + 40px);
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background: var(--blue);
+      border: 4px solid var(--white);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      box-shadow: 0 0 0 3px var(--blue);
+    }
+    .timeline-panel {
+      border: 3px solid var(--ink);
+      border-radius: 6px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 340px;
+    }
+    .timeline-panel img {
+      width: 100%;
+      display: block;
+    }
+    .timeline-caption {
+      background: var(--cream);
+      border-top: 2px solid var(--ink);
+      padding: 12px 16px;
+      font-family: 'Caveat', cursive;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* ===== QUIZ SECTION ===== */
+    .quiz-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px 16px 80px;
+    }
+    .quiz-frame {
+      border: 5px solid var(--ink);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 8px 8px 0 var(--ink);
+      position: relative;
+    }
+    .quiz-frame-header {
+      background: var(--ink);
+      color: var(--white);
+      padding: 16px 24px;
+      font-family: 'Caveat', cursive;
+      font-size: 28px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .quiz-inner {
+      padding: 32px 24px;
+    }
+    .quiz-step {
+      display: none;
+    }
+    .quiz-step.active {
+      display: block;
+      animation: fadeUp 0.4s ease;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .quiz-question {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .quiz-options {
+      display: grid;
+      gap: 12px;
+    }
+    .quiz-option {
+      display: block;
+      width: 100%;
+      padding: 16px 20px;
+      border: 3px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s;
+    }
+    .quiz-option:hover {
+      border-color: var(--blue);
+      background: rgba(56, 189, 248, 0.05);
+    }
+    .quiz-option.selected {
+      border-color: var(--blue);
+      background: rgba(56, 189, 248, 0.1);
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 28px;
+      gap: 12px;
+    }
+    .quiz-btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .quiz-btn-back {
+      background: none;
+      border: 2px solid var(--border);
+      color: var(--slate);
+    }
+    .quiz-btn-back:hover { border-color: var(--ink); color: var(--ink); }
+    .quiz-btn-next {
+      background: var(--blue);
+      color: var(--white);
+      margin-left: auto;
+    }
+    .quiz-btn-next:hover { background: #0ea5e9; }
+    .quiz-btn-next:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* BMI inputs */
+    .bmi-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .bmi-field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate);
+      margin-bottom: 6px;
+    }
+    .bmi-field input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 3px solid var(--border);
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .bmi-field input:focus {
+      border-color: var(--blue);
+    }
+
+    /* Quiz progress */
+    .quiz-progress {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .quiz-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: background 0.3s;
+    }
+    .quiz-dot.active { background: var(--blue); }
+    .quiz-dot.done { background: var(--ink); }
+
+    /* Quiz result */
+    .quiz-result {
+      text-align: center;
+      padding: 20px 0;
+    }
+    .quiz-result-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 36px;
+    }
+    .quiz-result h3 {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .quiz-result p {
+      font-size: 15px;
+      color: var(--slate);
+      line-height: 1.6;
+      max-width: 380px;
+      margin: 0 auto 24px;
+    }
+    .quiz-result .bmi-display {
+      font-family: 'Caveat', cursive;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    /* ===== HERO PANEL (4b) ===== */
+    .hero-panel-section {
+      max-width: 340px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
+    }
+    .hero-panel {
+      border: 5px solid var(--ink);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 10px 10px 0 var(--blue);
+    }
+    .hero-panel img {
+      width: 100%;
+      display: block;
+    }
+    .hero-panel .caption-box {
+      font-size: 16px;
+      padding: 12px 20px;
+      font-family: 'Caveat', cursive;
+      font-weight: 700;
+      bottom: 12px;
+      right: 12px;
+      left: auto;
+      top: auto;
+      transform: rotate(1deg);
+    }
+
+    /* ===== BRAND CLOSE PANEL ===== */
+    .brand-close {
+      max-width: 380px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+    .brand-panel {
+      border: 5px solid var(--ink);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .brand-panel img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ===== MEMBERS CAROUSEL ===== */
+    .members-section {
+      padding: 80px 0;
+      overflow: hidden;
+      background: #f8fafc;
+    }
+    .members-title {
+      text-align: center;
+      font-family: 'Caveat', cursive;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 40px;
+    }
+    .carousel-row {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 20px;
+      width: max-content;
+    }
+    .carousel-row.drift-left {
+      animation: driftLeft 40s linear infinite;
+    }
+    .carousel-row.drift-right {
+      animation: driftRight 40s linear infinite;
+    }
+    @keyframes driftLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes driftRight {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .member-card {
+      flex-shrink: 0;
+      width: 200px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 3px solid var(--ink);
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .member-card img {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+    }
+    .member-info {
+      padding: 12px 14px;
+    }
+    .member-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .member-stat {
+      font-family: 'Caveat', cursive;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      text-align: center;
+      padding: 80px 20px;
+      background: var(--white);
+    }
+    .final-cta h2 {
+      font-family: 'Caveat', cursive;
+      font-size: clamp(36px, 8vw, 56px);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+    .final-cta p {
+      font-size: 16px;
+      color: var(--slate);
+      max-width: 440px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+    .cta-btn {
+      display: inline-block;
+      padding: 18px 48px;
+      background: var(--blue);
+      color: var(--white);
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 700;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s;
+      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
+    }
+    .cta-btn:hover {
+      background: #0ea5e9;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.4);
+    }
+
+    /* ===== DISCLAIMER & FOOTER ===== */
+    .disclaimer {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--slate);
+      line-height: 1.6;
+    }
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 20px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .footer-logo i {
+      font-style: italic;
+      color: var(--blue);
+    }
+    .footer-legal {
+      font-size: 12px;
+      color: var(--slate);
+      line-height: 1.6;
+    }
+
+    /* ===== CONFETTI ===== */
+    .confetti-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    .confetti-piece {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: -20px;
+      animation: confettiFall 3s ease-in forwards;
+    }
+    @keyframes confettiFall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+
+    /* ===== MOBILE RESPONSIVE ===== */
+    @media (max-width: 640px) {
+      .panel-row.three {
+        grid-template-columns: 1fr;
+      }
+      .thought-pair {
+        grid-template-columns: 1fr;
+      }
+      .timeline-line { display: none; }
+      .timeline-dot { display: none; }
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        padding: 0;
+        flex-direction: column;
+      }
+      .timeline-item {
+        margin-bottom: 32px;
+      }
+      .bmi-inputs {
+        grid-template-columns: 1fr;
+      }
+      .kapow-band {
+        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+      }
+      .member-card {
+        width: 160px;
+      }
+      .member-card img {
+        width: 160px;
+        height: 200px;
+      }
+    }
+
+    /* ===== SPEED-LINE DIVIDER ===== */
+    .speed-lines {
+      height: 40px;
+      position: relative;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .speed-lines::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 8px,
+        var(--border) 8px,
+        var(--border) 10px
+      );
+      opacity: 0.5;
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18056464608"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18056464608');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "don't weight",
+  "description": "Clinician-led weight management programme with GLP-1 treatments",
+  "url": "https://dontweight.co.uk",
+  "logo": "https://dontweight.co.uk/wp-content/uploads/dontweight-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB"
+  },
+  "medicalSpecialty": "Weight Management",
+  "isAcceptingNewPatients": true,
+  "availableService": {
+    "@type": "MedicalTherapy",
+    "name": "GLP-1 Weight Loss Treatment",
+    "description": "Clinician-prescribed GLP-1 medication for weight management"
+  }
+}
+</script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid #E2E8F0;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="https://dontweight.co.uk" style="font-size:1.2rem;font-weight:700;letter-spacing:-.5px;color:#0F172A;text-decoration:none;">don't <i style="color:#38BDF8;font-style:italic;">weight</i></a>
+    <a href="#quiz" style="background:#38BDF8;color:#fff;font-weight:600;font-size:.85rem;padding:10px 22px;border-radius:50px;text-decoration:none;">Start your plan</a>
+  </nav>
+
+  <!-- ===== COVER PAGE ===== -->
+  <section class="cover">
+    <div class="cover-content">
+      <div class="cover-logo">don't <i>weight</i></div>
+      <h1 class="cover-title">
+        every hero has<br>
+        <span>an origin story</span>
+      </h1>
+      <p class="cover-sub">This one's yours. A comic-book journey from "ugh" to "unstoppable."</p>
+      <div class="scroll-cue">
+        <span class="scroll-hook">weight loss, minus the drama</span>
+        scroll to begin
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHAPTER 1: SOUND FAMILIAR? ===== -->
+  <div class="chapter-header reveal">
+    <div class="chapter-num">Chapter 1</div>
+    <h2 class="chapter-title">Sound familiar?</h2>
+  </div>
+
+  <div class="comic-strip">
+    <div class="panel-row three">
+      <div class="comic-panel reveal-left" style="transition-delay: 0s;">
+        <img src="img/panel-1a.png" alt="Frustrated person on a scale" loading="lazy">
+        <div class="caption-box bottom">Feeling stuck on the same road?</div>
+      </div>
+      <div class="comic-panel reveal" style="transition-delay: 0.15s;">
+        <img src="img/panel-1b.png" alt="Person struggling to climb stairs" loading="lazy">
+        <div class="caption-box bottom">Every step feels heavy...</div>
+      </div>
+      <div class="comic-panel reveal-right" style="transition-delay: 0.3s;">
+        <img src="img/panel-1c.png" alt="Confusing pills, diets, gym cards" loading="lazy">
+        <div class="caption-box bottom">Lost in contradictory advice?</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="speech-bubble-wrap reveal">
+    <div class="speech-bubble">yeah... we've all been there</div>
+  </div>
+
+  <!-- ===== KAPOW TRANSITION ===== -->
+  <div class="kapow-band reveal-scale">
+    <div class="kapow-text">KAPOW!</div>
+    <div class="kapow-sub">but then...</div>
+  </div>
+
+  <!-- ===== CHAPTER 2: THE TURNING POINT ===== -->
+  <div class="chapter-header reveal">
+    <div class="chapter-num">Chapter 2</div>
+    <h2 class="chapter-title">The turning point</h2>
+  </div>
+
+  <div class="spotlight-section reveal-scale">
+    <div class="spotlight-panel">
+      <div class="caption-box">Simple. Medical. For every body.</div>
+      <img src="img/panel-2a.png" alt="Browser showing dontweight.co.uk" loading="lazy">
+    </div>
+  </div>
+
+  <div class="thought-pair" style="margin-top: 40px;">
+    <div class="thought-card reveal-left">
+      <div class="thought-bubble">"Wait, that's it?"</div>
+      <div class="comic-panel">
+        <img src="img/panel-2b.png" alt="Quick eligibility check on phone" loading="lazy">
+      </div>
+    </div>
+    <div class="thought-card reveal-right">
+      <div class="thought-bubble">"A real doctor!"</div>
+      <div class="comic-panel">
+        <img src="img/panel-2c.png" alt="Video consultation with doctor" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="speed-lines"></div>
+
+  <!-- ===== CHAPTER 3: THE MONTAGE ===== -->
+  <div class="chapter-header reveal">
+    <div class="chapter-num">Chapter 3</div>
+    <h2 class="chapter-title">The montage</h2>
+  </div>
+
+  <div class="timeline-section">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-item reveal-left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-panel">
+        <img src="img/panel-3a.png" alt="Discreet delivery box arrives" loading="lazy">
+        <div class="timeline-caption">Your discreet package arrives...</div>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal-right">
+      <div class="timeline-dot"></div>
+      <div class="timeline-panel">
+        <img src="img/panel-3b.png" alt="Calendar showing weight going from 188.1 to 135.10" loading="lazy">
+        <div class="timeline-caption">Weeks pass. The numbers drop. 188 ... 172 ... 155 ... 135!</div>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal-left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-panel">
+        <img src="img/panel-4a.png" alt="Dashboard with progress chart" loading="lazy">
+        <div class="timeline-caption">Your dashboard tells the story</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CHAPTER 4: YOUR TURN ===== -->
+  <div class="chapter-header reveal">
+    <div class="chapter-num">Chapter 4</div>
+    <h2 class="chapter-title">Your turn</h2>
+  </div>
+
+  <div class="quiz-section reveal">
+    <div class="quiz-frame">
+      <div class="quiz-frame-header">Is this your origin story too?</div>
+      <div class="quiz-inner">
+
+        <!-- Step 1: Goal -->
+        <div class="quiz-step active" data-step="1">
+          <div class="quiz-progress">
+            <span class="quiz-dot active"></span>
+            <span class="quiz-dot"></span>
+            <span class="quiz-dot"></span>
+            <span class="quiz-dot"></span>
+          </div>
+          <div class="quiz-question">What's your main goal?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" onclick="selectOption(this)">Lose weight and keep it off</button>
+            <button class="quiz-option" onclick="selectOption(this)">Improve my energy and health</button>
+            <button class="quiz-option" onclick="selectOption(this)">Feel confident in my own skin</button>
+            <button class="quiz-option" onclick="selectOption(this)">All of the above (greedy, I know)</button>
+          </div>
+          <div class="quiz-nav">
+            <span></span>
+            <button class="quiz-btn quiz-btn-next" disabled onclick="nextStep()">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 2: History -->
+        <div class="quiz-step" data-step="2">
+          <div class="quiz-progress">
+            <span class="quiz-dot done"></span>
+            <span class="quiz-dot active"></span>
+            <span class="quiz-dot"></span>
+            <span class="quiz-dot"></span>
+          </div>
+          <div class="quiz-question">Tried losing weight before?</div>
+          <div class="quiz-options">
+            <button class="quiz-option" onclick="selectOption(this)">Diets, apps, sheer willpower... all of it</button>
+            <button class="quiz-option" onclick="selectOption(this)">A couple of times, never stuck</button>
+            <button class="quiz-option" onclick="selectOption(this)">This is my first serious go</button>
+          </div>
+          <div class="quiz-nav">
+            <button class="quiz-btn quiz-btn-back" onclick="prevStep()">Back</button>
+            <button class="quiz-btn quiz-btn-next" disabled onclick="nextStep()">Next</button>
+          </div>
+        </div>
+
+        <!-- Step 3: BMI -->
+        <div class="quiz-step" data-step="3">
+          <div class="quiz-progress">
+            <span class="quiz-dot done"></span>
+            <span class="quiz-dot done"></span>
+            <span class="quiz-dot active"></span>
+            <span class="quiz-dot"></span>
+          </div>
+          <div class="quiz-question">Let's check your BMI</div>
+          <div style="display:flex;gap:12px;margin-bottom:10px;">
+            <input type="text" class="quiz-input" id="quizName" placeholder="Your name" style="flex:1;padding:14px 16px;border:2px solid var(--border,#E2E8F0);border-radius:10px;font-size:1rem;font-family:inherit;outline:none" oninput="checkWeightStep()">
+            <input type="email" class="quiz-input" id="quizEmail" placeholder="Email address" style="flex:1;padding:14px 16px;border:2px solid var(--border,#E2E8F0);border-radius:10px;font-size:1rem;font-family:inherit;outline:none" oninput="checkWeightStep()">
+          </div>
+          <div class="bmi-inputs">
+            <div class="bmi-field">
+              <label>Weight (kg)</label>
+              <input type="number" id="quiz-weight" placeholder="85" min="30" max="300" oninput="checkWeightStep()">
+            </div>
+            <div class="bmi-field">
+              <label>Height (cm)</label>
+              <input type="number" id="quiz-height" placeholder="170" min="100" max="250" oninput="checkWeightStep()">
+            </div>
+          </div>
+          <div class="quiz-nav">
+            <button class="quiz-btn quiz-btn-back" onclick="prevStep()">Back</button>
+            <button class="quiz-btn quiz-btn-next" disabled onclick="showQuizResult()">See result</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Result -->
+        <div class="quiz-step" data-step="4">
+          <div class="quiz-progress">
+            <span class="quiz-dot done"></span>
+            <span class="quiz-dot done"></span>
+            <span class="quiz-dot done"></span>
+            <span class="quiz-dot active"></span>
+          </div>
+          <div class="quiz-result" id="quiz-result">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FINALE: HERO PANEL ===== -->
+  <div class="hero-panel-section reveal-scale">
+    <div class="hero-panel">
+      <img src="img/panel-4b.png" alt="Happy person enjoying life with their child" loading="lazy">
+      <div class="caption-box bottom">Enjoy life again.</div>
+    </div>
+  </div>
+
+  <!-- ===== BRAND CLOSE ===== -->
+  <div class="brand-close reveal">
+    <div class="brand-panel">
+      <img src="img/panel-4c.png" alt="don't weight. every body welcome." loading="lazy">
+    </div>
+  </div>
+
+  <!-- ===== MEMBERS CAROUSEL ===== -->
+  <section class="members-section">
+    <div class="members-title reveal">Real people. Real results.</div>
+
+    <div class="carousel-row drift-left" id="carousel-row-1">
+      <!-- populated by JS -->
+    </div>
+    <div class="carousel-row drift-right" id="carousel-row-2">
+      <!-- populated by JS -->
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta reveal">
+    <h2>Ready to write<br>your chapter?</h2>
+    <p>Clinician-led weight management, delivered to your door. No fads. No judgement. Just science.</p>
+    <a href="https://dontweight.co.uk/consultation/" class="cta-btn">Start your story</a>
+  </section>
+
+  <!-- ===== DISCLAIMER ===== -->
+  <div class="disclaimer">
+    Treatment is subject to clinical suitability. Results vary. All patients are assessed by
+    a prescribing clinician before any treatment is issued.
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">don't <i>weight</i></div>
+    <div class="footer-legal">
+      &copy; 2026 Don't Weight Ltd. All rights reserved. | <a href="https://dontweight.co.uk/privacy-policy/" style="color:inherit;">Privacy</a> | <a href="https://dontweight.co.uk/terms/" style="color:inherit;">Terms</a>
+    </div>
+    <div class="footer-legal" style="margin-top:4px;">
+      Don't Weight is part of Ultrasound London Limited &middot; CQC registered &middot; GPhC-registered prescribers
+    </div>
+  </footer>
+
+  <!-- ===== CONFETTI CONTAINER ===== -->
+  <div class="confetti-container" id="confetti-container"></div>
+
+  <script>
+    /* ===== INTERSECTION OBSERVER FOR REVEALS ===== */
+    const revealClasses = ['.reveal', '.reveal-left', '.reveal-right', '.reveal-scale'];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    revealClasses.forEach(cls => {
+      document.querySelectorAll(cls).forEach(el => observer.observe(el));
+    });
+
+    /* ===== QUIZ LOGIC ===== */
+    let currentStep = 1;
+
+    function selectOption(btn) {
+      const parent = btn.closest('.quiz-options');
+      parent.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      // Enable next button
+      btn.closest('.quiz-step').querySelector('.quiz-btn-next').disabled = false;
+    }
+
+    function nextStep() {
+      const current = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+      current.classList.remove('active');
+      currentStep++;
+      const next = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+      next.classList.add('active');
+    }
+
+    function prevStep() {
+      const current = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+      current.classList.remove('active');
+      currentStep--;
+      const prev = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+      prev.classList.add('active');
+    }
+
+    function checkWeightStep() {
+      const w = parseFloat(document.getElementById('quiz-weight').value);
+      const h = parseFloat(document.getElementById('quiz-height').value);
+      var n = document.getElementById('quizName').value.trim();
+      var e = document.getElementById('quizEmail').value.trim();
+      const btn = document.querySelector('.quiz-step[data-step="3"] .quiz-btn-next');
+      btn.disabled = !(w > 0 && h > 0 && n.length > 0 && e.length > 2 && e.includes('@'));
+    }
+
+    function showQuizResult() {
+      const w = parseFloat(document.getElementById('quiz-weight').value);
+      const h = parseFloat(document.getElementById('quiz-height').value);
+      var userName = document.getElementById('quizName').value.trim();
+      var userEmail = document.getElementById('quizEmail').value.trim();
+      if (!w || !h || !userName || !userEmail) return;
+
+      // Capture lead data
+      var nameParts = userName.split(' ');
+      fetch('/.netlify/functions/capture-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          first_name: nameParts[0] || userName,
+          last_name: nameParts.slice(1).join(' ') || '',
+          email: userEmail,
+          source: 'quiz',
+          page_url: window.location.href,
+          utm_source: new URLSearchParams(window.location.search).get('utm_source') || '',
+          utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
+          utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+          bmi: (w / ((h / 100) * (h / 100))).toFixed(1),
+          weight_kg: w,
+          height_cm: h
+        })
+      }).catch(function(){});
+
+      const bmi = w / ((h / 100) ** 2);
+      const bmiRounded = bmi.toFixed(1);
+
+      const resultDiv = document.getElementById('quiz-result');
+      const current = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+      current.classList.remove('active');
+      currentStep = 4;
+
+      if (bmi >= 27) {
+        resultDiv.innerHTML = `
+          <div class="quiz-result-icon">&#127881;</div>
+          <div class="bmi-display">${bmiRounded}</div>
+          <h3>You're likely eligible!</h3>
+          <p>Great news — based on your BMI, our clinicians can assess you for treatment. Your origin story starts now.</p>
+          <a href="https://dontweight.co.uk/consultation/" class="cta-btn" style="display:inline-block; text-decoration:none;">Proceed</a>
+        `;
+        fireConfetti();
+      } else {
+        resultDiv.innerHTML = `
+          <div class="quiz-result-icon">&#128172;</div>
+          <div class="bmi-display">${bmiRounded}</div>
+          <h3>Let's have a chat</h3>
+          <p>Your BMI is below 27, so medical treatment might not be right just yet — but our team can still help you explore your options.</p>
+          <a href="https://dontweight.co.uk/consultation/" class="cta-btn" style="display:inline-block; text-decoration:none;">Talk to our team</a>
+        `;
+      }
+
+      document.querySelector('.quiz-step[data-step="4"]').classList.add('active');
+    }
+
+    /* ===== CONFETTI ===== */
+    function fireConfetti() {
+      const container = document.getElementById('confetti-container');
+      const colors = ['#38BDF8', '#0ea5e9', '#0F172A', '#fbbf24', '#f472b6', '#34d399'];
+      for (let i = 0; i < 60; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.width = (Math.random() * 8 + 6) + 'px';
+        piece.style.height = (Math.random() * 8 + 6) + 'px';
+        piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+        piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+        piece.style.animationDelay = (Math.random() * 0.8) + 's';
+        container.appendChild(piece);
+      }
+      setTimeout(() => { container.innerHTML = ''; }, 5000);
+    }
+
+    /* ===== MEMBERS CAROUSEL ===== */
+    const imgBase = 'https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/';
+    const members = [
+      { img: 'tom-28-manchester.jpg', name: 'Tom, 28', stat: '-26 kg' },
+      { img: 'charlotte-31-brighton.jpg', name: 'Charlotte, 31', stat: '-18 kg' },
+      { img: 'marcus-55-london.jpg', name: 'Marcus, 55', stat: '-22 kg' },
+      { img: 'lisa-42-reading.jpg', name: 'Lisa, 42', stat: '-20 kg+' },
+      { img: 'brian-63-exeter.jpg', name: 'Brian, 63', stat: '-19 kg' },
+      { img: 'mei-39-edinburgh.jpg', name: 'Mei, 39', stat: '-15 kg' },
+      { img: 'hannah-35-oxford.jpg', name: 'Hannah, 35', stat: '-21 kg' },
+      { img: 'sarah-34-bristol.jpg', name: 'Sarah, 34', stat: '-17 kg' },
+    ];
+
+    function buildCard(m) {
+      return `<div class="member-card">
+        <img src="${imgBase}${m.img}" alt="${m.name}" loading="lazy">
+        <div class="member-info">
+          <div class="member-name">${m.name}</div>
+          <div class="member-stat">${m.stat}</div>
+        </div>
+      </div>`;
+    }
+
+    // Shuffle function
+    function shuffle(arr) {
+      var a = arr.slice();
+      for (var i = a.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var t = a[i]; a[i] = a[j]; a[j] = t;
+      }
+      return a;
+    }
+
+    // Row 1: shuffled members, duplicated for seamless loop
+    var shuffled1 = shuffle(members);
+    var row1HTML = shuffled1.concat(shuffled1).map(buildCard).join('');
+    document.getElementById('carousel-row-1').innerHTML = row1HTML;
+
+    // Row 2: different shuffle, duplicated for seamless loop
+    var shuffled2 = shuffle(members);
+    var row2HTML = shuffled2.concat(shuffled2).map(buildCard).join('');
+    document.getElementById('carousel-row-2').innerHTML = row2HTML;
+  </script>
+
+</body>
+</html>

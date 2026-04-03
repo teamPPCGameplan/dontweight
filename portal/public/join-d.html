@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Weight Loss Story | Don't Weight</title>
+  <meta name="description" content="Clinician-led weight loss programme. Simple. Medical. For every body. Video consultations, next-day delivery, 30-day money-back guarantee.">
+  <link rel="canonical" href="https://app.dontweight.co.uk/join-d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Your Weight Loss Story | Don't Weight">
+  <meta property="og:description" content="Clinician-led weight loss programme. Simple. Medical. For every body. Video consultations, next-day delivery, 30-day money-back guarantee.">
+  <meta property="og:image" content="/img/og-share.png">
+  <meta property="og:url" content="https://app.dontweight.co.uk/join-d">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #38BDF8;
+      --ink: #0F172A;
+      --slate: #64748B;
+      --white: #FFFFFF;
+      --border: #E2E8F0;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    .hand { font-family: 'Caveat', cursive; }
+
+    /* ===== HEADER ===== */
+    .top-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { text-decoration: none; font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -0.5px; }
+    .nav-logo i { font-style: italic; color: var(--blue); }
+    .header-cta {
+      background: var(--blue); color: white; padding: 10px 24px; border-radius: 999px;
+      font-size: 13px; font-weight: 700; text-decoration: none;
+      transition: all 0.2s; box-shadow: 0 2px 8px rgba(56,189,248,0.3);
+    }
+    .header-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(56,189,248,0.4); }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+    /* ===== HERO ===== */
+    .hero { padding: 48px 20px 24px; text-align: center; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      border: 1px solid var(--border); border-radius: 999px;
+      padding: 5px 16px; font-size: 11px; font-weight: 600;
+      color: var(--slate); margin-bottom: 24px;
+    }
+    .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: #22C55E; }
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 72px); font-weight: 700; line-height: 1.06;
+      letter-spacing: -2.5px; margin-bottom: 12px;
+      text-shadow: 1px 1px 0 rgba(0,0,0,.04), 2px 2px 0 rgba(0,0,0,.03);
+    }
+    .hero h1 .blue { color: var(--blue); }
+    .hero-sub { font-size: 16px; color: var(--slate); max-width: 480px; margin: 0 auto 28px; }
+    .hero-sub strong { color: var(--ink); }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--blue); color: white; padding: 16px 36px; border-radius: 999px;
+      font-size: 16px; font-weight: 700; text-decoration: none;
+      transition: all 0.2s; box-shadow: 0 4px 20px rgba(56,189,248,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(56,189,248,0.4); }
+    .hero-micro { font-size: 11px; color: var(--slate); margin-top: 14px; }
+
+    /* ===== SECTION LABELS ===== */
+    .section-label {
+      text-align: center; font-family: 'Caveat', cursive;
+      font-size: 26px; color: var(--blue); font-weight: 700;
+      margin-bottom: 20px; padding-top: 48px;
+    }
+
+    /* ===== STORY ROW (3 panels side by side) ===== */
+    .story-row {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 640px) { .story-row { grid-template-columns: 1fr 1fr 1fr; gap: 6px; } }
+
+    .story-panel {
+      border-radius: 16px; overflow: hidden;
+      border: none;
+      transition: all 0.3s; background: transparent;
+    }
+    .story-panel:hover { transform: translateY(-4px); }
+    .story-panel img { width: 100%; height: auto; display: block; }
+
+    /* ===== FEATURED PANEL (large, with text overlay) ===== */
+    .featured-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-bottom: 16px; align-items: stretch;
+    }
+    @media (max-width: 640px) { .featured-row { grid-template-columns: 1fr; } }
+
+    .featured-panel {
+      border-radius: 16px; overflow: hidden;
+      border: none; background: transparent;
+      transition: all 0.3s;
+    }
+    .featured-panel:hover { box-shadow: 0 12px 32px rgba(56,189,248,0.1); }
+    .featured-panel img { width: 100%; height: auto; display: block; }
+
+    .featured-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 36px; border-radius: 16px;
+      background: #F0F9FF; border: 2px solid var(--border);
+    }
+    .featured-text h2 { font-size: 28px; font-weight: 700; letter-spacing: -1px; margin-bottom: 8px; }
+    .featured-text p { font-size: 14px; color: var(--slate); line-height: 1.6; margin-bottom: 16px; }
+    .featured-text .hand-note { font-family: 'Caveat', cursive; font-size: 20px; color: var(--blue); transform: rotate(-1deg); display: inline-block; }
+
+    /* ===== BLUE STRIP ===== */
+    .blue-strip {
+      background: var(--blue); color: white; text-align: center;
+      padding: 20px; border-radius: 16px; margin: 24px 0;
+      font-family: 'Caveat', cursive; font-size: 26px; font-weight: 700;
+    }
+
+    /* ===== DELIVERY BOX SECTION ===== */
+    .delivery-section {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: center;
+      padding: 48px 0;
+    }
+    @media (max-width: 640px) { .delivery-section { grid-template-columns: 1fr; } }
+    .delivery-img { border-radius: 20px; overflow: hidden; }
+    .delivery-img img { width: 100%; height: auto; display: block; border-radius: 20px; }
+    .delivery-text h2 { font-size: 28px; font-weight: 700; letter-spacing: -1px; margin-bottom: 8px; }
+    .delivery-text p { font-size: 14px; color: var(--slate); margin-bottom: 16px; }
+
+    /* ===== QUIZ ===== */
+    .quiz-section { padding: 48px 0; }
+    .quiz-card {
+      background: var(--white); border: 2px solid var(--border); border-radius: 20px;
+      padding: 40px 36px; max-width: 520px; margin: 0 auto;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+    }
+    .quiz-title { font-family: 'Caveat', cursive; font-size: 26px; color: var(--blue); text-align: center; margin-bottom: 16px; }
+    .quiz-progress { height: 4px; background: #F1F5F9; border-radius: 2px; margin-bottom: 24px; overflow: hidden; }
+    .quiz-progress-fill { height: 100%; background: var(--blue); border-radius: 2px; transition: width 0.4s; width: 0%; }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .quiz-step h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 4px; }
+    .quiz-step .q-sub { font-size: 13px; color: var(--slate); margin-bottom: 16px; }
+    .quiz-back {
+      display: inline-flex; align-items: center; gap: 4px; background: none; border: none;
+      color: var(--slate); font-size: 13px; cursor: pointer; font-family: inherit;
+      padding: 4px 0; margin-bottom: 8px; transition: color 0.2s;
+    }
+    .quiz-back:hover { color: var(--blue); }
+    .quiz-option {
+      display: block; width: 100%; padding: 14px 18px; margin-bottom: 8px;
+      background: var(--white); border: 2px solid var(--border); border-radius: 12px;
+      color: var(--ink); font-size: 15px; font-weight: 600; cursor: pointer;
+      transition: all 0.15s; text-align: left; font-family: inherit;
+    }
+    .quiz-option:hover { border-color: var(--blue); background: #F0F9FF; transform: translateX(4px); }
+    .quiz-option.selected { border-color: var(--blue); background: #E0F2FE; }
+    .quiz-input {
+      width: 100%; padding: 14px 16px; border: 2px solid var(--border); border-radius: 12px;
+      background: var(--white); color: var(--ink); font-size: 16px; font-family: inherit;
+      outline: none; margin-bottom: 8px;
+    }
+    .quiz-input:focus { border-color: var(--blue); }
+    .quiz-input::placeholder { color: #94A3B8; }
+    .quiz-next {
+      width: 100%; padding: 14px; border-radius: 12px; border: none;
+      background: var(--blue); color: white; font-size: 15px; font-weight: 700;
+      cursor: pointer; font-family: inherit; margin-top: 8px;
+      opacity: 0.3; pointer-events: none; transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(56,189,248,0.25);
+    }
+    .quiz-next.enabled { opacity: 1; pointer-events: auto; }
+    .quiz-next.enabled:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(56,189,248,0.35); }
+
+    /* ===== MEMBERS ===== */
+    .members-section { padding: 60px 0; overflow: hidden; }
+    .members-section h2 { text-align: center; font-size: 2rem; font-weight: 700; letter-spacing: -1.5px; margin-bottom: 8px; }
+    .members-section .sub { text-align: center; font-size: 14px; color: var(--slate); margin-bottom: 40px; }
+    .carousel-row { margin-bottom: 16px; overflow: hidden; }
+    .carousel-track { display: flex; gap: 16px; width: max-content; }
+    .drift-left .carousel-track { animation: driftLeft 40s linear infinite; }
+    .drift-right .carousel-track { animation: driftRight 40s linear infinite; }
+    @keyframes driftLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    @keyframes driftRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+    .carousel-card {
+      flex: 0 0 auto; width: 200px; border-radius: 16px; overflow: hidden;
+      background: #fff; border: 1px solid var(--border);
+      transition: transform 0.2s;
+    }
+    .carousel-card:hover { transform: translateY(-4px); }
+    .carousel-card img { width: 200px; height: 200px; object-fit: cover; display: block; }
+    .carousel-card .card-info { padding: 10px 14px; }
+    .carousel-card .card-info strong { font-size: .85rem; display: block; margin-bottom: 2px; }
+    .carousel-card .card-info span { font-size: .8rem; color: var(--blue); font-weight: 600; }
+      padding: 18px 6px 5px; text-align: center; letter-spacing: -0.3px;
+    }
+    @media (max-width: 520px) {
+      .carousel-card { width: 170px; }
+      .carousel-card img { width: 170px; height: 170px; }
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-section { padding: 48px 0; text-align: center; }
+    .final-section h2 { font-size: clamp(24px, 5vw, 36px); font-weight: 700; letter-spacing: -1.5px; margin-bottom: 8px; }
+    .final-section .blue { color: var(--blue); }
+    .final-section p { color: var(--slate); font-size: 14px; margin-bottom: 24px; }
+
+    /* ===== DISCLAIMER & FOOTER ===== */
+    .disclaimer {
+      max-width: 700px; margin: 0 auto; padding: 14px 20px;
+      background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px;
+      font-size: 11px; color: #92400E; line-height: 1.6;
+    }
+    .lp-footer {
+      padding: 24px 0 40px; text-align: center; font-size: 11px; color: #94A3B8;
+      border-top: 1px solid var(--border); margin-top: 24px;
+    }
+    .lp-footer a { color: var(--slate); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      .hero { padding: 32px 20px 16px; }
+      .quiz-card { padding: 28px 20px; margin: 0 16px; }
+      .featured-text { padding: 24px; }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18056464608"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18056464608');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "don't weight",
+  "description": "Clinician-led weight management programme with GLP-1 treatments",
+  "url": "https://dontweight.co.uk",
+  "logo": "https://dontweight.co.uk/wp-content/uploads/dontweight-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB"
+  },
+  "medicalSpecialty": "Weight Management",
+  "isAcceptingNewPatients": true,
+  "availableService": {
+    "@type": "MedicalTherapy",
+    "name": "GLP-1 Weight Loss Treatment",
+    "description": "Clinician-prescribed GLP-1 medication for weight management"
+  }
+}
+</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="top-header">
+  <a href="https://dontweight.co.uk" class="nav-logo">don't <i>weight</i></a>
+  <a href="#quiz" class="header-cta">Am I eligible?</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><div class="dot"></div> CQC Registered &middot; MHRA Approved &middot; UK Clinicians</div>
+    <h1>Simple. Medical.<br><span class="blue">For every body.</span></h1>
+    <p class="hero-sub">Clinician-prescribed weight loss treatment, delivered to your door. From <strong>&pound;3.80/day</strong>.</p>
+    <a href="#quiz" class="btn-primary">
+      Am I eligible?
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p class="hero-micro">4.8&#9733; Google &middot; Trusted by thousands &middot; Free delivery</p>
+  </div>
+</section>
+
+<!-- ROW 1: THE PROBLEM (3 storyboard panels) -->
+<section class="container">
+  <div class="section-label">sound familiar?</div>
+  <div class="story-row">
+    <div class="story-panel"><img src="img/panel-1a.png" alt="Feeling stuck on the same road?" loading="lazy"></div>
+    <div class="story-panel"><img src="img/panel-1b.png" alt="Every step feels heavy" loading="lazy"></div>
+    <div class="story-panel"><img src="img/panel-1c.png" alt="Lost in contradictory advice?" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- BLUE STRIP -->
+<div class="container">
+  <div class="blue-strip">here's where everything changes...</div>
+</div>
+
+<!-- ROW 2: THE SOLUTION (featured layout) -->
+<section class="container">
+  <div class="featured-row">
+    <div class="featured-panel"><img src="img/panel-2a.png" alt="Simple. Medical. For every body. Just type it in." loading="lazy"></div>
+    <div class="featured-text">
+      <h2>Get started in seconds</h2>
+      <p>Just type in your details and our system checks your eligibility instantly. No forms to print, no phone calls, no waiting.</p>
+      <a href="#quiz" class="btn-primary" style="align-self:flex-start;">Check now <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+  <div class="featured-row" style="margin-top:0;">
+    <div class="featured-text">
+      <h2>Real doctors. Real advice.</h2>
+      <p>A UK-registered clinician reviews your profile and speaks with you via video. From your sofa. In your pyjamas if you like.</p>
+      <div class="hand-note">no awkward waiting rooms</div>
+    </div>
+    <div class="featured-panel"><img src="img/panel-2c.png" alt="Real human conversation. Real medical advice." loading="lazy"></div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="quiz-card">
+      <div class="quiz-title">your turn! eligible in seconds</div>
+      <div class="quiz-progress"><div class="quiz-progress-fill" id="quizProgress"></div></div>
+
+      <div class="quiz-step active" data-step="1">
+        <h3>What's your main goal?</h3>
+        <p class="q-sub">Pick the one that resonates most</p>
+        <button class="quiz-option" onclick="selectOption(this)">Improve my overall health</button>
+        <button class="quiz-option" onclick="selectOption(this)">Feel more confident</button>
+        <button class="quiz-option" onclick="selectOption(this)">Have more energy</button>
+        <button class="quiz-option" onclick="selectOption(this)">All of the above!</button>
+      </div>
+
+      <div class="quiz-step" data-step="2">
+        <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+        <h3>Tried losing weight before?</h3>
+        <p class="q-sub">No judgement, promise</p>
+        <button class="quiz-option" onclick="selectOption(this)">Yes, but it keeps coming back</button>
+        <button class="quiz-option" onclick="selectOption(this)">Yes, with some success</button>
+        <button class="quiz-option" onclick="selectOption(this)">This is my first real go</button>
+      </div>
+
+      <div class="quiz-step" data-step="3">
+        <button class="quiz-back" onclick="prevStep()">&larr; Back</button>
+        <h3>Let's check your eligibility</h3>
+        <p class="q-sub">Pop in your details and we'll do the maths</p>
+        <div style="display:flex;gap:12px;margin-bottom:10px;">
+          <input type="text" class="quiz-input" id="quizName" placeholder="Your name" style="flex:1" oninput="checkWeightStep()">
+          <input type="email" class="quiz-input" id="quizEmail" placeholder="Email address" style="flex:1" oninput="checkWeightStep()">
+        </div>
+        <div style="display:flex;gap:10px;margin-bottom:8px;">
+          <input type="number" class="quiz-input" id="quizWeight" placeholder="Weight (kg)" style="flex:1" oninput="checkWeightStep()">
+          <input type="number" class="quiz-input" id="quizHeight" placeholder="Height (cm)" style="flex:1" oninput="checkWeightStep()">
+        </div>
+        <button class="quiz-next" id="weightNext" onclick="showQuizResult()">See my results</button>
+      </div>
+
+      <div class="quiz-step" data-step="4">
+        <div id="quizResultBox" style="text-align:center;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY BOX FEATURE -->
+<section class="container">
+  <div class="delivery-section">
+    <div class="delivery-img"><img src="img/delivery-box.png" alt="Don't Weight delivery box" loading="lazy"></div>
+    <div class="delivery-text">
+      <h2>Everything in one box</h2>
+      <p>Your clinician-prescribed medication arrives next day in our signature discreet blue box. Royal Mail tracked, always.</p>
+      <p style="font-size:13px;color:var(--slate);">30-day money-back guarantee included.</p>
+      <a href="#quiz" class="btn-primary" style="margin-top:12px;">Get started <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ROW 4: THE FUTURE -->
+<section class="container">
+  <div class="section-label">your new chapter</div>
+  <div class="story-row">
+    <div class="story-panel"><img src="img/panel-4a.png" alt="Your health, in your hands. Dashboard with progress." loading="lazy"></div>
+    <div class="story-panel"><img src="img/panel-4b.png" alt="Enjoy life again" loading="lazy"></div>
+    <div class="story-panel"><img src="img/panel-4c.png" alt="Don't weight. Every body welcome." loading="lazy"></div>
+  </div>
+</section>
+
+<!-- MEMBERS -->
+<section class="members-section">
+  <h2>They didn't <i style="color:var(--blue);">weight</i></h2>
+  <p class="sub">Neither should you.</p>
+  <div class="carousel-row drift-left">
+    <div class="carousel-track" id="carousel-row-1"></div>
+  </div>
+  <div class="carousel-row drift-right">
+    <div class="carousel-track" id="carousel-row-2"></div>
+  </div>
+  <p style="text-align:center;font-size:.75rem;color:var(--slate);margin-top:16px">Individual results vary. All members completed a clinician-supervised programme.</p>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-section">
+  <div class="container">
+    <h2>Ready to start <span class="blue">your</span> story?</h2>
+    <p>30 seconds. No payment required. CQC registered.</p>
+    <a href="#quiz" class="btn-primary">
+      Am I eligible?
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div style="padding:20px;">
+  <div class="disclaimer">
+    <strong>Important:</strong> This is a prescription-only treatment. It is only available following a video consultation with a registered prescriber who will assess your suitability. Treatment is not guaranteed and will only be prescribed if clinically appropriate. Individual results vary. Don't Weight is a CQC-registered service.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+  <div class="container">
+    <p>&copy; 2026 Don't Weight Ltd. All rights reserved. | <a href="https://dontweight.co.uk/privacy-policy/">Privacy</a> | <a href="https://dontweight.co.uk/terms/">Terms</a></p>
+    <p style="margin-top:4px;font-size:10px;">Don't Weight is part of Ultrasound London Limited &middot; CQC registered &middot; GPhC-registered prescribers</p>
+  </div>
+</footer>
+
+<script>
+var currentStep = 1;
+var totalSteps = 4;
+
+function selectOption(btn) {
+  var siblings = btn.parentElement.querySelectorAll('.quiz-option');
+  siblings.forEach(function(s) { s.classList.remove('selected'); });
+  btn.classList.add('selected');
+  setTimeout(function() { nextStep(); }, 300);
+}
+
+function prevStep() {
+  if (currentStep <= 1) return;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.remove('active');
+  currentStep--;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.add('active');
+  document.getElementById('quizProgress').style.width = ((currentStep - 1) / (totalSteps - 1) * 100) + '%';
+}
+
+function nextStep() {
+  if (currentStep >= totalSteps) return;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.remove('active');
+  currentStep++;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.add('active');
+  document.getElementById('quizProgress').style.width = ((currentStep - 1) / (totalSteps - 1) * 100) + '%';
+}
+
+function checkWeightStep() {
+  var w = document.getElementById('quizWeight').value;
+  var h = document.getElementById('quizHeight').value;
+  var n = document.getElementById('quizName').value.trim();
+  var e = document.getElementById('quizEmail').value.trim();
+  var btn = document.getElementById('weightNext');
+  btn.classList.toggle('enabled', w > 0 && h > 0 && n.length > 0 && e.length > 2 && e.includes('@'));
+}
+
+function showQuizResult() {
+  var w = parseFloat(document.getElementById('quizWeight').value);
+  var h = parseFloat(document.getElementById('quizHeight').value);
+  var userName = document.getElementById('quizName').value.trim();
+  var userEmail = document.getElementById('quizEmail').value.trim();
+  if (!w || !h || !userName || !userEmail) return;
+
+  // Capture lead data
+  var nameParts = userName.split(' ');
+  fetch('/.netlify/functions/capture-lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      first_name: nameParts[0] || userName,
+      last_name: nameParts.slice(1).join(' ') || '',
+      email: userEmail,
+      source: 'quiz',
+      page_url: window.location.href,
+      utm_source: new URLSearchParams(window.location.search).get('utm_source') || '',
+      utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
+      utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+      bmi: (w / ((h / 100) * (h / 100))).toFixed(1),
+      weight_kg: w,
+      height_cm: h
+    })
+  }).catch(function(){});
+
+  var bmi = (w / ((h / 100) * (h / 100))).toFixed(1);
+  var eligible = bmi >= 27;
+  var box = document.getElementById('quizResultBox');
+
+  if (eligible) {
+    box.innerHTML =
+      '<div class="hand" style="font-size:36px;color:var(--blue);margin-bottom:8px;">great news!</div>' +
+      '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">You may be eligible</h3>' +
+      '<p style="color:var(--slate);font-size:14px;margin-bottom:4px;">Your BMI: <strong style="color:var(--ink);">' + bmi + '</strong></p>' +
+      '<p style="color:var(--slate);font-size:13px;margin-bottom:24px;">Based on your BMI, you could be a great candidate for our clinician-led programme.</p>' +
+      '<a href="https://dontweight.co.uk/consultation/" class="btn-primary">Proceed <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>' +
+      '<p style="font-size:11px;color:var(--slate);margin-top:12px;">Subject to clinician approval. Individual results vary.</p>';
+  } else {
+    box.innerHTML =
+      '<div class="hand" style="font-size:32px;color:var(--blue);margin-bottom:8px;">let\'s have a chat</div>' +
+      '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">Let\'s talk!</h3>' +
+      '<p style="color:var(--slate);font-size:14px;margin-bottom:4px;">Your BMI: <strong style="color:var(--ink);">' + bmi + '</strong></p>' +
+      '<p style="color:var(--slate);font-size:13px;margin-bottom:24px;">Prescription treatment is typically for BMI 27+. Our clinicians can discuss what\'s right for you.</p>' +
+      '<a href="https://dontweight.co.uk/consultation/" style="display:inline-flex;align-items:center;gap:8px;color:var(--ink);border:2px solid var(--border);border-radius:999px;padding:14px 28px;font-weight:700;text-decoration:none;font-size:14px;">Speak to a clinician <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>';
+  }
+
+  document.querySelector('.quiz-step[data-step="3"]').classList.remove('active');
+  currentStep = 4;
+  document.querySelector('.quiz-step[data-step="4"]').classList.add('active');
+  document.getElementById('quizProgress').style.width = '100%';
+}
+
+/* ========== MEMBERS CAROUSEL ========== */
+var BASE = 'https://dontweight.co.uk/wp-content/themes/dontweight-theme-v72/img/';
+var members = [
+  { img: 'tom-28-manchester.jpg', name: 'Tom, 28', loc: 'Manchester', lost: '-26kg' },
+  { img: 'charlotte-31-brighton.jpg', name: 'Charlotte, 31', loc: 'Brighton', lost: '-18kg' },
+  { img: 'marcus-55-london.jpg', name: 'Marcus, 55', loc: 'London', lost: '-22kg' },
+  { img: 'lisa-42-reading.jpg', name: 'Lisa, 42', loc: 'Reading', lost: '-20kg+' },
+  { img: 'brian-63-exeter.jpg', name: 'Brian, 63', loc: 'Exeter', lost: '-19kg' },
+  { img: 'mei-39-edinburgh.jpg', name: 'Mei, 39', loc: 'Edinburgh', lost: '-15kg' },
+  { img: 'hannah-35-oxford.jpg', name: 'Hannah, 35', loc: 'Oxford', lost: '-21kg' },
+  { img: 'sarah-34-bristol.jpg', name: 'Sarah, 34', loc: 'Bristol', lost: '-17kg' }
+];
+function cardHTML(m) {
+  return '<div class="carousel-card"><img src="' + BASE + m.img + '" alt="' + m.name + '" width="200" height="200" loading="lazy"><div class="card-info"><strong>' + m.name + ' &middot; ' + m.loc + '</strong><span>' + m.lost + '</span></div></div>';
+}
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+var s1 = shuffle(members);
+document.getElementById('carousel-row-1').innerHTML = s1.concat(s1).map(cardHTML).join('');
+var s2 = shuffle(members);
+document.getElementById('carousel-row-2').innerHTML = s2.concat(s2).map(cardHTML).join('');
+</script>
+
+</body>
+</html>

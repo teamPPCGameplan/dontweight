@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Health Check UK | From £199 | Don't Weight</title>
+  <meta name="description" content="Comprehensive private health screening with full body ultrasound, ECG, 50+ biomarkers, cancer markers. GP consultation included. Book today.">
+  <link rel="canonical" href="https://app.dontweight.co.uk/lp/health-checks">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Private Health Check UK | From £199 | Don't Weight">
+  <meta property="og:description" content="Comprehensive private health screening with full body ultrasound, ECG, 50+ biomarkers, cancer markers. GP consultation included. Book today.">
+  <meta property="og:image" content="/img/og-share.png">
+  <meta property="og:url" content="https://app.dontweight.co.uk/lp/health-checks">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --blue: #38BDF8; --ink: #0F172A; --slate: #64748B; --border: #E2E8F0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #F8FAFC; color: var(--ink); line-height: 1.6; }
+    .container { max-width: 820px; margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-size: 1.2rem; font-weight: 700; letter-spacing: -.5px; color: var(--ink); text-decoration: none; }
+    .nav-logo i { color: var(--blue); font-style: italic; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-link { font-size: .85rem; font-weight: 500; color: var(--slate); text-decoration: none; transition: color .2s; }
+    .nav-link:hover { color: var(--ink); }
+    .nav-cta { background: var(--blue); color: var(--ink); font-weight: 700; font-size: .85rem; padding: 10px 22px; border-radius: 50px; text-decoration: none; transition: all .2s; }
+    .nav-cta:hover { background: #7DD3FC; }
+    @media (max-width: 640px) { .nav-link { display: none; } }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #0C4A6E 0%, #0369A1 50%, #0EA5E9 100%); color: white; padding: 96px 0 56px; text-align: center; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 600; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 800; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.02em; }
+    .hero h1 span { color: var(--blue); }
+    .hero p { font-size: 17px; opacity: 0.92; max-width: 540px; margin: 0 auto 28px; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--blue); color: var(--ink); padding: 16px 36px; border-radius: 999px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 14px rgba(56,189,248,0.3); }
+    .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56,189,248,0.4); }
+
+    /* Urgency */
+    .urgency { background: #FEF3C7; border-bottom: 1px solid #FDE68A; padding: 12px 0; text-align: center; }
+    .urgency span { font-size: 13px; font-weight: 600; color: #92400E; }
+    .urgency .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #F59E0B; margin-right: 6px; animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .trust-bar { background: white; border-bottom: 1px solid var(--border); padding: 16px 0; }
+    .trust-items { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
+    .trust-item { font-size: 13px; font-weight: 500; color: var(--slate); display: flex; align-items: center; gap: 6px; }
+    .trust-item svg { color: var(--blue); }
+
+    /* Packages */
+    .packages { padding: 56px 0; }
+    .packages h2 { text-align: center; font-size: 26px; font-weight: 800; margin-bottom: 8px; letter-spacing: -.5px; }
+    .packages-sub { text-align: center; color: var(--slate); font-size: 14px; margin-bottom: 36px; }
+    .pkg-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .pkg { background: white; border: 1px solid var(--border); border-radius: 20px; padding: 32px 28px; position: relative; transition: all .3s; display: flex; flex-direction: column; }
+    .pkg:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .pkg.featured { border: 2px solid var(--blue); box-shadow: 0 4px 20px rgba(56,189,248,0.18); }
+    .pkg-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--blue); color: var(--ink); font-size: 11px; font-weight: 700; padding: 4px 16px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+    .pkg-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; }
+    .pkg h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+    .pkg-price { font-size: 36px; font-weight: 800; color: var(--ink); letter-spacing: -1px; }
+    .pkg-price span { color: var(--blue); }
+    .pkg-period { font-size: 13px; color: #94A3B8; margin-bottom: 16px; display: block; }
+    .pkg-desc { font-size: 14px; color: var(--slate); margin-bottom: 20px; line-height: 1.5; }
+    .pkg-highlight { font-size: 12px; font-weight: 600; color: var(--blue); margin-bottom: 16px; }
+    .pkg ul { list-style: none; margin-bottom: 24px; flex: 1; }
+    .pkg li { font-size: 13px; padding: 7px 0; display: flex; align-items: flex-start; gap: 8px; }
+    .pkg li svg { color: var(--blue); flex-shrink: 0; margin-top: 2px; }
+    .pkg-cta { display: block; text-align: center; padding: 16px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all 0.2s; }
+    .pkg-cta.primary { background: var(--blue); color: var(--ink); box-shadow: 0 4px 12px rgba(56,189,248,0.25); }
+    .pkg-cta.primary:hover { background: #7DD3FC; transform: translateY(-1px); }
+    .pkg-cta.secondary { border: 2px solid var(--border); color: var(--ink); }
+    .pkg-cta.secondary:hover { background: #F0F9FF; border-color: var(--blue); }
+
+    /* Mobile packages — horizontal scroll */
+    @media (max-width: 768px) {
+      .pkg-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 16px; padding: 16px 4px 20px; margin: 0 -20px; padding-left: 20px; padding-right: 20px; scrollbar-width: none; }
+      .pkg-grid::-webkit-scrollbar { display: none; }
+      .pkg { min-width: 280px; max-width: 300px; scroll-snap-align: center; flex-shrink: 0; }
+      .pkg.featured { order: -1; }
+      .pkg-scroll-hint { display: flex; justify-content: center; gap: 6px; margin-top: 8px; }
+      .pkg-scroll-hint span { width: 8px; height: 8px; border-radius: 50%; background: var(--border); transition: background .3s; }
+      .pkg-scroll-hint span.active { background: var(--blue); width: 24px; border-radius: 4px; }
+    }
+    @media (min-width: 769px) { .pkg-scroll-hint { display: none; } }
+
+    /* What's tested */
+    .tested { background: white; padding: 48px 0; }
+    .tested h2 { text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 32px; }
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+    .test-card { background: #F8FAFC; border-radius: 12px; padding: 16px; text-align: center; }
+    .test-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .test-card p { font-size: 12px; color: var(--slate); }
+    .test-card .emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+
+    /* Why */
+    .why { padding: 48px 0; }
+    .why h2 { text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+    .why-sub { text-align: center; color: var(--slate); font-size: 14px; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .why-grid { grid-template-columns: 1fr; } }
+    .why-card { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+    .why-card h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .why-card p { font-size: 13px; color: var(--slate); }
+
+    /* Book section */
+    .book-section { padding: 48px 0; }
+    .book-section h2 { text-align: center; font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    .book-section .sub { text-align: center; color: var(--slate); font-size: 14px; margin-bottom: 24px; }
+
+    /* Final CTA */
+    .final-cta { background: var(--ink); color: white; padding: 56px 0; text-align: center; }
+    .final-cta h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+    .final-cta p { font-size: 15px; color: #94A3B8; margin-bottom: 28px; }
+    .final-cta a { display: inline-flex; align-items: center; gap: 8px; background: var(--blue); color: var(--ink); padding: 16px 40px; border-radius: 999px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; }
+    .final-cta a:hover { background: #7DD3FC; transform: translateY(-2px); }
+
+    .lp-footer { padding: 24px 0; text-align: center; font-size: 12px; color: #94A3B8; }
+    .lp-footer a { color: var(--slate); text-decoration: none; }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18056464608"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18056464608');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "don't weight",
+  "description": "Comprehensive private health screening with full body ultrasound, ECG, biomarkers and GP consultation",
+  "url": "https://dontweight.co.uk",
+  "logo": "https://dontweight.co.uk/wp-content/uploads/dontweight-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB"
+  },
+  "medicalSpecialty": "Preventive Medicine",
+  "isAcceptingNewPatients": true
+}
+</script>
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Basic Health Check",
+    "description": "Essential private health screening package",
+    "brand": {
+      "@type": "Brand",
+      "name": "don't weight"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "199",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock",
+      "url": "https://app.dontweight.co.uk/lp/health-checks.html"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Standard Health Check",
+    "description": "Comprehensive private health screening package with extended biomarkers",
+    "brand": {
+      "@type": "Brand",
+      "name": "don't weight"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "599",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock",
+      "url": "https://app.dontweight.co.uk/lp/health-checks.html"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Premium Health Check",
+    "description": "Full premium private health screening package with all tests and consultations",
+    "brand": {
+      "@type": "Brand",
+      "name": "don't weight"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "999",
+      "priceCurrency": "GBP",
+      "availability": "https://schema.org/InStock",
+      "url": "https://app.dontweight.co.uk/lp/health-checks.html"
+    }
+  }
+]
+</script>
+</head>
+<body>
+
+<!-- Fixed nav with logo and menu -->
+<nav class="nav">
+  <a href="https://dontweight.co.uk" class="nav-logo">don't <i>weight</i></a>
+  <div class="nav-links">
+    <a href="https://dontweight.co.uk/health-checks/" class="nav-link">Health Checks</a>
+    <a href="https://dontweight.co.uk/treatments/" class="nav-link">Treatments</a>
+    <a href="https://dontweight.co.uk/how-it-works/" class="nav-link">How It Works</a>
+    <a href="#book" class="nav-cta">Book now</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19.5 12.572l-7.5 7.428-7.5-7.428A5 5 0 1 1 12 6.006a5 5 0 1 1 7.5 6.566z"/></svg>
+      UK's Most Comprehensive Health Check
+    </div>
+    <h1>Know your health.<br>Not just your <span>weight</span>.</h1>
+    <p>Full body ultrasound, ECG, 50+ blood biomarkers and cancer markers — all reviewed by a consultant. Available exclusively through Don't Weight.</p>
+    <a href="#book" class="hero-cta">
+      Book Your Health Check
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<div class="urgency">
+  <span><span class="dot"></span>Only 6 appointments left this week — book now to secure your slot</span>
+</div>
+
+<div class="trust-bar">
+  <div class="trust-items">
+    <div class="trust-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> CQC regulated</div>
+    <div class="trust-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Consultant reviewed</div>
+    <div class="trust-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Same-week appointments</div>
+    <div class="trust-item"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg> Detailed report</div>
+  </div>
+</div>
+
+<!-- Packages — 3 tiers -->
+<section class="packages">
+  <div class="container">
+    <h2>Three packages to choose from</h2>
+    <p class="packages-sub">All include a consultation and personalised report</p>
+    <div class="pkg-grid" id="pkgGrid">
+
+      <!-- Basic -->
+      <div class="pkg">
+        <div class="pkg-icon" style="background:#F0F9FF;">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+        </div>
+        <h3>Basic</h3>
+        <div class="pkg-price"><span>&pound;</span>199</div>
+        <span class="pkg-period">One-off</span>
+        <p class="pkg-highlight">Ideal before starting treatment</p>
+        <p class="pkg-desc">Essential health screening to check the fundamentals</p>
+        <ul>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Blood pressure check</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Body composition analysis</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Essential blood panel</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Resting ECG</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> GP consultation and report</li>
+        </ul>
+        <a href="#book" class="pkg-cta primary">Book now</a>
+      </div>
+
+      <!-- Standard -->
+      <div class="pkg featured">
+        <div class="pkg-badge">Most popular</div>
+        <div class="pkg-icon" style="background:#F0F9FF;">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Standard</h3>
+        <div class="pkg-price"><span>&pound;</span>599</div>
+        <span class="pkg-period">One-off | or &pound;1,000/year</span>
+        <p class="pkg-highlight">In-person or video &middot; London or St Albans</p>
+        <p class="pkg-desc">Comprehensive screening with 30+ biomarkers</p>
+        <ul>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Everything in Basic</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Full body ultrasound</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> 30+ biomarker blood panel</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Blood pressure and body composition</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Private GP consultation and report</li>
+        </ul>
+        <a href="#book" class="pkg-cta primary">Book now</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="pkg">
+        <div class="pkg-badge" style="background:var(--ink);color:white;">Most comprehensive</div>
+        <div class="pkg-icon" style="background:#F0F9FF;">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Premium</h3>
+        <div class="pkg-price"><span>&pound;</span>999</div>
+        <span class="pkg-period">One-off | or &pound;1,700/year</span>
+        <p class="pkg-highlight">In-person or video &middot; London or St Albans</p>
+        <p class="pkg-desc">Advanced screening with 50+ biomarkers and cancer markers</p>
+        <ul>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Everything in Standard</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Echocardiogram and Carotid Doppler</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> 50+ biomarkers incl. hormones</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Cancer markers and specialist screening</li>
+          <li><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Consultant review and personalised report</li>
+        </ul>
+        <a href="#book" class="pkg-cta primary">Book now</a>
+      </div>
+
+    </div>
+    <div class="pkg-scroll-hint" id="pkgDots">
+      <span class="active"></span><span></span><span></span>
+    </div>
+  </div>
+</section>
+
+<!-- What's tested -->
+<section class="tested">
+  <div class="container">
+    <h2>What we test</h2>
+    <div class="test-grid">
+      <div class="test-card"><span class="emoji">🫀</span><h4>Heart Health</h4><p>Cholesterol, triglycerides, ECG, echocardiogram</p></div>
+      <div class="test-card"><span class="emoji">🩸</span><h4>Blood Health</h4><p>Full blood count, iron, B12, folate, ferritin</p></div>
+      <div class="test-card"><span class="emoji">🦴</span><h4>Liver and Kidney</h4><p>ALT, AST, creatinine, GFR, urea, bilirubin</p></div>
+      <div class="test-card"><span class="emoji">⚡</span><h4>Thyroid</h4><p>TSH, T3, T4 — metabolism and energy</p></div>
+      <div class="test-card"><span class="emoji">🧬</span><h4>Hormones</h4><p>Testosterone, cortisol, DHEA (Premium)</p></div>
+      <div class="test-card"><span class="emoji">🛡️</span><h4>Cancer Markers</h4><p>PSA, CEA, CA125 screening (Premium)</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="why">
+  <div class="container">
+    <h2>Why choose Don't Weight health checks?</h2>
+    <p class="why-sub">We go further than any standard health screening</p>
+    <div class="why-grid">
+      <div class="why-card"><h3>Not just a blood test</h3><p>Full body ultrasound, ECG and body composition — not just a few vials of blood.</p></div>
+      <div class="why-card"><h3>Consultant reviewed</h3><p>Your results are reviewed by a specialist consultant, not just a computer algorithm.</p></div>
+      <div class="why-card"><h3>For everyone</h3><p>Whether you're on weight loss treatment or just want a full MOT — everyone welcome.</p></div>
+      <div class="why-card"><h3>Annual tracking</h3><p>Subscribe annually and track changes over time. Early detection saves lives.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK NOW — Semble iframe -->
+<section class="book-section" id="book">
+  <div class="container">
+    <h2>Book your health check</h2>
+    <p class="sub">No referral needed. Open to everyone. Pick a date and you're done.</p>
+    <div style="background:white;border:1px solid var(--border);border-radius:16px;overflow:hidden;">
+      <iframe src="https://online-booking.semble.io/?token=1154525539a981e026728e5e0f7a40f52e212da5" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="display:block;border-radius:16px;"></iframe>
+    </div>
+    <p style="font-size:12px;color:#94A3B8;margin-top:12px;text-align:center;">No eligibility check required &middot; Open to everyone over 18</p>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Your health is your greatest asset</h2>
+    <p>Comprehensive screening. Expert review. Peace of mind.</p>
+    <a href="#book">Book Your Health Check <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <p style="font-size:13px; color:#94A3B8; margin-top:16px;">Limited appointments available each week &middot; Results within 5 working days</p>
+  </div>
+</section>
+
+<footer class="lp-footer">
+  <p>&copy; 2026 Don't Weight Ltd. | <a href="https://dontweight.co.uk/privacy-policy/">Privacy</a> | <a href="https://dontweight.co.uk/terms/">Terms</a></p>
+  <p style="margin-top:6px">CQC regulated. All consultations conducted by UK-registered clinicians.</p>
+</footer>
+
+<script>
+// Scroll dot indicators for mobile packages
+(function(){
+  var grid = document.getElementById('pkgGrid');
+  var dots = document.querySelectorAll('#pkgDots span');
+  if (!grid || !dots.length) return;
+  grid.addEventListener('scroll', function(){
+    var cards = grid.querySelectorAll('.pkg');
+    var center = grid.scrollLeft + grid.offsetWidth / 2;
+    var closest = 0;
+    var minDist = Infinity;
+    cards.forEach(function(card, i){
+      var dist = Math.abs(card.offsetLeft + card.offsetWidth/2 - center);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    dots.forEach(function(d, i){ d.className = i === closest ? 'active' : ''; });
+  });
+})();
+</script>
+</body>
+</html>

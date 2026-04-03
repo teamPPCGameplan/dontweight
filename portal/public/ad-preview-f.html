@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ad Previews - don't weight</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#38BDF8;--ink:#0F172A;--slate:#64748B;--white:#FFFFFF}
+body{font-family:'Inter',sans-serif;background:#e8e8e8;padding:40px;display:flex;flex-direction:column;align-items:center;gap:48px}
+
+.label{font-size:12px;color:#999;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+
+/* Shared ad base */
+.ad{
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--white);
+}
+.ad .content{position:relative;z-index:2;text-align:center}
+.logo{font-size:16px;font-weight:700;letter-spacing:-.5px;color:var(--ink);margin-bottom:20px}
+.logo i{font-style:italic;color:var(--blue)}
+.title{font-family:'Caveat',cursive;font-weight:700;line-height:1.05;color:var(--ink)}
+.title span{color:var(--blue)}
+.hook{font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--slate);margin-top:16px}
+
+/* ===== LANDSCAPE 1200x628 ===== */
+.landscape{width:600px;height:314px}
+.landscape .title{font-size:48px}
+
+/* ===== SQUARE 600x600 ===== */
+.square{width:600px;height:600px}
+.square .title{font-size:56px}
+.square .logo{margin-bottom:32px}
+.square .hook{margin-top:24px}
+
+/* Halftone dot background */
+.dots{
+  background:
+    radial-gradient(circle,rgba(15,23,42,0.08) 1px,transparent 1px),
+    var(--white);
+  background-size:20px 20px;
+}
+.dots::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at center,transparent 40%,var(--white) 75%);
+  pointer-events:none;
+}
+
+/* Clean white */
+.clean{background:var(--white);border:1px solid #e2e8f0}
+
+/* Blue accent */
+.blue-accent{
+  background:var(--white);
+  border-bottom:6px solid var(--blue);
+}
+
+</style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18056464608"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18056464608');
+</script>
+</head>
+<body>
+
+<!-- === LANDSCAPE VARIANTS === -->
+<div>
+  <div class="label">Landscape 1 — Halftone dots</div>
+  <div class="ad landscape dots">
+    <div class="content">
+      <div class="logo">don't <i>weight</i></div>
+      <h1 class="title">every hero has<br><span>an origin story</span></h1>
+      <p class="hook">weight loss, minus the drama</p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="label">Landscape 2 — Clean</div>
+  <div class="ad landscape clean">
+    <div class="content">
+      <div class="logo">don't <i>weight</i></div>
+      <h1 class="title">weight loss,<br><span>minus the drama</span></h1>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="label">Landscape 3 — Blue accent</div>
+  <div class="ad landscape blue-accent">
+    <div class="content">
+      <div class="logo">don't <i>weight</i></div>
+      <h1 class="title">your story<br><span>starts here</span></h1>
+      <p class="hook">clinician-prescribed weight loss</p>
+    </div>
+  </div>
+</div>
+
+<!-- === SQUARE VARIANTS === -->
+<div>
+  <div class="label">Square 1 — Halftone dots</div>
+  <div class="ad square dots">
+    <div class="content">
+      <div class="logo">don't <i>weight</i></div>
+      <h1 class="title">every hero has<br><span>an origin story</span></h1>
+      <p class="hook">weight loss, minus the drama</p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="label">Square 2 — Clean</div>
+  <div class="ad square clean">
+    <div class="content">
+      <div class="logo">don't <i>weight</i></div>
+      <h1 class="title">weight loss,<br><span>minus the drama</span></h1>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="label">Square 3 — Blue accent</div>
+  <div class="ad square blue-accent">
+    <div class="content">
+      <div class="logo">don't <i>weight</i></div>
+      <h1 class="title">your story<br><span>starts here</span></h1>
+      <p class="hook">clinician-prescribed weight loss</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

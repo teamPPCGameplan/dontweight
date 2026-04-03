@@ -218,10 +218,12 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 /* ════════════════════════════════════════
    STATS — bold numbers
    ════════════════════════════════════════ */
-.stats{padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px);background:var(--ink);color:var(--white)}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:800px;margin:0 auto;text-align:center}
-.stat h3{font-family:var(--display);font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--sky);line-height:1;margin-bottom:6px;letter-spacing:-1px}
-.stat p{font-size:11px;color:rgba(255,255,255,.65);font-weight:400;line-height:1.4}
+.stats{padding:clamp(48px,6vw,72px) clamp(20px,4vw,56px);background:linear-gradient(135deg,#0C0A09 0%,#1C1917 100%);color:var(--white)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,24px);max-width:900px;margin:0 auto;text-align:center}
+.stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:clamp(20px,2.5vw,28px) 16px;transition:border-color .3s,background .3s}
+.stat:hover{border-color:rgba(56,189,248,.2);background:rgba(56,189,248,.04)}
+.stat h3{font-family:var(--display);font-size:clamp(32px,4vw,48px);font-weight:800;background:linear-gradient(135deg,var(--sky),#7DD3FC);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px;letter-spacing:-1.5px}
+.stat p{font-size:11px;color:rgba(255,255,255,.50);font-weight:500;line-height:1.4;letter-spacing:.3px}
 
 /* ════════════════════════════════════════
    FAQ
@@ -1002,10 +1004,10 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
 <!-- STATS -->
 <div class="stats">
   <div class="stats-grid">
-    <div class="stat fu"><h3>&lt;24h</h3><p>Application to<br>clinician approval</p></div>
-    <div class="stat fu"><h3>14k+</h3><p>Members on their<br>weight loss journey</p></div>
-    <div class="stat fu"><h3>23%</h3><p>Average body weight<br>lost with Mounjaro</p></div>
-    <div class="stat fu"><h3>4.8</h3><p>Google rating<br>from verified reviews</p></div>
+    <div class="stat fu"><h3>CQC</h3><p>Registered &amp; regulated<br>UK clinic</p></div>
+    <div class="stat fu"><h3>97%</h3><p>Member satisfaction<br>rate</p></div>
+    <div class="stat fu"><h3>23%</h3><p>Avg. weight loss<br>with Mounjaro</p></div>
+    <div class="stat fu"><h3>4.8★</h3><p>Google rating<br>verified reviews</p></div>
   </div>
 </div>
 

@@ -16,6 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 <?php wp_head(); ?>
 <style>
+.dw-lpug-bar{display:none!important;}.dw-rec-badge{display:none!important;}.dw-lpug-badge{display:none!important;}
 :root{
   --sky:#38BDF8;--sky-deep:#0EA5E9;--sky-dark:#0284C7;--sky-pale:#E0F2FE;--sky-wash:#F0F9FF;
   --white:#FFFFFF;--cream:#FAFAF9;--warm:#F5F5F4;--stone:#E7E5E4;
@@ -149,6 +150,20 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
   <a href="#pricing" class="hc-cta">Choose your health check &darr;</a>
   <div class="hc-price">From <strong>&pound;149</strong> (Baseline) &middot; <strong>&pound;599</strong> (Standard) &middot; <strong>&pound;999</strong> (Premium)</div>
 </header>
+
+<!-- LPUG BADGE -->
+<div class="dw-lpug-badge" style="width:100%;background:linear-gradient(135deg,#F8FAFC,#EFF6FF);padding:40px 20px;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+  <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
+    <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1A1A2E,#2D2B55);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:2px solid rgba(255,255,255,0.1);box-shadow:0 4px 16px rgba(26,26,46,0.2);"><span style="color:#fff;font-size:13px;font-weight:800;letter-spacing:0.5px;">LPUG</span></div>
+    <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:8px;letter-spacing:-0.2px;">Health checks performed by <strong>London Private Ultrasound Group</strong></div>
+    <div style="font-size:14px;color:#334155;line-height:1.65;max-width:740px;margin-bottom:20px;">Our comprehensive health screening is delivered by <a href="https://londonsono.com" target="_blank" rel="noopener" style="color:#334155;font-weight:600;text-decoration:underline;text-decoration-color:#38BDF8;text-underline-offset:2px;">London Private Ultrasound Group&rsquo;s</a> experienced sonographers and clinical team, using state-of-the-art diagnostic equipment.</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+      <span style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#334155;letter-spacing:0.3px;">CQC Registered</span>
+      <span style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#334155;letter-spacing:0.3px;">GMC Certified Clinicians</span>
+      <span style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#334155;letter-spacing:0.3px;">NHS-Trained Sonographers</span>
+    </div>
+  </div>
+</div>
 
 <!-- WHY THIS MATTERS -->
 <section class="hc-why">

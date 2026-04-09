@@ -9,14 +9,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title>Weight Loss Health Check — Clinical Screening | Don't Weight</title>
-<meta name="description" content="Comprehensive health screening designed for your weight loss programme. Ultrasound, blood tests, and body composition analysis. Biannual monitoring with your treatment. Baseline from £149, Standard £599.">
+<meta name="description" content="DW360 health screening for weight loss patients. Ultrasound, blood tests, and body composition analysis. From £149. CQC-registered London clinic.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 <?php wp_head(); ?>
 <style>
-.dw-lpug-bar{display:none!important;}.dw-rec-badge{display:none!important;}.dw-lpug-badge{display:none!important;}
+.dw-lpug-bar{display:none!important;}.dw-rec-badge{display:none!important;}
 :root{
   --sky:#38BDF8;--sky-deep:#0EA5E9;--sky-dark:#0284C7;--sky-pale:#E0F2FE;--sky-wash:#F0F9FF;
   --white:#FFFFFF;--cream:#FAFAF9;--warm:#F5F5F4;--stone:#E7E5E4;
@@ -47,7 +49,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 .mobile-menu.open{opacity:1;pointer-events:all}
 .mobile-menu a{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);text-decoration:none}
 .mobile-menu .mm-cta{background:var(--sky);color:var(--white);border:none;border-radius:100px;padding:16px 48px;font-family:var(--body);font-size:16px;font-weight:700;cursor:pointer;text-decoration:none}
-.mm-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:32px;color:var(--ink);cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.mm-close{position:absolute;top:max(16px,env(safe-area-inset-top,16px));right:20px;background:var(--warm);border:none;font-size:32px;color:var(--ink);cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s;z-index:102}
 
 /* HERO */
 .hc-hero{padding:clamp(100px,14vw,140px) clamp(20px,6vw,80px) clamp(48px,6vw,72px);text-align:center;background:linear-gradient(180deg,var(--white) 0%,var(--sky-wash) 50%,var(--white) 100%)}
@@ -148,7 +150,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
   <h1>The Weight Loss <em>Health Check</em></h1>
   <p class="hc-sub">The UK's first comprehensive health screening designed specifically for patients on GLP-1 weight loss medication. Ultrasound. Bloods. Body composition. All in one appointment.</p>
   <a href="#pricing" class="hc-cta">Choose your health check &darr;</a>
-  <div class="hc-price">From <strong>&pound;149</strong> (Baseline) &middot; <strong>&pound;599</strong> (Standard) &middot; <strong>&pound;999</strong> (Premium)</div>
+  <div class="hc-price">From <strong>&pound;149</strong> (Baseline) &middot; <strong>&pound;599</strong> (360) &middot; <strong>&pound;999</strong> (Premium)</div>
 </header>
 
 <!-- LPUG BADGE -->
@@ -231,7 +233,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
       <thead><tr>
         <th style="text-align:left;padding:14px 16px;background:var(--ink);color:white;border-radius:12px 0 0 0;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;width:34%">What&rsquo;s included</th>
         <th style="text-align:center;padding:14px 12px;background:var(--ink);color:rgba(255,255,255,.6);font-size:12px;font-weight:700;width:22%"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" style="display:block;margin:0 auto 4px"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8m8 4H8m2-8H8"/></svg>Baseline<br><span style="font-size:20px;color:white">&pound;149</span><br><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.4)">In-clinic</span></th>
-        <th style="text-align:center;padding:14px 12px;background:var(--ink);color:rgba(255,255,255,.6);font-size:12px;font-weight:700;width:22%"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" style="display:block;margin:0 auto 4px"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span style="position:relative">360<span style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:#38BDF8;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;">RECOMMENDED</span></span><br><span style="font-size:20px;color:white">&pound;599</span><br><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.4)">In-clinic</span></th>
+        <th style="text-align:center;padding:14px 12px;background:var(--ink);color:rgba(255,255,255,.6);font-size:12px;font-weight:700;width:22%"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" style="display:block;margin:0 auto 4px"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span style="position:relative;display:inline-block">360<span style="position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:#38BDF8;color:#fff;font-size:9px;font-weight:700;padding:2px 10px;border-radius:12px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;">RECOMMENDED</span></span><br><span style="font-size:20px;color:white">&pound;599</span><br><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.4)">In-clinic</span></th>
         <th style="text-align:center;padding:14px 12px;background:var(--sky);color:white;border-radius:0 12px 0 0;font-size:12px;font-weight:700;width:22%"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" style="display:block;margin:0 auto 4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Premium<br><span style="font-size:20px">&pound;999</span><br><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.65)">In-clinic</span></th>
       </tr></thead>
       <tbody>
@@ -268,11 +270,13 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
     </table>
   </div>
 
+  <!-- Semble booking forms injected by chatbot widget -->
+
   <!-- ANNUAL PROGRAMMES — prominent 3-column -->
   <div style="max-width:900px;margin:0 auto;text-align:center;padding:clamp(32px,5vw,56px) 0 0">
     <div style="display:inline-block;background:var(--ink);color:#fff;padding:6px 20px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px">Save with Annual</div>
     <h3 style="font-family:var(--display);font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.5px;margin-bottom:8px">Two checks per year. Track your progress.</h3>
-    <p style="font-size:14px;color:var(--slate);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto">Check at 0 and 6 months. Compare results, catch problems early, give your clinician the data they need.</p>
+    <p style="font-size:14px;color:var(--slate);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto">Book your first health check at the single-visit rates above. Upgrade to annual at the clinic — we'll only charge the difference. Your medical concierge arranges your second check 6 months later.</p>
 
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="hc-pkg-pair">
       <!-- Baseline Annual -->
@@ -283,11 +287,11 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
         <div style="background:var(--sky-wash);border-radius:8px;padding:8px 12px;margin:12px 0;font-size:12px;color:var(--sky-dark);font-weight:600">You save &pound;49 <span style="font-weight:400;color:var(--slate)">(vs &pound;298 separately)</span></div>
         <button class="hc-pc-btn hc-pc-btn-outline" style="margin-top:12px" onclick="bookHC('hc-baseline-annual')">Start Annual &rarr;</button>
       </div>
-      <!-- Standard Annual -->
+      <!-- 360 Annual -->
       <div class="hc-price-card" style="padding:28px">
-        <h3>Standard Annual</h3>
+        <h3>360 Annual</h3>
         <div class="hc-pc-price" style="font-size:32px">&pound;1,000<span>/year</span></div>
-        <div class="hc-pc-per">2 &times; Standard Check</div>
+        <div class="hc-pc-per">2 &times; 360 Check</div>
         <div style="background:var(--sky-wash);border-radius:8px;padding:8px 12px;margin:12px 0;font-size:12px;color:var(--sky-dark);font-weight:600">You save &pound;198 <span style="font-weight:400;color:var(--slate)">(vs &pound;1,198 separately)</span></div>
         <button class="hc-pc-btn hc-pc-btn-outline" style="margin-top:12px" onclick="bookHC('hc-standard-annual')">Start Annual &rarr;</button>
       </div>
@@ -303,7 +307,26 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
     </div>
   </div>
 
-  <p style="text-align:center;font-size:11px;color:var(--slate);margin-top:24px;max-width:500px;margin-left:auto;margin-right:auto">100% money-back guarantee. Cancel before your appointment for a full refund.</p>
+  <!-- How annual works note -->
+  <div style="max-width:760px;margin:28px auto 0;background:var(--sky-wash);border:1px solid rgba(14,165,233,.15);border-radius:16px;padding:24px 28px">
+    <p style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:12px">How annual plans work</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="hc-pkg-pair">
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <span style="width:24px;height:24px;border-radius:50%;background:var(--sky-dark);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</span>
+        <span style="font-size:12px;color:var(--slate);line-height:1.5">Choose the time and location of your first health check and <strong style="color:var(--ink)">book it at the single-visit rates above</strong></span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <span style="width:24px;height:24px;border-radius:50%;background:var(--sky-dark);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</span>
+        <span style="font-size:12px;color:var(--slate);line-height:1.5">At the clinic, <strong style="color:var(--ink)">we'll charge you only the difference</strong> to upgrade to the annual plan</span>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <span style="width:24px;height:24px;border-radius:50%;background:var(--sky-dark);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</span>
+        <span style="font-size:12px;color:var(--slate);line-height:1.5">Your <strong style="color:var(--ink)">medical concierge will organise</strong> the date of your second health check — 6 months later</span>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align:center;font-size:11px;color:var(--slate);margin-top:24px;max-width:500px;margin-left:auto;margin-right:auto">Full refund if not clinically eligible. Cancel before your appointment at any time.</p>
 </section>
 
 <!-- BIANNUAL PROGRAMME -->
@@ -407,7 +430,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
       
       <div style="background:var(--sky-wash);border-radius:12px;padding:16px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center">
         <div>
-          <div style="font-size:14px;font-weight:700;color:var(--ink)" id="bkSummaryTitle">Standard Check</div>
+          <div style="font-size:14px;font-weight:700;color:var(--ink)" id="bkSummaryTitle">360 Check</div>
           <div style="font-size:11px;color:var(--slate)">London clinic &middot; 45 min appointment</div>
         </div>
         <div style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--ink)" id="bkSummaryPrice">&pound;499</div>
@@ -473,7 +496,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
   <h2 style="font-family:var(--display);font-size:clamp(24px,3.5vw,40px);font-weight:700;letter-spacing:-1px;color:var(--ink);margin-bottom:12px;line-height:1.1">Your medication is working.<br>Make sure <em style="font-style:normal;color:var(--sky-deep)">everything else</em> is too.</h2>
   <p style="font-size:14px;color:var(--slate);max-width:440px;margin:0 auto 28px;line-height:1.7">The Weight Loss Health Check is available now at our London clinic. Open to all — not just Don't Weight patients.</p>
   <a href="#pricing" class="hc-cta" style="margin-right:12px">Book now</a>
-  <a href="<?php echo home_url(); ?>" style="color:var(--charcoal);font-size:14px;font-weight:500;text-decoration:none;border-bottom:1.5px solid var(--stone);padding-bottom:2px">Explore treatments</a>
+  <a href="<?php echo home_url('/treatments/#treatments'); ?>" style="color:var(--charcoal);font-size:14px;font-weight:500;text-decoration:none;border-bottom:1.5px solid var(--stone);padding-bottom:2px">Explore treatments</a>
 </section>
 
 <!-- FOOTER -->
@@ -483,21 +506,16 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open');document.querySelector('.burger').classList.toggle('open');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':''}
 function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.querySelector('.burger').classList.remove('open');document.body.style.overflow=''}
 
-// Booking via Stripe
+// Scroll to Semble booking form (injected by chatbot widget)
 function bookHC(productId){
-  var fd=new FormData();
-  fd.append('action','dw_stripe_checkout');
-  fd.append('nonce',typeof dwStripe!=='undefined'?dwStripe.nonce:'');
-  fd.append('checkout_type','healthcheck');
-  fd.append('treatment',productId);
-  var ajaxUrl=typeof dwStripe!=='undefined'?dwStripe.ajaxUrl:'/wp-admin/admin-ajax.php';
-  fetch(ajaxUrl,{method:'POST',body:fd})
-    .then(function(r){return r.json()})
-    .then(function(data){
-      if(data.success && data.data.url){window.location.href=data.data.url}
-      else{alert('Booking failed: '+(data.data||'Please try again.'))}
-    })
-    .catch(function(){alert('Connection error. Please try again.')});
+  var semble=document.querySelector('iframe[src*="semble"]');
+  if(semble){
+    semble.scrollIntoView({behavior:'smooth',block:'center'});
+  } else {
+    // Fallback: scroll to bottom of pricing section
+    var pricing=document.getElementById('pricing');
+    if(pricing) pricing.scrollIntoView({behavior:'smooth',block:'end'});
+  }
 }
 
 // Booking form
@@ -518,7 +536,7 @@ function selTime(el){
 }
 
 function openBooking(plan){
-  var planLabels={'standard-single':'Standard Check','premium-single':'Premium Check','standard-annual':'Standard Annual (×2)','premium-annual':'Premium Annual (×2)'};
+  var planLabels={'standard-single':'360 Check','premium-single':'Premium Check','standard-annual':'360 Annual (×2)','premium-annual':'Premium Annual (×2)'};
   var planPrices={'standard-single':'£599','premium-single':'£999','standard-annual':'£1,000','premium-annual':'£1,800'};
   bookingPlan=plan;
   document.getElementById('bkOverlay').classList.add('open');

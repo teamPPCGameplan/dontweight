@@ -10,8 +10,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title>Don't Weight — Clinician-Led Weight Loss | Free Consultation</title>
 <meta name="description" content="UK's clinician-led weight management service. Free 2-minute eligibility check, personalised treatment plans, and ongoing medical support. CQC registered. Every body welcome.">
+<link rel="canonical" href="https://dontweight.co.uk/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="don't weight">
+<meta property="og:title" content="Don't Weight — Clinician-Led Weight Loss | Free Consultation">
+<meta property="og:description" content="UK's clinician-led weight management service. Free eligibility check, personalised treatment plans, ongoing medical support. CQC registered.">
+<meta property="og:url" content="https://dontweight.co.uk/">
+<meta property="og:image" content="https://dontweight.co.uk/wp-content/uploads/og-share.png">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Don't Weight — Clinician-Led Weight Loss">
+<meta name="twitter:description" content="UK's clinician-led weight management. Free eligibility check, personalised plans, CQC registered.">
+<meta name="twitter:image" content="https://dontweight.co.uk/wp-content/uploads/og-share.png">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "MedicalBusiness",
+      "name": "don't weight",
+      "description": "Clinician-led weight management service offering GLP-1 treatments including Mounjaro and Wegovy with 1-to-1 video consultations",
+      "url": "https://dontweight.co.uk",
+      "telephone": "+442071013377",
+      "email": "hello@dontweight.co.uk",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB",
+        "addressLocality": "London"
+      },
+      "priceRange": "££",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "16:00"
+        }
+      ],
+      "medicalSpecialty": "Bariatrics",
+      "isAcceptingNewPatients": true
+    },
+    {
+      "@type": "WebSite",
+      "name": "don't weight",
+      "url": "https://dontweight.co.uk",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://dontweight.co.uk/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+
 <script>document.documentElement.classList.add('js-anim')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,7 +144,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 .mobile-menu a{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:-.5px;transition:color .2s}
 .mobile-menu a:hover{color:var(--sky)}
 .mobile-menu .mm-cta{background:var(--sky);color:var(--white);border:none;border-radius:100px;padding:16px 48px;font-family:var(--body);font-size:16px;font-weight:700;cursor:pointer;margin-top:16px}
-.mm-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:32px;color:var(--ink);cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.mm-close{position:absolute;top:max(16px,env(safe-area-inset-top,16px));right:20px;background:var(--warm);border:none;font-size:32px;color:var(--ink);cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s;z-index:102}
 .mm-close:hover{background:var(--warm)}
 
 /* ════════════════════════════════════════
@@ -156,7 +223,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 .treat-pct{width:64px;height:64px;border-radius:50%;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-family:var(--display);font-size:22px;font-weight:700;color:var(--sky-dark)}
 .treat-card h3{font-family:var(--display);font-size:20px;font-weight:700;margin-bottom:4px;color:var(--ink);letter-spacing:-.3px}
 .treat-label{font-size:11px;font-weight:600;color:var(--sky-deep);margin-bottom:10px}
-.treat-card p{font-size:12px;color:var(--charcoal);margin-bottom:20px;line-height:1.6;flex:1}
+.treat-card p{font-size:12px;color:var(--charcoal);margin-bottom:20px;line-height:1.6}
 .treat-btn{display:block;width:100%;background:var(--ink);color:var(--white);border:none;border-radius:100px;padding:12px;font-family:var(--body);font-size:13px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:auto;text-decoration:none;text-align:center}
 .treat-btn:hover{background:var(--charcoal)}
 
@@ -272,6 +339,8 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
    ════════════════════════════════════════ */
 .ov{position:fixed;inset:0;z-index:1000;background:rgba(12,10,9,.45);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px}
 .ov.on{opacity:1;pointer-events:all}
+/* Hide chatbot widget when eligibility modal is open */
+body.quiz-open #dw-chat-bubble,body.quiz-open #dw-chat-toast,body.quiz-open #dw-chat-window,body.quiz-open #dw-welcome-cta{display:none!important}
 .qm{background:var(--white);border-radius:24px;width:100%;max-width:460px;padding:clamp(24px,4vw,36px);position:relative;transform:translateY(16px);transition:transform .4s;max-height:88vh;overflow-y:auto;box-shadow:0 32px 80px rgba(0,0,0,.18)}
 .ov.on .qm{transform:translateY(0)}
 .qx{position:absolute;top:18px;right:18px;background:var(--warm);border:none;color:var(--slate);width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center}
@@ -478,7 +547,7 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
 
     <div class="hero-cta-row fu" style="justify-content:center;margin-bottom:0;gap:16px">
       <button class="cta-main" onclick="openQ()">Am I eligible? &rarr;</button>
-      <a href="<?php echo home_url('/treatments/'); ?>" class="cta-sub">View available treatments</a>
+      <a href="<?php echo home_url('/treatments/#treatments'); ?>" class="cta-sub">View available treatments</a>
     </div>
 
     <div class="fu hero-trust-bottom" style="font-size:12px;color:var(--slate);font-weight:500;margin-top:16px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap">
@@ -700,6 +769,7 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
     <div class="section-label fu">Available Treatments</div>
     <h2 class="section-title fu">Clinically-proven <em>medications</em></h2>
     <p class="section-desc fu">Your clinician will recommend the best option for your body, goals, and health profile.</p>
+    <p style="font-size:12px;color:var(--slate);margin-top:8px;display:inline-flex;align-items:center;gap:6px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.15);padding:6px 14px;border-radius:20px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--sky)"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>Transparent pricing — no hidden fees, dose & price adjusted by your clinician</p>
   </div>
 
   <div class="treat-grid" style="max-width:520px">
@@ -709,20 +779,20 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
       <h3>Mounjaro</h3>
       <div class="treat-label">Most effective</div>
       <p>Tirzepatide, dual GIP/GLP-1. Up to 23% weight loss in clinical trials.</p>
-      <div style="font-family:var(--display);font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--ink);margin-bottom:2px;letter-spacing:-1px"><span style="font-size:12px;font-weight:500;color:var(--slate);letter-spacing:0">from </span>&pound;4.99<span style="font-size:13px;font-weight:500;color:var(--slate)">/day</span></div>
-      <div style="font-size:11px;color:var(--slate);margin-bottom:6px">2.5mg starter dose &middot; billed monthly</div>
-      <a href="<?php echo home_url('/treatments/'); ?>" class="treat-btn">Learn more &rarr;</a>
-      <p style="font-size:10px;color:var(--slate);text-align:center;margin-top:8px">&#10003; Refundable if not eligible &nbsp;&middot;&nbsp; &#10003; Pause or cancel anytime</p>
+      <div style="font-family:var(--display);font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--ink);margin-bottom:2px;letter-spacing:-1px;margin-top:auto"><span style="font-size:12px;font-weight:500;color:var(--slate);letter-spacing:0">from </span>&pound;4.99<span style="font-size:13px;font-weight:500;color:var(--slate)">/day</span></div>
+      <div style="font-size:11px;color:var(--slate);margin-bottom:6px">2.5mg starter &middot; &pound;150/mo &middot; dose &amp; price adjusted by your clinician</div>
+      <a href="<?php echo home_url('/treatments/#treatments'); ?>" class="treat-btn">Learn more &rarr;</a>
+      <p style="font-size:10px;color:var(--slate);text-align:center;margin-top:8px">&#10003; Refundable if not eligible &nbsp;&middot;&nbsp; &#10003; No commitment</p>
     </div>
     <div class="treat-card fu">
       <div class="treat-pct">15%</div>
       <h3>Wegovy</h3>
       <div class="treat-label">Proven &amp; trusted</div>
       <p>Semaglutide (Ozempic), GLP-1. Up to 15% weight loss in clinical trials.</p>
-      <div style="font-family:var(--display);font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--ink);margin-bottom:2px;letter-spacing:-1px"><span style="font-size:12px;font-weight:500;color:var(--slate);letter-spacing:0">from </span>&pound;3.80<span style="font-size:13px;font-weight:500;color:var(--slate)">/day</span></div>
-      <div style="font-size:11px;color:var(--slate);margin-bottom:6px">0.25mg starter &middot; &pound;114 first month, then &pound;139/mo</div>
-      <a href="<?php echo home_url('/treatments/'); ?>" class="treat-btn">Learn more &rarr;</a>
-      <p style="font-size:10px;color:var(--slate);text-align:center;margin-top:8px">&#10003; Refundable if not eligible &nbsp;&middot;&nbsp; &#10003; Pause or cancel anytime</p>
+      <div style="font-family:var(--display);font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--ink);margin-bottom:2px;letter-spacing:-1px;margin-top:auto"><span style="font-size:12px;font-weight:500;color:var(--slate);letter-spacing:0">from </span>&pound;3.80<span style="font-size:13px;font-weight:500;color:var(--slate)">/day</span></div>
+      <div style="font-size:11px;color:var(--slate);margin-bottom:6px">0.25mg starter &middot; &pound;114/mo &middot; dose &amp; price adjusted by your clinician</div>
+      <a href="<?php echo home_url('/treatments/#treatments'); ?>" class="treat-btn">Learn more &rarr;</a>
+      <p style="font-size:10px;color:var(--slate);text-align:center;margin-top:8px">&#10003; Refundable if not eligible &nbsp;&middot;&nbsp; &#10003; No commitment</p>
     </div>
   </div>
 </section>
@@ -787,7 +857,7 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
                 <div style="font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:2px">&pound;999</div>
                 <div style="font-size:10px;color:var(--sky-dark);font-weight:700;margin-bottom:4px">Premium</div>
                 <div style="font-size:9px;color:var(--slate)">+ Lipids, CRP, B12, Vit D, GP call</div>
-                <div style="font-size:9px;color:var(--sky-dark);font-weight:600;margin-top:6px;padding-top:6px;border-top:1px solid rgba(56,189,248,.2)">&pound;1,700/year &middot; 2&times; every 6 months</div>
+                <div style="font-size:9px;color:var(--sky-dark);font-weight:600;margin-top:6px;padding-top:6px;border-top:1px solid rgba(56,189,248,.2)">&pound;1,800/year &middot; 2&times; every 6 months</div>
               </div>
             </div>
           </div>
@@ -972,44 +1042,43 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
   </div>
 </section>
 
-<!-- GUARANTEE + WHY US -->
-<section style="padding:clamp(40px,5vw,60px) clamp(20px,4vw,56px);background:var(--cream)">
-  <div style="max-width:840px;margin:0 auto">
-    <!-- WHY US GRID -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px" class="why-grid">
-      <div class="fu" style="background:var(--white);border:1px solid var(--stone);border-radius:16px;padding:24px 20px;text-align:center">
-        <div style="width:44px;height:44px;border-radius:12px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#0EA5E9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4 style="font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px">CQC Regulated</h4>
-        <p style="font-size:11px;color:var(--charcoal);line-height:1.5">Same regulatory standard as your GP surgery.</p>
+<!-- WHY US + RESULTS — single unified section -->
+<section style="padding:clamp(40px,5vw,60px) clamp(20px,4vw,56px);background:var(--ink)">
+  <div style="max-width:960px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.5vw,24px);text-align:center" class="why-grid">
+      <div class="fu" style="padding:clamp(20px,3vw,32px) 16px">
+        <div style="font-family:var(--display);font-size:clamp(32px,4vw,42px);font-weight:700;color:var(--sky);letter-spacing:-1.5px;line-height:1;margin-bottom:8px">23%</div>
+        <p style="font-size:clamp(11px,1.2vw,13px);font-weight:600;color:var(--white);margin-bottom:4px">Average weight loss</p>
+        <p style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.4">Mounjaro clinical trials</p>
       </div>
-      <div class="fu" style="background:var(--white);border:1px solid var(--stone);border-radius:16px;padding:24px 20px;text-align:center">
-        <div style="width:44px;height:44px;border-radius:12px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0z" stroke="#0EA5E9" stroke-width="1.8"/><path d="M12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke="#0EA5E9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 11l2 2 4-4" stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4 style="font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px">Real UK Clinicians</h4>
-        <p style="font-size:11px;color:var(--charcoal);line-height:1.5">Every prescription reviewed by a UK-registered clinician.</p>
+      <div class="fu" style="padding:clamp(20px,3vw,32px) 16px;border-left:1px solid rgba(255,255,255,.08)">
+        <div style="font-family:var(--display);font-size:clamp(32px,4vw,42px);font-weight:700;color:var(--sky);letter-spacing:-1.5px;line-height:1;margin-bottom:8px">4.8<span style="font-size:clamp(18px,2vw,24px);color:#FBBC05">★</span></div>
+        <p style="font-size:clamp(11px,1.2vw,13px);font-weight:600;color:var(--white);margin-bottom:4px">Google rating</p>
+        <p style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.4">From verified patients</p>
       </div>
-      <div class="fu" style="background:var(--white);border:1px solid var(--stone);border-radius:16px;padding:24px 20px;text-align:center">
-        <div style="width:44px;height:44px;border-radius:12px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke="#0EA5E9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4 style="font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px">Next-Day Delivery</h4>
-        <p style="font-size:11px;color:var(--charcoal);line-height:1.5">Discreet packaging from a registered UK pharmacy. Always free.</p>
+      <div class="fu" style="padding:clamp(20px,3vw,32px) 16px;border-left:1px solid rgba(255,255,255,.08)">
+        <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:8px">
+          <svg width="clamp(22px,3vw,28px)" height="clamp(22px,3vw,28px)" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="var(--sky)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span style="font-family:var(--display);font-size:clamp(14px,1.6vw,17px);font-weight:700;color:var(--white);letter-spacing:.3px">CQC</span>
+        </div>
+        <p style="font-size:clamp(11px,1.2vw,13px);font-weight:600;color:var(--white);margin-bottom:4px">CQC Regulated</p>
+        <p style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.4">Same standard as your GP</p>
       </div>
-      <div class="fu" style="background:var(--white);border:1px solid var(--stone);border-radius:16px;padding:24px 20px;text-align:center">
-        <div style="width:44px;height:44px;border-radius:12px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;margin:0 auto 16px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" stroke="#0EA5E9" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="9.5" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="3 2"/></svg></div>
-        <h4 style="font-family:var(--display);font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px">30-Day Guarantee</h4>
-        <p style="font-size:11px;color:var(--charcoal);line-height:1.5">Not for you? Full refund on your programme fee. No questions.</p>
+      <div class="fu" style="padding:clamp(20px,3vw,32px) 16px;border-left:1px solid rgba(255,255,255,.08)">
+        <div style="font-family:var(--display);font-size:clamp(32px,4vw,42px);font-weight:700;color:var(--sky);letter-spacing:-1.5px;line-height:1;margin-bottom:8px">48<span style="font-size:clamp(14px,1.6vw,18px);font-weight:500;color:rgba(255,255,255,.5)">hr</span></div>
+        <p style="font-size:clamp(11px,1.2vw,13px);font-weight:600;color:var(--white);margin-bottom:4px">To first delivery</p>
+        <p style="font-size:10px;color:rgba(255,255,255,.45);line-height:1.4">Free tracked Royal Mail</p>
       </div>
+    </div>
+    <!-- Trust badges row -->
+    <div style="display:flex;justify-content:center;gap:clamp(12px,2vw,20px);flex-wrap:wrap;margin-top:clamp(20px,3vw,28px);padding-top:clamp(16px,2vw,20px);border-top:1px solid rgba(255,255,255,.06)">
+      <span style="font-size:10px;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.08);padding:5px 12px;border-radius:20px">MHRA Approved</span>
+      <span style="font-size:10px;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.08);padding:5px 12px;border-radius:20px">UK Clinicians</span>
+      <span style="font-size:10px;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.08);padding:5px 12px;border-radius:20px">Free Delivery</span>
+      <span style="font-size:10px;color:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.08);padding:5px 12px;border-radius:20px">Transparent Pricing</span>
     </div>
   </div>
 </section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stats-grid">
-    <div class="stat fu"><h3>CQC</h3><p>Registered &amp; regulated<br>UK clinic</p></div>
-    <div class="stat fu"><h3>97%</h3><p>Member satisfaction<br>rate</p></div>
-    <div class="stat fu"><h3>23%</h3><p>Avg. weight loss<br>with Mounjaro</p></div>
-    <div class="stat fu"><h3>4.8★</h3><p>Google rating<br>verified reviews</p></div>
-  </div>
-</div>
 
 
 
@@ -1096,9 +1165,15 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
     <div class="faq-list">
       <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>What medications do you prescribe?</span><div class="faq-plus">+</div></button><div class="faq-a">We prescribe Mounjaro (tirzepatide) and Wegovy (semaglutide) &mdash; both MHRA-approved GLP-1 treatments. Your clinician will recommend the most appropriate medication based on your health profile, goals, and medical history.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>Am I eligible?</span><div class="faq-plus">+</div></button><div class="faq-a">Most adults with a BMI of 30+ (or 27+ with a weight-related health condition) are eligible. Our 2-minute eligibility check confirms this instantly. A UK-registered clinician reviews every application.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>How does pricing work?</span><div class="faq-plus">+</div></button><div class="faq-a">All new patients start on the starter dose at a lower introductory price. After your video consultation, your clinician may adjust your dose based on your response and goals &mdash; the monthly price is then updated to reflect your prescribed dose. You always know your price before you&rsquo;re charged. See our <a href="/treatments/" style="color:var(--sky-deep)">treatments page</a> for full dose-by-dose pricing.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>What happens after my first month?</span><div class="faq-plus">+</div></button><div class="faq-a">Your clinician reviews your progress and may adjust your dose. Your treatment continues at the price for your prescribed dose &mdash; you&rsquo;ll always know the cost before your next order. There are no contracts or lock-in periods.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>How do dose increases work?</span><div class="faq-plus">+</div></button><div class="faq-a">Dose increases are always managed by your clinician based on your progress, tolerance, and clinical guidelines. You&rsquo;ll never be moved to a higher dose without a clinical review. If your dose changes, we&rsquo;ll confirm the new monthly price before your next payment.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>How fast will I see results?</span><div class="faq-plus">+</div></button><div class="faq-a">Most members notice reduced appetite within the first 1&ndash;2 weeks. Visible weight loss typically begins weeks 2&ndash;4. Clinical trial averages: 5&ndash;7% body weight by 3 months, and 15&ndash;23% by 12 months depending on medication. Individual results vary.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>Is it safe?</span><div class="faq-plus">+</div></button><div class="faq-a">All our medications are MHRA-approved and prescribed only by GPhC-registered UK clinicians after a full medical review. Your clinician monitors you throughout your treatment, adjusting your dose as needed. Common initial side effects like nausea and reduced appetite are mild and typically ease within the first few weeks.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>Can I cancel anytime?</span><div class="faq-plus">+</div></button><div class="faq-a">Yes. No contracts, no lock-in. Pause or cancel your subscription anytime from your account. We also offer a 30-day money-back guarantee on your programme fee if you&rsquo;re not satisfied*.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>What are the common side effects?</span><div class="faq-plus">+</div></button><div class="faq-a">The most common side effects are mild nausea, reduced appetite, and occasional digestive discomfort. These are typically temporary and ease within the first 2&ndash;4 weeks as your body adjusts. Starting on a lower dose helps minimise side effects. Your clinician is available throughout your treatment if you have any concerns.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>Do I need a GP referral?</span><div class="faq-plus">+</div></button><div class="faq-a">No. You do not need a GP referral. Our UK-registered clinicians conduct a full independent medical review as part of your application. We may contact your GP with your consent if clinically necessary.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>How is the medication delivered?</span><div class="faq-plus">+</div></button><div class="faq-a">Your medication is dispatched via next-day delivery in discreet, temperature-controlled packaging. First orders include free next-day delivery. You&rsquo;ll receive tracking information by email.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>Do I have to commit long-term?</span><div class="faq-plus">+</div></button><div class="faq-a">Not at all. There are no contracts or lock-in periods. Every prescription is reviewed and approved by your clinician. If you&rsquo;d like to stop treatment at any point, simply let us know.</div></div>
     </div>
   </div>
 </section>
@@ -1108,7 +1183,7 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
   <h2 class="fu">Don&rsquo;t weight.</h2>
   <p class="fu">2-minute application. Approved by tomorrow. Medication at your door the next day.</p>
   <button class="cta-white fu" onclick="openQ()">Start your programme &rarr;</button>
-  <p class="final-note fu">100% money-back guarantee if not approved. Monthly supply &mdash; pause or cancel anytime.</p>
+  <p class="final-note fu">Every prescription clinician-approved. No commitment.</p>
 </div>
 
 <!-- FOOTER -->
@@ -1239,7 +1314,7 @@ footer{background:var(--ink);padding:clamp(36px,5vw,56px) clamp(20px,4vw,56px) 2
         <input class="qi" id="leadLname" type="text" placeholder="Last name" style="margin-bottom:8px">
         <input class="qi" id="leadEmail" type="email" placeholder="Email address" style="margin-bottom:4px">
         <div style="font-size:11px;color:var(--slate);margin-bottom:8px;line-height:1.5">By continuing, you agree to receive communication from don&rsquo;t weight about your consultation. We never share your data.</div>
-        <div style="font-size:11px;color:var(--slate);margin-bottom:16px">&#10003; Monthly supply &nbsp;&middot;&nbsp; &#10003; Pause or cancel anytime &nbsp;&middot;&nbsp; &#10003; Refundable if not eligible</div>
+        <div style="font-size:11px;color:var(--slate);margin-bottom:16px">&#10003; Clinician-approved &nbsp;&middot;&nbsp; &#10003; No commitment &nbsp;&middot;&nbsp; &#10003; Refundable if not eligible</div>
         <div class="qerr" id="eR"></div>
         <button class="qrcta" onclick="goToConsultation()">Continue to consultation &rarr;</button>
       </div>
@@ -1286,8 +1361,8 @@ setTimeout(()=>document.querySelectorAll('.hero .fu').forEach((el,i)=>setTimeout
 // Quiz state
 let cur=1, patientBmi=0, hasComorbid=false, isAdjusted=false, useImperial=false;
 
-function openQ(){document.getElementById('ov').classList.add('on')}
-function closeQ(){document.getElementById('ov').classList.remove('on')}
+function openQ(){document.getElementById('ov').classList.add('on');document.body.classList.add('quiz-open')}
+function closeQ(){document.getElementById('ov').classList.remove('on');document.body.classList.remove('quiz-open')}
 // Auto-open quiz if redirected from treatments page
 if(new URLSearchParams(window.location.search).get('openQ')==='1'){setTimeout(openQ,400)}
 function go(n){document.getElementById('q'+cur).classList.remove('on');cur=n;document.getElementById('q'+cur).classList.add('on');document.querySelectorAll('.qd').forEach((d,i)=>d.classList.toggle('done',i<n));clearErr()}

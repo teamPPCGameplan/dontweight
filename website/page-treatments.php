@@ -9,8 +9,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title>Weight Loss Treatments — Clinician-Prescribed | Don't Weight</title>
-<meta name="description" content="Explore clinician-prescribed weight loss treatments. Check your eligibility in 2 minutes. Free next-day delivery. CQC registered, MHRA approved. Pause or cancel anytime.">
+<meta name="description" content="GLP-1 weight loss treatments: Wegovy, Mounjaro, and Ozempic prescribed by UK clinicians. CQC registered, MHRA approved. Free next-day delivery. No contracts.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=optional" rel="stylesheet">
@@ -24,7 +26,7 @@
 .nav-r{display:flex;align-items:center;gap:16px}.nav-login{color:var(--ink);text-decoration:none;font-size:13px;font-weight:600}
 .nav-btn{background:var(--sky);color:#fff;border:none;border-radius:100px;padding:10px 24px;font-family:var(--body);font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;white-space:nowrap}
 .burger{display:none;background:none;border:none;cursor:pointer;width:32px;height:32px;position:relative;z-index:102}.burger span{display:block;width:20px;height:1.5px;background:var(--ink);position:absolute;left:6px;transition:transform .3s,opacity .2s}.burger span:nth-child(1){top:10px}.burger span:nth-child(2){top:16px}.burger span:nth-child(3){top:22px}
-.mobile-menu{position:fixed;inset:0;z-index:101;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .3s}.mobile-menu.open{opacity:1;pointer-events:all}.mobile-menu a{font-size:22px;font-weight:600;color:var(--ink);text-decoration:none}.mobile-menu .mm-cta{background:var(--sky);color:#fff;border:none;border-radius:100px;padding:16px 48px;font-size:16px;font-weight:700;cursor:pointer}.mm-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:32px;color:var(--ink);cursor:pointer}
+.mobile-menu{position:fixed;inset:0;z-index:101;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .3s}.mobile-menu.open{opacity:1;pointer-events:all}.mobile-menu a{font-size:22px;font-weight:600;color:var(--ink);text-decoration:none}.mobile-menu .mm-cta{background:var(--sky);color:#fff;border:none;border-radius:100px;padding:16px 48px;font-size:16px;font-weight:700;cursor:pointer}.mm-close{position:absolute;top:max(16px,env(safe-area-inset-top,16px));right:20px;background:var(--warm);border:none;font-size:32px;color:var(--ink);cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;z-index:102}
 
 /* HERO */
 .tx-hero{padding:clamp(72px,14vw,140px) clamp(16px,4vw,48px) clamp(32px,6vw,72px);text-align:center;background:linear-gradient(180deg,var(--white) 0%,var(--sky-wash) 50%,var(--white) 100%)}
@@ -155,7 +157,7 @@
         <div style="font-size:12px;font-weight:600;color:var(--sky-deep);margin-bottom:8px">Most effective &mdash; Tirzepatide</div>
       </div>
       <p style="font-size:13px;color:var(--slate);line-height:1.6;margin-bottom:20px;text-align:center">Dual GIP/GLP-1. Up to 23% body weight loss in clinical trials. The most effective weight loss medication available in the UK.</p>
-      <div style="font-size:11px;font-weight:600;margin-bottom:8px">Select your dose:</div>
+      <div style="font-size:11px;font-weight:600;margin-bottom:4px">See all dose pricing:</div>
       <div class="tx-doses" id="mounjaroDoses">
         <div class="tx-dose active" onclick="selectDose('mounjaro',this,150,170)">2.5mg<small>Starter</small></div>
         <div class="tx-dose" onclick="selectDose('mounjaro',this,185,0)">5mg</div>
@@ -165,11 +167,14 @@
         <div class="tx-dose" onclick="selectDose('mounjaro',this,310,0)">15mg<small>Maximum</small></div>
       </div>
       <div style="text-align:center;margin-bottom:2px"><span class="tx-from" id="mounjaroFrom" style="font-size:14px;color:var(--slate)">from </span><span class="tx-price" id="mounjaroPrice">&pound;35</span><span style="font-size:12px;color:var(--slate)">/week</span></div>
-      <p id="mounjaroMonthly" style="font-size:11px;color:var(--slate);text-align:center;margin-bottom:2px">&pound;150/month</p>
-      <p class="tx-then" id="mounjaroThen" style="font-size:11px;color:var(--slate);text-align:center;margin-bottom:4px">then &pound;39/week (&pound;170/mo) &middot; 2.5mg</p>
-      <p style="font-size:10px;color:var(--slate);text-align:center;margin-bottom:20px">Includes medication, clinician review &amp; free next day delivery on first order</p>
+      <p id="mounjaroMonthly" style="font-size:11px;color:var(--slate);text-align:center;margin-bottom:2px">&pound;150/month &middot; 2.5mg starter dose</p>
+      <p class="tx-then" id="mounjaroThen" style="font-size:11px;color:var(--slate);text-align:center;margin-bottom:4px">then &pound;170/mo ongoing at 2.5mg</p>
+      <p style="font-size:10px;color:var(--slate);text-align:center;margin-bottom:4px">Includes medication, clinician review &amp; free next day delivery on first order</p>
+      <div style="background:var(--sky-pale,#E0F2FE);border-radius:10px;padding:10px 14px;margin-bottom:20px;text-align:center">
+        <p style="font-size:10px;color:var(--sky-dark,#0369A1);line-height:1.6;margin:0;font-weight:500"><strong>New patients</strong> start on the clinically recommended starter dose. <strong>Switching provider?</strong> You can continue your current dose with clinician approval. All pricing confirmed before payment &mdash; no surprises.</p>
+      </div>
       <button class="tx-order" onclick="openQ()" style="background:var(--sky)">Check eligibility &amp; order &rarr;</button>
-      <p style="font-size:10px;color:var(--slate);text-align:center;margin-top:10px">&#10003; Refundable if not eligible &nbsp;&middot;&nbsp; &#10003; Monthly supply &nbsp;&middot;&nbsp; &#10003; Pause or cancel anytime</p>
+      <p style="font-size:10px;color:var(--slate);text-align:center;margin-top:10px">&#10003; Refundable if not eligible &nbsp;&middot;&nbsp; &#10003; Clinician-approved &nbsp;&middot;&nbsp; &#10003; No commitment</p>
     </div>
 
     <!-- WEGOVY -->
@@ -180,20 +185,23 @@
         <div style="font-size:12px;font-weight:600;color:var(--sky-deep);margin-bottom:8px">Proven &amp; trusted &mdash; Semaglutide (Ozempic)</div>
       </div>
       <p style="font-size:13px;color:var(--slate);line-height:1.6;margin-bottom:20px;text-align:center">GLP-1. Up to 15% body weight loss in clinical trials. Well-established safety profile trusted by millions worldwide.</p>
-      <div style="font-size:11px;font-weight:600;margin-bottom:8px">Select your dose:</div>
+      <div style="font-size:11px;font-weight:600;margin-bottom:4px">See all dose pricing:</div>
       <div class="tx-doses" id="wegovyDoses">
         <div class="tx-dose active" onclick="selectDose('wegovy',this,114,139)">0.25mg<small>Starter</small></div>
         <div class="tx-dose" onclick="selectDose('wegovy',this,139,0)">0.5mg</div>
-        <div class="tx-dose" onclick="selectDose('wegovy',this,139,0)">1mg</div>
-        <div class="tx-dose" onclick="selectDose('wegovy',this,190,0)">1.7mg</div>
-        <div class="tx-dose" onclick="selectDose('wegovy',this,215,0)">2.4mg<small>Maximum</small></div>
+        <div class="tx-dose" onclick="selectDose('wegovy',this,169,0)">1mg</div>
+        <div class="tx-dose" onclick="selectDose('wegovy',this,199,0)">1.7mg</div>
+        <div class="tx-dose" onclick="selectDose('wegovy',this,229,0)">2.4mg<small>Maximum</small></div>
       </div>
       <div style="text-align:center;margin-bottom:2px"><span class="tx-from" id="wegovyFrom" style="font-size:14px;color:var(--slate)">from </span><span class="tx-price" id="wegovyPrice">&pound;26</span><span style="font-size:12px;color:var(--slate)">/week</span></div>
-      <p id="wegovyMonthly" style="font-size:11px;color:var(--slate);text-align:center;margin-bottom:2px">&pound;114/month</p>
-      <p class="tx-then" id="wegovyThen" style="font-size:11px;color:var(--slate);text-align:center;margin-bottom:4px">then &pound;32/week (&pound;139/mo) &middot; 0.25mg starter</p>
-      <p style="font-size:10px;color:var(--slate);text-align:center;margin-bottom:20px">Includes medication, clinician review &amp; free next day delivery on first order</p>
+      <p id="wegovyMonthly" style="font-size:11px;color:var(--slate);text-align:center;margin-bottom:2px">&pound;114/month &middot; 0.25mg starter dose</p>
+      <p class="tx-then" id="wegovyThen" style="font-size:11px;color:var(--slate);text-align:center;margin-bottom:4px">then &pound;139/mo ongoing at 0.25mg</p>
+      <p style="font-size:10px;color:var(--slate);text-align:center;margin-bottom:4px">Includes medication, clinician review &amp; free next day delivery on first order</p>
+      <div style="background:var(--sky-pale,#E0F2FE);border-radius:10px;padding:10px 14px;margin-bottom:20px;text-align:center">
+        <p style="font-size:10px;color:var(--sky-dark,#0369A1);line-height:1.6;margin:0;font-weight:500"><strong>New patients</strong> start on the clinically recommended starter dose. <strong>Switching provider?</strong> You can continue your current dose with clinician approval. All pricing confirmed before payment &mdash; no surprises.</p>
+      </div>
       <button class="tx-order" onclick="openQ()">Check eligibility &amp; order &rarr;</button>
-      <p style="font-size:10px;color:var(--slate);text-align:center;margin-top:10px">&#10003; Refundable if not eligible &nbsp;&middot;&nbsp; &#10003; Monthly supply &nbsp;&middot;&nbsp; &#10003; Pause or cancel anytime</p>
+      <p style="font-size:10px;color:var(--slate);text-align:center;margin-top:10px">&#10003; Refundable if not eligible &nbsp;&middot;&nbsp; &#10003; Clinician-approved &nbsp;&middot;&nbsp; &#10003; No commitment</p>
     </div>
   </div>
 
@@ -202,7 +210,7 @@
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;color:var(--charcoal)">
       <div>&#10003; Free next-day delivery</div><div>&#10003; UK clinician review</div>
       <div>&#10003; Video consultation</div><div>&#10003; Ongoing support</div>
-      <div>&#10003; Discreet packaging</div><div>&#10003; 30-day guarantee</div>
+      <div>&#10003; Discreet packaging</div><div>&#10003; Refund if not eligible</div>
     </div>
   </div>
 </div></section>
@@ -280,8 +288,8 @@
   <h2 style="font-family:var(--display);font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:-1.5px;margin-bottom:12px">Don&rsquo;t weight.</h2>
   <p style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:28px">2-minute questionnaire. Video consultation. Medication at your door next day.</p>
   <a href="#" onclick="openQ();return false" style="background:#fff;color:var(--sky-dark);border-radius:100px;padding:16px 44px;font-family:var(--body);font-size:15px;font-weight:700;text-decoration:none;display:inline-block">Check your eligibility &rarr;</a>
-  <p style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6)">100% money-back guarantee if not approved.</p>
-  <p style="margin-top:8px;font-size:11px;color:rgba(255,255,255,.5)">Monthly supply &mdash; pause or cancel anytime. No minimum commitment.</p>
+  <p style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6)">Full refund if not clinically eligible.</p>
+  <p style="margin-top:8px;font-size:11px;color:rgba(255,255,255,.5)">Every prescription is reviewed by your clinician. No commitment required.</p>
 </div>
 
 
@@ -413,7 +421,7 @@
         <input class="qi" id="leadLname" type="text" placeholder="Last name" style="margin-bottom:8px">
         <input class="qi" id="leadEmail" type="email" placeholder="Email address" style="margin-bottom:4px">
         <div style="font-size:11px;color:var(--slate);margin-bottom:8px;line-height:1.5">By continuing, you agree to receive communication from don&rsquo;t weight about your consultation. We never share your data.</div>
-        <div style="font-size:11px;color:var(--slate);margin-bottom:16px">&#10003; Monthly supply &nbsp;&middot;&nbsp; &#10003; Pause or cancel anytime &nbsp;&middot;&nbsp; &#10003; Refundable if not eligible</div>
+        <div style="font-size:11px;color:var(--slate);margin-bottom:16px">&#10003; Clinician-approved &nbsp;&middot;&nbsp; &#10003; No commitment &nbsp;&middot;&nbsp; &#10003; Refundable if not eligible</div>
         <div class="qerr" id="eR"></div>
         <button class="qrcta" onclick="goToConsultation()">Continue to consultation &rarr;</button>
       </div>

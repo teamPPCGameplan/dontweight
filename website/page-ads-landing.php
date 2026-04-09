@@ -10,9 +10,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title>Free Weight Loss Consultation — UK Clinicians | don't weight</title>
 <meta name="description" content="Check if you qualify for clinician-prescribed weight management in 2 minutes. CQC registered, MHRA approved. Free eligibility check.">
 <meta name="robots" content="noindex, nofollow">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="don't weight">
+<meta property="og:title" content="Free Weight Loss Consultation — UK Clinicians">
+<meta property="og:description" content="Check if you qualify for clinician-prescribed weight management in 2 minutes. CQC registered, MHRA approved. Free eligibility check.">
+<meta property="og:url" content="https://dontweight.co.uk/start/">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Weight Loss Consultation — UK Clinicians">
+<meta name="twitter:description" content="Check if you qualify for clinician-prescribed weight management in 2 minutes. CQC registered, MHRA approved.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=optional" rel="stylesheet">
@@ -108,7 +123,7 @@
     <div id="imperialF" style="display:none"><div style="display:flex;gap:8px;margin-bottom:12px"><input class="lp-input" id="lpFt" type="number" placeholder="Feet" min="4" max="7" style="margin-bottom:0"><input class="lp-input" id="lpIn" type="number" placeholder="Inches" min="0" max="11" style="margin-bottom:0"></div><div style="display:flex;gap:8px"><input class="lp-input" id="lpSt" type="number" placeholder="Stone" min="5" max="50" style="margin-bottom:0"><input class="lp-input" id="lpLbs" type="number" placeholder="Lbs" min="0" max="13" style="margin-bottom:0"></div></div>
     <input class="lp-input" id="lpEmail" type="email" placeholder="Email address" style="margin-top:12px">
     <button class="lp-check-btn" onclick="checkE()">Check if I qualify &rarr;</button>
-    <a class="lp-check-skip" href="<?php echo home_url('/consultation/'); ?>">Skip &mdash; go straight to full consultation</a>
+    <!-- Skip link removed: eligibility check is mandatory before consultation -->
     <p class="lp-check-legal">We'll use your details to check eligibility. By entering I agree to the <a href="<?php echo home_url('/terms/'); ?>">Terms</a> &amp; <a href="<?php echo home_url('/privacy-policy/'); ?>">Privacy Policy</a>.</p>
   </div>
   <div class="lp-checker-card" id="checkerResult" style="display:none;text-align:center">
@@ -132,7 +147,7 @@
     </svg>
     <div style="font-size:11px;color:var(--slate);margin-bottom:20px;line-height:1.5">Results based on clinical trial averages. Individual results vary.</div>
     <a href="<?php echo home_url('/consultation/'); ?>" class="lp-check-btn" style="display:block;text-align:center;text-decoration:none;color:#fff;background:var(--sky)">Start my consultation &rarr;</a>
-    <div style="font-size:11px;color:var(--slate);margin-top:10px">From just <strong>&pound;3.80/day</strong> &middot; Cancel anytime &middot; Refund if not eligible</div>
+    <div style="font-size:11px;color:var(--slate);margin-top:10px">From just <strong>&pound;3.80/day</strong> &middot; Real clinician support &middot; Refund if not eligible</div>
   </div>
 </div></section>
 
@@ -149,21 +164,21 @@
   <div class="lp-why-card"><h4><div class="lp-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>Confidential</h4><p>Encrypted data, discreet packaging. Nobody needs to know.</p></div>
 </div></section>
 
-<section class="lp-social"><div class="lp-section-label" style="color:var(--sky)">Trusted by Thousands</div><h2 class="lp-section-title" style="color:#fff">Real people. Real results.</h2><div class="lp-stats">
-  <div class="lp-stat"><h3>4.8</h3><p>Google rating</p></div><div class="lp-stat"><h3>24h</h3><p>Clinician review</p></div><div class="lp-stat"><h3>96%</h3><p>Recommend us</p></div><div class="lp-stat"><h3>7 day</h3><p>Care support</p></div>
-</div><blockquote class="lp-quote">&ldquo;The support from my care team made all the difference. I finally feel like myself again.&rdquo;</blockquote><p class="lp-author">Sarah M. &mdash; Bristol</p></section>
+<section class="lp-social"><div class="lp-section-label" style="color:var(--sky)">Trusted Care</div><h2 class="lp-section-title" style="color:#fff">Real people. Real results.</h2>
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:32px"><span style="font-size:11px;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1);padding:6px 14px;border-radius:100px">CQC Registered</span><span style="font-size:11px;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1);padding:6px 14px;border-radius:100px">MHRA Approved</span><span style="font-size:11px;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1);padding:6px 14px;border-radius:100px">4.8★ Google</span><span style="font-size:11px;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1);padding:6px 14px;border-radius:100px">UK Clinicians</span></div>
+<blockquote class="lp-quote">&ldquo;The support from my care team made all the difference. I finally feel like myself again.&rdquo;</blockquote><p class="lp-author">Sarah M. &mdash; Bristol</p></section>
 
 <section class="lp-price"><div class="lp-section-label">Transparent Pricing</div><h2 class="lp-section-title">No hidden fees. Ever.</h2><div class="lp-price-card">
   <div style="font-size:13px;color:var(--slate);margin-bottom:4px">Treatment plans from</div>
   <div class="lp-price-num">&pound;3.80 <span>/day</span></div>
-  <div class="lp-price-per">Billed monthly &middot; Pause or cancel anytime</div>
+  <div class="lp-price-per">Real clinician consultations &middot; No commitment</div>
   <ul class="lp-price-includes"><li>Clinician consultation &amp; ongoing reviews</li><li>Personalised treatment plan</li><li>Free next-day delivery</li><li>7-day clinical support team</li><li>Full refund if not eligible</li></ul>
   <a href="#checker" class="lp-check-btn" style="display:block;text-align:center;text-decoration:none;color:#fff">Check my eligibility &rarr;</a>
 </div></section>
 
 <section class="lp-final"><h2>Your weight shouldn't wait.</h2><p>Free eligibility check. No obligation. Clinician review within 24 hours.</p><a href="#checker" class="lp-cta-white">See what I could lose &rarr;</a><p style="margin-top:12px;font-size:11px;color:rgba(255,255,255,.55)">Takes 30 seconds &middot; 100% confidential</p></section>
 
-<footer class="lp-footer"><div class="lp-footer-links"><a href="<?php echo home_url('/privacy-policy/'); ?>">Privacy Policy</a><a href="<?php echo home_url('/terms/'); ?>">Terms</a><a href="<?php echo home_url('/cookie-policy/'); ?>">Cookies</a><a href="<?php echo home_url('/complaints/'); ?>">Complaints</a></div><p>&copy; <?php echo date('Y'); ?> Don't Weight Ltd. CQC Registered. MHRA Approved.</p><p style="margin-top:4px;font-size:9px;color:rgba(255,255,255,.2)">Treatment prescribed only where clinically appropriate. Individual results vary.</p></footer>
+<footer class="lp-footer"><div class="lp-footer-links"><a href="<?php echo home_url('/privacy-policy/'); ?>">Privacy Policy</a><a href="<?php echo home_url('/terms/'); ?>">Terms</a><a href="<?php echo home_url('/cookie-policy/'); ?>">Cookies</a><a href="<?php echo home_url('/complaints/'); ?>">Complaints</a></div><p>&copy; <?php echo date('Y'); ?> don't weight — a trading name of Ultrasound London Limited. All rights reserved.</p><p style="margin-top:4px;font-size:9px;color:rgba(255,255,255,.2)">Treatment prescribed only where clinically appropriate. Individual results vary.</p></footer>
 
 <script>
 function setU(u,b){document.querySelectorAll('.lp-unit-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('metricF').style.display=u==='metric'?'block':'none';document.getElementById('imperialF').style.display=u==='imperial'?'block':'none'}

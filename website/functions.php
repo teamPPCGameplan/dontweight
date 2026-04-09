@@ -51,6 +51,30 @@ function dontweight_remove_block_css() {
 }
 add_action('wp_enqueue_scripts', 'dontweight_remove_block_css', 100);
 
+// Google Ads tag (gtag.js) — injected on all frontend pages
+function dontweight_google_tag() {
+    if (is_admin()) return;
+    ?>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18056464608"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18056464608');
+    </script>
+    <?php
+}
+add_action('wp_head', 'dontweight_google_tag', 1);
+
+// Favicon
+function dontweight_favicon() {
+    $favicon_url = get_template_directory_uri() . '/favicon.svg';
+    echo '<link rel="icon" type="image/svg+xml" href="' . esc_url($favicon_url) . '">' . "\n";
+    echo '<link rel="apple-touch-icon" href="' . esc_url($favicon_url) . '">' . "\n";
+}
+add_action('wp_head', 'dontweight_favicon', 2);
+
 // Custom page template redirect: if front page is set to "Home" page, use our template
 function dontweight_front_page_template($template) {
     if (is_front_page() && is_page()) {
@@ -61,12 +85,13 @@ function dontweight_front_page_template($template) {
 }
 add_filter('template_include', 'dontweight_front_page_template');
 
-// Add theme settings page for Stripe keys and Cal.com URL
+// Add theme settings page for Stripe keys
 function dontweight_settings_init() {
     register_setting('dontweight_options', 'dontweight_stripe_pk');
     register_setting('dontweight_options', 'dontweight_stripe_sk');
     register_setting('dontweight_options', 'dontweight_first_month_coupon');
-    register_setting('dontweight_options', 'dontweight_calcom_url');
+    register_setting('dontweight_options', 'dontweight_stripe_webhook_secret');
+    // Cal.com removed — video consultations are now request-based
     register_setting('dontweight_options', 'dontweight_company_name');
     register_setting('dontweight_options', 'dontweight_gphc_number');
     register_setting('dontweight_options', 'dontweight_cqc_number');
@@ -106,7 +131,7 @@ function dontweight_settings_html() {
                 </tr>
                 <tr>
                     <th scope="row"><label for="dontweight_stripe_sk">Stripe Secret Key</label></th>
-                    <td><input type="text" id="dontweight_stripe_sk" name="dontweight_stripe_sk" value="<?php echo esc_attr(get_option('dontweight_stripe_sk')); ?>" class="regular-text" placeholder="sk_test_..."></td>
+                    <td><input type="password" id="dontweight_stripe_sk" name="dontweight_stripe_sk" value="<?php echo esc_attr(get_option('dontweight_stripe_sk')); ?>" class="regular-text" placeholder="sk_test_..."></td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="dontweight_first_month_coupon">First Month Coupon ID</label></th>
@@ -114,9 +139,11 @@ function dontweight_settings_html() {
                     <p class="description">Stripe coupon ID for Wegovy 0.25mg first month discount (£25 off). Create in Stripe Dashboard → Coupons.</p></td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="dontweight_calcom_url">Cal.com Booking URL</label></th>
-                    <td><input type="url" id="dontweight_calcom_url" name="dontweight_calcom_url" value="<?php echo esc_attr(get_option('dontweight_calcom_url')); ?>" class="regular-text" placeholder="https://cal.com/dontweight/video-consultation"></td>
+                    <th scope="row"><label for="dontweight_stripe_webhook_secret">Stripe Webhook Secret</label></th>
+                    <td><input type="password" id="dontweight_stripe_webhook_secret" name="dontweight_stripe_webhook_secret" value="<?php echo esc_attr(get_option('dontweight_stripe_webhook_secret')); ?>" class="regular-text" placeholder="whsec_...">
+                    <p class="description">From Stripe Dashboard → Webhooks → Signing secret. Required to verify webhook authenticity.</p></td>
                 </tr>
+                <!-- Cal.com removed — consultations are request-based -->
                 <tr><td colspan="2"><hr><h2>Company Details</h2></td></tr>
                 <tr>
                     <th scope="row"><label for="dontweight_company_name">Company Legal Name</label></th>
@@ -405,37 +432,48 @@ function dontweight_submit_application() {
     }
     
     $data = array();
-    $fields = array('first_name','last_name','email','phone','bmi','dob','gender',
-                     'height_cm','weight_kg','ethnicity','conditions','medications',
-                     'prev_medication','treatment_choice','stage','answers');
-    
+    $fields = array('first_name','last_name','email','phone','weight_kg','height_cm','bmi','dob','gender',
+                     'conditions','medications','allergies','surgeries','family_history',
+                     'lifestyle','address','prev_medication','prev_med_details',
+                     'treatment_choice','target_dose','stage','answers');
+
     foreach ($fields as $f) {
         $data[$f] = isset($_POST[$f]) ? sanitize_text_field($_POST[$f]) : '';
     }
-    // 'answers' can be longer text
-    if (isset($_POST['answers'])) {
-        $data['answers'] = sanitize_textarea_field($_POST['answers']);
+    // Longer text fields
+    foreach (array('answers','conditions','medications','allergies','surgeries','family_history','lifestyle','prev_med_details') as $tf) {
+        if (isset($_POST[$tf])) {
+            $data[$tf] = sanitize_textarea_field($_POST[$tf]);
+        }
     }
-    
+
     $stage = $data['stage'] ?: 'eligibility';
     $name = trim($data['first_name'] . ' ' . $data['last_name']);
     if (!$name) $name = 'Unknown';
-    
+
     // Build readable content
-    $content = "=== Application Details ===\n\n";
+    $content = "=== Patient Details ===\n\n";
     $content .= "Name: {$name}\n";
     $content .= "Email: {$data['email']}\n";
     $content .= "Phone: {$data['phone']}\n";
-    $content .= "BMI: {$data['bmi']}\n";
     $content .= "Date of Birth: {$data['dob']}\n";
     $content .= "Gender: {$data['gender']}\n";
-    $content .= "Height: {$data['height_cm']}cm\n";
-    $content .= "Weight: {$data['weight_kg']}kg\n";
-    $content .= "Ethnicity: {$data['ethnicity']}\n";
-    $content .= "Conditions: {$data['conditions']}\n";
+    $content .= "Weight: {$data['weight_kg']} kg\n";
+    $content .= "Height: {$data['height_cm']} cm\n";
+    $content .= "BMI: {$data['bmi']}\n";
+    $content .= "Address: {$data['address']}\n";
+    $content .= "\n=== Medical History ===\n\n";
+    $content .= "Medical Conditions: {$data['conditions']}\n";
     $content .= "Current Medications: {$data['medications']}\n";
+    $content .= "Allergies: {$data['allergies']}\n";
+    $content .= "Surgeries / Hospital Admissions: {$data['surgeries']}\n";
+    $content .= "Family History: {$data['family_history']}\n";
+    $content .= "Lifestyle (smoking/alcohol): {$data['lifestyle']}\n";
     $content .= "Previous Weight Loss Medication: {$data['prev_medication']}\n";
+    if ($data['prev_med_details']) $content .= "Previous Medication Details: {$data['prev_med_details']}\n";
+    $content .= "\n=== Treatment ===\n\n";
     $content .= "Treatment Choice: {$data['treatment_choice']}\n";
+    if ($data['target_dose']) $content .= "Target Dose: {$data['target_dose']}\n";
     $content .= "Stage: {$stage}\n";
     $content .= "\n=== Full Answers ===\n\n";
     $content .= $data['answers'];
@@ -459,33 +497,201 @@ function dontweight_submit_application() {
     
     // Send email notification
     $to = 'hello@dontweight.co.uk';
-    $subject = "[Don't Weight] New {$stage} application — {$name}";
-    
-    $email_body = "New application received:\n\n";
+    $subject = "[Don't Weight] New {$stage} order — {$name}";
+
+    $email_body = "New {$stage} order received:\n\n";
     $email_body .= "Name: {$name}\n";
     $email_body .= "Email: {$data['email']}\n";
     $email_body .= "Phone: {$data['phone']}\n";
+    $email_body .= "DOB: {$data['dob']}\n";
+    $email_body .= "Weight: {$data['weight_kg']} kg\n";
+    $email_body .= "Height: {$data['height_cm']} cm\n";
     $email_body .= "BMI: {$data['bmi']}\n";
     $email_body .= "Treatment: {$data['treatment_choice']}\n";
-    $email_body .= "Stage: {$stage}\n\n";
-    $email_body .= "--- Full Details ---\n\n";
+    if ($data['target_dose']) $email_body .= "Target Dose: {$data['target_dose']}\n";
+    $email_body .= "\n--- Medical History ---\n\n";
+    $email_body .= "Conditions: {$data['conditions']}\n";
+    $email_body .= "Medications: {$data['medications']}\n";
+    $email_body .= "Allergies: {$data['allergies']}\n";
+    $email_body .= "Surgeries: {$data['surgeries']}\n";
+    $email_body .= "Family History: {$data['family_history']}\n";
+    $email_body .= "Lifestyle: {$data['lifestyle']}\n";
+    $email_body .= "Previous Weight Loss Meds: {$data['prev_medication']}\n";
+    if ($data['prev_med_details']) $email_body .= "Details: {$data['prev_med_details']}\n";
+    $email_body .= "\n--- Full Record ---\n\n";
     $email_body .= $content;
     $email_body .= "\n\nView in WordPress: " . admin_url("post.php?post={$post_id}&action=edit");
     
     $headers = array('Content-Type: text/plain; charset=UTF-8');
     wp_mail($to, $subject, $email_body, $headers);
-    
+
+    // Send confirmation email to patient
+    if ($data['email']) {
+        $patient_subject = "Don't Weight — We've received your order";
+        $patient_body  = "Hi {$data['first_name']},\n\n";
+        $patient_body .= "Thank you for your order with Don't Weight.\n\n";
+        $patient_body .= "Here's a summary of what you submitted:\n\n";
+        $patient_body .= "Treatment: {$data['treatment_choice']}\n";
+        $patient_body .= "Weight: {$data['weight_kg']} kg\n";
+        $patient_body .= "Height: {$data['height_cm']} cm\n";
+        $patient_body .= "BMI: {$data['bmi']}\n\n";
+        $patient_body .= "What happens next:\n";
+        $patient_body .= "1. A UK-registered clinician will review your order\n";
+        $patient_body .= "2. If approved, we'll arrange your video consultation\n";
+        $patient_body .= "3. Your medication will be dispatched via next-day delivery\n\n";
+        $patient_body .= "If you have any questions, reply to this email or contact us at hello@dontweight.co.uk\n\n";
+        $patient_body .= "Best wishes,\nThe Don't Weight Clinical Team\n\n";
+        $patient_body .= "---\ndon't weight — a trading name of Ultrasound London Limited\nhttps://dontweight.co.uk";
+        $patient_headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: Don\'t Weight Clinic <hello@dontweight.co.uk>',
+            'Reply-To: hello@dontweight.co.uk',
+        );
+        wp_mail($data['email'], $patient_subject, $patient_body, $patient_headers);
+    }
+
     wp_send_json_success(array(
-        'message' => 'Application submitted successfully.',
+        'message' => 'Order submitted successfully.',
         'id'      => $post_id,
     ));
 }
 add_action('wp_ajax_dw_submit_app', 'dontweight_submit_application');
 add_action('wp_ajax_nopriv_dw_submit_app', 'dontweight_submit_application');
 
+// Handle contact form submissions
+function dontweight_contact_form() {
+    if (!wp_verify_nonce($_POST['nonce'] ?? '', 'dw_submit_app')) {
+        wp_send_json_error('Security check failed. Please refresh and try again.');
+        return;
+    }
+    $first   = sanitize_text_field($_POST['first_name'] ?? '');
+    $last    = sanitize_text_field($_POST['last_name'] ?? '');
+    $email   = sanitize_email($_POST['email'] ?? '');
+    $subject = sanitize_text_field($_POST['subject'] ?? '');
+    $message = sanitize_textarea_field($_POST['message'] ?? '');
+    $name    = trim("$first $last") ?: 'Unknown';
+
+    // Save as custom post
+    $content  = "=== Contact Form Submission ===\n\n";
+    $content .= "Name: {$name}\n";
+    $content .= "Email: {$email}\n";
+    $content .= "Subject: {$subject}\n\n";
+    $content .= "Message:\n{$message}\n";
+
+    $post_id = wp_insert_post(array(
+        'post_type'    => 'dw_application',
+        'post_title'   => "[Contact] {$name} — {$email} (" . date('j M Y H:i') . ")",
+        'post_content' => $content,
+        'post_status'  => 'publish',
+    ));
+    if ($post_id) {
+        update_post_meta($post_id, '_dw_first_name', $first);
+        update_post_meta($post_id, '_dw_last_name', $last);
+        update_post_meta($post_id, '_dw_email', $email);
+        update_post_meta($post_id, '_dw_stage', 'contact');
+        update_post_meta($post_id, '_dw_submitted', current_time('mysql'));
+        update_post_meta($post_id, '_dw_ip', $_SERVER['REMOTE_ADDR'] ?? '');
+    }
+
+    // Notify team
+    $headers = array('Content-Type: text/plain; charset=UTF-8');
+    $team_body  = "New contact form submission:\n\n";
+    $team_body .= "Name: {$name}\nEmail: {$email}\nSubject: {$subject}\n\nMessage:\n{$message}\n\n";
+    $team_body .= "View in WordPress: " . admin_url("post.php?post={$post_id}&action=edit");
+    wp_mail('hello@dontweight.co.uk', "[Don't Weight] Contact: {$subject} — {$name}", $team_body, $headers);
+
+    // Confirm to patient
+    if ($email) {
+        $patient_body  = "Hi {$first},\n\n";
+        $patient_body .= "Thank you for getting in touch with Don't Weight. We've received your message and will get back to you within 24 hours.\n\n";
+        $patient_body .= "Your message:\n\"{$message}\"\n\n";
+        $patient_body .= "If it's urgent, you can email us directly at hello@dontweight.co.uk\n\n";
+        $patient_body .= "Best wishes,\nThe Don't Weight Team\n\n";
+        $patient_body .= "---\ndon't weight — a trading name of Ultrasound London Limited\nhttps://dontweight.co.uk";
+        $patient_headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: Don\'t Weight Clinic <hello@dontweight.co.uk>',
+            'Reply-To: hello@dontweight.co.uk',
+        );
+        wp_mail($email, "Don't Weight — We've received your message", $patient_body, $patient_headers);
+    }
+
+    wp_send_json_success(array('message' => 'Message sent.'));
+}
+add_action('wp_ajax_dw_contact', 'dontweight_contact_form');
+add_action('wp_ajax_nopriv_dw_contact', 'dontweight_contact_form');
+
+// Handle schedule call form submissions
+function dontweight_schedule_call() {
+    if (!wp_verify_nonce($_POST['nonce'] ?? '', 'dw_submit_app')) {
+        wp_send_json_error('Security check failed. Please refresh and try again.');
+        return;
+    }
+    $name   = sanitize_text_field($_POST['name'] ?? '');
+    $email  = sanitize_email($_POST['email'] ?? '');
+    $phone  = sanitize_text_field($_POST['phone'] ?? '');
+    $day    = sanitize_text_field($_POST['day'] ?? '');
+    $time   = sanitize_text_field($_POST['time'] ?? '');
+    $reason = sanitize_text_field($_POST['reason'] ?? '');
+
+    // Save as custom post
+    $content  = "=== Schedule Call Request ===\n\n";
+    $content .= "Name: {$name}\n";
+    $content .= "Email: {$email}\n";
+    $content .= "Phone: {$phone}\n";
+    $content .= "Preferred Day: {$day}\n";
+    $content .= "Preferred Time: {$time}\n";
+    $content .= "Reason: {$reason}\n";
+
+    $post_id = wp_insert_post(array(
+        'post_type'    => 'dw_application',
+        'post_title'   => "[Call Request] {$name} — {$day} {$time} (" . date('j M Y H:i') . ")",
+        'post_content' => $content,
+        'post_status'  => 'publish',
+    ));
+    if ($post_id) {
+        update_post_meta($post_id, '_dw_first_name', $name);
+        update_post_meta($post_id, '_dw_email', $email);
+        update_post_meta($post_id, '_dw_phone', $phone);
+        update_post_meta($post_id, '_dw_stage', 'schedule_call');
+        update_post_meta($post_id, '_dw_submitted', current_time('mysql'));
+        update_post_meta($post_id, '_dw_ip', $_SERVER['REMOTE_ADDR'] ?? '');
+    }
+
+    // Notify team
+    $headers = array('Content-Type: text/plain; charset=UTF-8');
+    $team_body  = "New call request:\n\n";
+    $team_body .= "Name: {$name}\nEmail: {$email}\nPhone: {$phone}\n";
+    $team_body .= "Preferred: {$day} at {$time}\nReason: {$reason}\n\n";
+    $team_body .= "View in WordPress: " . admin_url("post.php?post={$post_id}&action=edit");
+    wp_mail('hello@dontweight.co.uk', "[Don't Weight] Call Request — {$name} ({$day} {$time})", $team_body, $headers);
+
+    // Confirm to patient
+    if ($email) {
+        $patient_body  = "Hi {$name},\n\n";
+        $patient_body .= "We've received your call request. Here are the details:\n\n";
+        $patient_body .= "Preferred day: {$day}\n";
+        $patient_body .= "Preferred time: {$time}\n";
+        $patient_body .= "Reason: {$reason}\n\n";
+        $patient_body .= "A member of our team will be in touch to confirm your appointment.\n\n";
+        $patient_body .= "Best wishes,\nThe Don't Weight Team\n\n";
+        $patient_body .= "---\ndon't weight — a trading name of Ultrasound London Limited\nhttps://dontweight.co.uk";
+        $patient_headers = array(
+            'Content-Type: text/plain; charset=UTF-8',
+            'From: Don\'t Weight Clinic <hello@dontweight.co.uk>',
+            'Reply-To: hello@dontweight.co.uk',
+        );
+        wp_mail($email, "Don't Weight — Call request received", $patient_body, $patient_headers);
+    }
+
+    wp_send_json_success(array('message' => 'Call request submitted.'));
+}
+add_action('wp_ajax_dw_schedule', 'dontweight_schedule_call');
+add_action('wp_ajax_nopriv_dw_schedule', 'dontweight_schedule_call');
+
 // Pass AJAX URL and nonce to frontend
 function dontweight_ajax_vars() {
-    if (is_front_page() || is_page('consultation') || is_page('home') || is_page('treatments') || is_page('dw360')) {
+    if (is_front_page() || is_page('consultation') || is_page('home') || is_page('treatments') || is_page('dw360') || is_page('contact')) {
         echo '<script>var dwAjax={url:"' . admin_url('admin-ajax.php') . '",nonce:"' . wp_create_nonce('dw_submit_app') . '"};</script>';
     }
 }
@@ -562,9 +768,9 @@ function dontweight_create_checkout_session() {
         'mounjaro-15'  => array('ongoing' => 31000, 'first' => 31000, 'name' => 'Mounjaro 15mg — Monthly Treatment'),
         'wegovy'       => array('ongoing' => 13900, 'first' => 11400, 'name' => 'Wegovy 0.25mg — Monthly Treatment'),
         'wegovy-0.5'   => array('ongoing' => 13900, 'first' => 13900, 'name' => 'Wegovy 0.5mg — Monthly Treatment'),
-        'wegovy-1'     => array('ongoing' => 13900, 'first' => 13900, 'name' => 'Wegovy 1mg — Monthly Treatment'),
-        'wegovy-1.7'   => array('ongoing' => 19000, 'first' => 19000, 'name' => 'Wegovy 1.7mg — Monthly Treatment'),
-        'wegovy-2.4'   => array('ongoing' => 21500, 'first' => 21500, 'name' => 'Wegovy 2.4mg — Monthly Treatment'),
+        'wegovy-1'     => array('ongoing' => 16900, 'first' => 16900, 'name' => 'Wegovy 1mg — Monthly Treatment'),
+        'wegovy-1.7'   => array('ongoing' => 19900, 'first' => 19900, 'name' => 'Wegovy 1.7mg — Monthly Treatment'),
+        'wegovy-2.4'   => array('ongoing' => 22900, 'first' => 22900, 'name' => 'Wegovy 2.4mg — Monthly Treatment'),
     );
     
     // ─── HEALTH CHECK ONE-OFF PAYMENTS ───
@@ -605,35 +811,27 @@ function dontweight_create_checkout_session() {
         $body['metadata[type]'] = 'healthcheck';
         
     } else {
-        // ─── SUBSCRIPTION for treatments ───
+        // ─── ONE-OFF PAYMENT for first month treatment ───
+        // Clinician reviews application first; ongoing subscription set up via portal after approval
         $t = $treatments[$product_id] ?? $treatments['mounjaro'];
         $success_url = home_url('/consultation/?paid=1&session_id={CHECKOUT_SESSION_ID}');
         $cancel_url  = home_url('/consultation/?cancelled=1');
-        
+
         $body = array(
             'payment_method_types[]' => 'card',
-            'mode' => 'subscription',
+            'mode' => 'payment',
             'success_url' => $success_url,
             'cancel_url'  => $cancel_url,
             'line_items[0][price_data][currency]' => 'gbp',
-            'line_items[0][price_data][product_data][name]' => $t['name'],
-            'line_items[0][price_data][unit_amount]' => $t['ongoing'],
-            'line_items[0][price_data][recurring][interval]' => 'month',
+            'line_items[0][price_data][product_data][name]' => $t['name'] . ' — First Month',
+            'line_items[0][price_data][unit_amount]' => $t['first'],
             'line_items[0][quantity]' => 1,
-            'subscription_data[metadata][treatment]' => $product_id,
         );
-        
-        // Apply first-month discount coupon if first month differs from ongoing
-        if ($t['first'] < $t['ongoing']) {
-            $coupon_id = get_option('dontweight_first_month_coupon', '');
-            if ($coupon_id) {
-                $body['discounts[0][coupon]'] = $coupon_id;
-            }
-        }
-        
+
         if ($email) $body['customer_email'] = $email;
         if ($name) $body['metadata[patient_name]'] = $name;
         $body['metadata[product]'] = $product_id;
+        if (isset($_POST['target_dose'])) $body['metadata[target_dose]'] = sanitize_text_field($_POST['target_dose']);
         $body['metadata[type]'] = 'treatment';
     }
     
@@ -667,6 +865,158 @@ function dontweight_stripe_vars() {
     }
 }
 add_action('wp_head', 'dontweight_stripe_vars');
+
+// ═══════════════════════════════════════════
+// STRIPE WEBHOOK
+// ═══════════════════════════════════════════
+// Configure in Stripe Dashboard → Webhooks → Add endpoint:
+// URL: https://dontweight.co.uk/wp-json/dontweight/v1/stripe-webhook
+// Events: checkout.session.completed, customer.subscription.updated, customer.subscription.deleted
+add_action('rest_api_init', function() {
+    register_rest_route('dontweight/v1', '/stripe-webhook', array(
+        'methods'  => 'POST',
+        'callback' => 'dontweight_stripe_webhook',
+        'permission_callback' => '__return_true',
+    ));
+});
+
+function dontweight_stripe_webhook($request) {
+    $payload = $request->get_body();
+
+    // Verify Stripe webhook signature if secret is configured
+    $webhook_secret = get_option('dontweight_stripe_webhook_secret', '');
+    if ($webhook_secret) {
+        $sig_header = $request->get_header('stripe-signature');
+        if (!$sig_header) {
+            return new WP_REST_Response(array('error' => 'Missing signature'), 401);
+        }
+        // Parse the signature header
+        $sig_parts = array();
+        foreach (explode(',', $sig_header) as $part) {
+            $kv = explode('=', trim($part), 2);
+            if (count($kv) === 2) $sig_parts[$kv[0]] = $kv[1];
+        }
+        $timestamp = $sig_parts['t'] ?? '';
+        $signature = $sig_parts['v1'] ?? '';
+        if (!$timestamp || !$signature) {
+            return new WP_REST_Response(array('error' => 'Invalid signature format'), 401);
+        }
+        // Reject events older than 5 minutes (replay protection)
+        if (abs(time() - intval($timestamp)) > 300) {
+            return new WP_REST_Response(array('error' => 'Timestamp too old'), 401);
+        }
+        // Compute expected signature
+        $signed_payload = $timestamp . '.' . $payload;
+        $expected = hash_hmac('sha256', $signed_payload, $webhook_secret);
+        if (!hash_equals($expected, $signature)) {
+            return new WP_REST_Response(array('error' => 'Invalid signature'), 401);
+        }
+    }
+
+    $event = json_decode($payload, true);
+
+    if (!$event || !isset($event['type'])) {
+        return new WP_REST_Response(array('error' => 'Invalid payload'), 400);
+    }
+
+    $type = $event['type'];
+    $data = $event['data']['object'] ?? array();
+
+    switch ($type) {
+        case 'checkout.session.completed':
+            $email   = $data['customer_email'] ?? '';
+            $name    = $data['metadata']['patient_name'] ?? '';
+            $product = $data['metadata']['product'] ?? '';
+            $ptype   = $data['metadata']['type'] ?? '';
+            $amount  = ($data['amount_total'] ?? 0) / 100;
+            $mode    = $data['mode'] ?? '';
+
+            // Save as application post
+            $content  = "=== Stripe Payment Confirmed ===\n\n";
+            $content .= "Name: {$name}\n";
+            $content .= "Email: {$email}\n";
+            $content .= "Product: {$product}\n";
+            $content .= "Type: {$ptype}\n";
+            $content .= "Amount: £{$amount}\n";
+            $content .= "Mode: {$mode}\n";
+            $content .= "Stripe Session: {$data['id']}\n";
+            $content .= "Customer: " . ($data['customer'] ?? 'N/A') . "\n";
+
+            $post_id = wp_insert_post(array(
+                'post_type'    => 'dw_application',
+                'post_title'   => "[Payment] {$name} — £{$amount} {$product} (" . date('j M Y H:i') . ")",
+                'post_content' => $content,
+                'post_status'  => 'publish',
+            ));
+            if ($post_id) {
+                update_post_meta($post_id, '_dw_email', $email);
+                update_post_meta($post_id, '_dw_stage', 'payment');
+                update_post_meta($post_id, '_dw_treatment_choice', $product);
+                update_post_meta($post_id, '_dw_stripe_session', $data['id']);
+                update_post_meta($post_id, '_dw_submitted', current_time('mysql'));
+            }
+
+            // Notify team
+            $headers = array('Content-Type: text/plain; charset=UTF-8');
+            $team_body = "Payment confirmed!\n\nName: {$name}\nEmail: {$email}\nProduct: {$product}\nAmount: £{$amount}\nMode: {$mode}\n\nStripe Session: {$data['id']}";
+            wp_mail('hello@dontweight.co.uk', "[Don't Weight] Payment Confirmed — {$name} £{$amount}", $team_body, $headers);
+
+            // Send confirmation email to patient
+            if ($email) {
+                if ($ptype === 'healthcheck') {
+                    $patient_body  = "Hi {$name},\n\n";
+                    $patient_body .= "Thank you for booking your health check with Don't Weight.\n\n";
+                    $patient_body .= "Payment of £{$amount} has been confirmed.\n\n";
+                    $patient_body .= "What happens next:\n";
+                    $patient_body .= "1. Our team at London Private Ultrasound Group will contact you to arrange your appointment\n";
+                    $patient_body .= "2. Please bring photo ID to your appointment\n";
+                    $patient_body .= "3. Results will be shared with you and your Don't Weight clinician\n\n";
+                } else {
+                    $patient_body  = "Hi {$name},\n\n";
+                    $patient_body .= "Great news — your payment of £{$amount} has been confirmed.\n\n";
+                    $patient_body .= "What happens next:\n";
+                    $patient_body .= "1. A clinician will review your order\n";
+                    $patient_body .= "2. We'll arrange your video consultation via Google Meet\n";
+                    $patient_body .= "3. Once approved, your medication will be dispatched for next-day delivery\n\n";
+                }
+                $patient_body .= "If you have any questions, reply to this email or contact hello@dontweight.co.uk\n\n";
+                $patient_body .= "Best wishes,\nThe Don't Weight Clinical Team\n\n";
+                $patient_body .= "---\ndon't weight — a trading name of Ultrasound London Limited\nhttps://dontweight.co.uk";
+                $patient_headers = array(
+                    'Content-Type: text/plain; charset=UTF-8',
+                    'From: Don\'t Weight Clinic <hello@dontweight.co.uk>',
+                    'Reply-To: hello@dontweight.co.uk',
+                );
+                wp_mail($email, "Don't Weight — Payment confirmed", $patient_body, $patient_headers);
+            }
+            break;
+
+        case 'customer.subscription.updated':
+            $sub_id = $data['id'] ?? '';
+            $status = $data['status'] ?? '';
+            $email  = '';
+            // Log subscription changes
+            $headers = array('Content-Type: text/plain; charset=UTF-8');
+            wp_mail('hello@dontweight.co.uk',
+                "[Don't Weight] Subscription Updated — {$sub_id}",
+                "Subscription {$sub_id} status: {$status}\n\nFull data:\n" . print_r($data, true),
+                $headers
+            );
+            break;
+
+        case 'customer.subscription.deleted':
+            $sub_id = $data['id'] ?? '';
+            $headers = array('Content-Type: text/plain; charset=UTF-8');
+            wp_mail('hello@dontweight.co.uk',
+                "[Don't Weight] Subscription Cancelled — {$sub_id}",
+                "Subscription {$sub_id} has been cancelled.\n\nFull data:\n" . print_r($data, true),
+                $headers
+            );
+            break;
+    }
+
+    return new WP_REST_Response(array('received' => true), 200);
+}
 // ═══════════════════════════════════════════
 
 function dontweight_customizer($wp_customize) {
@@ -888,7 +1238,7 @@ function dontweight_create_legal_pages() {
 <ul>
 <li>If you are found not to be clinically eligible after payment, you will receive a full refund</li>
 <li>Refunds for medications that have been dispensed and dispatched are not available due to pharmaceutical regulations</li>
-<li>You may pause or cancel your subscription at any time with no penalty</li>
+<li>You may stop your treatment at any time with no penalty</li>
 </ul>
 
 <h2>Cancellation &amp; Refunds</h2>
@@ -1137,7 +1487,7 @@ add_action('init', 'dontweight_create_start_page');
 function dontweight_chatbot_widget() {
     // Don't load on admin pages or wp-login
     if (is_admin()) return;
-    
+
     wp_enqueue_script(
         'dw-chatbot-widget',
         'https://app.dontweight.co.uk/chatbot-widget.js',
@@ -1147,6 +1497,14 @@ function dontweight_chatbot_widget() {
     );
 }
 add_action('wp_enqueue_scripts', 'dontweight_chatbot_widget');
+
+// Block chatbot page-fixes (DOM manipulation causes flicker).
+// All fixes are now baked into templates. Chat widget still loads fine.
+function dw_block_chatbot_page_fixes() {
+    if (is_admin()) return;
+    echo '<script>window.__dwBlockPageFixes=true;var _origSetTimeout=window.setTimeout;window.setTimeout=function(fn,ms){if(typeof fn==="function"&&ms>=500&&ms<=700){var s=fn.toString();if(s.indexOf("renameJournal")!==-1)return 0;}return _origSetTimeout.apply(window,arguments)};</script>';
+}
+add_action('wp_head', 'dw_block_chatbot_page_fixes', 1);
 
 
 // TEMP DEPLOY ENDPOINT v2 - REMOVE AFTER BASELINE PULL

@@ -25,7 +25,7 @@
   <div class="nav-r">
     <a href="https://app.dontweight.co.uk" class="nav-login">Log in</a>
     <a href="/contact/" class="nav-cta">Contact</a>
-    <button class="burger" onclick="openMobileMenu()" aria-label="Open menu">
+    <button class="burger" onclick="toggleMobileMenu()" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </div>

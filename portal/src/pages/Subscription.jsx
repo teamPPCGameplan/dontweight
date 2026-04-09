@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Pause, X, RefreshCw, ArrowRight, Shield, Truck, Package, MapPin, Calendar, CreditCard, Clock, CheckCircle2 } from 'lucide-react'
+import { RefreshCw, ArrowRight, Shield, Truck, Package, MapPin, Calendar, CreditCard, Clock, CheckCircle2 } from 'lucide-react'
 import { useAuth } from '../hooks/useAuth'
 import { supabase } from '../lib/supabase'
 import { useSubscription } from '../hooks/useSubscription'
@@ -18,10 +18,6 @@ export default function Subscription() {
   const { subscription, loading, refetch } = useSubscription()
   const { deliveries, latest: latestDelivery, loading: deliveryLoading } = useDeliveries()
   const [showDose, setShowDose] = useState(false)
-  const [showPause, setShowPause] = useState(false)
-  const [showCancel, setShowCancel] = useState(false)
-  const [cancelStep, setCancelStep] = useState(0)
-  const [cancelReason, setCancelReason] = useState('')
   const [processing, setProcessing] = useState(false)
   const [actionError, setActionError] = useState('')
   const [doseRequested, setDoseRequested] = useState(false)
@@ -71,23 +67,6 @@ export default function Subscription() {
     }
   }
 
-  async function handlePause() {
-    const success = await handleAction('pause')
-    if (success) setShowPause(false)
-  }
-
-  async function handleCancel() {
-    const success = await handleAction('cancel', { reason: cancelReason })
-    if (success) {
-      setShowCancel(false)
-      setCancelStep(0)
-    }
-  }
-
-  async function handleResume() {
-    await handleAction('resume')
-  }
-
   if (loading) return (
     <div className="max-w-4xl mx-auto space-y-6">
       <CardSkeleton />
@@ -111,52 +90,32 @@ export default function Subscription() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
               <h2 className="text-lg font-bold text-ink">{treatment?.treatment} {treatment?.dose}</h2>
-              <p className="text-sm text-slate">{formatPrice(subscription.price_monthly)}/month</p>
+              <p className="text-sm text-slate">{formatPrice(subscription.price_monthly)}</p>
             </div>
             <StatusBadge status={subscription.status} />
           </div>
 
-          {subscription.current_period_end && (
+          {subscription.created_at && (
             <div className="flex flex-wrap gap-6 text-sm text-slate mb-6">
               <div>
-                <span className="text-[10px] font-semibold uppercase tracking-wide block mb-0.5">Next payment</span>
-                {new Date(subscription.current_period_end).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+                <span className="text-[10px] font-semibold uppercase tracking-wide block mb-0.5">Order date</span>
+                {new Date(subscription.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
               </div>
               <div>
-                <span className="text-[10px] font-semibold uppercase tracking-wide block mb-0.5">Amount</span>
+                <span className="text-[10px] font-semibold uppercase tracking-wide block mb-0.5">Amount paid</span>
                 {formatPrice(subscription.price_monthly)}
               </div>
             </div>
           )}
 
-          <div className="flex flex-wrap gap-2">
-            {subscription.status === 'active' && (
-              <>
-                <button onClick={() => setShowDose(true)} className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-gold border border-gold/30 rounded-full hover:bg-gold/10 transition-all duration-300">
-                  <RefreshCw size={14} /> Change dose
-                </button>
-                <button onClick={() => setShowPause(true)} className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-amber-400 border border-amber-500/30 rounded-full hover:bg-amber-500/10 transition-all duration-300">
-                  <Pause size={14} /> Pause
-                </button>
-                <button onClick={() => { setShowCancel(true); setCancelStep(0) }} className="flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-red-400 border border-red-500/30 rounded-full hover:bg-red-500/10 transition-all duration-300">
-                  <X size={14} /> Cancel
-                </button>
-              </>
-            )}
-            {subscription.status === 'cancelling' && (
-              <div className="flex items-center gap-3">
-                <span className="text-xs text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1.5 rounded-full">Cancels at end of billing period</span>
-                <button onClick={handleResume} disabled={processing} className="flex items-center gap-1.5 bg-emerald-500 text-white px-5 py-2 text-sm font-semibold rounded-full hover:bg-emerald-400 transition-all duration-300 disabled:opacity-60">
-                  <RefreshCw size={14} /> Keep my treatment
-                </button>
-              </div>
-            )}
-            {(subscription.status === 'paused' || subscription.status === 'cancelled') && (
-              <button onClick={handleResume} disabled={processing} className="flex items-center gap-1.5 bg-emerald-500 text-white px-5 py-2 text-sm font-semibold rounded-full hover:bg-emerald-400 transition-all duration-300 disabled:opacity-60">
-                <RefreshCw size={14} /> Reactivate treatment
+          {/* Dose change / reorder — visible for all non-terminal statuses */}
+          {!['rejected', 'cancelled'].includes(subscription.status) && (
+            <div className="flex flex-wrap gap-2">
+              <button onClick={() => setShowDose(true)} className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold text-gold border border-gold/30 rounded-full hover:bg-gold/10 transition-all duration-300">
+                <RefreshCw size={14} /> Change dose / Reorder
               </button>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       ) : (
         <div className="bg-dark-card rounded-[16px] border border-border p-6 md:p-8">
@@ -196,7 +155,7 @@ export default function Subscription() {
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-sm font-semibold text-slate uppercase tracking-wide">Order Details</h2>
             <span className="text-[10px] font-semibold uppercase tracking-wide text-slate bg-warm px-2.5 py-1 rounded-full">
-              Monthly treatment
+              Treatment order
             </span>
           </div>
           <div className="space-y-4">
@@ -206,19 +165,14 @@ export default function Subscription() {
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-sm font-semibold text-ink">{treatment?.treatment} {treatment?.dose}</p>
-                <p className="text-xs text-slate mt-0.5">GLP-1 weight loss medication · Monthly supply</p>
+                <p className="text-xs text-slate mt-0.5">GLP-1 weight loss medication</p>
                 <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2">
                   <span className="text-xs text-slate flex items-center gap-1">
-                    <CreditCard size={11} /> {formatPrice(subscription.price_monthly)}/month
+                    <CreditCard size={11} /> {formatPrice(subscription.price_monthly)} paid
                   </span>
                   {subscription.created_at && (
                     <span className="text-xs text-slate flex items-center gap-1">
                       <Calendar size={11} /> Patient since {new Date(subscription.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
-                    </span>
-                  )}
-                  {subscription.current_period_end && (
-                    <span className="text-xs text-slate flex items-center gap-1">
-                      <Clock size={11} /> Renews {new Date(subscription.current_period_end).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })}
                     </span>
                   )}
                 </div>
@@ -376,56 +330,6 @@ export default function Subscription() {
         )}
       </Modal>
 
-      {/* Pause modal */}
-      <Modal open={showPause} onClose={() => setShowPause(false)} title="Pause your treatment">
-        <p className="text-sm text-slate mb-4">
-          Your treatment will be paused at the end of your current billing period. You won't be charged until you resume. Your portal access will remain active.
-        </p>
-        <div className="flex gap-2">
-          <button onClick={handlePause} disabled={processing} className="flex-1 bg-amber-500 text-dark font-semibold py-2.5 rounded-full hover:bg-amber-400 transition-colors disabled:opacity-60">
-            {processing ? 'Pausing...' : 'Confirm pause'}
-          </button>
-          <button onClick={() => setShowPause(false)} className="flex-1 border border-border text-ink font-medium py-2.5 rounded-full hover:bg-warm transition-colors">
-            Keep my treatment
-          </button>
-        </div>
-      </Modal>
-
-      {/* Cancel modal */}
-      <Modal open={showCancel} onClose={() => { setShowCancel(false); setCancelStep(0) }} title="Cancel treatment">
-        {cancelStep === 0 && (
-          <>
-            <p className="text-sm text-slate mb-4">We're sorry to see you go. Can you tell us why you're cancelling?</p>
-            <div className="space-y-2 mb-4">
-              {['Too expensive', 'Side effects', 'Not seeing results', 'Switching to another provider', 'No longer need medication', 'Other'].map((reason) => (
-                <button
-                  key={reason}
-                  onClick={() => { setCancelReason(reason); setCancelStep(1) }}
-                  className={`w-full text-left px-4 py-2.5 rounded-xl border text-sm transition-colors ${
-                    cancelReason === reason ? 'border-gold bg-gold/10' : 'border-border hover:bg-warm'
-                  }`}
-                >
-                  {reason}
-                </button>
-              ))}
-            </div>
-          </>
-        )}
-        {cancelStep === 1 && (
-          <>
-            <p className="text-sm text-slate mb-2">Are you sure you want to cancel?</p>
-            <p className="text-sm text-slate mb-4">You'll lose access to your medication and portal features at the end of your current billing period.</p>
-            <div className="flex gap-2">
-              <button onClick={handleCancel} disabled={processing} className="flex-1 bg-red-500 text-white font-semibold py-2.5 rounded-full hover:bg-red-400 transition-colors disabled:opacity-60">
-                {processing ? 'Cancelling...' : 'Yes, cancel'}
-              </button>
-              <button onClick={() => { setShowCancel(false); setCancelStep(0) }} className="flex-1 border border-border text-ink font-medium py-2.5 rounded-full hover:bg-warm transition-colors">
-                Keep my treatment
-              </button>
-            </div>
-          </>
-        )}
-      </Modal>
     </div>
   )
 }

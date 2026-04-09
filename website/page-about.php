@@ -9,13 +9,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us — Don't Weight | Clinician-Led Weight Management</title>
-<meta name="description" content="Meet the team behind Don't Weight. UK-registered clinicians combining evidence-based prescribing with comprehensive health monitoring. CQC registered. MHRA approved.">
+<link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
+<title>About Us — Don't Weight | Private Medical Weight Loss Clinic London</title>
+<meta name="description" content="Don't Weight is a CQC-registered medical weight loss clinic in London, part of London Private Ultrasound Group. Clinician-led GLP-1 treatment with full medical assessment and health screening.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=optional" rel="stylesheet">
 <?php wp_head(); ?>
 <style>
+.dw-lpug-bar{display:none!important;}
 :root{--sky:#38BDF8;--sky-deep:#0EA5E9;--sky-dark:#0284C7;--sky-pale:#E0F2FE;--sky-wash:#F0F9FF;--white:#FFFFFF;--cream:#FAFAF9;--warm:#F5F5F4;--stone:#E7E5E4;--ink:#0C0A09;--charcoal:#1C1917;--slate:#44403C;--display:'DM Sans',-apple-system,sans-serif;--body:'DM Sans',-apple-system,sans-serif}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,48px);background:#fff;backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.04)}
@@ -25,7 +28,7 @@
 .nav-login{color:var(--ink);text-decoration:none;font-size:13px;font-weight:600}
 .nav-btn{background:var(--sky);color:#fff;border:none;border-radius:100px;padding:10px 24px;font-family:var(--body);font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
 .burger{display:none;background:none;border:none;cursor:pointer;width:32px;height:32px;position:relative;z-index:102}.burger span{display:block;width:20px;height:1.5px;background:var(--ink);position:absolute;left:6px;transition:transform .3s,opacity .2s}.burger span:nth-child(1){top:10px}.burger span:nth-child(2){top:16px}.burger span:nth-child(3){top:22px}
-.mobile-menu{position:fixed;inset:0;z-index:101;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .3s}.mobile-menu.open{opacity:1;pointer-events:all}.mobile-menu a{font-size:22px;font-weight:600;color:var(--ink);text-decoration:none}.mobile-menu .mm-cta{background:var(--sky);color:#fff;border:none;border-radius:100px;padding:16px 48px;font-size:16px;font-weight:700;cursor:pointer}.mm-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:32px;color:var(--ink);cursor:pointer}
+.mobile-menu{position:fixed;inset:0;z-index:101;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;opacity:0;pointer-events:none;transition:opacity .3s}.mobile-menu.open{opacity:1;pointer-events:all}.mobile-menu a{font-size:22px;font-weight:600;color:var(--ink);text-decoration:none}.mobile-menu .mm-cta{background:var(--sky);color:#fff;border:none;border-radius:100px;padding:16px 48px;font-size:16px;font-weight:700;cursor:pointer}.mm-close{position:absolute;top:max(16px,env(safe-area-inset-top,16px));right:20px;background:var(--warm);border:none;font-size:32px;color:var(--ink);cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;z-index:102}
 @media(max-width:960px){.nav-mid{display:none}.burger{display:block}.nav-login{display:none}}
 @media(max-width:600px){.nav-btn{padding:8px 14px;font-size:11px}}
 
@@ -92,7 +95,7 @@
 .ft-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
 .ft-bot p{font-size:11px;color:rgba(255,255,255,.25)}.ft-badges{display:flex;gap:8px}.ft-badge{font-size:9px;color:rgba(255,255,255,.25);border:1px solid rgba(255,255,255,.08);border-radius:100px;padding:3px 10px}
 
-@media(max-width:768px){.ab-grid{grid-template-columns:1fr}.ab-cards,.ab-cred-grid,.ab-hc-stats{grid-template-columns:1fr}.ft-top{grid-template-columns:1fr 1fr;gap:24px}}
+@media(max-width:768px){.ab-grid{grid-template-columns:1fr}.ab-cards,.ab-cred-grid,.ab-hc-stats{grid-template-columns:1fr}.ab-cond-grid{grid-template-columns:1fr!important}.ft-top{grid-template-columns:1fr 1fr;gap:24px}}
 @media(max-width:600px){.ab-hero h1{font-size:32px;letter-spacing:-1.2px}.ab-stats{gap:20px}.ab-cred-grid{grid-template-columns:1fr}}
 
 .ab-founder{padding:80px 24px;background:#fafaf9}
@@ -138,14 +141,14 @@
 
 <!-- HERO -->
 <section class="ab-hero">
-  <div class="label" style="color:var(--sky);text-align:center">About Don't Weight</div>
+  <div class="label" style="color:var(--sky);text-align:center">Private Medical Weight Loss Clinic</div>
   <h1>Medication and monitoring. <span>Together.</span></h1>
-  <p class="ab-hero-sub">The UK's first weight management programme that combines clinician-prescribed treatment with structured health monitoring. Because your body deserves more than just a prescription.</p>
-  <div class="ab-stats">
-    <div class="ab-stat"><h3>23%</h3><p>Avg. weight loss (Mounjaro)</p></div>
-    <div class="ab-stat"><h3>&lt;24h</h3><p>Clinician approval</p></div>
-    <div class="ab-stat"><h3>4.8</h3><p>Google rating</p></div>
-    <div class="ab-stat"><h3>7 day</h3><p>Support team</p></div>
+  <p class="ab-hero-sub">A CQC-registered weight management clinic combining clinician-prescribed treatment with full medical assessment, blood tests, and structured health monitoring. Part of London Private Ultrasound Group.</p>
+  <div class="ab-stats" style="display:flex;justify-content:center;gap:clamp(10px,2vw,16px);flex-wrap:wrap;margin-top:20px">
+    <span style="font-size:11px;color:var(--slate);border:1px solid var(--stone);padding:6px 14px;border-radius:20px">CQC Regulated</span>
+    <span style="font-size:11px;color:var(--slate);border:1px solid var(--stone);padding:6px 14px;border-radius:20px">MHRA Approved</span>
+    <span style="font-size:11px;color:var(--slate);border:1px solid var(--stone);padding:6px 14px;border-radius:20px">4.8★ Google</span>
+    <span style="font-size:11px;color:var(--slate);border:1px solid var(--stone);padding:6px 14px;border-radius:20px">Transparent Pricing</span>
   </div>
 </section>
 
@@ -154,11 +157,11 @@
   <div class="sec-inner">
     <div class="ab-grid">
       <div>
-        <div class="label">Our mission</div>
-        <h2>Prescribe well. <span>Monitor better.</span></h2>
-        <p style="font-size:14px;color:var(--slate);line-height:1.8;margin-bottom:14px">GLP-1 medications like Mounjaro and Wegovy are transforming lives. But rapid weight loss triggers real physiological changes in your liver, gallbladder, thyroid, pancreas, and cardiovascular system.</p>
-        <p style="font-size:14px;color:var(--slate);line-height:1.8;margin-bottom:14px">Most clinics hand you a prescription and move on. We built something different: clinician-prescribed treatment, expert ongoing support, and the UK's first health screening designed specifically for patients on weight loss medication.</p>
-        <p style="font-size:14px;color:var(--slate);line-height:1.8">Because knowing your weight dropped is good. Knowing your liver fat reversed, your heart health improved, and your thyroid is clear? That's proper medicine.</p>
+        <div class="label">Our approach</div>
+        <h2>Full medical assessment. <span>Then treatment.</span></h2>
+        <p style="font-size:14px;color:var(--slate);line-height:1.8;margin-bottom:14px">Unlike many online weight loss providers, we don&rsquo;t prescribe medication based on a questionnaire alone. Before starting treatment, every patient undergoes a detailed consultation, medical history review, and where appropriate, blood tests, health screening, and diagnostic assessment.</p>
+        <p style="font-size:14px;color:var(--slate);line-height:1.8;margin-bottom:14px">GLP-1 medications like Mounjaro and Wegovy are transforming lives. But rapid weight loss triggers real changes in your liver, gallbladder, thyroid, and cardiovascular system. That&rsquo;s why we monitor what&rsquo;s happening inside &mdash; not just what the scale says.</p>
+        <p style="font-size:14px;color:var(--slate);line-height:1.8">This allows us to ensure that weight loss medication is both safe and suitable for each individual, and to catch anything that needs attention early.</p>
       </div>
       <div class="ab-quote">
         <blockquote>&ldquo;We don't just prescribe the medication. We track what it's doing to your body &mdash; the things that don't show up on a scale.&rdquo;</blockquote>
@@ -174,23 +177,23 @@
     <div style="text-align:center;margin-bottom:40px">
       <div class="label">Why different</div>
       <h2>More than a <span>prescription</span></h2>
-      <p style="font-size:14px;color:var(--slate);max-width:480px;margin:0 auto">Three things that set us apart from every other weight loss clinic in the UK.</p>
+      <p style="font-size:14px;color:var(--slate);max-width:520px;margin:0 auto">What separates a medically supervised weight loss programme from an online prescription service.</p>
     </div>
     <div class="ab-cards">
       <div class="ab-card">
         <div class="ab-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>CQC registered</h3>
-        <p>Every prescription issued by a UK-registered clinician following a full medical review. Same standard as your NHS GP.</p>
+        <h3>Careful assessment first</h3>
+        <p>Full medical history review and clinical consultation before prescribing anything. We assess eligibility, check for contraindications, and identify underlying conditions like insulin resistance or thyroid issues.</p>
       </div>
       <div class="ab-card">
         <div class="ab-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <h3>Dedicated care team</h3>
-        <p>You're not a ticket in a queue. Your care team is available 7 days a week for questions, side effects, and dose changes.</p>
+        <h3>Ongoing clinical support</h3>
+        <p>Your clinician monitors your progress, reviews side effects, and adjusts medication when needed. Care team available 7 days a week. Not a one-size-fits-all prescription.</p>
       </div>
       <div class="ab-card">
         <div class="ab-card-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-        <h3>Clinical monitoring built in</h3>
-        <p>The UK's first health screening for weight loss patients. Blood tests, ultrasound, ECG and GP review. Progress you can actually see.</p>
+        <h3>Integrated diagnostics</h3>
+        <p>Access to blood tests, ultrasound scans, ECG, and comprehensive health checks through London Private Ultrasound. We track what the medication is doing to your body, not just your weight.</p>
       </div>
     </div>
   </div>
@@ -234,6 +237,42 @@
   </div>
 </section>
 
+<!-- CONDITIONS WE SUPPORT -->
+<section class="sec" style="background:var(--cream)">
+  <div class="sec-inner">
+    <div style="text-align:center;margin-bottom:36px">
+      <div class="label">Who we help</div>
+      <h2>Specialist support for <span>complex conditions</span></h2>
+      <p style="font-size:14px;color:var(--slate);max-width:520px;margin:0 auto">We treat the person, not just the number on the scale. Our clinicians have experience across a range of weight-related and metabolic conditions.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="ab-cond-grid">
+      <div style="background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:20px 18px">
+        <h4 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px">Obesity &amp; weight management</h4>
+        <p style="font-size:12px;color:var(--slate);line-height:1.6">Evidence-based treatment for patients with a BMI of 30+ or 27+ with weight-related health conditions.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:20px 18px">
+        <h4 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px">Type 2 diabetes</h4>
+        <p style="font-size:12px;color:var(--slate);line-height:1.6">GLP-1 therapies that help manage blood sugar and support weight loss simultaneously.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:20px 18px">
+        <h4 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px">Insulin resistance</h4>
+        <p style="font-size:12px;color:var(--slate);line-height:1.6">Targeted treatment for patients whose insulin resistance is contributing to weight gain.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:20px 18px">
+        <h4 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px">PCOS</h4>
+        <p style="font-size:12px;color:var(--slate);line-height:1.6">Weight management support for polycystic ovary syndrome, where hormonal imbalance makes losing weight harder.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:20px 18px">
+        <h4 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px">Metabolic syndrome</h4>
+        <p style="font-size:12px;color:var(--slate);line-height:1.6">Clinician-led treatment addressing the cluster of conditions that increase heart disease, stroke, and diabetes risk.</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--stone);border-radius:14px;padding:20px 18px">
+        <h4 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px">Pre-diabetes</h4>
+        <p style="font-size:12px;color:var(--slate);line-height:1.6">Early intervention with weight loss treatment to help prevent progression to type 2 diabetes.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- FOUNDER -->
 <section class="ab-founder">
@@ -244,10 +283,10 @@
     <div class="ab-founder-text">
       <span class="ab-founder-label">Meet the Founder</span>
       <h2>Ali Aghaei</h2>
-      <p class="ab-founder-role">Founder &amp; Clinical Director</p>
-      <p>I started <strong>Don’t</strong> <em style="color:var(--sky)">Weight</em> because I believe everyone deserves access to proper, clinician-led weight management. Having worked across the NHS and private sector, I saw an opportunity to build something better — a service that combines the latest treatments with genuine clinical care and ongoing support.</p>
-      <p>Our approach is different. Every patient gets a dedicated clinician, evidence-based treatment, and ongoing support that actually fits their life. We combine the latest GLP-1 therapies with real clinical oversight — not a one-size-fits-all prescription.</p>
-      <p>This isn’t about quick fixes. It’s about building something that lasts — for your health, your confidence, and your future.</p>
+      <p class="ab-founder-role">Founder &amp; Clinical Director, GPhC-Registered Pharmacist</p>
+      <p>I started <strong>Don’t</strong> <em style="color:var(--sky)">Weight</em> because I believe everyone deserves access to proper, clinician-led weight management. Having worked across the NHS and private sector, I saw too many patients receiving prescriptions with minimal follow-up &mdash; and an opportunity to build something better.</p>
+      <p>As part of London Private Ultrasound Group, we can offer what most weight loss clinics can&rsquo;t: full diagnostic capability alongside treatment. Blood tests, health screening, ultrasound &mdash; everything under one roof. Every patient gets a dedicated clinician, evidence-based treatment, and ongoing support that actually fits their life.</p>
+      <p>This isn’t about quick fixes. It’s about safe, medically supervised weight loss with the clinical infrastructure to support you at every stage.</p>
     </div>
   </div>
 </section>
@@ -258,9 +297,10 @@
   <div class="ab-clinic-inner">
     <span class="ab-clinic-label">The Clinic</span>
     <h2>Medical weight loss. Done properly.</h2>
-    <p><strong>Don’t</strong> <em style="color:var(--sky)">Weight</em> is the specialist weight management arm of London Private Ultrasound and UK Health Check. We deliver safe, evidence-based programmes for patients across London and the UK who want to lose weight under genuine clinical supervision.</p>
-    <p>Every patient gets a detailed consultation, full medical history review, and where needed, blood tests, health screening, and diagnostic assessment — before we prescribe anything. Because the right treatment starts with understanding your health first.</p>
-    <p>Our team supports you before, during, and after treatment. We monitor progress, review side effects, adjust medication when needed, and provide ongoing support to help you achieve results that last.</p>
+    <p><strong>Don’t</strong> <em style="color:var(--sky)">Weight</em> is the specialist medical weight loss division of London Private Ultrasound Group and UK Health Check. We provide safe, evidence-based weight management programmes for patients across London and the UK who want to lose weight under the supervision of qualified healthcare professionals.</p>
+    <p>Every patient gets a detailed consultation, full medical history review, and where needed, blood tests, health screening, and diagnostic assessment &mdash; before we prescribe anything. This allows us to ensure that treatment is both safe and suitable for each individual, and to identify any underlying conditions that may affect weight loss.</p>
+    <p>We specialise in modern prescription weight loss treatments, including MHRA-approved GLP-1 medications used for obesity, insulin resistance, and type 2 diabetes-related weight gain. Our programmes are designed for patients who want expert clinical guidance rather than a one-size-fits-all approach.</p>
+    <p>Our integrated approach helps identify conditions that may be contributing to weight gain or affecting treatment response &mdash; including thyroid problems, hormonal imbalance, fatty liver disease, PCOS, and other metabolic disorders. As part of London Private Ultrasound Group, we have direct access to diagnostic investigations that most weight loss clinics simply cannot offer.</p>
   </div>
 </section>
 
@@ -269,14 +309,16 @@
   <div class="ab-clinic-why-inner">
     <h3>Why patients choose <strong>Don’t</strong> <em style="color:var(--sky)">Weight</em></h3>
     <ul>
-      <li>Medical-led programmes supervised by experienced healthcare professionals</li>
-      <li>Thorough assessment before prescribing any medication</li>
-      <li>Focus on patient safety, effectiveness, and long-term outcomes</li>
-      <li>Access to blood tests, health checks, ultrasound scans, and diagnostics through London Private Ultrasound</li>
-      <li>Support for obesity, diabetes, pre-diabetes, PCOS, metabolic syndrome, and weight-related conditions</li>
-      <li>Ongoing follow-up appointments and personalised treatment adjustments</li>
-      <li>Same-day appointments available in London</li>
-      <li>No GP referral required</li>
+      <li>Medical-led weight loss programmes supervised by experienced UK healthcare professionals</li>
+      <li>Careful clinical assessment before prescribing any medication &mdash; not just a questionnaire</li>
+      <li>Focus on patient safety, treatment effectiveness, and long-term sustainable results</li>
+      <li>Direct access to private blood tests, health checks, ultrasound scans, and diagnostic imaging through London Private Ultrasound Group</li>
+      <li>Specialist support for patients with obesity, type 2 diabetes, pre-diabetes, PCOS, metabolic syndrome, and insulin resistance</li>
+      <li>Ongoing follow-up consultations and personalised dose and treatment adjustments</li>
+      <li>Same-day appointments available at our London clinic</li>
+      <li>No GP referral required &mdash; self-refer directly</li>
+      <li>Discreet next-day delivery from a GPhC-registered UK pharmacy</li>
+      <li>Every medication MHRA-approved and clinician-prescribed</li>
     </ul>
   </div>
 </section>
@@ -285,17 +327,17 @@
 <section class="ab-ali-detail">
   <div class="ab-ali-detail-inner">
     <h3>More about Ali Aghaei</h3>
-    <p>Ali is a GPhC-registered pharmacist with a specialist focus on diabetes, obesity, metabolic health, and medical weight management. He founded <strong>Don’t</strong> <em style="color:var(--sky)">Weight</em> to bridge the gap between accessible treatment and proper clinical oversight.</p>
-    <p>His experience spans:</p>
+    <p>Ali is a GPhC-registered pharmacist with a specialist focus on diabetes, obesity, metabolic health, and medical weight management. He founded <strong>Don’t</strong> <em style="color:var(--sky)">Weight</em> to bridge the gap between accessible treatment and proper clinical oversight &mdash; and plays a leading role in developing the clinic&rsquo;s safe, medically supervised approach to weight management.</p>
+    <p>His clinical experience spans:</p>
     <ul>
-      <li>Prescription weight loss treatment and GLP-1 therapies</li>
+      <li>Prescription weight loss treatment and GLP-1 therapies (Mounjaro, Wegovy)</li>
       <li>Type 2 diabetes and insulin resistance management</li>
-      <li>Obesity-related health conditions</li>
-      <li>Medication management and optimisation</li>
-      <li>Lifestyle and nutrition guidance</li>
+      <li>Obesity-related health conditions and metabolic syndrome</li>
+      <li>Medication management, optimisation, and dose titration</li>
+      <li>Lifestyle, nutrition, and behavioural support</li>
     </ul>
-    <p>Ali’s philosophy is simple: every patient deserves an individualised plan based on their medical history, current health, goals, and risk profile. No shortcuts, no generic protocols.</p>
-    <p>Through Don’t Weight, Ali works closely with the wider team at London Private Ultrasound to offer a complete service — including blood testing, health screening, and diagnostic investigations where needed.</p>
+    <p>Ali&rsquo;s clinical focus is to ensure that every patient receives an individualised treatment plan based on their medical history, current health, goals, and risk factors. Unlike many commercial weight loss services that prescribe medication with limited follow-up, his approach prioritises comprehensive, ongoing care &mdash; every patient is assessed carefully before treatment begins, monitored during treatment, and reviewed regularly.</p>
+    <p>Through Don’t Weight, Ali works closely with the wider clinical team at London Private Ultrasound Group to provide a complete service &mdash; including blood testing, health screening, and diagnostic investigations where needed. His goal is to help patients lose weight safely, improve their long-term health, reduce the risk of obesity-related disease, and achieve results they can maintain.</p>
   </div>
 </section>
 
@@ -304,13 +346,17 @@
   <div class="ab-mission-inner">
     <h3>Our mission</h3>
     <p>To provide safe, accessible, and patient-centred medical weight loss treatment backed by clinical expertise and advanced diagnostics.</p>
-    <p>As part of London Private Ultrasound, we go far beyond medication alone:</p>
+    <p>As part of London Private Ultrasound Group, we go far beyond weight loss medication alone. Our integrated approach helps identify and address underlying health conditions that affect weight &mdash; giving patients and their clinicians the full picture.</p>
     <div class="ab-mission-services">
       <div class="ab-mission-service">Private blood tests</div>
       <div class="ab-mission-service">Diagnostic ultrasound scans</div>
       <div class="ab-mission-service">Comprehensive health check-ups</div>
       <div class="ab-mission-service">Diabetes &amp; metabolic assessment</div>
-      <div class="ab-mission-service">Ongoing medical monitoring</div>
+      <div class="ab-mission-service">Thyroid &amp; hormonal screening</div>
+      <div class="ab-mission-service">Fatty liver assessment</div>
+      <div class="ab-mission-service">Cardiovascular health monitoring</div>
+      <div class="ab-mission-service">Ongoing clinical follow-up</div>
+      <div class="ab-mission-service">Weight management nutrition guidance</div>
     </div>
   </div>
 </section>
@@ -319,7 +365,7 @@
 <section class="sec ab-final">
   <h2>Ready to start?</h2>
   <p>Free consultation, no commitment. Your clinician reviews your profile within 24 hours.</p>
-  <a href="<?php echo home_url('/consultation/'); ?>" class="ab-btn-w">Start free consultation &rarr;</a>
+  <a href="<?php echo home_url('/#calculator'); ?>" class="ab-btn-w">Check your eligibility &rarr;</a>
 </section>
 
 <!-- FOOTER -->

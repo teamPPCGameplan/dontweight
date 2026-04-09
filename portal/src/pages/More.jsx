@@ -34,14 +34,23 @@ export default function More() {
         )
       })}
 
-      <a
-        href="mailto:hello@dontweight.co.uk"
-        className="flex items-center gap-3 bg-dark-card rounded-xl border border-border p-4 hover:bg-warm transition-colors group"
-      >
-        <HelpCircle size={20} className="text-slate" />
-        <span className="text-sm font-medium text-ink flex-1">Contact Support</span>
-        <ChevronRight size={16} className="text-slate group-hover:text-gold transition-colors" />
-      </a>
+      {/* Contact Us */}
+      <div className="bg-dark-card rounded-xl border border-border p-4 space-y-3">
+        <p className="text-xs font-semibold text-slate uppercase tracking-wide">Contact Us</p>
+        <a href="tel:+442071013377" className="flex items-center gap-3 group">
+          <HelpCircle size={18} className="text-gold shrink-0" />
+          <span className="text-sm text-ink">+44 20 7101 3377</span>
+          <span className="text-[10px] text-slate ml-auto">Mon–Fri 9–6, Sat 10–4</span>
+        </a>
+        <a href="mailto:hello@dontweight.co.uk" className="flex items-center gap-3 group">
+          <ChevronRight size={18} className="text-gold shrink-0" />
+          <span className="text-sm text-ink">hello@dontweight.co.uk</span>
+        </a>
+        <a href="https://wa.me/442071013377" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group">
+          <ChevronRight size={18} className="text-gold shrink-0" />
+          <span className="text-sm text-ink">WhatsApp</span>
+        </a>
+      </div>
 
       <button
         onClick={signOut}

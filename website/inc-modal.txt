@@ -16,7 +16,7 @@
       <div class="ft-col"><h5>Legal</h5><ul><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/terms/">Terms &amp; Conditions</a></li><li><a href="/complaints/">Complaints Procedure</a></li><li><a href="/cookie-policy/">Cookie Policy</a></li></ul></div>
       <div class="ft-col"><h5>Contact</h5><ul><li><a href="mailto:hello@dontweight.co.uk">hello@dontweight.co.uk</a></li><li><a href="mailto:support@dontweight.co.uk">support@dontweight.co.uk</a></li><li><a href="mailto:pharmacy@dontweight.co.uk">pharmacy@dontweight.co.uk</a></li></ul></div>
     </div>
-    <div class="ft-bot"><p>&copy; 2026 Don't Weight Ltd. Registered in England &amp; Wales. GPhC-registered prescribing pharmacists.</p><div class="ft-badges"><span class="ft-badge">CQC Registered</span><span class="ft-badge">MHRA Approved</span><span class="ft-badge">ICO Compliant</span></div></div>
+    <div class="ft-bot"><p>&copy; 2026 don't weight — a trading name of Ultrasound London Limited. All rights reserved.</p><div class="ft-badges"><span class="ft-badge">CQC Registered</span><span class="ft-badge">MHRA Approved</span><span class="ft-badge">ICO Compliant</span></div></div>
   </div>
 </footer>
 

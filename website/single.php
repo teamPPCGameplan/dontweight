@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title><?php the_title(); ?> — Blog | don't weight</title>
 <meta name="description" content="<?php echo esc_attr(wp_trim_words(get_the_excerpt(), 25, '...')); ?>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +46,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 .mobile-menu.open{opacity:1;pointer-events:all}
 .mobile-menu a{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);text-decoration:none}
 .mobile-menu .mm-cta{background:var(--sky);color:var(--white);border:none;border-radius:100px;padding:16px 48px;font-family:var(--body);font-size:16px;font-weight:700;cursor:pointer;text-decoration:none}
-.mm-close{position:absolute;top:16px;right:20px;background:none;border:none;font-size:32px;color:var(--ink);cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s}
+.mm-close{position:absolute;top:max(16px,env(safe-area-inset-top,16px));right:20px;background:var(--warm);border:none;font-size:32px;color:var(--ink);cursor:pointer;width:48px;height:48px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s;z-index:102}
 .mm-close:hover{background:var(--warm)}
 
 /* ARTICLE */

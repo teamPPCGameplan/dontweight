@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don't Weight - Complete System Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: #1a1a1a; line-height: 1.7; background: #f8f7f4; padding: 0; }
+  .cover { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: white; padding: 80px 60px; page-break-after: always; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+  .cover h1 { font-size: 48px; font-weight: 700; margin-bottom: 8px; letter-spacing: -1px; }
+  .cover h1 span { color: #d4a853; font-style: italic; }
+  .cover .subtitle { font-size: 24px; font-weight: 300; color: #a0a0a0; margin-bottom: 40px; }
+  .cover .meta { font-size: 14px; color: #808080; line-height: 2; }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 60px; background: white; }
+  h2 { font-size: 28px; font-weight: 700; color: #1a1a1a; margin: 50px 0 20px; padding-bottom: 10px; border-bottom: 3px solid #d4a853; letter-spacing: -0.5px; page-break-after: avoid; }
+  h3 { font-size: 20px; font-weight: 600; color: #333; margin: 30px 0 12px; page-break-after: avoid; }
+  h4 { font-size: 16px; font-weight: 600; color: #555; margin: 20px 0 8px; }
+  p { margin-bottom: 14px; font-size: 15px; }
+  ul, ol { margin: 10px 0 16px 24px; font-size: 15px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 14px; page-break-inside: avoid; }
+  th { background: #1a1a1a; color: white; text-align: left; padding: 10px 14px; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td { padding: 10px 14px; border-bottom: 1px solid #eee; vertical-align: top; }
+  tr:nth-child(even) td { background: #fafaf8; }
+  code { background: #f0efe8; padding: 2px 6px; border-radius: 4px; font-size: 13px; font-family: 'SF Mono', 'Fira Code', monospace; }
+  pre { background: #1a1a1a; color: #e0e0e0; padding: 20px; border-radius: 12px; overflow-x: auto; margin: 16px 0 24px; font-size: 13px; line-height: 1.6; font-family: 'SF Mono', 'Fira Code', monospace; white-space: pre; page-break-inside: avoid; }
+  blockquote { border-left: 4px solid #d4a853; background: #fdfcf5; padding: 14px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; font-size: 14px; }
+  blockquote strong { color: #b8922e; }
+  .toc { background: #fafaf8; border: 1px solid #e8e6df; border-radius: 12px; padding: 24px 30px; margin: 20px 0 30px; }
+  .toc h3 { margin: 0 0 12px; font-size: 16px; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+  .toc ol { margin: 0; padding-left: 20px; }
+  .toc li { margin-bottom: 4px; }
+  .toc a { color: #1a1a1a; text-decoration: none; font-weight: 500; }
+  .toc a:hover { color: #d4a853; }
+  a { color: #d4a853; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .pipeline { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 12px 0 20px; }
+  .pipeline-step { background: #f0efe8; padding: 8px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; }
+  .pipeline-arrow { color: #d4a853; font-weight: 700; }
+  .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+  .checklist li { padding: 6px 0 6px 28px; position: relative; }
+  .checklist li::before { content: ''; position: absolute; left: 0; top: 10px; width: 18px; height: 18px; border: 2px solid #ccc; border-radius: 4px; }
+  .section-num { color: #d4a853; }
+  @media print {
+    body { background: white; }
+    .cover { min-height: auto; padding: 60px 40px; }
+    .container { padding: 20px 40px; box-shadow: none; }
+    h2 { page-break-before: always; }
+    h2:first-of-type { page-break-before: avoid; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
+  }
+  @media (max-width: 768px) {
+    .cover { padding: 40px 24px; }
+    .cover h1 { font-size: 32px; }
+    .container { padding: 20px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>don't <span>weight</span></h1>
+  <p class="subtitle">Complete System Guide</p>
+  <div class="meta">
+    <p>Last updated: April 2026</p>
+    <p>Prepared for: Don't Weight Ltd</p>
+    <p>Platform documentation for business owners and administrators</p>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="toc">
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#s1">System Overview</a></li>
+    <li><a href="#s2">Access Credentials &amp; Logins</a></li>
+    <li><a href="#s3">Patient Journey Flow</a></li>
+    <li><a href="#s4">Clinician Portal Guide</a></li>
+    <li><a href="#s5">Patient Portal Guide</a></li>
+    <li><a href="#s6">WordPress Admin Guide</a></li>
+    <li><a href="#s7">Database Structure (Supabase)</a></li>
+    <li><a href="#s8">Payment Flow (Stripe)</a></li>
+    <li><a href="#s9">Deployment Guide</a></li>
+    <li><a href="#s10">How to Create Accounts</a></li>
+    <li><a href="#s11">Ongoing Maintenance</a></li>
+    <li><a href="#s12">Tech Stack Summary</a></li>
+    <li><a href="#s13">Cost Structure</a></li>
+  </ol>
+</div>
+
+<!-- Section 1 -->
+<h2 id="s1"><span class="section-num">1.</span> System Overview</h2>
+
+<p>The Don't Weight platform is made up of several connected services that work together to deliver weight-loss treatment online.</p>
+
+<pre>
+ PATIENT VISITS WEBSITE
+         |
+         v
++------------------------------+         +----------------------------+
+|                              |         |                            |
+|   WORDPRESS WEBSITE          |         |   PATIENT PORTAL           |
+|   dontweight.co.uk           |         |   app.dontweight.co.uk     |
+|                              |         |                            |
+|   Hosted on: Kinsta          |         |   Hosted on: Netlify       |
+|                              |         |   Built with: React        |
+|   - Homepage &amp; quiz          |         |                            |
+|   - Treatment pages          |         |   - Patient dashboard      |
+|   - Consultation form        |         |   - Weight tracking        |
+|   - Health check info        |         |   - Messaging              |
+|   - Blog &amp; content           |         |   - Delivery tracking      |
+|   - Chatbot widget           |         |   - Clinician dashboard    |
+|                              |         |   - Subscription mgmt      |
++--------+---------------------+         +-------------+--------------+
+         |                                             |
+         |  (payment)                                  |  (data)
+         v                                             v
++------------------------------+         +----------------------------+
+|                              |         |                            |
+|   STRIPE                     |         |   SUPABASE                 |
+|   Payment processing         |         |   Database &amp; authentication|
+|                              |         |                            |
+|   - Checkout sessions        |         |   - User accounts          |
+|   - Payment records          |         |   - Patient records        |
+|   - Refunds                  |         |   - Messages               |
+|                              |         |   - Deliveries             |
++------------------------------+         |   - Weight logs            |
+                                         |   - Subscriptions          |
++------------------------------+         +----------------------------+
+|                              |
+|   GOOGLE WORKSPACE           |
+|   Email &amp; communication      |         +----------------------------+
+|                              |         |                            |
+|   - hello@dontweight.co.uk   |         |   SEMBLE                   |
+|   - support@dontweight.co.uk |         |   Health check bookings    |
+|   - pharmacy@dontweight.co.uk|         |                            |
+|                              |         |   - Baseline health check  |
++------------------------------+         |   - Standard health check  |
+                                         |   - Premium health check   |
+                                         +----------------------------+
+</pre>
+
+<p><strong>How the pieces connect:</strong></p>
+<ul>
+  <li>The <strong>WordPress website</strong> is the public-facing site where patients learn about treatments and apply.</li>
+  <li>When a patient pays, <strong>Stripe</strong> processes the payment and notifies WordPress via a "webhook" (an automatic message between systems).</li>
+  <li>Once approved, the patient gets access to the <strong>Patient Portal</strong>, which is a separate web application.</li>
+  <li>The portal reads and writes all its data to <strong>Supabase</strong> (the database).</li>
+  <li><strong>Google Workspace</strong> handles all email communication.</li>
+  <li><strong>Semble</strong> handles health check appointment bookings.</li>
+  <li>The <strong>chatbot widget</strong> is served from the portal (app.dontweight.co.uk/chatbot-widget.js) and embedded on the main website.</li>
+</ul>
+
+<!-- Section 2 -->
+<h2 id="s2"><span class="section-num">2.</span> Access Credentials &amp; Logins</h2>
+
+<p>Below is every platform you need to manage Don't Weight. <strong>Passwords are not listed here for security reasons.</strong></p>
+
+<table>
+  <thead>
+    <tr><th>Platform</th><th>What It Does</th><th>Login URL</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Kinsta</strong></td><td>WordPress hosting, server management, backups, cache</td><td>my.kinsta.com</td></tr>
+    <tr><td><strong>WordPress Admin</strong></td><td>Website content, pages, patient applications, forms</td><td>dontweight.co.uk/wp-admin/</td></tr>
+    <tr><td><strong>Supabase</strong></td><td>Database, user authentication, real-time features</td><td>supabase.com/dashboard</td></tr>
+    <tr><td><strong>Netlify</strong></td><td>Portal hosting, deployments, domain settings</td><td>app.netlify.com</td></tr>
+    <tr><td><strong>Stripe</strong></td><td>Payments, checkout, refunds</td><td>dashboard.stripe.com</td></tr>
+    <tr><td><strong>Google Workspace</strong></td><td>Email accounts</td><td>admin.google.com</td></tr>
+    <tr><td><strong>Semble</strong></td><td>Health check appointment booking</td><td>app.semble.io</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Email accounts managed via Google Workspace:</strong></p>
+<ul>
+  <li><code>hello@dontweight.co.uk</code> &mdash; Main contact and notifications</li>
+  <li><code>support@dontweight.co.uk</code> &mdash; Patient support</li>
+  <li><code>pharmacy@dontweight.co.uk</code> &mdash; Pharmacy communications</li>
+</ul>
+
+<blockquote><strong>Note:</strong> Keep a secure, separate record of all passwords (e.g., in a password manager like 1Password or LastPass). Never store passwords in this document or in plain text files.</blockquote>
+
+<!-- Section 3 -->
+<h2 id="s3"><span class="section-num">3.</span> Patient Journey Flow</h2>
+
+<p>This is the complete path a patient follows from first visit to receiving treatment:</p>
+
+<pre>
+    STEP 1: DISCOVERY
+    Patient visits dontweight.co.uk
+              |
+              v
+    STEP 2: ELIGIBILITY QUIZ
+    Takes BMI check + medical screening on homepage
+              |
+         +----+----+
+         |         |
+    NOT ELIGIBLE   ELIGIBLE
+    (shown advice) |
+                   v
+    STEP 3: CONSULTATION FORM
+    Redirected to /consultation/ page
+              |
+              v
+    STEP 4: MEDICAL HISTORY
+    Fills in:
+    - Personal details (name, DOB, address)
+    - Medical history &amp; conditions
+    - Current medications &amp; allergies
+    - Selects treatment (Mounjaro or Wegovy)
+              |
+              v
+    STEP 5: PAYMENT
+    Pays via Stripe checkout
+    (secure card payment page)
+              |
+              v
+    STEP 6: APPLICATION SAVED
+    - Saved as "dw_application" in WordPress
+    - Email sent to hello@dontweight.co.uk
+    - Confirmation email sent to patient
+              |
+              v
+    STEP 7: CLINICAL REVIEW
+    Clinician reviews the application
+    Checks medical history &amp; suitability
+              |
+              v
+    STEP 8: VIDEO CONSULTATION
+    Video call arranged with clinician
+    Identity verified during call
+              |
+              v
+    STEP 9: PORTAL ACCESS
+    Patient gets login for app.dontweight.co.uk
+    Can track treatment, message clinician
+              |
+              v
+    STEP 10: TREATMENT DISPATCHED
+    Medication sent via pharmacy
+    Patient tracks delivery in portal
+</pre>
+
+<p><strong>Delivery pipeline:</strong></p>
+<div class="pipeline">
+  <span class="pipeline-step">Order Received</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">Clinical Review</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">Approved</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">With Pharmacy</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">Dispatched</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">Delivered</span>
+</div>
+
+<!-- Section 4 -->
+<h2 id="s4"><span class="section-num">4.</span> Clinician Portal Guide</h2>
+
+<h3>Logging In</h3>
+<ol>
+  <li>Go to <strong>app.dontweight.co.uk/login</strong></li>
+  <li>Log in with your clinician email (e.g., clinician@dontweight.co.uk)</li>
+  <li>The system automatically detects your clinician role and shows the clinician dashboard</li>
+</ol>
+
+<h3>Dashboard Overview</h3>
+<p>When you log in, you will see:</p>
+<ul>
+  <li><strong>Key statistics</strong> &mdash; Total patients, unread messages, pending deliveries</li>
+  <li><strong>Recent patients</strong> &mdash; Quick access to recently active patients</li>
+  <li><strong>Unread messages</strong> &mdash; Messages that need your attention</li>
+</ul>
+
+<h3>Patient List</h3>
+<ul>
+  <li>View all registered patients in a searchable, filterable list</li>
+  <li>Search by name or email</li>
+  <li>Filter by treatment status</li>
+</ul>
+
+<h3>Patient Detail View</h3>
+<p>Click on any patient to see their full record:</p>
+<ul>
+  <li><strong>Identity Verification</strong> &mdash; A toggle/tick box. Mark this as verified after completing the video consultation and confirming the patient's identity.</li>
+  <li><strong>Weight Progress Chart</strong> &mdash; Visual chart showing the patient's weight over time.</li>
+  <li><strong>Messaging</strong> &mdash; Real-time chat with the patient. Messages appear instantly.</li>
+  <li><strong>Delivery Management</strong> &mdash; Create new orders, advance status through the pipeline, add tracking numbers.</li>
+  <li><strong>Clinician Notes</strong> &mdash; Private notes only visible to clinicians. Patients cannot see these.</li>
+</ul>
+
+<!-- Section 5 -->
+<h2 id="s5"><span class="section-num">5.</span> Patient Portal Guide</h2>
+
+<h3>Logging In</h3>
+<ol>
+  <li>Go to <strong>app.dontweight.co.uk/login</strong></li>
+  <li>Enter the email and password provided when your account was created</li>
+  <li>You will see your personal dashboard</li>
+</ol>
+
+<h3>Dashboard</h3>
+<ul>
+  <li><strong>Treatment overview</strong> &mdash; Your current treatment, dose, and status</li>
+  <li><strong>Delivery status</strong> &mdash; Where your medication is in the delivery process</li>
+  <li><strong>Recent messages</strong> &mdash; Any messages from your clinician</li>
+</ul>
+
+<h3>Weight Tracking</h3>
+<ul>
+  <li><strong>Log your weight</strong> &mdash; Enter your current weight at any time</li>
+  <li><strong>View chart</strong> &mdash; See your weight trend over time on an interactive chart</li>
+  <li><strong>Export CSV</strong> &mdash; Download your weight history as a spreadsheet file</li>
+</ul>
+
+<h3>Messages</h3>
+<ul>
+  <li>Real-time chat with your clinician</li>
+  <li>Messages appear instantly without refreshing</li>
+  <li>Notification when you have unread messages</li>
+</ul>
+
+<h3>Health Checks</h3>
+<ul>
+  <li>Book health check appointments through the integrated Semble system</li>
+  <li>Three packages: Baseline, Standard, and Premium</li>
+</ul>
+
+<h3>Settings</h3>
+<ul>
+  <li>Update your profile information</li>
+  <li>Manage notification preferences</li>
+  <li>Change your password</li>
+</ul>
+
+<!-- Section 6 -->
+<h2 id="s6"><span class="section-num">6.</span> WordPress Admin Guide</h2>
+
+<h3>Accessing the Admin Panel</h3>
+<p>Go to <strong>dontweight.co.uk/wp-admin/</strong> and log in with your WordPress credentials.</p>
+
+<h3>Patient Applications</h3>
+<p>Patient applications are stored as a custom type called <code>dw_application</code>.</p>
+<ul>
+  <li><strong>Where to find them:</strong> WP Admin sidebar &rarr; Applications</li>
+  <li><strong>Each application stores:</strong> Full name, email, phone, DOB, BMI, medical history, medications, allergies, treatment choice, full address, payment status</li>
+</ul>
+
+<h3>Email Notifications</h3>
+<p>When a patient submits an application:</p>
+<ul>
+  <li>An email is automatically sent to <code>hello@dontweight.co.uk</code></li>
+  <li>A confirmation email is sent to the patient</li>
+  <li>Email is configured through WP Mail SMTP using Google Workspace</li>
+</ul>
+
+<blockquote><strong>Important:</strong> If emails stop working, check WP Admin &rarr; WP Mail SMTP &rarr; Settings to ensure the Google Workspace connection is still active.</blockquote>
+
+<h3>Key Website Pages</h3>
+<table>
+  <thead>
+    <tr><th>Page</th><th>URL Path</th><th>Template File</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Homepage</td><td><code>/</code></td><td><code>page-home.php</code></td></tr>
+    <tr><td>Treatments</td><td><code>/treatments/</code></td><td><code>page-treatments.php</code></td></tr>
+    <tr><td>Health Checks (DW360)</td><td><code>/dw360/</code></td><td><code>page-dw360.php</code></td></tr>
+    <tr><td>Consultation Form</td><td><code>/consultation/</code></td><td><code>page-consultation.php</code></td></tr>
+    <tr><td>About Us</td><td><code>/about/</code></td><td><code>page-about.php</code></td></tr>
+    <tr><td>Contact</td><td><code>/contact/</code></td><td><code>page-contact.php</code></td></tr>
+    <tr><td>Ads Landing Page</td><td><code>/ads-landing/</code></td><td><code>page-ads-landing.php</code></td></tr>
+  </tbody>
+</table>
+
+<p><strong>Theme name:</strong> <code>dontweight-theme-v72</code></p>
+
+<h3>Clearing the Cache</h3>
+<ol>
+  <li>In WP Admin, look for <strong>"Kinsta Cache"</strong> in the left sidebar</li>
+  <li>Click <strong>"Clear All Caches"</strong></li>
+  <li>Wait 30 seconds, then check the live site</li>
+</ol>
+
+<blockquote><strong>Important:</strong> If you skip this step, your changes may not appear on the live site. Kinsta caches pages aggressively for performance.</blockquote>
+
+<!-- Section 7 -->
+<h2 id="s7"><span class="section-num">7.</span> Database Structure (Supabase)</h2>
+
+<p>Supabase is the database that stores all portal data.</p>
+
+<table>
+  <thead>
+    <tr><th>Table</th><th>Purpose</th><th>Key Fields</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>profiles</strong></td><td>User accounts (patients and clinicians)</td><td>email, first_name, last_name, phone, role, id_verified</td></tr>
+    <tr><td><strong>subscriptions</strong></td><td>Treatment plans and payment links</td><td>treatment, dose, status, Stripe IDs, price</td></tr>
+    <tr><td><strong>messages</strong></td><td>Patient-clinician messaging</td><td>user_id, sender_role, content, is_read</td></tr>
+    <tr><td><strong>deliveries</strong></td><td>Medication order tracking</td><td>status, tracking_number, carrier, medication_name</td></tr>
+    <tr><td><strong>weight_logs</strong></td><td>Patient weight entries</td><td>user_id, weight_kg, logged_at, note</td></tr>
+    <tr><td><strong>progress_photos</strong></td><td>Patient progress photos</td><td>user_id, photo_url, caption</td></tr>
+    <tr><td><strong>video_calls</strong></td><td>Consultation appointments</td><td>user_id, scheduled_at, duration_minutes, status</td></tr>
+    <tr><td><strong>health_check_bookings</strong></td><td>Health check reservations</td><td>user_id, package, appointment_date, status</td></tr>
+    <tr><td><strong>identity_documents</strong></td><td>ID verification uploads</td><td>user_id, document_type, status</td></tr>
+    <tr><td><strong>ai_chats</strong></td><td>Chatbot conversation history</td><td>user_id, role, content</td></tr>
+    <tr><td><strong>leads</strong></td><td>Marketing leads from website forms</td><td>email, source, utm data, consent flags</td></tr>
+  </tbody>
+</table>
+
+<h3>Delivery Status Pipeline</h3>
+<div class="pipeline">
+  <span class="pipeline-step">Order Received</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">Clinical Review</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">Approved</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">With Pharmacy</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">Dispatched</span>
+  <span class="pipeline-arrow">&rarr;</span>
+  <span class="pipeline-step">Delivered</span>
+</div>
+<p>Each stage is updated by a clinician through the portal interface.</p>
+
+<h3>User Roles</h3>
+<ul>
+  <li><code>client</code> &mdash; A patient. Can only see their own data.</li>
+  <li><code>clinician</code> &mdash; A staff member. Can see all patients' data.</li>
+</ul>
+<p>The database enforces these permissions automatically through Row Level Security (RLS) policies.</p>
+
+<!-- Section 8 -->
+<h2 id="s8"><span class="section-num">8.</span> Payment Flow (Stripe)</h2>
+
+<pre>
+    Patient selects treatment on consultation form
+                    |
+                    v
+    WordPress creates a Stripe "checkout session"
+    (a secure payment page hosted by Stripe)
+                    |
+                    v
+    Patient enters card details on Stripe's page
+                    |
+                    v
+    Payment successful
+                    |
+                    v
+    Stripe sends a "webhook" to WordPress
+                    |
+                    v
+    WordPress receives the webhook and:
+    - Saves the payment record
+    - Emails the team (hello@dontweight.co.uk)
+    - Emails the patient (confirmation)
+</pre>
+
+<h3>Managing Payments in Stripe</h3>
+<p>Log in to <strong>dashboard.stripe.com</strong> to:</p>
+<ul>
+  <li><strong>View all payments</strong> &mdash; See transaction history, amounts, dates</li>
+  <li><strong>Issue refunds</strong> &mdash; Click on any payment to process a full or partial refund</li>
+  <li><strong>View customer records</strong> &mdash; See a patient's full payment history</li>
+  <li><strong>Manage subscriptions</strong> &mdash; View, pause, or cancel recurring payments</li>
+</ul>
+
+<blockquote><strong>Important:</strong> The Stripe webhook endpoint must be configured in Stripe for payments to work correctly. If you need to reconfigure it, go to Stripe Dashboard &rarr; Developers &rarr; Webhooks and add endpoint: <code>https://dontweight.co.uk/wp-json/dontweight/v1/stripe-webhook</code></blockquote>
+
+<!-- Section 9 -->
+<h2 id="s9"><span class="section-num">9.</span> Deployment Guide</h2>
+
+<h3>WordPress (Main Website)</h3>
+
+<h4>Option A: Edit via WordPress Admin (easiest)</h4>
+<ol>
+  <li>Log in to dontweight.co.uk/wp-admin/</li>
+  <li>Go to Appearance &rarr; Theme File Editor</li>
+  <li>Select the file you want to edit</li>
+  <li>Make your changes</li>
+  <li>Click "Update File"</li>
+  <li>Go to Kinsta Cache &rarr; Clear All Caches</li>
+  <li>Check the live site to confirm changes</li>
+</ol>
+
+<h4>Option B: Edit via SFTP/SSH (for developers)</h4>
+<ol>
+  <li>Log in to my.kinsta.com</li>
+  <li>Go to Sites &rarr; Don't Weight &rarr; Info</li>
+  <li>Find SFTP/SSH credentials</li>
+  <li>Connect with an SFTP client (e.g., FileZilla) or SSH</li>
+  <li>Navigate to the theme directory</li>
+  <li>Upload modified files</li>
+  <li>Clear Kinsta Cache</li>
+</ol>
+
+<blockquote><strong>Important:</strong> Always make a backup before editing theme files. Kinsta keeps 14 days of daily backups that can be restored from MyKinsta &rarr; Sites &rarr; Don't Weight &rarr; Backups.</blockquote>
+
+<h3>Portal (React App)</h3>
+<p>To deploy updates:</p>
+<ol>
+  <li>Navigate to the portal code directory</li>
+  <li>Build the app: <code>npm run build</code></li>
+  <li>Deploy: <code>netlify deploy --prod --dir=dist</code></li>
+  <li>Or, if connected to Git, push your code and Netlify deploys automatically</li>
+</ol>
+
+<p><strong>Netlify Site ID:</strong> <code>d78e09ed-c249-4daa-ab12-6a4e329a6a42</code></p>
+
+<!-- Section 10 -->
+<h2 id="s10"><span class="section-num">10.</span> How to Create Accounts</h2>
+
+<h3>Create a New Clinician Account</h3>
+<ol>
+  <li>Go to Supabase Dashboard</li>
+  <li>Click <strong>Authentication</strong> in the left sidebar</li>
+  <li>Click <strong>Users</strong> &rarr; <strong>Add User</strong></li>
+  <li>Enter the clinician's email address and a temporary password</li>
+  <li>Tick <strong>"Auto confirm"</strong></li>
+  <li>Click <strong>Create User</strong></li>
+  <li>Go to <strong>Table Editor</strong> in the left sidebar</li>
+  <li>Click on the <strong>profiles</strong> table</li>
+  <li>Find the row for the new user (search by email)</li>
+  <li>Change the <strong>role</strong> field from <code>client</code> to <code>clinician</code></li>
+  <li>Click <strong>Save</strong></li>
+</ol>
+
+<h3>Create a New Patient Account</h3>
+<p><strong>Automatic (normal process):</strong> Patients create their own accounts through the consultation flow on the website.</p>
+<p><strong>Manual (if needed):</strong> Follow the clinician steps above but leave the role as <code>client</code>.</p>
+
+<!-- Section 11 -->
+<h2 id="s11"><span class="section-num">11.</span> Ongoing Maintenance</h2>
+
+<h3>What Runs Automatically</h3>
+<table>
+  <thead>
+    <tr><th>Service</th><th>What It Handles</th><th>What to Monitor</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Kinsta</strong></td><td>WordPress hosting, SSL, daily backups, server performance</td><td>MyKinsta dashboard</td></tr>
+    <tr><td><strong>Netlify</strong></td><td>Portal hosting, SSL, CDN, auto deployments</td><td>Netlify dashboard</td></tr>
+    <tr><td><strong>Supabase</strong></td><td>Database, user login, real-time messaging</td><td>Supabase dashboard</td></tr>
+    <tr><td><strong>Stripe</strong></td><td>Payment processing, PCI compliance</td><td>Stripe dashboard</td></tr>
+    <tr><td><strong>Google Workspace</strong></td><td>Email delivery, spam filtering</td><td>Google Admin console</td></tr>
+  </tbody>
+</table>
+
+<h3>DNS Configuration</h3>
+<ul>
+  <li><strong>dontweight.co.uk</strong> &rarr; Points to Kinsta (WordPress website)</li>
+  <li><strong>app.dontweight.co.uk</strong> &rarr; Points to Netlify (Patient portal)</li>
+</ul>
+
+<blockquote><strong>Important:</strong> If you ever change your domain registrar or hosting provider, these DNS records must be updated or the sites will go offline.</blockquote>
+
+<h3>Monthly Checklist</h3>
+<ul class="checklist">
+  <li>Verify the website loads correctly on mobile and desktop</li>
+  <li>Check Stripe dashboard for failed payments or disputes</li>
+  <li>Review Supabase usage to ensure you are within plan limits</li>
+  <li>Confirm Kinsta backups are running</li>
+  <li>Test the patient journey end-to-end</li>
+  <li>Check that emails are being sent and received</li>
+  <li>Review Google Workspace for delivery issues</li>
+</ul>
+
+<!-- Section 12 -->
+<h2 id="s12"><span class="section-num">12.</span> Tech Stack Summary</h2>
+
+<table>
+  <thead>
+    <tr><th>Component</th><th>Purpose</th><th>Hosted On</th><th>Technology</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Main Website</td><td>Public site, quiz, consultation form</td><td>Kinsta</td><td>WordPress + custom theme</td></tr>
+    <tr><td>Patient Portal</td><td>Patient &amp; clinician dashboards</td><td>Netlify</td><td>React + Vite + Tailwind CSS</td></tr>
+    <tr><td>Database</td><td>All portal data and user accounts</td><td>Supabase</td><td>PostgreSQL</td></tr>
+    <tr><td>Payments</td><td>Card processing</td><td>Stripe</td><td>Stripe Checkout</td></tr>
+    <tr><td>Email</td><td>All business email</td><td>Google Workspace</td><td>Gmail</td></tr>
+    <tr><td>Bookings</td><td>Health check appointments</td><td>Semble</td><td>Semble</td></tr>
+  </tbody>
+</table>
+
+<!-- Section 13 -->
+<h2 id="s13"><span class="section-num">13.</span> Cost Structure</h2>
+
+<table>
+  <thead>
+    <tr><th>Service</th><th>What You Pay For</th><th>Typical Monthly Cost</th><th>Notes</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Kinsta</strong></td><td>WordPress hosting</td><td>~$35 &ndash; $70/month</td><td>Includes SSL, CDN, backups</td></tr>
+    <tr><td><strong>Netlify</strong></td><td>Portal hosting</td><td>Free &ndash; $19/month</td><td>Free tier is generous</td></tr>
+    <tr><td><strong>Supabase</strong></td><td>Database &amp; auth</td><td>Free &ndash; $25/month</td><td>Free tier: 500MB, 50K users</td></tr>
+    <tr><td><strong>Stripe</strong></td><td>Payment processing</td><td>1.4% + 20p per txn</td><td>No monthly fee, per transaction</td></tr>
+    <tr><td><strong>Google Workspace</strong></td><td>Email accounts</td><td>~$5.75/user/month</td><td>Per email account</td></tr>
+    <tr><td><strong>Domain</strong></td><td>dontweight.co.uk renewal</td><td>~$10 &ndash; $15/year</td><td>Annual renewal</td></tr>
+    <tr><td><strong>Semble</strong></td><td>Booking system</td><td>Varies</td><td>Check your Semble plan</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Estimated total monthly running cost:</strong> ~$80 &ndash; $150/month (excluding Stripe transaction fees and Semble)</p>
+
+<blockquote><strong>Important:</strong> Keep all payment methods up to date on each platform to avoid service interruptions.</blockquote>
+
+<hr style="margin: 40px 0; border: none; border-top: 1px solid #e8e6df;">
+
+<h2 id="semble">Semble Booking Links</h2>
+<ul>
+  <li><strong>Baseline Health Check:</strong> app.semble.io/book/don-t-weight-ltd/baseline-health-check</li>
+  <li><strong>Standard Health Check:</strong> app.semble.io/book/don-t-weight-ltd/standard-health-check</li>
+  <li><strong>Premium Health Check:</strong> app.semble.io/book/don-t-weight-ltd/comprehensive-health-check</li>
+</ul>
+
+<hr style="margin: 40px 0; border: none; border-top: 1px solid #e8e6df;">
+
+<h2 id="glossary">Glossary of Technical Terms</h2>
+
+<table>
+  <thead>
+    <tr><th>Term</th><th>What It Means</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>WordPress</strong></td><td>A popular website-building platform. Your main website runs on it.</td></tr>
+    <tr><td><strong>React</strong></td><td>A programming framework used to build the patient portal.</td></tr>
+    <tr><td><strong>Supabase</strong></td><td>An online database service that stores all portal data and handles logins.</td></tr>
+    <tr><td><strong>Netlify</strong></td><td>A hosting service that serves the patient portal to visitors.</td></tr>
+    <tr><td><strong>Kinsta</strong></td><td>A premium WordPress hosting service that runs your main website.</td></tr>
+    <tr><td><strong>Stripe</strong></td><td>An online payment processing service. Handles all card payments securely.</td></tr>
+    <tr><td><strong>DNS</strong></td><td>Domain Name System. The "address book" of the internet.</td></tr>
+    <tr><td><strong>SSL</strong></td><td>Secure Sockets Layer. Makes your site show "https://" and the padlock icon.</td></tr>
+    <tr><td><strong>CDN</strong></td><td>Content Delivery Network. Copies of your site stored worldwide for fast loading.</td></tr>
+    <tr><td><strong>Webhook</strong></td><td>An automatic message sent between systems when something happens.</td></tr>
+    <tr><td><strong>SFTP</strong></td><td>Secure File Transfer Protocol. A way to upload files to your server.</td></tr>
+    <tr><td><strong>API</strong></td><td>Application Programming Interface. How different software systems talk to each other.</td></tr>
+    <tr><td><strong>RLS</strong></td><td>Row Level Security. Ensures patients can only see their own data.</td></tr>
+    <tr><td><strong>Cache</strong></td><td>A saved copy of pages for faster loading. Must be cleared after changes.</td></tr>
+  </tbody>
+</table>
+
+<hr style="margin: 40px 0; border: none; border-top: 1px solid #e8e6df;">
+<p style="text-align: center; color: #aaa; font-size: 13px; padding: 20px 0;">
+  Don't Weight &mdash; Complete System Guide &mdash; April 2026
+</p>
+
+</div>
+</body>
+</html>

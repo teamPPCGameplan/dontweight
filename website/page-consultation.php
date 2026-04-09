@@ -10,8 +10,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title>Medical Consultation — Check Your Eligibility | Don't Weight</title>
-<meta name="description" content="Complete your free weight loss consultation in minutes. Reviewed by UK-registered clinicians within 24 hours. Confidential, secure, and no obligation.">
+<meta name="description" content="Free medical weight loss consultation reviewed by UK clinicians within 24 hours. Confidential, secure, no obligation. CQC-registered clinic.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="don't weight">
+<meta property="og:title" content="Free Medical Consultation — Don't Weight">
+<meta property="og:description" content="Free weight loss consultation reviewed by UK clinicians within 24 hours. Confidential, secure, no obligation. CQC-registered clinic.">
+<meta property="og:url" content="https://dontweight.co.uk/consultation/">
+<meta property="og:locale" content="en_GB">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Medical Consultation — Don't Weight">
+<meta name="twitter:description" content="Free weight loss consultation reviewed by UK clinicians within 24 hours. Confidential, secure, no obligation. CQC-registered clinic.">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Medical Weight Loss Consultation",
+  "description": "Free medical weight loss consultation reviewed by UK-registered clinicians within 24 hours",
+  "url": "https://dontweight.co.uk/consultation/",
+  "lastReviewed": "2026-04-06",
+  "medicalAudience": {
+    "@type": "PatientAudience",
+    "audienceType": "Patient"
+  },
+  "provider": {
+    "@type": ["MedicalBusiness", "MedicalClinic"],
+    "name": "don't weight",
+    "url": "https://dontweight.co.uk"
+  }
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
@@ -164,26 +200,28 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
 
   <!-- STEP 2: Personal Details -->
   <div class="step" id="s2">
+    <form id="personalForm" autocomplete="on" onsubmit="return false">
     <div class="section-card">
       <h2>Personal Details</h2>
-      <div class="sec-sub">As they appear on your photo ID.</div>
+      <div class="sec-sub">As they appear on your medical records.</div>
 
       <div class="field-row">
-        <div class="field"><label>First name <span class="req">*</span></label><input type="text" id="fname" placeholder="First name"></div>
-        <div class="field"><label>Last name <span class="req">*</span></label><input type="text" id="lname" placeholder="Last name"></div>
+        <div class="field"><label>First name <span class="req">*</span></label><input type="text" id="fname" name="given-name" autocomplete="given-name" placeholder="First name"></div>
+        <div class="field"><label>Last name <span class="req">*</span></label><input type="text" id="lname" name="family-name" autocomplete="family-name" placeholder="Last name"></div>
       </div>
       <div class="field-row">
-        <div class="field"><label>Date of birth <span class="req">*</span></label><input type="date" id="dob"></div>
+        <div class="field"><label>Date of birth <span class="req">*</span></label><input type="date" id="dob" name="bday" autocomplete="bday"></div>
         <div class="field"><label>Biological sex <span class="req">*</span></label>
-          <select id="sex"><option value="">Select...</option><option>Female</option><option>Male</option></select>
+          <select id="sex" name="sex" autocomplete="sex"><option value="">Select...</option><option>Female</option><option>Male</option></select>
         </div>
       </div>
-      <div class="field"><label>Email address <span class="req">*</span></label><input type="email" id="email" placeholder="your@email.com"></div>
-      <div class="field"><label>Phone number <span class="req">*</span></label><input type="tel" id="phone" placeholder="07xxx xxxxxx"></div>
-      <div class="field"><label>Home address <span class="req">*</span></label><input type="text" id="addr1" placeholder="Address line 1" style="margin-bottom:8px"><input type="text" id="addr2" placeholder="Address line 2 (optional)" style="margin-bottom:8px">
-        <div class="field-row"><div class="field" style="margin-bottom:0"><input type="text" id="city" placeholder="City"></div><div class="field" style="margin-bottom:0"><input type="text" id="postcode" placeholder="Postcode"></div></div>
+      <div class="field"><label>Email address <span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email" placeholder="your@email.com"></div>
+      <div class="field"><label>Phone number <span class="req">*</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07xxx xxxxxx"></div>
+      <div class="field"><label>Home address <span class="req">*</span></label><input type="text" id="addr1" name="address-line1" autocomplete="address-line1" placeholder="Address line 1" style="margin-bottom:8px"><input type="text" id="addr2" name="address-line2" autocomplete="address-line2" placeholder="Address line 2 (optional)" style="margin-bottom:8px">
+        <div class="field-row"><div class="field" style="margin-bottom:0"><input type="text" id="city" name="address-level2" autocomplete="address-level2" placeholder="City"></div><div class="field" style="margin-bottom:0"><input type="text" id="postcode" name="postal-code" autocomplete="postal-code" placeholder="Postcode"></div></div>
       </div>
     </div>
+    </form>
     <div class="err" id="err2"></div>
     <div class="nav-btns"><button class="btn-back" onclick="prevS(2)">&larr; Back</button><button class="btn-next" onclick="nextS(2)">Continue &rarr;</button></div>
   </div>
@@ -274,6 +312,15 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
     <div class="section-card">
       <h2>Weight &amp; Treatment History</h2>
       <div class="sec-sub">Helps your clinician recommend the most appropriate treatment plan.</div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="field"><label>Current weight (kg) <span class="req">*</span></label>
+          <input type="number" id="weightKg" placeholder="e.g. 95" min="30" max="300" step="0.1" style="width:100%">
+        </div>
+        <div class="field"><label>Height (cm) <span class="req">*</span></label>
+          <input type="number" id="heightCm" placeholder="e.g. 170" min="100" max="250" step="1" style="width:100%">
+        </div>
+      </div>
 
       <div class="field"><label>How long have you been concerned about your weight? <span class="req">*</span></label>
         <select id="weightDuration"><option value="">Select...</option><option>Less than 1 year</option><option>1-3 years</option><option>3-5 years</option><option>More than 5 years</option></select>
@@ -369,7 +416,7 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
       </div>
 
       <!-- Mounjaro -->
-      <div class="treat-select-card" id="sel-mounjaro" onclick="selectTreat('mounjaro')" style="border:2px solid var(--sky);background:var(--sky-wash);border-radius:16px;padding:24px;margin-bottom:14px;cursor:pointer;position:relative;transition:all .2s">
+      <div class="treat-select-card" id="sel-mounjaro" onclick="selectTreat('mounjaro')" style="border:2px solid var(--sky);background:var(--sky-wash);border-radius:16px;padding:24px;margin-bottom:14px;cursor:pointer;position:relative;transition:all .2s;overflow:visible">
         <div style="position:absolute;top:-10px;left:20px;background:var(--coral);color:#fff;padding:4px 14px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase">Recommended</div>
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px">
           <div style="flex:1;min-width:200px">
@@ -380,16 +427,16 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
           <div style="text-align:right;min-width:120px">
             <div style="font-family:var(--display);font-size:28px;font-weight:700;color:var(--ink);letter-spacing:-1px">&pound;150</div>
             <div style="font-size:12px;color:var(--slate)">first month</div>
-            <div style="font-size:12px;color:var(--slate);margin-top:2px">then from &pound;175/month</div>
+            <div style="font-size:12px;color:var(--slate);margin-top:2px">then from &pound;170/month</div>
             <div style="font-size:10px;color:var(--slate);margin-top:1px">(dosage dependent)</div>
           </div>
         </div>
         <div style="margin-top:12px;font-size:12px;color:var(--charcoal);line-height:1.6">Includes: medication, clinical review, personalised plan, free next-day delivery, ongoing clinician support.</div>
-        <div class="treat-check" style="position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--sky-dark);display:flex;align-items:center;justify-content:center;background:var(--sky-dark);color:#fff;font-size:12px;font-weight:700">&#10003;</div>
+        <div class="treat-check" style="position:absolute;top:-13px;right:-13px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--sky-dark);display:flex;align-items:center;justify-content:center;background:var(--sky-dark);color:#fff;font-size:12px;font-weight:700">&#10003;</div>
       </div>
 
       <!-- Wegovy -->
-      <div class="treat-select-card" id="sel-wegovy" onclick="selectTreat('wegovy')" style="border:2px solid var(--stone);background:var(--white);border-radius:16px;padding:24px;margin-bottom:20px;cursor:pointer;position:relative;transition:all .2s">
+      <div class="treat-select-card" id="sel-wegovy" onclick="selectTreat('wegovy')" style="border:2px solid var(--stone);background:var(--white);border-radius:16px;padding:24px;margin-bottom:20px;cursor:pointer;position:relative;transition:all .2s;overflow:visible">
         <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px">
           <div style="flex:1;min-width:200px">
             <h3 style="font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:4px;letter-spacing:-.5px">Wegovy</h3>
@@ -402,11 +449,18 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
           </div>
         </div>
         <div style="margin-top:12px;font-size:12px;color:var(--charcoal);line-height:1.6">Includes: medication, clinical review, personalised plan, free next-day delivery, ongoing clinician support.</div>
-        <div class="treat-check" style="position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--stone);display:flex;align-items:center;justify-content:center;background:transparent;color:transparent;font-size:12px;font-weight:700">&#10003;</div>
+        <div class="treat-check" style="position:absolute;top:-13px;right:-13px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--stone);display:flex;align-items:center;justify-content:center;background:transparent;color:transparent;font-size:12px;font-weight:700">&#10003;</div>
+      </div>
+
+      <!-- Dose selector (shown for patients switching provider) -->
+      <div id="doseSelectArea" style="display:none;background:var(--cream);border-radius:16px;padding:20px;margin-bottom:16px">
+        <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:4px">Select your dose</div>
+        <div id="doseNote" style="font-size:11px;color:var(--sky-dark);margin-bottom:12px;font-weight:500"></div>
+        <div id="doseOptions" style="display:flex;flex-wrap:wrap;gap:8px"></div>
       </div>
 
       <div style="background:var(--cream);border-radius:12px;padding:16px;font-size:12px;color:var(--charcoal);line-height:1.7;margin-bottom:12px">
-        <strong>How pricing works:</strong> All prices shown are starting prices. Your exact monthly cost depends on your prescribed dosage, which your pharmacist will determine based on your clinical needs. As your dose increases during treatment (a normal part of the titration process), your monthly cost may increase. You will always be informed of the exact cost before each prescription is dispensed. Treatment can be cancelled at any time with no further charges.
+        <strong>How pricing works:</strong> All prices shown are starting prices. Your exact monthly cost depends on your prescribed dosage, which your pharmacist will determine based on your clinical needs. You will always be informed of the exact cost before each prescription is dispensed. You can stop treatment at any time with no further charges.
       </div>
 
       <div style="font-size:12px;color:var(--slate);line-height:1.6">
@@ -414,59 +468,7 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
       </div>
     </div>
     <div class="err" id="err6"></div>
-    <div class="nav-btns"><button class="btn-back" onclick="prevS(6)">&larr; Back</button><button class="btn-next" onclick="nextS(6)">Continue to verification &rarr;</button></div>
-  </div>
-
-  <!-- STEP_7_UPLOADS -->
-  <div class="step" id="s7">
-    <div class="section-card">
-      <h2>Identity Verification</h2>
-      <div class="sec-sub">Required by GPhC regulations before any prescription can be issued.</div>
-
-      <div class="info-banner">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" stroke="#0284C7" stroke-width="2" stroke-linecap="round"/></svg>
-        <span>Your documents are encrypted, stored securely, and reviewed only by our clinical team. Never shared with third parties.</span>
-      </div>
-
-      <div class="field">
-        <label>Photo ID <span class="req">*</span></label>
-        <div class="field-note" style="margin-bottom:10px">Upload a clear photo of your passport, driving licence, or national identity card. Must show your full name and photo.</div>
-        <div class="upload-zone" id="uz1">
-          <input type="file" accept="image/*,.pdf" onchange="handleUpload(this,'uz1','p1')">
-          <div class="uz-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15A2.25 2.25 0 002.25 6.75v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" stroke="#0EA5E9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-          <div class="uz-title">Upload photo ID</div>
-          <div class="uz-sub">JPG, PNG or PDF, max 10MB</div>
-        </div>
-        <div class="upload-preview" id="p1"></div>
-      </div>
-
-      
-
-      <div class="field">
-        <label>GP practice details <span class="req">*</span></label>
-        <div class="field-note" style="margin-bottom:10px">GPhC regulations require us to verify your information with your GP or clinical records. Please provide your GP practice name and address.</div>
-        <input type="text" id="gpName" placeholder="GP practice name">
-        <input type="text" id="gpAddr" placeholder="GP practice address or postcode" style="margin-top:8px">
-      </div>
-
-      
-      <div class="field" style="margin-top:16px">
-        <label>Can we contact your GP? <span class="req">*</span></label>
-        <div class="field-note" style="margin-bottom:10px">GPhC regulations may require us to verify your medical history or notify your GP about your treatment. This is standard practice for prescription medication.</div>
-        <div class="yn-row">
-          <button type="button" class="yn-btn" onclick="this.classList.add('sel-yes');this.nextElementSibling.classList.remove('sel-no');document.getElementById('gpConsent').value='yes'" id="gpConsentYes">Yes, that's fine</button>
-          <button type="button" class="yn-btn" onclick="this.classList.add('sel-no');this.previousElementSibling.classList.remove('sel-yes');document.getElementById('gpConsent').value='no'" id="gpConsentNo">I'd prefer not</button>
-        </div>
-        <input type="hidden" id="gpConsent" value="">
-        <div class="field-note" style="margin-top:8px;color:var(--sky-dark)">We will always discuss this with you first before contacting your GP.</div>
-      </div>
-
-<div class="warning-banner">
-        <strong>Live video consultation</strong> &mdash; GPhC regulations for weight management medication require your prescribing clinician to verify your identity and assess you via a live video or in-person consultation. After you submit this form, our team will contact you within 24 hours to arrange a short video call (typically 5&ndash;10 minutes) with your prescribing pharmacist.
-      </div>
-    </div>
-    <div class="err" id="err7"></div>
-    <div class="nav-btns"><button class="btn-back" onclick="prevS(7)">&larr; Back</button><button class="btn-submit" onclick="submitAll()">Submit for clinical review &rarr;</button></div>
+    <div class="nav-btns"><button class="btn-back" onclick="prevS(6)">&larr; Back</button><button class="btn-next" onclick="nextS(6)">Continue to payment &rarr;</button></div>
   </div>
 
   <!-- STEP 8: Payment -->
@@ -504,7 +506,7 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
       </div>
 
       <div style="font-size:12px;color:var(--slate);line-height:1.6;margin-bottom:20px">
-        <strong>What you&rsquo;re paying for:</strong> Your initial treatment month including medication, clinical review, personalised plan, free next-day delivery, and ongoing clinician support. Recurring payments begin after your first month at the standard dosage rate.
+        <strong>What you&rsquo;re paying for:</strong> Your initial treatment month including medication, clinical review, personalised plan, free next-day delivery, and ongoing clinician support. Your treatment continues monthly at the standard dosage rate.
       </div>
 
       <!-- Stripe Checkout Button (placeholder until keys are added) -->
@@ -540,29 +542,53 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
         <p style="color:var(--slate);font-size:14px;margin-top:6px">Now book your video consultation with our pharmacist.</p>
       </div>
 
-      <div class="info-banner">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" stroke="#0284C7" stroke-width="2"/><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" stroke="#0284C7" stroke-width="2"/></svg>
-        <span><strong>Required by GPhC:</strong> A live video consultation is mandatory before any weight management medication can be prescribed. This is a short 10&ndash;15 minute call.</span>
-      </div>
+      <!-- STEP 9A: Prominent booking prompt -->
+      <div id="booking-prompt" style="text-align:center;margin-bottom:32px">
+        <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#38BDF8,#0284C7);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 32px rgba(56,189,248,.3)">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h2 style="font-family:var(--display);font-size:26px;font-weight:700;margin-bottom:8px;letter-spacing:-.6px;color:var(--ink)">Payment received &mdash; one last step!</h2>
+        <p style="font-size:16px;color:var(--charcoal);line-height:1.6;max-width:480px;margin:0 auto 8px;font-weight:500">Book your mandatory video consultation below</p>
+        <p style="font-size:13px;color:var(--slate);max-width:420px;margin:0 auto 20px;line-height:1.5">A short 10&ndash;15 minute call with your pharmacist is required by the GPhC before any medication can be prescribed. Pick a time that works for you.</p>
 
-      <div style="background:var(--cream);border-radius:16px;padding:20px;margin-bottom:20px">
-        <div style="font-size:13px;color:var(--charcoal);line-height:1.7">
-          <strong>What to expect:</strong><br>
-          &bull; Your pharmacist will verify your identity (have your photo ID ready)<br>
-          &bull; Brief clinical assessment and review of your medical history<br>
-          &bull; Discuss your treatment plan and answer any questions<br>
-          &bull; Consultation via Google Meet (link sent in confirmation email)
+        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">
+          <span style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);border:1px solid var(--green);color:var(--green);font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Payment confirmed
+          </span>
+          <span style="display:inline-flex;align-items:center;gap:6px;background:var(--sky-pale);border:1px solid var(--sky);color:var(--sky-deep);font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
+            Book consultation now
+          </span>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:2px solid #F59E0B;border-radius:16px;padding:16px 20px;max-width:460px;margin:0 auto 24px;text-align:left">
+          <p style="font-size:14px;font-weight:700;color:#92400E;margin-bottom:6px">&#9888; Don&rsquo;t leave without booking!</p>
+          <p style="font-size:13px;color:#78350F;line-height:1.5;margin:0">Your order <strong>cannot be processed</strong> until the video consultation is completed. Choose a time slot below to avoid delays.</p>
         </div>
       </div>
 
-      <!-- Cal.com Embed -->
-      <div style="border:1px solid var(--stone);border-radius:16px;overflow:hidden;min-height:500px">
-        <div style="width:100%;height:600px;overflow:auto" id="my-cal-inline-video-consultation"></div>
+      <!-- Cal.com Inline Booking — large and prominent -->
+      <div id="cal-booking-area" style="background:var(--cream);border-radius:16px;padding:4px;margin-bottom:20px;min-height:500px;border:2px solid var(--sky);box-shadow:0 4px 24px rgba(56,189,248,.15)">
+        <iframe src="https://cal.com/dontweight/video-consultation?embed=true" style="width:100%;height:650px;border:none;border-radius:12px" loading="lazy"></iframe>
       </div>
 
       <div style="text-align:center;margin-top:20px">
-        <button onclick="skipBooking()" style="background:none;border:none;color:var(--slate);font-size:13px;cursor:pointer;text-decoration:underline;font-family:var(--body)">I&rsquo;ll book later &mdash; skip for now</button>
-        <p style="font-size:11px;color:var(--slate);margin-top:6px">Our team will contact you within 24 hours if you don&rsquo;t book now.</p>
+        <p style="font-size:12px;color:var(--slate);margin-bottom:8px">Having trouble with the calendar? Contact us and we&rsquo;ll arrange it for you.</p>
+        <button onclick="showSkipConfirm()" style="background:none;border:1px solid var(--border);color:var(--slate);font-size:13px;cursor:pointer;font-family:var(--body);padding:8px 20px;border-radius:100px">I&rsquo;ll book later &mdash; contact me instead</button>
+      </div>
+
+      <!-- Skip booking confirmation overlay -->
+      <div id="skip-confirm-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:9999;backdrop-filter:blur(4px)">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:20px;padding:32px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)">
+          <div style="width:60px;height:60px;border-radius:50%;background:#FEF3C7;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px">&#9888;</div>
+          <h3 style="font-family:var(--display);font-size:20px;font-weight:700;margin-bottom:8px;color:var(--ink)">Are you sure?</h3>
+          <p style="font-size:14px;color:var(--slate);line-height:1.6;margin-bottom:20px">Your medication <strong>cannot be dispatched</strong> until the video consultation is completed. Skipping may delay your treatment by several days.</p>
+          <div style="display:flex;gap:10px;flex-direction:column">
+            <button onclick="hideSkipConfirm()" style="background:var(--sky);color:#fff;border:none;border-radius:100px;padding:14px 28px;font-family:var(--body);font-size:14px;font-weight:600;cursor:pointer;width:100%">Go back and book now</button>
+            <button onclick="confirmSkipBooking()" style="background:none;border:1px solid var(--border);color:var(--slate);border-radius:100px;padding:12px 28px;font-family:var(--body);font-size:13px;cursor:pointer;width:100%">Skip anyway &mdash; contact me within 24h</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -574,13 +600,28 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
         <div class="success-icon">&#10003;</div>
         <h2>You&rsquo;re all set!</h2>
         <p>Your consultation has been submitted, payment received, and your video consultation is being arranged.</p>
-        <div class="next-steps">
-          <strong>What happens next:</strong><br><br>
-          1. <strong>Video consultation</strong> &mdash; your pharmacist will meet you at your booked time via Google Meet. Have your photo ID ready.<br>
-          2. <strong>Clinical review</strong> &mdash; your prescribing pharmacist will review all your information and the video assessment<br>
-          3. <strong>If approved</strong> &mdash; your medication will be dispatched from a registered UK pharmacy the following day via free next-day delivery<br>
-          4. <strong>If not approved</strong> &mdash; you will receive a full refund within 5 working days<br><br>
-          <strong>Check your email</strong> at <span id="confirmEmail" style="color:var(--sky-deep);font-weight:600"></span> for booking confirmation and Google Meet link.
+        <div class="next-steps" style="text-align:left;background:var(--cream);border-radius:16px;padding:20px;margin-top:16px">
+          <strong style="font-size:15px">What happens next:</strong><br><br>
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--sky-pale);color:var(--sky-deep);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">1</span>
+            <div><strong>Video consultation</strong> &mdash; your pharmacist will meet you at your booked time via Google Meet.</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--sky-pale);color:var(--sky-deep);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">2</span>
+            <div><strong>Clinical review</strong> &mdash; your prescribing pharmacist will review all your information and the video assessment.</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
+            <span style="width:28px;height:28px;border-radius:50%;background:var(--green-bg);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">3</span>
+            <div><strong>If approved</strong> &mdash; your medication will be dispatched from a registered UK pharmacy the following day via free next-day delivery.</div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
+            <span style="width:28px;height:28px;border-radius:50%;background:#FEF3C7;color:#92400E;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">4</span>
+            <div><strong>If not approved</strong> &mdash; you will receive a full refund within 5 working days.</div>
+          </div>
+          <div style="margin-top:16px;padding:14px 16px;background:var(--sky-pale);border-radius:12px;display:flex;align-items:center;gap:10px">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span style="font-size:13px;color:var(--charcoal)"><strong>Check your email</strong> at <span id="confirmEmail" style="color:var(--sky-deep);font-weight:600"></span> for booking confirmation and Google Meet link.</span>
+          </div>
         </div>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
           <a href="<?php echo esc_url(home_url('/')); ?>" style="display:inline-block;background:var(--sky);color:#fff;border:none;border-radius:100px;padding:14px 36px;font-family:var(--body);font-size:14px;font-weight:600;text-decoration:none;transition:background .2s">Return to homepage</a>
@@ -591,7 +632,7 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
 </div>
 
 <div style="background:var(--ink);padding:24px;text-align:center;font-size:11px;color:rgba(255,255,255,.35);margin-top:40px">
-  &copy; 2026 Don't Weight Ltd. Registered in England &amp; Wales. GPhC-registered prescribing pharmacists.
+  &copy; <?php echo date('Y'); ?> don't weight — a trading name of Ultrasound London Limited. All rights reserved. <a href="https://londonsono.com" style="color:rgba(255,255,255,.5);text-decoration:none">londonsono.com</a>
 </div>
 
 <script>
@@ -610,10 +651,10 @@ function showStep(n){
   document.getElementById('s'+n).classList.add('active');
   
   // Map form steps to 4 progress phases
-  // Steps 1-2: Your Details | Steps 3-5: Medical History | Steps 6-8: Treatment & Pay | Steps 9-10: Book Call
-  const phaseMap={1:1,2:1,3:2,4:2,5:2,6:3,7:3,8:3,9:4,10:4};
+  // Steps 1-2: Your Details | Steps 3-5: Medical History | Steps 6,8: Treatment & Pay | Steps 9-10: Book Call
+  const phaseMap={1:1,2:1,3:2,4:2,5:2,6:3,8:3,9:4,10:4};
   const phase=phaseMap[n]||1;
-  
+
   // Update step numbers
   for(let i=1;i<=4;i++){
     const num=document.querySelector('#sl'+i+' .step-num');
@@ -621,9 +662,9 @@ function showStep(n){
     if(i<phase)num.classList.add('done');
     if(i===phase)num.classList.add('active');
   }
-  
+
   // Fill progress lines
-  const subSteps={1:[1,2],2:[3,4,5],3:[6,7,8],4:[9,10]};
+  const subSteps={1:[1,2],2:[3,4,5],3:[6,8],4:[9,10]};
   for(let i=1;i<=3;i++){
     const fill=document.getElementById('progFill'+(i>1?i:''));
     if(i<phase){fill.style.width='100%'}
@@ -642,7 +683,6 @@ function showStep(n){
     4:'Halfway there!',
     5:'Almost done with medical info',
     6:'Step 3 of 4 — Choose treatment',
-    7:'One more step after this',
     8:'Nearly there — payment',
     9:'Final step — book your call!',
     10:'All done!'
@@ -691,6 +731,11 @@ function nextS(current){
   }
   // Step 4: Weight & Safety
   if(current===4){
+    const wKg=document.getElementById('weightKg').value;
+    const hCm=document.getElementById('heightCm').value;
+    if(!wKg||!hCm){document.getElementById(errId).textContent='Please enter your current weight and height.';return}
+    if(parseFloat(wKg)<30||parseFloat(wKg)>300){document.getElementById(errId).textContent='Please enter a valid weight in kg.';return}
+    if(parseFloat(hCm)<100||parseFloat(hCm)>250){document.getElementById(errId).textContent='Please enter a valid height in cm.';return}
     const wd=document.getElementById('weightDuration').value;
     const pm=document.getElementById('prevMed').value;
     const preg=document.getElementById('pregnant').value;
@@ -711,35 +756,55 @@ function nextS(current){
   }
   // Step 6: Treatment selection - always valid (one is pre-selected)
 
-  step=current+1;
+  // Skip step 7 (removed)
+  // When leaving step 6 (treatment selection), submit all medical data before showing payment
+  if(current===6){
+    submitAll(); // This sets step=8 and shows it
+    return;
+  }
+  step = current + 1;
   showStep(step);
 }
 
-function prevS(current){step=current-1;showStep(step)}
+function prevS(current){
+  // Skip step 7 (removed)
+  step = current === 8 ? 6 : current - 1;
+  showStep(step);
+}
 
 function submitAll(){
   // Collect all consultation form data
-  const fields=['fname','lname','dob','sex','email','phone','addr2','postcode',
+  const fields=['fname','lname','dob','sex','email','phone','addr1','addr2','city','postcode',
     'conditions','medications','allergies','surgeries','family','lifestyle',
-    'weightDuration','prevMed','prevMedDetails','pregnant','thyroid',
+    'weightKg','heightCm','weightDuration','prevMed','prevMedDetails','pregnant','thyroid',
     'pancreatitis','eating','contraception'];
-  
+
   const allData={};
   fields.forEach(f=>{
     const el=document.getElementById(f);
     if(el) allData[f]=el.value||el.textContent||'';
   });
-  
+
+  // Calculate BMI from weight/height if available, fallback to URL param
+  const wKg=parseFloat(allData.weightKg)||0;
+  const hCm=parseFloat(allData.heightCm)||0;
+  if(wKg>0&&hCm>0){
+    allData.bmi=(wKg/((hCm/100)**2)).toFixed(1);
+  } else {
+    const urlParams=new URLSearchParams(window.location.search);
+    allData.bmi=urlParams.get('bmi')||'';
+  }
+
   // Consents
   for(let i=1;i<=7;i++){
     const c=document.getElementById('c'+i);
     allData['consent_'+i]=c&&c.checked?'Yes':'No';
   }
-  
+
   // Build readable answers
   const answerLines=[];
   Object.keys(allData).forEach(k=>{ if(allData[k]) answerLines.push(k+': '+allData[k]); });
-  
+
   // Submit to server
   const fd=new FormData();
   fd.append('action','dw_submit_app');
@@ -750,16 +815,69 @@ function submitAll(){
   fd.append('phone',allData.phone||'');
   fd.append('dob',allData.dob||'');
   fd.append('gender',allData.sex||'');
+  fd.append('weight_kg',allData.weightKg||'');
+  fd.append('height_cm',allData.heightCm||'');
+  fd.append('bmi',allData.bmi||'');
   fd.append('treatment_choice',selectedTreat||'');
+  if(selectedTargetDose&&selectedTargetDose!==selectedTreat){
+    fd.append('target_dose',selectedTargetDose);
+  }
   fd.append('stage','consultation');
+  fd.append('address',[(allData.addr1||''),(allData.addr2||''),(allData.city||''),(allData.postcode||'')].filter(Boolean).join(', '));
   fd.append('conditions',allData.conditions||'');
   fd.append('medications',allData.medications||'');
+  fd.append('allergies',allData.allergies||'');
+  fd.append('surgeries',allData.surgeries||'');
+  fd.append('family_history',allData.family||'');
+  fd.append('lifestyle',allData.lifestyle||'');
   fd.append('prev_medication',allData.prevMed||'');
+  fd.append('prev_med_details',allData.prevMedDetails||'');
   fd.append('answers',answerLines.join('\n'));
   
   const ajaxUrl=typeof dwAjax!=='undefined'?dwAjax.url:'/wp-admin/admin-ajax.php';
   fetch(ajaxUrl,{method:'POST',body:fd}).catch(()=>{});
-  
+
+  // Also send to Supabase via portal capture-lead function
+  var leadPayload={
+    first_name:allData.fname||'',
+    last_name:allData.lname||'',
+    email:allData.email||'',
+    phone:allData.phone||'',
+    source:'consultation',
+    page_url:window.location.href,
+    date_of_birth:allData.dob||'',
+    treatment:selectedTreat||'mounjaro',
+    consent_data_processing:true,
+    questionnaire_data:{
+      sex:allData.sex||'',
+      address:[(allData.addr1||''),(allData.addr2||''),(allData.city||''),(allData.postcode||'')].filter(Boolean).join(', '),
+      medical_conditions:allData.conditions||'',
+      medications:allData.medications||'',
+      allergies:allData.allergies||'',
+      surgeries:allData.surgeries||'',
+      family_history:allData.family||'',
+      smoking_alcohol:allData.lifestyle||'',
+      weight_concern_duration:allData.weightDuration||'',
+      previous_medication:allData.prevMed||'',
+      previous_medication_details:allData.prevMedDetails||'',
+      pregnant:allData.pregnant||'',
+      thyroid_cancer:allData.thyroid||'',
+      pancreatitis:allData.pancreatitis||'',
+      eating_disorder:allData.eating||'',
+      contraception:allData.contraception||'',
+      target_dose:selectedTargetDose||''
+    }
+  };
+  // Add UTM params if available
+  var utmKeys=['utm_source','utm_medium','utm_campaign'];
+  utmKeys.forEach(function(k){var v=sessionStorage.getItem(k);if(v)leadPayload[k]=v;});
+
+  fetch('https://app.dontweight.co.uk/.netlify/functions/capture-lead',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(leadPayload)
+  }).catch(function(){});
+
   step=8;
   showStep(8);
   updatePaymentSummary();
@@ -793,6 +911,9 @@ function processPayment(){
   fd.append('action','dw_stripe_checkout');
   fd.append('nonce',typeof dwStripe!=='undefined'?dwStripe.nonce:'');
   fd.append('treatment',selectedTreat||'mounjaro');
+  if(selectedTargetDose&&selectedTargetDose!==selectedTreat){
+    fd.append('target_dose',selectedTargetDose);
+  }
   fd.append('email',email);
   fd.append('name',name.trim());
   
@@ -802,6 +923,19 @@ function processPayment(){
     .then(r=>r.json())
     .then(data=>{
       if(data.success && data.data.url){
+        // Save form state to localStorage before Stripe redirect
+        try{
+          var formState={
+            fname:document.getElementById('fname').value||'',
+            lname:document.getElementById('lname').value||'',
+            email:document.getElementById('email').value||'',
+            phone:document.getElementById('phone').value||'',
+            treatment:selectedTreat||'mounjaro',
+            targetDose:selectedTargetDose||'',
+            timestamp:Date.now()
+          };
+          localStorage.setItem('dw_consultation_state',JSON.stringify(formState));
+        }catch(e){}
         window.location.href=data.data.url;
       } else {
         btn.disabled=false;
@@ -816,26 +950,102 @@ function processPayment(){
     });
 }
 
-// Load Cal.com embed
-function loadCalEmbed(){
-  if(window.calLoaded)return;
-  window.calLoaded=true;
-  (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.com/embed/embed.js","init");
-  Cal("init","video-consultation",{origin:"https://app.cal.com"});
-  Cal.ns["video-consultation"]("inline",{
-    elementOrSelector:"#my-cal-inline-video-consultation",
-    config:{"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
-    calLink:"dontweight/video-consultation",
-  });
-  Cal.ns["video-consultation"]("ui",{"hideEventTypeDetails":false,"layout":"month_view"});
+// Submit video consultation request
+function submitVideoRequest(){
+  var day=document.getElementById('vcDay').value;
+  var time=document.getElementById('vcTime').value;
+  var notes=document.getElementById('vcNotes').value.trim();
+  if(!day||!time){alert('Please select your preferred day and time.');return;}
+  var email=document.getElementById('email').value||'';
+  var name=(document.getElementById('fname').value||'')+' '+(document.getElementById('lname').value||'');
+  var phone=document.getElementById('phone').value||'';
+
+  var fd=new FormData();
+  fd.append('action','dw_schedule');
+  fd.append('nonce',typeof dwAjax!=='undefined'?dwAjax.nonce:'');
+  fd.append('name',name.trim());
+  fd.append('email',email);
+  fd.append('phone',phone);
+  fd.append('day',day);
+  fd.append('time',time);
+  fd.append('reason','Video consultation (post-payment) — '+notes);
+  var url=typeof dwAjax!=='undefined'?dwAjax.url:'/wp-admin/admin-ajax.php';
+  fetch(url,{method:'POST',body:fd}).catch(function(){});
+
+  var em=email||'your email';
+  document.getElementById('confirmEmail').textContent=em;
+  step=10;
+  showStep(10);
 }
 
-// Skip booking
-function skipBooking(){
+// Skip booking — now requires confirmation
+function showSkipConfirm(){
+  document.getElementById('skip-confirm-overlay').style.display='block';
+}
+function hideSkipConfirm(){
+  document.getElementById('skip-confirm-overlay').style.display='none';
+}
+function confirmSkipBooking(){
+  document.getElementById('skip-confirm-overlay').style.display='none';
   const em=document.getElementById('email').value||'your email';
   document.getElementById('confirmEmail').textContent=em;
   step=10;
   showStep(10);
+}
+// Legacy alias
+function skipBooking(){ showSkipConfirm(); }
+
+// Dose data
+const doseData={
+  mounjaro:[
+    {id:'mounjaro',dose:'2.5mg',price:150,ongoing:170,starter:true},
+    {id:'mounjaro-5',dose:'5mg',price:185,ongoing:185},
+    {id:'mounjaro-7.5',dose:'7.5mg',price:250,ongoing:250},
+    {id:'mounjaro-10',dose:'10mg',price:275,ongoing:275},
+    {id:'mounjaro-12.5',dose:'12.5mg',price:285,ongoing:285},
+    {id:'mounjaro-15',dose:'15mg',price:310,ongoing:310},
+  ],
+  wegovy:[
+    {id:'wegovy',dose:'0.25mg',price:114,ongoing:139,starter:true},
+    {id:'wegovy-0.5',dose:'0.5mg',price:139,ongoing:139},
+    {id:'wegovy-1',dose:'1mg',price:169,ongoing:169},
+    {id:'wegovy-1.7',dose:'1.7mg',price:199,ongoing:199},
+    {id:'wegovy-2.4',dose:'2.4mg',price:229,ongoing:229},
+  ]
+};
+
+let selectedTargetDose=null;
+
+function renderDoseSelector(){
+  const area=document.getElementById('doseSelectArea');
+  const opts=document.getElementById('doseOptions');
+  const note=document.getElementById('doseNote');
+  const baseTreat=selectedTreat.startsWith('wegovy')?'wegovy':'mounjaro';
+  const doses=doseData[baseTreat]||[];
+  const starter=doses.find(d=>d.starter);
+
+  area.style.display='block';
+  note.innerHTML='All patients start on the starter dose (&pound;'+starter.price+'/mo). Switching provider? Your clinician can approve a higher dose after consultation. Price adjusts from your next order.';
+  opts.innerHTML='';
+  selectedTargetDose=null;
+  // Always charge starter dose
+  selectedTreat=starter.id;
+
+  doses.forEach(d=>{
+    const btn=document.createElement('button');
+    btn.type='button';
+    btn.innerHTML=d.dose+(d.starter?' <small style="color:var(--sky-dark)">(starter &mdash; &pound;'+d.price+'/mo)</small>':' <small style="color:var(--slate)">&pound;'+d.price+'/mo</small>');
+    btn.style.cssText='padding:10px 16px;border-radius:100px;border:2px solid var(--stone);background:var(--white);font-family:var(--body);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;color:var(--charcoal)';
+    btn.onclick=function(){
+      opts.querySelectorAll('button').forEach(b=>{b.style.borderColor='var(--stone)';b.style.background='var(--white)';b.style.color='var(--charcoal)'});
+      btn.style.borderColor='var(--sky)';btn.style.background='var(--sky-wash)';btn.style.color='var(--sky-dark)';
+      selectedTargetDose=d.id;
+      // Always charge starter price regardless of selection
+      selectedTreat=starter.id;
+    };
+    if(d.starter)btn.click();
+    opts.appendChild(btn);
+  });
 }
 
 // Treatment selection
@@ -844,17 +1054,20 @@ function selectTreat(treat){
   selectedTreat=treat;
   const mCard=document.getElementById('sel-mounjaro');
   const oCard=document.getElementById('sel-wegovy');
-  if(treat==='mounjaro'){
+  if(treat==='mounjaro'||treat.startsWith('mounjaro')){
     mCard.style.borderColor='var(--sky)';mCard.style.background='var(--sky-wash)';
-    mCard.querySelector('.treat-check').style.cssText='position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--sky-dark);display:flex;align-items:center;justify-content:center;background:var(--sky-dark);color:#fff;font-size:12px;font-weight:700';
+    mCard.querySelector('.treat-check').style.cssText='position:absolute;top:-13px;right:-13px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--sky-dark);display:flex;align-items:center;justify-content:center;background:var(--sky-dark);color:#fff;font-size:12px;font-weight:700';
     oCard.style.borderColor='var(--stone)';oCard.style.background='var(--white)';
-    oCard.querySelector('.treat-check').style.cssText='position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--stone);display:flex;align-items:center;justify-content:center;background:transparent;color:transparent;font-size:12px;font-weight:700';
+    oCard.querySelector('.treat-check').style.cssText='position:absolute;top:-13px;right:-13px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--stone);display:flex;align-items:center;justify-content:center;background:transparent;color:transparent;font-size:12px;font-weight:700';
+    selectedTreat='mounjaro';
   } else {
     oCard.style.borderColor='var(--sky)';oCard.style.background='var(--sky-wash)';
-    oCard.querySelector('.treat-check').style.cssText='position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--sky-dark);display:flex;align-items:center;justify-content:center;background:var(--sky-dark);color:#fff;font-size:12px;font-weight:700';
+    oCard.querySelector('.treat-check').style.cssText='position:absolute;top:-13px;right:-13px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--sky-dark);display:flex;align-items:center;justify-content:center;background:var(--sky-dark);color:#fff;font-size:12px;font-weight:700';
     mCard.style.borderColor='var(--stone)';mCard.style.background='var(--white)';
-    mCard.querySelector('.treat-check').style.cssText='position:absolute;top:16px;right:16px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--stone);display:flex;align-items:center;justify-content:center;background:transparent;color:transparent;font-size:12px;font-weight:700';
+    mCard.querySelector('.treat-check').style.cssText='position:absolute;top:-13px;right:-13px;width:26px;height:26px;border-radius:50%;border:2.5px solid var(--stone);display:flex;align-items:center;justify-content:center;background:transparent;color:transparent;font-size:12px;font-weight:700';
+    selectedTreat='wegovy';
   }
+  renderDoseSelector();
 }
 
 function ynToggle(btn,fieldId){
@@ -863,7 +1076,16 @@ function ynToggle(btn,fieldId){
   const isYes=btn.textContent==='Yes';
   btn.classList.add(isYes?'sel-yes':'sel-no');
   const detail=document.getElementById(fieldId+'-detail');
-  if(isYes){detail.classList.add('open')}else{detail.classList.remove('open')}
+  const textarea=document.getElementById(fieldId);
+  if(isYes){
+    detail.classList.add('open');
+    // Clear "None reported" if switching to Yes
+    if(textarea && textarea.value==='None reported') textarea.value='';
+  } else {
+    detail.classList.remove('open');
+    // Record explicit "No" answer so clinician knows patient was asked
+    if(textarea) textarea.value='None reported';
+  }
 }
 
 function ynSafety(btn,fieldId){
@@ -906,21 +1128,46 @@ if(params.get('fn'))document.getElementById('fname').value=params.get('fn');
 if(params.get('ln'))document.getElementById('lname').value=params.get('ln');
 if(params.get('em'))document.getElementById('email').value=params.get('em');
 
-// Listen for Cal.com booking completion
-window.addEventListener('message',function(e){
+// Post-payment return handler — detect ?paid=1 and jump to booking step
+if(params.get('paid')==='1'){
   try{
-    if(e.data&&e.data.type&&e.data.type.indexOf('cal')>-1){
-      if(e.data.type==='__]]cal:eventTypeSelected'||e.data.type==='cal:bookingSuccessful'||(e.data.data&&e.data.data.type==='booking_successful')){
-        setTimeout(function(){
-          const em=document.getElementById('email').value||'your email';
-          document.getElementById('confirmEmail').textContent=em;
-          step=10;
-          showStep(10);
-        },2000);
-      }
+    var saved=JSON.parse(localStorage.getItem('dw_consultation_state')||'{}');
+    // Only restore if saved within last 2 hours
+    if(saved.timestamp && (Date.now()-saved.timestamp)<7200000){
+      // Restore key fields for display
+      if(saved.fname)document.getElementById('fname').value=saved.fname;
+      if(saved.lname)document.getElementById('lname').value=saved.lname;
+      if(saved.email)document.getElementById('email').value=saved.email;
+      if(saved.phone)document.getElementById('phone').value=saved.phone;
+      if(saved.treatment)selectedTreat=saved.treatment;
+      if(saved.targetDose)selectedTargetDose=saved.targetDose;
     }
-  }catch(err){}
-});
+    localStorage.removeItem('dw_consultation_state');
+  }catch(e){}
+  // Jump straight to Step 9 (Cal.com booking)
+  step=9;
+  showStep(9);
+}
+// Handle cancelled payment return
+if(params.get('cancelled')==='1'){
+  try{
+    var saved=JSON.parse(localStorage.getItem('dw_consultation_state')||'{}');
+    if(saved.timestamp && (Date.now()-saved.timestamp)<7200000){
+      if(saved.fname)document.getElementById('fname').value=saved.fname;
+      if(saved.lname)document.getElementById('lname').value=saved.lname;
+      if(saved.email)document.getElementById('email').value=saved.email;
+      if(saved.phone)document.getElementById('phone').value=saved.phone;
+      if(saved.treatment)selectedTreat=saved.treatment;
+      if(saved.targetDose)selectedTargetDose=saved.targetDose;
+    }
+  }catch(e){}
+  // Return to payment step so they can try again
+  step=8;
+  showStep(8);
+  updatePaymentSummary();
+}
+
+// Cal.com embedded inline at Step 9 for video consultation scheduling after payment
 </script>
 <?php echo dontweight_get_ajax_script(); ?>
 <?php wp_footer(); ?>

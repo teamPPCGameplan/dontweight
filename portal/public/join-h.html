@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UK Clinician-Led Weight Loss | Real Doctors, Real Support | Don't Weight</title>
+  <meta name="description" content="The only weight loss programme where every patient gets a 1-to-1 video consultation with a UK-registered clinician. CQC registered. Full medical screening. Safety first.">
+  <link rel="canonical" href="https://app.dontweight.co.uk/join-h">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="UK Clinician-Led Weight Loss | Real Doctors, Real Support | Don't Weight">
+  <meta property="og:description" content="The only weight loss programme where every patient gets a 1-to-1 video consultation with a UK-registered clinician. CQC registered. Full medical screening. Safety first.">
+  <meta property="og:image" content="https://app.dontweight.co.uk/img/og-share.png">
+  <meta property="og:url" content="https://app.dontweight.co.uk/join-h">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue: #38BDF8;
+      --blue-dark: #0284C7;
+      --blue-glow: rgba(56, 189, 248, 0.3);
+      --ink: #0F172A;
+      --slate: #64748B;
+      --white: #FFFFFF;
+      --green: #22C55E;
+      --gold: #F59E0B;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--ink); color: var(--white); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+    /* ===== SHIMMER BACKGROUND ===== */
+    .shimmer-bg {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 50%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 20% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
+    }
+    .shimmer-bg::after {
+      content: ''; position: absolute; top: 0; left: -100%; width: 200%; height: 100%;
+      background: linear-gradient(90deg, transparent 0%, rgba(56,189,248,0.03) 25%, rgba(56,189,248,0.06) 50%, rgba(56,189,248,0.03) 75%, transparent 100%);
+      animation: shimmerMove 8s ease-in-out infinite;
+    }
+    @keyframes shimmerMove { 0%,100% { transform: translateX(-25%); } 50% { transform: translateX(25%); } }
+
+    section { position: relative; z-index: 1; }
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+    .container-wide { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    /* ===== TOP HEADER ===== */
+    .top-header {
+      position: absolute; top: 0; left: 0; right: 0; z-index: 50;
+      padding: 16px 24px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .top-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .top-logo svg { height: 32px; width: auto; }
+    .top-logo-text { font-size: 18px; font-weight: 900; color: var(--white); letter-spacing: -0.03em; }
+    .top-logo-text i { font-style: italic; color: var(--blue); }
+
+    .hamburger {
+      width: 40px; height: 40px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05); display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 5px; cursor: pointer; transition: all 0.2s; backdrop-filter: blur(10px);
+    }
+    .hamburger:hover { border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.06); }
+    .hamburger span { display: block; width: 18px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 200;
+      background: rgba(15,23,42,0.97); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    }
+    .mobile-menu.open { opacity: 1; pointer-events: auto; }
+    .mobile-menu a {
+      font-size: 20px; font-weight: 700; color: var(--white); text-decoration: none;
+      padding: 14px 32px; border-radius: 12px; transition: all 0.2s; width: 280px; text-align: center;
+    }
+    .mobile-menu a:hover { background: rgba(56,189,248,0.08); color: var(--blue); }
+    .mobile-menu .menu-cta {
+      background: var(--blue); color: var(--ink); font-weight: 800; margin-top: 16px;
+      border-radius: 999px;
+    }
+    .mobile-menu .menu-close {
+      position: absolute; top: 16px; right: 24px; width: 40px; height: 40px; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);
+      display: flex; align-items: center; justify-content: center; cursor: pointer;
+      color: var(--white); font-size: 20px; transition: all 0.2s;
+    }
+    .mobile-menu .menu-close:hover { border-color: rgba(56,189,248,0.3); }
+
+    /* ===== FLOATING NAV (scroll) ===== */
+    .float-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+      padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;
+      transform: translateY(-100%); transition: transform 0.3s ease;
+    }
+    .float-nav.visible { transform: translateY(0); }
+    .float-nav-logo { font-size: 14px; font-weight: 800; letter-spacing: -0.02em; }
+    .float-nav-logo span { color: var(--blue); }
+    .float-nav-cta {
+      background: var(--blue); color: var(--ink); padding: 8px 20px; border-radius: 999px;
+      font-size: 13px; font-weight: 700; text-decoration: none; transition: all 0.2s;
+    }
+    .float-nav-cta:hover { background: #7DD3FC; transform: scale(1.02); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 80px 20px 60px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 50%; left: 50%; width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%);
+      transform: translate(-50%, -50%); border-radius: 50%; animation: heroPulse 4s ease-in-out infinite;
+    }
+    @keyframes heroPulse { 0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.7; } 50% { transform: translate(-50%,-50%) scale(1.15); opacity: 1; } }
+
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25);
+      padding: 8px 18px; border-radius: 999px; font-size: 12px; font-weight: 600;
+      color: var(--blue); margin-bottom: 28px; animation: fadeInUp 0.6s ease both;
+    }
+    .hero-pill .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: blink 2s infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 80px); font-weight: 700; line-height: 1.06; letter-spacing: -2.5px;
+      margin-bottom: 20px; animation: fadeInUp 0.6s ease 0.1s both;
+      text-shadow: 1px 1px 0 rgba(0,0,0,.06), 2px 2px 0 rgba(0,0,0,.04), 3px 3px 6px rgba(0,0,0,.06);
+    }
+    .hero h1 .highlight {
+      background: linear-gradient(135deg, var(--blue) 0%, #7DD3FC 50%, var(--blue) 100%);
+      background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; animation: gradientText 3s linear infinite;
+    }
+    @keyframes gradientText { 0% { background-position: 0% center; } 100% { background-position: 200% center; } }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 20px); color: #94A3B8; max-width: 600px;
+      margin: 0 auto 36px; line-height: 1.5; animation: fadeInUp 0.6s ease 0.2s both;
+    }
+    .hero-sub strong { color: var(--white); font-weight: 600; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ===== CTA BUTTON ===== */
+    .cta-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--blue); color: var(--ink); padding: 16px 36px; border-radius: 999px;
+      font-size: 16px; font-weight: 800; text-decoration: none;
+      transition: all 0.25s; position: relative; overflow: hidden;
+      box-shadow: 0 0 30px var(--blue-glow), 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .cta-primary::after {
+      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
+      transition: all 0.6s; transform: translateX(-100%);
+    }
+    .cta-primary:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 0 50px var(--blue-glow), 0 8px 25px rgba(0,0,0,0.3); }
+    .cta-primary:hover::after { transform: translateX(100%); }
+    .cta-ghost {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.06); color: var(--white); padding: 16px 36px; border-radius: 999px;
+      font-size: 16px; font-weight: 700; text-decoration: none; border: 1px solid rgba(255,255,255,0.12);
+      transition: all 0.25s;
+    }
+    .cta-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(56,189,248,0.3); }
+
+    .hero-reassurance { margin-top: 16px; font-size: 13px; color: #64748B; animation: fadeInUp 0.6s ease 0.4s both; }
+
+    /* ===== TRUST SECTION (Why We're Different) ===== */
+    .trust-section { padding: 80px 0; }
+    .trust-section h2 { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 40px; letter-spacing: -0.02em; }
+    .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 600px) { .trust-grid { grid-template-columns: 1fr; } }
+    .trust-card {
+      padding: 32px 28px; border-radius: 20px; position: relative;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid transparent;
+      background-clip: padding-box;
+      transition: all 0.3s;
+    }
+    .trust-card::before {
+      content: ''; position: absolute; inset: 0; border-radius: 20px; padding: 1px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.3), rgba(56,189,248,0.05), rgba(56,189,248,0.2));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      pointer-events: none;
+    }
+    .trust-card:hover { transform: translateY(-4px); background: rgba(56,189,248,0.04); }
+    .trust-card-icon {
+      width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 16px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(56,189,248,0.05));
+    }
+    .trust-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .trust-card p { font-size: 13px; color: var(--slate); line-height: 1.6; }
+
+    /* ===== INLINE QUIZ ===== */
+    .quiz-section { padding: 80px 0; background: linear-gradient(180deg, rgba(56,189,248,0.04) 0%, transparent 100%); }
+    .quiz-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(56,189,248,0.04) 50%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(56,189,248,0.2); border-radius: 24px;
+      padding: 48px 40px; max-width: 560px; margin: 0 auto;
+      position: relative; overflow: hidden;
+      box-shadow: 0 0 60px rgba(56,189,248,0.1), 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05) inset;
+      transform: perspective(1000px) rotateX(1deg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .quiz-card:hover {
+      transform: perspective(1000px) rotateX(0deg) translateY(-4px);
+      box-shadow: 0 0 80px rgba(56,189,248,0.15), 0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.08) inset;
+    }
+    .quiz-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--blue), #7DD3FC, var(--blue));
+      background-size: 200% auto; animation: gradientText 3s linear infinite;
+    }
+    .quiz-card::after {
+      content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: radial-gradient(ellipse at 30% 20%, rgba(56,189,248,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .quiz-progress { height: 4px; background: rgba(255,255,255,0.06); border-radius: 4px; margin-bottom: 32px; overflow: hidden; }
+    .quiz-progress-fill { height: 100%; background: var(--blue); border-radius: 4px; transition: width 0.4s ease; width: 0%; }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; animation: fadeInUp 0.4s ease; }
+    .quiz-step h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .quiz-step .q-sub { font-size: 14px; color: var(--slate); margin-bottom: 24px; }
+    .quiz-option {
+      display: block; width: 100%; padding: 16px 20px; margin-bottom: 10px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px; color: var(--white); font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; text-align: left; font-family: inherit;
+      position: relative; z-index: 1;
+    }
+    .quiz-option:hover { border-color: var(--blue); background: rgba(56,189,248,0.08); transform: translateX(4px); box-shadow: 0 4px 20px rgba(56,189,248,0.1); }
+    .quiz-option.selected { border-color: var(--blue); background: rgba(56,189,248,0.12); box-shadow: 0 0 20px rgba(56,189,248,0.15); }
+    .quiz-input {
+      width: 100%; padding: 14px 18px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.04);
+      color: var(--white); font-size: 16px; font-family: inherit; outline: none;
+      transition: border-color 0.2s; margin-bottom: 10px;
+    }
+    .quiz-input:focus { border-color: var(--blue); }
+    .quiz-input::placeholder { color: #475569; }
+    .quiz-back {
+      display: inline-flex; align-items: center; gap: 6px; background: none; border: none;
+      color: var(--slate); font-size: 13px; font-weight: 500; cursor: pointer;
+      font-family: inherit; padding: 8px 0; margin-bottom: 16px; transition: color 0.2s;
+    }
+    .quiz-back:hover { color: var(--blue); }
+    .quiz-back svg { transition: transform 0.2s; }
+    .quiz-back:hover svg { transform: translateX(-2px); }
+    .quiz-next {
+      width: 100%; padding: 14px; border-radius: 12px; border: none;
+      background: var(--blue); color: var(--ink); font-size: 15px; font-weight: 700;
+      cursor: pointer; font-family: inherit; transition: all 0.2s; margin-top: 8px;
+      opacity: 0.4; pointer-events: none;
+    }
+    .quiz-next.enabled { opacity: 1; pointer-events: auto; }
+    .quiz-next.enabled:hover { background: #7DD3FC; }
+    .quiz-result { text-align: center; }
+    .quiz-result .big { font-size: 42px; font-weight: 900; color: var(--blue); }
+    .quiz-result p { color: #CBD5E1; font-size: 14px; margin-top: 8px; }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-section { padding: 80px 0; }
+    .how-section h2 { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
+    .how-section .sub { text-align: center; color: var(--slate); font-size: 14px; margin-bottom: 48px; }
+    .how-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    @media (max-width: 900px) { .how-steps { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 600px) { .how-steps { grid-template-columns: 1fr; } }
+    .how-step {
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px; padding: 24px 20px; transition: all 0.3s; text-align: center;
+    }
+    .how-step:hover { border-color: rgba(56,189,248,0.2); transform: translateY(-4px); }
+    .how-step .step-num {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: var(--ink); display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 900; margin: 0 auto 16px;
+    }
+    .how-step h3 { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .how-step p { font-size: 12px; color: var(--slate); line-height: 1.5; }
+
+    /* ===== SAFETY SECTION ===== */
+    .safety-section { padding: 80px 0; }
+    .safety-card {
+      background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(56,189,248,0.04) 100%);
+      border: 1px solid rgba(34,197,94,0.12); border-radius: 24px;
+      padding: 48px 40px; position: relative; overflow: hidden;
+    }
+    .safety-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+    }
+    .safety-card h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+    .safety-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 28px; }
+    @media (max-width: 600px) { .safety-list { grid-template-columns: 1fr; } }
+    .safety-item {
+      display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px;
+      background: rgba(255,255,255,0.04); border-radius: 12px; font-size: 14px; font-weight: 500;
+    }
+    .safety-item svg { color: var(--green); flex-shrink: 0; margin-top: 2px; }
+    .safety-badges {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+      padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .safety-badge {
+      display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: #94A3B8;
+    }
+    .safety-badge svg { color: var(--blue); }
+
+    /* ===== APPROACH SECTION ===== */
+    .approach-section { padding: 80px 0; }
+    .approach-section h2 { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 40px; letter-spacing: -0.02em; }
+    .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 700px) { .approach-grid { grid-template-columns: 1fr; } }
+    .approach-card {
+      padding: 32px 24px; border-radius: 20px; text-align: center;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.3s;
+    }
+    .approach-card:hover { border-color: rgba(56,189,248,0.2); transform: translateY(-4px); }
+    .approach-card-icon {
+      width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; margin: 0 auto 16px;
+      background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(56,189,248,0.04));
+    }
+    .approach-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .approach-card p { font-size: 13px; color: var(--slate); line-height: 1.6; }
+
+    /* ===== FINAL CTA ===== */
+    .final-section {
+      padding: 100px 0; text-align: center;
+      background: linear-gradient(180deg, transparent 0%, rgba(56,189,248,0.06) 50%, transparent 100%);
+    }
+    .final-section h2 { font-size: clamp(28px, 5vw, 42px); font-weight: 900; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .final-section p { color: var(--slate); font-size: 16px; margin-bottom: 32px; }
+    .final-section .sub-note { font-size: 12px; color: #475569; margin-top: 16px; }
+
+    /* ===== DISCLAIMER ===== */
+    .disclaimer {
+      max-width: 700px; margin: 0 auto; padding: 20px 24px;
+      background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.15);
+      border-radius: 12px; font-size: 11px; color: #F59E0B; line-height: 1.6;
+    }
+
+    /* ===== FOOTER ===== */
+    .lp-footer {
+      padding: 40px 0; text-align: center; font-size: 11px; color: #475569;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .lp-footer a { color: var(--slate); text-decoration: none; }
+    .lp-footer a:hover { color: var(--blue); }
+    .lp-footer .reg { margin-top: 8px; font-size: 10px; }
+
+    /* ===== FLOATING MOBILE CTA ===== */
+    .float-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+      background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(56,189,248,0.15); padding: 12px 20px;
+      display: none; align-items: center; justify-content: space-between;
+    }
+    .float-cta .float-info { font-size: 12px; }
+    .float-cta .float-info strong { font-size: 15px; color: var(--blue); }
+    .float-cta .cta-primary { padding: 10px 24px; font-size: 13px; }
+    @media (max-width: 768px) { .float-cta.visible { display: flex; } }
+
+    @media (max-width: 640px) {
+      .hero { min-height: auto; padding: 100px 20px 60px; }
+      .quiz-card { padding: 32px 20px; }
+      .safety-card { padding: 32px 20px; }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18056464608"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18056464608');
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "don't weight",
+  "description": "Clinician-led weight management programme with GLP-1 treatments",
+  "url": "https://dontweight.co.uk",
+  "logo": "https://dontweight.co.uk/wp-content/uploads/dontweight-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "GB"
+  },
+  "medicalSpecialty": "Weight Management",
+  "isAcceptingNewPatients": true,
+  "availableService": {
+    "@type": "MedicalTherapy",
+    "name": "GLP-1 Weight Loss Treatment",
+    "description": "Clinician-prescribed GLP-1 medication for weight management"
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="shimmer-bg"></div>
+
+<!-- Top header with logo + hamburger -->
+<header class="top-header">
+  <a href="https://dontweight.co.uk" class="top-logo">
+    <div class="top-logo-text">don't <i>weight</i></div>
+  </a>
+  <div class="hamburger" id="hamburgerBtn" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="menu-close" onclick="toggleMenu()">&times;</div>
+  <a href="https://dontweight.co.uk/treatments/" onclick="toggleMenu()">Treatments</a>
+  <a href="https://dontweight.co.uk/health-checks/" onclick="toggleMenu()">Health Checks</a>
+  <a href="https://dontweight.co.uk/how-it-works/" onclick="toggleMenu()">How It Works</a>
+  <a href="https://dontweight.co.uk/about/" onclick="toggleMenu()">About Us</a>
+  <a href="https://dontweight.co.uk/contact/" onclick="toggleMenu()">Contact</a>
+  <a href="#quiz" class="menu-cta" onclick="toggleMenu()">Check Eligibility</a>
+</div>
+
+<!-- Floating nav (appears on scroll) -->
+<nav class="float-nav" id="floatNav">
+  <a href="https://dontweight.co.uk" class="float-nav-logo" style="text-decoration:none;color:inherit;">don't <i style="font-style:italic;color:var(--blue);">weight</i></a>
+  <a href="#quiz" class="float-nav-cta">Check eligibility</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-pill">
+      <div class="dot"></div>
+      CQC Registered &middot; Real UK Clinicians
+    </div>
+    <h1>Your clinician.<br>Your journey.<br><span class="highlight">Your safety.</span></h1>
+    <p class="hero-sub">The only weight loss programme where every single patient gets a <strong>1-to-1 video consultation</strong> with a UK-registered clinician. Not a chatbot. Not a questionnaire. A real conversation about your health.</p>
+    <a href="#quiz" class="cta-primary">
+      Check your eligibility
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p class="hero-reassurance">30-second check &middot; Free &middot; No obligation &middot; CQC registered</p>
+  </div>
+</section>
+
+<!-- WHY WE'RE DIFFERENT -->
+<section class="trust-section">
+  <div class="container-wide">
+    <h2>Why we're different</h2>
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="m16 8 5 3v7l-5 3z"/></svg>
+        </div>
+        <h3>1-to-1 Video Consultations</h3>
+        <p>Every patient speaks with a UK-registered clinician before any medication is prescribed. This isn't optional &mdash; it's how we work.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Safety First, Always</h3>
+        <p>Full medical history review, identity verification, and ongoing monitoring. Your safety isn't a feature &mdash; it's our foundation.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </div>
+        <h3>Real Support, Real People</h3>
+        <p>Message your clinician anytime. Get responses within 2 hours. Track your progress with our dedicated portal.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-card-icon">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+        </div>
+        <h3>CQC Registered</h3>
+        <p>We're registered with the Care Quality Commission &mdash; the independent regulator of health and social care in England.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INLINE QUIZ -->
+<section class="quiz-section" id="quiz">
+  <div class="container">
+    <div class="quiz-card">
+      <div class="quiz-progress"><div class="quiz-progress-fill" id="quizProgress"></div></div>
+
+      <!-- Step 1 -->
+      <div class="quiz-step active" data-step="1">
+        <h3>What's your main goal?</h3>
+        <p class="q-sub">This helps us personalise your treatment plan</p>
+        <button class="quiz-option" onclick="selectOption(this)">Improve my overall health</button>
+        <button class="quiz-option" onclick="selectOption(this)">Feel more confident in my body</button>
+        <button class="quiz-option" onclick="selectOption(this)">Have more energy day-to-day</button>
+        <button class="quiz-option" onclick="selectOption(this)">All of the above</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="quiz-step" data-step="2">
+        <button class="quiz-back" onclick="prevStep()"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+        <h3>Have you tried to lose weight before?</h3>
+        <p class="q-sub">No wrong answers here</p>
+        <button class="quiz-option" onclick="selectOption(this)">Yes, but it keeps coming back</button>
+        <button class="quiz-option" onclick="selectOption(this)">Yes, with some success</button>
+        <button class="quiz-option" onclick="selectOption(this)">Not really &mdash; this is my first serious attempt</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="quiz-step" data-step="3">
+        <button class="quiz-back" onclick="prevStep()"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg> Back</button>
+        <h3>Let's check your eligibility</h3>
+        <p class="q-sub">We'll use this to assess whether treatment may be suitable for you</p>
+        <div style="display:flex;gap:12px;margin-bottom:10px;">
+          <input type="text" class="quiz-input" id="quizName" placeholder="Your name" style="flex:1" oninput="checkWeightStep()">
+          <input type="email" class="quiz-input" id="quizEmail" placeholder="Email address" style="flex:1" oninput="checkWeightStep()">
+        </div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;">
+          <input type="number" class="quiz-input" id="quizWeight" placeholder="Weight (kg)" style="flex:1" oninput="checkWeightStep()">
+          <input type="number" class="quiz-input" id="quizHeight" placeholder="Height (cm)" style="flex:1" oninput="checkWeightStep()">
+        </div>
+        <button class="quiz-next" id="weightNext" onclick="showQuizResult()">See my results</button>
+      </div>
+
+      <!-- Step 4: Result -->
+      <div class="quiz-step" data-step="4">
+        <div class="quiz-result" id="quizResultBox">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="container-wide">
+    <h2>How it works</h2>
+    <p class="sub">Five steps from first click to your door &mdash; clinician-led every step of the way</p>
+    <div class="how-steps">
+      <div class="how-step">
+        <div class="step-num">1</div>
+        <h3>Quick eligibility check</h3>
+        <p>30 seconds online</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">2</div>
+        <h3>Complete medical consultation</h3>
+        <p>Detailed health assessment</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">3</div>
+        <h3>Video call with your clinician</h3>
+        <p>1-to-1, face to face</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">4</div>
+        <h3>Clinician reviews &amp; prescribes</h3>
+        <p>If clinically appropriate</p>
+      </div>
+      <div class="how-step">
+        <div class="step-num">5</div>
+        <h3>Treatment delivered to your door</h3>
+        <p>Free next-day delivery</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAFETY SECTION -->
+<section class="safety-section">
+  <div class="container">
+    <div class="safety-card">
+      <h2>We take your safety seriously</h2>
+      <div class="safety-list">
+        <div class="safety-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Every prescription is reviewed by a UK-registered clinician
+        </div>
+        <div class="safety-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Full medical history screening before any medication
+        </div>
+        <div class="safety-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Mandatory video consultation for identity verification
+        </div>
+        <div class="safety-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Ongoing clinician support throughout your treatment
+        </div>
+        <div class="safety-item">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Full refund if treatment is not clinically appropriate
+        </div>
+      </div>
+      <div class="safety-badges">
+        <div class="safety-badge">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          GPhC Registered
+        </div>
+        <div class="safety-badge">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+          CQC Registered
+        </div>
+        <div class="safety-badge">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          MHRA Compliant
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT OUR APPROACH MEANS FOR YOU -->
+<section class="approach-section">
+  <div class="container-wide">
+    <h2>What our approach means for you</h2>
+    <div class="approach-grid">
+      <div class="approach-card">
+        <div class="approach-card-icon">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>You'll never feel like just a number</h3>
+        <p>Personal care from real clinicians who know your name, your history, and your goals. Every interaction is tailored to you.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-card-icon">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3>Your health questions get real answers</h3>
+        <p>From qualified medical professionals, not AI chatbots or templated responses. Ask anything &mdash; your clinician is here to help.</p>
+      </div>
+      <div class="approach-card">
+        <div class="approach-card-icon">
+          <svg width="24" height="24" fill="none" stroke="var(--blue)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>If it's not right for you, we'll tell you</h3>
+        <p>Honest clinical assessment every time. If treatment isn't appropriate, we won't prescribe it &mdash; and you'll receive a full refund.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-section">
+  <div class="container">
+    <h2>Ready for weight loss<br><span style="color:var(--blue);">led by real clinicians?</span></h2>
+    <p>Take the first step with a free, no-obligation eligibility check</p>
+    <a href="#quiz" class="cta-primary">
+      Check your eligibility
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <p class="sub-note">30-second check &middot; Free &middot; No obligation &middot; CQC registered</p>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div style="padding:0 20px 40px;">
+  <div class="disclaimer">
+    <strong>Important:</strong> This is a prescription-only treatment. It is only available following a video consultation with a registered prescriber who will assess your suitability. Treatment is not guaranteed and will only be prescribed if clinically appropriate. Individual results vary. Don't Weight is a CQC-registered service operated by Ultrasound London Limited. All prescriptions are issued by GPhC-registered clinicians. Mounjaro (tirzepatide) and Wegovy (semaglutide) are prescription-only medicines.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+  <div class="container">
+    <p>&copy; 2026 Don't Weight Ltd. All rights reserved. | <a href="https://dontweight.co.uk/privacy-policy/">Privacy</a> | <a href="https://dontweight.co.uk/terms/">Terms</a></p>
+    <p class="reg">Don't Weight is part of Ultrasound London Limited &middot; CQC registered &middot; GPhC-registered prescribers</p>
+    <p class="reg">All prescriptions subject to clinician approval</p>
+  </div>
+</footer>
+
+<!-- FLOATING MOBILE CTA -->
+<div class="float-cta" id="floatCTA">
+  <div class="float-info">Real <strong>clinicians</strong></div>
+  <a href="#quiz" class="cta-primary">Check eligibility</a>
+</div>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('mobileMenu');
+  menu.classList.toggle('open');
+  document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+}
+
+var floatNav = document.getElementById('floatNav');
+var floatCTA = document.getElementById('floatCTA');
+var heroEl = document.querySelector('.hero');
+
+window.addEventListener('scroll', function() {
+  var y = window.scrollY;
+  var hh = heroEl.offsetHeight;
+  floatNav.classList.toggle('visible', y > hh * 0.6);
+  floatCTA.classList.toggle('visible', y > hh);
+});
+
+var currentStep = 1;
+var totalSteps = 4;
+
+function selectOption(btn) {
+  var siblings = btn.parentElement.querySelectorAll('.quiz-option');
+  siblings.forEach(function(s) { s.classList.remove('selected'); });
+  btn.classList.add('selected');
+  setTimeout(function() { nextStep(); }, 300);
+}
+
+function prevStep() {
+  if (currentStep <= 1) return;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.remove('active');
+  currentStep--;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.add('active');
+  document.getElementById('quizProgress').style.width = ((currentStep - 1) / (totalSteps - 1) * 100) + '%';
+}
+
+function nextStep() {
+  if (currentStep >= totalSteps) return;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.remove('active');
+  currentStep++;
+  document.querySelector('.quiz-step[data-step="' + currentStep + '"]').classList.add('active');
+  document.getElementById('quizProgress').style.width = ((currentStep - 1) / (totalSteps - 1) * 100) + '%';
+}
+
+function checkWeightStep() {
+  var w = document.getElementById('quizWeight').value;
+  var h = document.getElementById('quizHeight').value;
+  var n = document.getElementById('quizName').value.trim();
+  var e = document.getElementById('quizEmail').value.trim();
+  var btn = document.getElementById('weightNext');
+  btn.classList.toggle('enabled', w > 0 && h > 0 && n.length > 0 && e.length > 2 && e.includes('@'));
+}
+
+function showQuizResult() {
+  var w = parseFloat(document.getElementById('quizWeight').value);
+  var h = parseFloat(document.getElementById('quizHeight').value);
+  var userName = document.getElementById('quizName').value.trim();
+  var userEmail = document.getElementById('quizEmail').value.trim();
+  if (!w || !h || !userName || !userEmail) return;
+
+  // Capture lead data
+  var nameParts = userName.split(' ');
+  fetch('/.netlify/functions/capture-lead', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      first_name: nameParts[0] || userName,
+      last_name: nameParts.slice(1).join(' ') || '',
+      email: userEmail,
+      source: 'quiz-clinician-trust',
+      page_url: window.location.href,
+      utm_source: new URLSearchParams(window.location.search).get('utm_source') || '',
+      utm_medium: new URLSearchParams(window.location.search).get('utm_medium') || '',
+      utm_campaign: new URLSearchParams(window.location.search).get('utm_campaign') || '',
+      bmi: (w / ((h / 100) * (h / 100))).toFixed(1),
+      weight_kg: w,
+      height_cm: h
+    })
+  }).catch(function(){});
+
+  var bmi = (w / ((h / 100) * (h / 100))).toFixed(1);
+  var eligible = bmi >= 27;
+  var box = document.getElementById('quizResultBox');
+
+  if (eligible) {
+    box.innerHTML =
+      '<div style="width:64px;height:64px;border-radius:50%;background:rgba(34,197,94,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">' +
+        '<svg width="32" height="32" fill="none" stroke="#22C55E" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>' +
+      '</div>' +
+      '<h3 style="font-size:24px;font-weight:800;margin-bottom:8px;">You may be eligible</h3>' +
+      '<p style="color:#94A3B8;font-size:14px;margin-bottom:4px;">Your BMI: <strong style="color:var(--white);">' + bmi + '</strong></p>' +
+      '<p style="color:#64748B;font-size:13px;margin-bottom:24px;">Based on your BMI, you may be a suitable candidate for our clinician-led weight loss programme. The next step is a 1-to-1 video consultation with your clinician.</p>' +
+      '<a href="https://dontweight.co.uk/consultation/" class="cta-primary" style="margin-bottom:12px;">' +
+        'Book your consultation' +
+        '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
+      '</a>' +
+      '<p style="font-size:11px;color:#475569;margin-top:12px;">Subject to clinician approval. Individual results vary.</p>';
+  } else {
+    box.innerHTML =
+      '<div style="width:64px;height:64px;border-radius:50%;background:rgba(245,158,11,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">' +
+        '<svg width="32" height="32" fill="none" stroke="#F59E0B" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>' +
+      '</div>' +
+      '<h3 style="font-size:24px;font-weight:800;margin-bottom:8px;">Let\'s chat with a clinician</h3>' +
+      '<p style="color:#94A3B8;font-size:14px;margin-bottom:4px;">Your BMI: <strong style="color:var(--white);">' + bmi + '</strong></p>' +
+      '<p style="color:#64748B;font-size:13px;margin-bottom:24px;">Prescription treatment is typically recommended for BMI 27+. However, our clinicians can discuss alternative options suited to your needs during a 1-to-1 consultation.</p>' +
+      '<a href="https://dontweight.co.uk/consultation/" class="cta-ghost">' +
+        'Speak to a clinician' +
+        '<svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>' +
+      '</a>';
+  }
+
+  document.querySelector('.quiz-step[data-step="3"]').classList.remove('active');
+  currentStep = 4;
+  document.querySelector('.quiz-step[data-step="4"]').classList.add('active');
+  document.getElementById('quizProgress').style.width = '100%';
+}
+</script>
+
+</body>
+</html>

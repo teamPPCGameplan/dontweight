@@ -492,40 +492,43 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
         <span><strong>100% refund guarantee:</strong> If your application is not approved by our clinical team, you will receive a full refund within 5 working days.</span>
       </div>
 
+      <!-- Wrap-up / how-it-works panel (shown above whichever iframe is active) -->
+      <div id="semble-wrap" style="background:var(--sky-wash);border:1px solid var(--sky-pale);border-radius:14px;padding:20px 22px;margin-top:22px;margin-bottom:18px;display:none">
+        <p style="font-size:14px;font-weight:700;color:var(--ink);margin:0 0 10px;letter-spacing:-.2px">To proceed &mdash; book your online consultation below</p>
+        <ul style="margin:0;padding:0;list-style:none;font-size:13px;color:var(--charcoal);line-height:1.65">
+          <li style="display:flex;gap:10px;margin-bottom:8px">
+            <span style="color:var(--sky-deep);font-weight:700;flex-shrink:0">&#10003;</span>
+            <span>Choose a date and time for your video consultation with our UK-registered clinician.</span>
+          </li>
+          <li style="display:flex;gap:10px;margin-bottom:8px">
+            <span style="color:var(--sky-deep);font-weight:700;flex-shrink:0">&#10003;</span>
+            <span>You will be charged for the clinically-appropriate <strong>starter dose</strong>. If a higher dose is recommended by your clinician during the consultation, the price difference will be adjusted with you directly before anything is dispensed.</span>
+          </li>
+          <li style="display:flex;gap:10px;margin-bottom:0">
+            <span style="color:var(--sky-deep);font-weight:700;flex-shrink:0">&#10003;</span>
+            <span><strong>100% refund guarantee:</strong> if you are not eligible, or if you decide not to proceed after your consultation, your payment will be refunded immediately and in full.</span>
+          </li>
+        </ul>
+      </div>
+
       <!-- SEMBLE BOOKING IFRAME — shown based on selected treatment -->
       <!-- MOUNJARO iframe slot -->
-      <div id="semble-mounjaro-area" style="display:none;margin-top:20px">
+      <div id="semble-mounjaro-area" style="display:none;margin-top:8px">
         <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
-          <strong style="color:var(--ink)">Selected treatment:</strong> Mounjaro (Tirzepatide)
+          <strong style="color:var(--ink)">Selected treatment:</strong> Mounjaro (Tirzepatide) &mdash; starter dose
         </div>
         <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
-          <!-- ════════════════════════════════════════════════════════ -->
-          <!-- PASTE MOUNJARO SEMBLE IFRAME CODE BELOW THIS LINE ONLY   -->
-          <!-- ════════════════════════════════════════════════════════ -->
-
-          <!-- SEMBLE_MOUNJARO_IFRAME_HERE -->
-
-          <!-- ════════════════════════════════════════════════════════ -->
-          <!-- END MOUNJARO SEMBLE IFRAME                               -->
-          <!-- ════════════════════════════════════════════════════════ -->
+          <iframe src="https://online-booking.semble.io/?token=d17e08266e35433bb6d733213b4728b61c3641c3" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="border:none;border-radius:12px;display:block;width:100%"></iframe>
         </div>
       </div>
 
       <!-- WEGOVY iframe slot -->
-      <div id="semble-wegovy-area" style="display:none;margin-top:20px">
+      <div id="semble-wegovy-area" style="display:none;margin-top:8px">
         <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
-          <strong style="color:var(--ink)">Selected treatment:</strong> Wegovy (Semaglutide)
+          <strong style="color:var(--ink)">Selected treatment:</strong> Wegovy (Semaglutide) &mdash; starter dose
         </div>
         <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
-          <!-- ════════════════════════════════════════════════════════ -->
-          <!-- PASTE WEGOVY SEMBLE IFRAME CODE BELOW THIS LINE ONLY     -->
-          <!-- ════════════════════════════════════════════════════════ -->
-
-          <!-- SEMBLE_WEGOVY_IFRAME_HERE -->
-
-          <!-- ════════════════════════════════════════════════════════ -->
-          <!-- END WEGOVY SEMBLE IFRAME                                 -->
-          <!-- ════════════════════════════════════════════════════════ -->
+          <iframe src="https://online-booking.semble.io/?token=b0e756507669c936e11ff974f808546cc2f85482" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="border:none;border-radius:12px;display:block;width:100%"></iframe>
         </div>
       </div>
 
@@ -784,13 +787,15 @@ function submitAll(){
   showSembleForTreatment();
 }
 
-// Show correct Semble iframe based on selected treatment
+// Show correct Semble iframe based on selected treatment (only one at a time)
 function showSembleForTreatment(){
   const base = (selectedTreat||'mounjaro').startsWith('wegovy') ? 'wegovy' : 'mounjaro';
   const m = document.getElementById('semble-mounjaro-area');
   const w = document.getElementById('semble-wegovy-area');
+  const wrap = document.getElementById('semble-wrap');
   if(m) m.style.display = (base === 'mounjaro') ? 'block' : 'none';
   if(w) w.style.display = (base === 'wegovy')   ? 'block' : 'none';
+  if(wrap) wrap.style.display = 'block';
 }
 
 function tickAll(el){

@@ -12,21 +12,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title>Free Weight Loss Consultation — UK Clinicians | don't weight</title>
-<meta name="description" content="Check if you qualify for clinician-prescribed weight management in 2 minutes. CQC registered, MHRA approved. Free eligibility check.">
+<meta name="description" content="Check if you qualify for clinician-prescribed weight management in 30 seconds. CQC registered, MHRA approved. Free eligibility check.">
 <meta name="robots" content="noindex, nofollow">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="don't weight">
 <meta property="og:title" content="Free Weight Loss Consultation — UK Clinicians">
-<meta property="og:description" content="Check if you qualify for clinician-prescribed weight management in 2 minutes. CQC registered, MHRA approved. Free eligibility check.">
+<meta property="og:description" content="Check if you qualify for clinician-prescribed weight management in 30 seconds. CQC registered, MHRA approved. Free eligibility check.">
 <meta property="og:url" content="https://dontweight.co.uk/start/">
 <meta property="og:locale" content="en_GB">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Free Weight Loss Consultation — UK Clinicians">
-<meta name="twitter:description" content="Check if you qualify for clinician-prescribed weight management in 2 minutes. CQC registered, MHRA approved.">
+<meta name="twitter:description" content="Check if you qualify for clinician-prescribed weight management in 30 seconds. CQC registered, MHRA approved.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -152,7 +152,7 @@
 </div></section>
 
 <section class="lp-section" style="background:var(--white)"><div class="lp-section-label">How It Works</div><h2 class="lp-section-title">Getting started is simple</h2><div class="lp-steps">
-  <div class="lp-step"><div class="lp-step-num">1</div><h3>Quick assessment</h3><p>Answer a few health questions. 2 minutes, completely free.</p></div>
+  <div class="lp-step"><div class="lp-step-num">1</div><h3>Quick assessment</h3><p>Answer a few health questions. 30 seconds, completely free.</p></div>
   <div class="lp-step"><div class="lp-step-num">2</div><h3>Clinician review</h3><p>A UK-registered clinician reviews your profile within 24 hours.</p></div>
   <div class="lp-step"><div class="lp-step-num">3</div><h3>Treatment delivered</h3><p>If approved, your plan arrives next day. Free delivery.</p></div>
 </div></section>

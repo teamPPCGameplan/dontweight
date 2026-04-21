@@ -157,12 +157,12 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 <div class="dw-lpug-badge" style="width:100%;background:linear-gradient(135deg,#F8FAFC,#EFF6FF);padding:40px 20px;box-sizing:border-box;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
   <div style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;">
     <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#1A1A2E,#2D2B55);display:flex;align-items:center;justify-content:center;margin-bottom:16px;border:2px solid rgba(255,255,255,0.1);box-shadow:0 4px 16px rgba(26,26,46,0.2);"><span style="color:#fff;font-size:13px;font-weight:800;letter-spacing:0.5px;">LPUG</span></div>
-    <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:8px;letter-spacing:-0.2px;">Health checks performed by <strong>London Private Ultrasound Group</strong></div>
-    <div style="font-size:14px;color:#334155;line-height:1.65;max-width:740px;margin-bottom:20px;">Our comprehensive health screening is delivered by <a href="https://londonsono.com" target="_blank" rel="noopener" style="color:#334155;font-weight:600;text-decoration:underline;text-decoration-color:#38BDF8;text-underline-offset:2px;">London Private Ultrasound Group&rsquo;s</a> experienced sonographers and clinical team, using state-of-the-art diagnostic equipment.</div>
+    <div style="font-size:17px;font-weight:700;color:#0F172A;margin-bottom:8px;letter-spacing:-0.2px;">Health checks delivered by <strong>London Private Ultrasound Group</strong></div>
+    <div style="font-size:14px;color:#334155;line-height:1.65;max-width:740px;margin-bottom:20px;">Our imaging and diagnostics are delivered through <a href="https://londonsono.com" target="_blank" rel="noopener" style="color:#334155;font-weight:600;text-decoration:underline;text-decoration-color:#38BDF8;text-underline-offset:2px;">London Private Ultrasound Group</a> &mdash; an established CQC-registered private diagnostic clinic, using hospital-grade equipment and experienced UK sonographers. Your results are reviewed by qualified UK clinicians.</div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
       <span style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#334155;letter-spacing:0.3px;">CQC Registered</span>
-      <span style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#334155;letter-spacing:0.3px;">GMC Certified Clinicians</span>
-      <span style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#334155;letter-spacing:0.3px;">NHS-Trained Sonographers</span>
+      <span style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#334155;letter-spacing:0.3px;">GMC &amp; GPhC Clinicians</span>
+      <span style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:600;color:#334155;letter-spacing:0.3px;">Hospital-grade imaging</span>
     </div>
   </div>
 </div>
@@ -172,7 +172,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
   <div class="hc-why-inner">
     <div class="hc-section-label">Why It Matters</div>
     <h2 class="hc-section-title">Weight loss medication is <em>powerful.</em><br>Monitoring it properly is <em>essential.</em></h2>
-    <p class="hc-section-desc">GLP-1 medications like Mounjaro and Wegovy transform your metabolism. That transformation needs clinical oversight — not just a prescription and a "good luck."</p>
+    <p class="hc-section-desc">GLP-1 medications like Mounjaro and Wegovy transform your metabolism &mdash; and that transformation affects your liver, gallbladder, glucose control, lipids and cardiovascular system. Proper care means prescribing the medication <strong>and</strong> monitoring what it does to your body. At Don&rsquo;t Weight, the two come together by design.</p>
     
     <div class="hc-risks">
       <div class="hc-risk">
@@ -235,9 +235,9 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
       <p style="font-size:12px;color:var(--charcoal);line-height:1.6;margin:0">An initial 1-to-1 with a prescribing pharmacist, then a final strategic review with a doctor. No shortcuts, no AI triage.</p>
     </div>
     <div style="background:var(--sky-wash);border:1px solid var(--sky-pale);border-radius:14px;padding:20px 22px">
-      <div style="width:36px;height:36px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
-      <h3 style="font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink)">Built on NHS-trained clinical infrastructure</h3>
-      <p style="font-size:12px;color:var(--charcoal);line-height:1.6;margin:0">Ultrasound, echocardiogram and reporting delivered by London Private Ultrasound Group. CQC-registered. GMC clinicians. NHS-trained sonographers.</p>
+      <div style="width:36px;height:36px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></div>
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink)">Specialist diagnostics &mdash; no waiting list</h3>
+      <p style="font-size:12px;color:var(--charcoal);line-height:1.6;margin:0">Advanced liver and gallbladder scans, echocardiogram and full metabolic bloods &mdash; delivered in a single appointment at our CQC-registered London private clinic. The same screening depth specialist services offer, without the months-long wait.</p>
     </div>
     <div style="background:var(--sky-wash);border:1px solid var(--sky-pale);border-radius:14px;padding:20px 22px">
       <div style="width:36px;height:36px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></div>

@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title>Don't Weight — Clinician-Led Weight Loss | Free Consultation</title>
-<meta name="description" content="UK's clinician-led weight management service. Free 2-minute eligibility check, personalised treatment plans, and ongoing medical support. CQC registered. Every body welcome.">
+<meta name="description" content="UK's clinician-led weight management service. Free 30-second eligibility check, personalised treatment plans, and ongoing medical support. CQC registered. Every body welcome.">
 <link rel="canonical" href="https://dontweight.co.uk/">
 
 <!-- Open Graph -->
@@ -543,7 +543,7 @@ body.quiz-open #dw-chat-bubble,body.quiz-open #dw-chat-toast,body.quiz-open #dw-
 
     <div class="fu" style="margin-bottom:clamp(12px,2vw,18px)"><span style="font-size:clamp(10px,1vw,13px);font-weight:700;color:var(--sky-deep);letter-spacing:clamp(3px,0.5vw,7px);text-transform:uppercase">Every body welcome</span></div>
 
-    <p class="hero-sub fu" style="font-size:clamp(16px,1.5vw,20px);color:var(--ink);max-width:500px;line-height:1.6;margin:0 auto clamp(24px,3vw,36px);font-weight:600">Clinician-prescribed weight loss medication, delivered to your door. Check if you qualify in 2 minutes.</p>
+    <p class="hero-sub fu" style="font-size:clamp(16px,1.5vw,20px);color:var(--ink);max-width:500px;line-height:1.6;margin:0 auto clamp(24px,3vw,36px);font-weight:600">Clinician-prescribed weight loss medication, delivered to your door. Check if you qualify in 30 seconds.</p>
 
     <div class="hero-cta-row fu" style="justify-content:center;margin-bottom:0;gap:16px">
       <button class="cta-main" onclick="openQ()">Am I eligible? &rarr;</button>
@@ -948,7 +948,7 @@ body.quiz-open #dw-chat-bubble,body.quiz-open #dw-chat-toast,body.quiz-open #dw-
     <div class="how-step fu">
       <div class="how-num">1</div>
       <h3>Apply online</h3>
-      <p>Answer a short health questionnaire. Takes under 2 minutes. No GP referral needed.</p>
+      <p>Answer a short health questionnaire. Takes under 30 seconds. No GP referral needed.</p>
     </div>
     <div class="how-step fu">
       <div class="how-num">2</div>
@@ -963,7 +963,7 @@ body.quiz-open #dw-chat-bubble,body.quiz-open #dw-chat-toast,body.quiz-open #dw-
   </div>
   <div style="text-align:center;margin-top:clamp(36px,4vw,52px)">
     <button onclick="openQ()" style="background:var(--sky);color:#fff;border:none;border-radius:100px;padding:14px 36px;font-family:var(--body);font-size:14px;font-weight:600;cursor:pointer;transition:background .2s,transform .2s;box-shadow:0 4px 16px rgba(56,189,248,.2)">Start your application &rarr;</button>
-    <p style="font-size:11px;color:var(--slate);margin-top:10px">Takes 2 minutes. Followed by a short video consultation with your clinician.</p>
+    <p style="font-size:11px;color:var(--slate);margin-top:10px">Takes 30 seconds. Followed by a short video consultation with your clinician.</p>
   </div>
 </section>
 
@@ -1166,7 +1166,7 @@ body.quiz-open #dw-chat-bubble,body.quiz-open #dw-chat-toast,body.quiz-open #dw-
     </div>
     <div class="faq-list">
       <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>What medications do you prescribe?</span><div class="faq-plus">+</div></button><div class="faq-a">We prescribe Mounjaro (tirzepatide) and Wegovy (semaglutide) &mdash; both MHRA-approved GLP-1 treatments. Your clinician will recommend the most appropriate medication based on your health profile, goals, and medical history.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>Am I eligible?</span><div class="faq-plus">+</div></button><div class="faq-a">Most adults with a BMI of 30+ (or 27+ with a weight-related health condition) are eligible. Our 2-minute eligibility check confirms this instantly. A UK-registered clinician reviews every application.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>Am I eligible?</span><div class="faq-plus">+</div></button><div class="faq-a">Most adults with a BMI of 30+ (or 27+ with a weight-related health condition) are eligible. Our 30-second eligibility check confirms this instantly. A UK-registered clinician reviews every application.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>How does pricing work?</span><div class="faq-plus">+</div></button><div class="faq-a">All new patients start on the starter dose at a lower introductory price. After your video consultation, your clinician may adjust your dose based on your response and goals &mdash; the monthly price is then updated to reflect your prescribed dose. You always know your price before you&rsquo;re charged. See our <a href="/treatments/" style="color:var(--sky-deep)">treatments page</a> for full dose-by-dose pricing.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>What happens after my first month?</span><div class="faq-plus">+</div></button><div class="faq-a">Your clinician reviews your progress and may adjust your dose. Your treatment continues at the price for your prescribed dose &mdash; you&rsquo;ll always know the cost before your next order. There are no contracts or lock-in periods.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="togFaq(this)"><span>How do dose increases work?</span><div class="faq-plus">+</div></button><div class="faq-a">Dose increases are always managed by your clinician based on your progress, tolerance, and clinical guidelines. You&rsquo;ll never be moved to a higher dose without a clinical review. If your dose changes, we&rsquo;ll confirm the new monthly price before your next payment.</div></div>
@@ -1183,7 +1183,7 @@ body.quiz-open #dw-chat-bubble,body.quiz-open #dw-chat-toast,body.quiz-open #dw-
 <!-- FINAL CTA -->
 <div class="final-cta">
   <h2 class="fu">Don&rsquo;t weight.</h2>
-  <p class="fu">2-minute application. Approved by tomorrow. Medication at your door the next day.</p>
+  <p class="fu">30-second application. Approved by tomorrow. Medication at your door the next day.</p>
   <button class="cta-white fu" onclick="openQ()">Start your programme &rarr;</button>
   <p class="final-note fu">Every prescription clinician-approved. No commitment.</p>
 </div>
@@ -1196,7 +1196,7 @@ body.quiz-open #dw-chat-bubble,body.quiz-open #dw-chat-toast,body.quiz-open #dw-
   <div class="qm">
     <button class="qx" onclick="closeQ()">&times;</button>
     <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky-deep);font-weight:700;margin-bottom:6px">Eligibility Check</div>
-    <div style="font-size:13px;color:var(--charcoal);margin-bottom:6px">2-minute assessment &middot; 100% confidential</div>
+    <div style="font-size:13px;color:var(--charcoal);margin-bottom:6px">30-second assessment &middot; 100% confidential</div>
     <div style="margin-bottom:20px"><a href="<?php echo home_url('/treatments/'); ?>" style="font-size:12px;color:var(--sky-deep);text-decoration:none;font-weight:500">View full pricing &amp; doses &rarr;</a></div>
     <div class="qprog" id="qp"><div class="qd done"></div><div class="qd"></div><div class="qd"></div><div class="qd"></div><div class="qd"></div></div>
 

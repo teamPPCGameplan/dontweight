@@ -75,6 +75,16 @@ function dontweight_favicon() {
 }
 add_action('wp_head', 'dontweight_favicon', 2);
 
+// Remove WordPress's legacy auto-generated Site Icon PNG output
+// (it was overriding our theme SVG favicon with an old black PNG)
+remove_action('wp_head', 'wp_site_icon', 99);
+// Also clear the site_icon option so admin UI shows no icon
+add_action('init', function() {
+    if (get_option('site_icon')) {
+        update_option('site_icon', 0);
+    }
+});
+
 // Custom page template redirect: if front page is set to "Home" page, use our template
 function dontweight_front_page_template($template) {
     if (is_front_page() && is_page()) {
@@ -218,7 +228,7 @@ function dontweight_create_starter_posts() {
             'title' => 'What Actually Happens During a GLP-1 Weight Loss Consultation',
             'content' => '<p>One of the most common questions we get is: "What happens when I start?" If you\'ve never spoken to a prescribing clinician about weight loss medication, the process can feel opaque. Here\'s exactly what to expect.</p>
 
-<h2>Step 1: The Eligibility Screener (2 Minutes)</h2>
+<h2>Step 1: The Eligibility Screener (30 seconds)</h2>
 <p>Before you speak to anyone, our online screener checks the basics: your BMI, any existing conditions, current medications, and pregnancy status. This isn\'t a formality — it\'s a genuine safety gate. If GLP-1 medication isn\'t appropriate for you, we\'ll tell you straight away rather than waste your time.</p>
 
 <h2>Step 2: Clinical Review</h2>
@@ -232,7 +242,7 @@ function dontweight_create_starter_posts() {
 
 <h2>What We Don\'t Do</h2>
 <p>We don\'t promise specific weight loss numbers. We don\'t prescribe without proper assessment. We don\'t disappear after dispensing — ongoing clinical oversight is part of the service. And we never prescribe to anyone with a BMI under 27, regardless of willingness to pay.</p>',
-            'excerpt' => 'From the 2-minute eligibility check to your first injection — here\'s the full process, no surprises.',
+            'excerpt' => 'From the 30-second eligibility check to your first injection — here\'s the full process, no surprises.',
         ),
         array(
             'title' => 'GLP-1 Medications and Exercise: What the Research Actually Says',

@@ -137,7 +137,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 <div class="post-cta">
   <div class="post-cta-inner">
     <h3>Ready to start?</h3>
-    <p>Check if you qualify for clinician-prescribed GLP-1 medication in 2 minutes.</p>
+    <p>Check if you qualify for clinician-prescribed GLP-1 medication in 30 seconds.</p>
     <a href="<?php echo home_url(); ?>">Check your eligibility &rarr;</a>
   </div>
 </div>

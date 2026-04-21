@@ -133,7 +133,7 @@
     CQC Registered &middot; MHRA Approved &middot; UK Clinicians
   </div>
   <h1 style="font-family:var(--display);font-size:clamp(32px,5.5vw,64px);font-weight:700;letter-spacing:-2px;line-height:1.05;margin-bottom:16px;max-width:700px;margin-left:auto;margin-right:auto">Clinician-prescribed <span style="color:var(--sky-deep)">weight loss</span> medication</h1>
-  <p style="font-size:clamp(14px,1.3vw,18px);color:var(--slate);max-width:520px;margin:0 auto 24px;line-height:1.7">Mounjaro &amp; Wegovy. Choose your treatment, check eligibility in 2 minutes. Delivered to your door &mdash; free, next day.</p>
+  <p style="font-size:clamp(14px,1.3vw,18px);color:var(--slate);max-width:520px;margin:0 auto 24px;line-height:1.7">Mounjaro &amp; Wegovy. Choose your treatment, check eligibility in 30 seconds. Delivered to your door &mdash; free, next day.</p>
   <div style="font-size:clamp(10px,1vw,13px);font-weight:700;color:var(--sky-deep);letter-spacing:clamp(3px,.5vw,7px);text-transform:uppercase;margin-bottom:20px">Your weight shouldn't wait</div>
   <div style="margin-bottom:20px"><a href="#treatments" style="background:var(--sky);color:#fff;border-radius:100px;padding:18px 48px;font-family:var(--body);font-size:16px;font-weight:700;text-decoration:none;display:inline-block;box-shadow:0 4px 24px rgba(56,189,248,.3)" onclick="document.getElementById('treatments').scrollIntoView({behavior:'smooth'});return false">View treatments &amp; pricing &darr;</a></div>
   <div style="font-size:12px;color:var(--sky-deep);font-weight:600">&#x1F4E6; Free Next Day Delivery <span style="font-weight:400;color:var(--slate)">on first order</span></div>
@@ -295,7 +295,7 @@
 <!-- FINAL CTA -->
 <div class="tx-final">
   <h2 style="font-family:var(--display);font-size:clamp(28px,4vw,48px);font-weight:700;letter-spacing:-1.5px;margin-bottom:12px">Don&rsquo;t weight.</h2>
-  <p style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:28px">2-minute questionnaire. Video consultation. Medication at your door next day.</p>
+  <p style="font-size:13px;color:rgba(255,255,255,.7);margin-bottom:28px">30-second questionnaire. Video consultation. Medication at your door next day.</p>
   <a href="#" onclick="openQ();return false" style="background:#fff;color:var(--sky-dark);border-radius:100px;padding:16px 44px;font-family:var(--body);font-size:15px;font-weight:700;text-decoration:none;display:inline-block">Check your eligibility &rarr;</a>
   <p style="margin-top:14px;font-size:12px;color:rgba(255,255,255,.6)">Full refund if not clinically eligible.</p>
   <p style="margin-top:8px;font-size:11px;color:rgba(255,255,255,.5)">Every prescription is reviewed by your clinician. No commitment required.</p>
@@ -310,7 +310,7 @@
   <div class="qm">
     <button class="qx" onclick="closeQ()">&times;</button>
     <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky-deep);font-weight:700;margin-bottom:6px">Eligibility Check</div>
-    <div style="font-size:13px;color:var(--charcoal);margin-bottom:6px">2-minute assessment &middot; 100% confidential</div>
+    <div style="font-size:13px;color:var(--charcoal);margin-bottom:6px">30-second assessment &middot; 100% confidential</div>
     <div style="margin-bottom:20px"><a href="<?php echo home_url('/treatments/'); ?>" style="font-size:12px;color:var(--sky-deep);text-decoration:none;font-weight:500">View full pricing &amp; doses &rarr;</a></div>
     <div class="qprog" id="qp"><div class="qd done"></div><div class="qd"></div><div class="qd"></div><div class="qd"></div><div class="qd"></div></div>
 

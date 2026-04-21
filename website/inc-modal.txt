@@ -2,7 +2,7 @@
 <!-- FINAL CTA -->
 <div class="final-cta">
   <h2 class="fu">Don&rsquo;t weight.</h2>
-  <p class="fu">2-minute application. Approved by tomorrow. Medication at your door the next day.</p>
+  <p class="fu">30-second application. Approved by tomorrow. Medication at your door the next day.</p>
   <button class="cta-white fu" onclick="openQ()">Start your programme &rarr;</button>
   <p class="final-note fu">100% money-back guarantee if not approved.</p>
 </div>
@@ -25,7 +25,7 @@
   <div class="qm">
     <button class="qx" onclick="closeQ()">&times;</button>
     <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky-deep);font-weight:700;margin-bottom:6px">Eligibility Check</div>
-    <div style="font-size:13px;color:var(--charcoal);margin-bottom:20px">2-minute assessment &middot; 100% confidential</div>
+    <div style="font-size:13px;color:var(--charcoal);margin-bottom:20px">30-second assessment &middot; 100% confidential</div>
     <div class="qprog" id="qp"><div class="qd done"></div><div class="qd"></div><div class="qd"></div><div class="qd"></div><div class="qd"></div></div>
 
     <!-- Step 1: Age + Gender -->

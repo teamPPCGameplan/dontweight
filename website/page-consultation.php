@@ -471,164 +471,72 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
     <div class="nav-btns"><button class="btn-back" onclick="prevS(6)">&larr; Back</button><button class="btn-next" onclick="nextS(6)">Continue to payment &rarr;</button></div>
   </div>
 
-  <!-- STEP 8: Payment -->
+  <!-- STEP 8: Book & Pay with Semble -->
   <div class="step" id="s8">
     <div class="section-card">
-      <h2>Payment</h2>
-      <div class="sec-sub">Review your order and complete payment to proceed.</div>
+
+      <!-- Phone / help banner -->
+      <div style="background:var(--sky-pale);border:1px solid var(--sky);border-radius:14px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <div style="flex:1;min-width:220px">
+          <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:2px">Any questions or doubts?</div>
+          <div style="font-size:13px;color:var(--charcoal)">Call us on <a href="tel:+442071013377" style="color:var(--sky-deep);font-weight:700;text-decoration:none">+44 20 7101 3377</a> &mdash; our team is happy to help.</div>
+        </div>
+      </div>
+
+      <h2>Book your appointment</h2>
+      <div class="sec-sub">Please book your appointment with our clinician using the form below. You will be able to choose a time slot and pay securely in one step.</div>
 
       <div class="info-banner">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span><strong>100% refund guarantee:</strong> If your application is not approved by our clinical team, you will receive a full refund within 5 working days. No questions asked.</span>
+        <span><strong>100% refund guarantee:</strong> If your application is not approved by our clinical team, you will receive a full refund within 5 working days.</span>
       </div>
 
-      <!-- Order Summary -->
-      <div style="background:var(--cream);border-radius:16px;padding:24px;margin-bottom:20px">
-        <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sky-deep);font-weight:700;margin-bottom:16px">Order Summary</div>
-
-        <div id="paymentSummary" style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--stone);margin-bottom:16px">
-          <div>
-            <div style="font-family:var(--display);font-size:18px;font-weight:700;color:var(--ink)" id="payTreatName">Mounjaro</div>
-            <div style="font-size:13px;color:var(--slate);margin-top:2px">First month &mdash; medication, clinical review, delivery</div>
-          </div>
-          <div style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--ink)" id="payAmount">&pound;150</div>
+      <!-- SEMBLE BOOKING IFRAME — shown based on selected treatment -->
+      <!-- MOUNJARO iframe slot -->
+      <div id="semble-mounjaro-area" style="display:none;margin-top:20px">
+        <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
+          <strong style="color:var(--ink)">Selected treatment:</strong> Mounjaro (Tirzepatide)
         </div>
+        <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
+          <!-- ════════════════════════════════════════════════════════ -->
+          <!-- PASTE MOUNJARO SEMBLE IFRAME CODE BELOW THIS LINE ONLY   -->
+          <!-- ════════════════════════════════════════════════════════ -->
 
-        <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid var(--stone);margin-bottom:12px">
-          <span style="font-size:13px;color:var(--charcoal)">Delivery</span>
-          <span style="font-size:13px;color:var(--green);font-weight:600">FREE</span>
-        </div>
+          <!-- SEMBLE_MOUNJARO_IFRAME_HERE -->
 
-        <div style="display:flex;justify-content:space-between;align-items:center">
-          <span style="font-size:15px;font-weight:700;color:var(--ink)">Total due today</span>
-          <span style="font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink)" id="payTotal">&pound;150</span>
+          <!-- ════════════════════════════════════════════════════════ -->
+          <!-- END MOUNJARO SEMBLE IFRAME                               -->
+          <!-- ════════════════════════════════════════════════════════ -->
         </div>
       </div>
 
-      <div style="font-size:12px;color:var(--slate);line-height:1.6;margin-bottom:20px">
-        <strong>What you&rsquo;re paying for:</strong> Your initial treatment month including medication, clinical review, personalised plan, free next-day delivery, and ongoing clinician support. Your treatment continues monthly at the standard dosage rate.
-      </div>
+      <!-- WEGOVY iframe slot -->
+      <div id="semble-wegovy-area" style="display:none;margin-top:20px">
+        <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
+          <strong style="color:var(--ink)">Selected treatment:</strong> Wegovy (Semaglutide)
+        </div>
+        <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
+          <!-- ════════════════════════════════════════════════════════ -->
+          <!-- PASTE WEGOVY SEMBLE IFRAME CODE BELOW THIS LINE ONLY     -->
+          <!-- ════════════════════════════════════════════════════════ -->
 
-      <!-- Stripe Checkout Button (placeholder until keys are added) -->
-      <div id="stripe-checkout-area">
-        <button id="stripePayBtn" onclick="processPayment()" style="width:100%;background:var(--sky);color:#fff;border:none;border-radius:100px;padding:18px;font-family:var(--body);font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(56,189,248,.2);display:flex;align-items:center;justify-content:center;gap:10px">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
-          Pay securely &rarr;
-        </button>
-        <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="#A8A29E" stroke-width="1.5" stroke-linecap="round"/></svg>
-          <span style="font-size:11px;color:var(--slate)">Payments secured by Stripe. 256-bit SSL encryption.</span>
+          <!-- SEMBLE_WEGOVY_IFRAME_HERE -->
+
+          <!-- ════════════════════════════════════════════════════════ -->
+          <!-- END WEGOVY SEMBLE IFRAME                                 -->
+          <!-- ════════════════════════════════════════════════════════ -->
         </div>
       </div>
 
-      <div style="margin-top:16px;display:flex;gap:8px;justify-content:center;opacity:.4">
-        <span style="font-size:10px;padding:4px 10px;border:1px solid var(--stone);border-radius:4px">Visa</span>
-        <span style="font-size:10px;padding:4px 10px;border:1px solid var(--stone);border-radius:4px">Mastercard</span>
-        <span style="font-size:10px;padding:4px 10px;border:1px solid var(--stone);border-radius:4px">Amex</span>
-        <span style="font-size:10px;padding:4px 10px;border:1px solid var(--stone);border-radius:4px">Apple Pay</span>
-        <span style="font-size:10px;padding:4px 10px;border:1px solid var(--stone);border-radius:4px">Google Pay</span>
+      <div style="text-align:center;margin-top:24px;padding:16px;background:var(--cream);border-radius:12px">
+        <p style="font-size:13px;color:var(--charcoal);line-height:1.6;margin:0">Having trouble booking? Call us on <a href="tel:+442071013377" style="color:var(--sky-deep);font-weight:700;text-decoration:none">+44 20 7101 3377</a> or email <a href="mailto:hello@dontweight.co.uk" style="color:var(--sky-deep);font-weight:700;text-decoration:none">hello@dontweight.co.uk</a></p>
       </div>
     </div>
     <div class="err" id="err8"></div>
     <div class="nav-btns"><button class="btn-back" onclick="prevS(8)">&larr; Back</button></div>
   </div>
 
-  <!-- STEP 9: Book Video Consultation -->
-  <div class="step" id="s9">
-    <div class="section-card">
-      <div style="text-align:center;margin-bottom:24px">
-        <div style="width:64px;height:64px;border-radius:50%;background:var(--green-bg);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px;color:var(--green)">&#10003;</div>
-        <h2>Payment received</h2>
-        <p style="color:var(--slate);font-size:14px;margin-top:6px">Now book your video consultation with our pharmacist.</p>
-      </div>
-
-      <!-- STEP 9A: Prominent booking prompt -->
-      <div id="booking-prompt" style="text-align:center;margin-bottom:32px">
-        <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#38BDF8,#0284C7);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 32px rgba(56,189,248,.3)">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        </div>
-        <h2 style="font-family:var(--display);font-size:26px;font-weight:700;margin-bottom:8px;letter-spacing:-.6px;color:var(--ink)">Payment received &mdash; one last step!</h2>
-        <p style="font-size:16px;color:var(--charcoal);line-height:1.6;max-width:480px;margin:0 auto 8px;font-weight:500">Book your mandatory video consultation below</p>
-        <p style="font-size:13px;color:var(--slate);max-width:420px;margin:0 auto 20px;line-height:1.5">A short 10&ndash;15 minute call with your pharmacist is required by the GPhC before any medication can be prescribed. Pick a time that works for you.</p>
-
-        <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">
-          <span style="display:inline-flex;align-items:center;gap:6px;background:var(--green-bg);border:1px solid var(--green);color:var(--green);font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Payment confirmed
-          </span>
-          <span style="display:inline-flex;align-items:center;gap:6px;background:var(--sky-pale);border:1px solid var(--sky);color:var(--sky-deep);font-size:12px;font-weight:600;padding:6px 14px;border-radius:100px">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg>
-            Book consultation now
-          </span>
-        </div>
-
-        <div style="background:linear-gradient(135deg,#FEF3C7,#FDE68A);border:2px solid #F59E0B;border-radius:16px;padding:16px 20px;max-width:460px;margin:0 auto 24px;text-align:left">
-          <p style="font-size:14px;font-weight:700;color:#92400E;margin-bottom:6px">&#9888; Don&rsquo;t leave without booking!</p>
-          <p style="font-size:13px;color:#78350F;line-height:1.5;margin:0">Your order <strong>cannot be processed</strong> until the video consultation is completed. Choose a time slot below to avoid delays.</p>
-        </div>
-      </div>
-
-      <!-- Cal.com Inline Booking — large and prominent -->
-      <div id="cal-booking-area" style="background:var(--cream);border-radius:16px;padding:4px;margin-bottom:20px;min-height:500px;border:2px solid var(--sky);box-shadow:0 4px 24px rgba(56,189,248,.15)">
-        <iframe src="https://cal.com/dontweight/video-consultation?embed=true" style="width:100%;height:650px;border:none;border-radius:12px" loading="lazy"></iframe>
-      </div>
-
-      <div style="text-align:center;margin-top:20px">
-        <p style="font-size:12px;color:var(--slate);margin-bottom:8px">Having trouble with the calendar? Contact us and we&rsquo;ll arrange it for you.</p>
-        <button onclick="showSkipConfirm()" style="background:none;border:1px solid var(--border);color:var(--slate);font-size:13px;cursor:pointer;font-family:var(--body);padding:8px 20px;border-radius:100px">I&rsquo;ll book later &mdash; contact me instead</button>
-      </div>
-
-      <!-- Skip booking confirmation overlay -->
-      <div id="skip-confirm-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:9999;backdrop-filter:blur(4px)">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;border-radius:20px;padding:32px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)">
-          <div style="width:60px;height:60px;border-radius:50%;background:#FEF3C7;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:28px">&#9888;</div>
-          <h3 style="font-family:var(--display);font-size:20px;font-weight:700;margin-bottom:8px;color:var(--ink)">Are you sure?</h3>
-          <p style="font-size:14px;color:var(--slate);line-height:1.6;margin-bottom:20px">Your medication <strong>cannot be dispatched</strong> until the video consultation is completed. Skipping may delay your treatment by several days.</p>
-          <div style="display:flex;gap:10px;flex-direction:column">
-            <button onclick="hideSkipConfirm()" style="background:var(--sky);color:#fff;border:none;border-radius:100px;padding:14px 28px;font-family:var(--body);font-size:14px;font-weight:600;cursor:pointer;width:100%">Go back and book now</button>
-            <button onclick="confirmSkipBooking()" style="background:none;border:1px solid var(--border);color:var(--slate);border-radius:100px;padding:12px 28px;font-family:var(--body);font-size:13px;cursor:pointer;width:100%">Skip anyway &mdash; contact me within 24h</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- STEP 10: Confirmation -->
-  <div class="step" id="s10">
-    <div class="section-card">
-      <div class="success-screen">
-        <div class="success-icon">&#10003;</div>
-        <h2>You&rsquo;re all set!</h2>
-        <p>Your consultation has been submitted, payment received, and your video consultation is being arranged.</p>
-        <div class="next-steps" style="text-align:left;background:var(--cream);border-radius:16px;padding:20px;margin-top:16px">
-          <strong style="font-size:15px">What happens next:</strong><br><br>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
-            <span style="width:28px;height:28px;border-radius:50%;background:var(--sky-pale);color:var(--sky-deep);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">1</span>
-            <div><strong>Video consultation</strong> &mdash; your pharmacist will meet you at your booked time via Google Meet.</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
-            <span style="width:28px;height:28px;border-radius:50%;background:var(--sky-pale);color:var(--sky-deep);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">2</span>
-            <div><strong>Clinical review</strong> &mdash; your prescribing pharmacist will review all your information and the video assessment.</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
-            <span style="width:28px;height:28px;border-radius:50%;background:var(--green-bg);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">3</span>
-            <div><strong>If approved</strong> &mdash; your medication will be dispatched from a registered UK pharmacy the following day via free next-day delivery.</div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px">
-            <span style="width:28px;height:28px;border-radius:50%;background:#FEF3C7;color:#92400E;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">4</span>
-            <div><strong>If not approved</strong> &mdash; you will receive a full refund within 5 working days.</div>
-          </div>
-          <div style="margin-top:16px;padding:14px 16px;background:var(--sky-pale);border-radius:12px;display:flex;align-items:center;gap:10px">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span style="font-size:13px;color:var(--charcoal)"><strong>Check your email</strong> at <span id="confirmEmail" style="color:var(--sky-deep);font-weight:600"></span> for booking confirmation and Google Meet link.</span>
-          </div>
-        </div>
-        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
-          <a href="<?php echo esc_url(home_url('/')); ?>" style="display:inline-block;background:var(--sky);color:#fff;border:none;border-radius:100px;padding:14px 36px;font-family:var(--body);font-size:14px;font-weight:600;text-decoration:none;transition:background .2s">Return to homepage</a>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
 
 <div style="background:var(--ink);padding:24px;text-align:center;font-size:11px;color:rgba(255,255,255,.35);margin-top:40px">
@@ -636,23 +544,18 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
 </div>
 
 <script>
-// Stripe configuration — injected directly since this is a standalone template
-var dwStripe={
-  pk:"<?php echo esc_js(get_option('dontweight_stripe_pk', '')); ?>",
-  ajaxUrl:"<?php echo admin_url('admin-ajax.php'); ?>",
-  nonce:"<?php echo wp_create_nonce('dw_stripe_checkout'); ?>"
-};
+// (Stripe + Cal.com integrations removed — booking handled via Semble iframe on step 8)
 
 let step=1;
-const totalSteps=5;
+const totalSteps=4;
 
 function showStep(n){
   document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
   document.getElementById('s'+n).classList.add('active');
-  
+
   // Map form steps to 4 progress phases
-  // Steps 1-2: Your Details | Steps 3-5: Medical History | Steps 6,8: Treatment & Pay | Steps 9-10: Book Call
-  const phaseMap={1:1,2:1,3:2,4:2,5:2,6:3,8:3,9:4,10:4};
+  // 1-2: Your Details | 3-5: Medical History | 6: Choose Treatment | 8: Book Appointment
+  const phaseMap={1:1,2:1,3:2,4:2,5:2,6:3,8:4};
   const phase=phaseMap[n]||1;
 
   // Update step numbers
@@ -664,7 +567,7 @@ function showStep(n){
   }
 
   // Fill progress lines
-  const subSteps={1:[1,2],2:[3,4,5],3:[6,8],4:[9,10]};
+  const subSteps={1:[1,2],2:[3,4,5],3:[6],4:[8]};
   for(let i=1;i<=3;i++){
     const fill=document.getElementById('progFill'+(i>1?i:''));
     if(i<phase){fill.style.width='100%'}
@@ -683,9 +586,7 @@ function showStep(n){
     4:'Halfway there!',
     5:'Almost done with medical info',
     6:'Step 3 of 4 — Choose treatment',
-    8:'Nearly there — payment',
-    9:'Final step — book your call!',
-    10:'All done!'
+    8:'Step 4 of 4 — Book your appointment'
   };
   const msgEl=document.getElementById('stepMsg');
   if(msgEl)msgEl.textContent=msgs[n]||'';
@@ -880,120 +781,26 @@ function submitAll(){
 
   step=8;
   showStep(8);
-  updatePaymentSummary();
+  showSembleForTreatment();
 }
 
-// Update payment summary based on selected treatment
+// Show correct Semble iframe based on selected treatment
+function showSembleForTreatment(){
+  const base = (selectedTreat||'mounjaro').startsWith('wegovy') ? 'wegovy' : 'mounjaro';
+  const m = document.getElementById('semble-mounjaro-area');
+  const w = document.getElementById('semble-wegovy-area');
+  if(m) m.style.display = (base === 'mounjaro') ? 'block' : 'none';
+  if(w) w.style.display = (base === 'wegovy')   ? 'block' : 'none';
+}
+
 function tickAll(el){
   var master=document.getElementById('cAll');
   var boxes=document.querySelectorAll('.consent-cb');
   boxes.forEach(function(b){b.checked=master.checked;});
 }
 
-function updatePaymentSummary(){
-  const name=selectedTreat==='mounjaro'?'Mounjaro':'Wegovy';
-  const price=selectedTreat==='mounjaro'?150:114;
-  document.getElementById('payTreatName').textContent=name;
-  document.getElementById('payAmount').innerHTML='&pound;'+price;
-  document.getElementById('payTotal').innerHTML='&pound;'+price;
-}
-
-// Payment processing — Stripe Checkout
-function processPayment(){
-  const btn=document.getElementById('stripePayBtn');
-  btn.disabled=true;
-  btn.innerHTML='<span style="display:inline-block;width:18px;height:18px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite"></span> Connecting to payment...';
-
-  const email=document.getElementById('email').value||'';
-  const name=(document.getElementById('fname').value||'')+' '+(document.getElementById('lname').value||'');
-  
-  const fd=new FormData();
-  fd.append('action','dw_stripe_checkout');
-  fd.append('nonce',typeof dwStripe!=='undefined'?dwStripe.nonce:'');
-  fd.append('treatment',selectedTreat||'mounjaro');
-  if(selectedTargetDose&&selectedTargetDose!==selectedTreat){
-    fd.append('target_dose',selectedTargetDose);
-  }
-  fd.append('email',email);
-  fd.append('name',name.trim());
-  
-  const ajaxUrl=typeof dwStripe!=='undefined'?dwStripe.ajaxUrl:'/wp-admin/admin-ajax.php';
-  
-  fetch(ajaxUrl,{method:'POST',body:fd})
-    .then(r=>r.json())
-    .then(data=>{
-      if(data.success && data.data.url){
-        // Save form state to localStorage before Stripe redirect
-        try{
-          var formState={
-            fname:document.getElementById('fname').value||'',
-            lname:document.getElementById('lname').value||'',
-            email:document.getElementById('email').value||'',
-            phone:document.getElementById('phone').value||'',
-            treatment:selectedTreat||'mounjaro',
-            targetDose:selectedTargetDose||'',
-            timestamp:Date.now()
-          };
-          localStorage.setItem('dw_consultation_state',JSON.stringify(formState));
-        }catch(e){}
-        window.location.href=data.data.url;
-      } else {
-        btn.disabled=false;
-        btn.innerHTML='Pay securely &rarr;';
-        alert('Payment setup failed: '+(data.data||'Please try again.'));
-      }
-    })
-    .catch(err=>{
-      btn.disabled=false;
-      btn.innerHTML='Pay securely &rarr;';
-      alert('Connection error. Please try again.');
-    });
-}
-
-// Submit video consultation request
-function submitVideoRequest(){
-  var day=document.getElementById('vcDay').value;
-  var time=document.getElementById('vcTime').value;
-  var notes=document.getElementById('vcNotes').value.trim();
-  if(!day||!time){alert('Please select your preferred day and time.');return;}
-  var email=document.getElementById('email').value||'';
-  var name=(document.getElementById('fname').value||'')+' '+(document.getElementById('lname').value||'');
-  var phone=document.getElementById('phone').value||'';
-
-  var fd=new FormData();
-  fd.append('action','dw_schedule');
-  fd.append('nonce',typeof dwAjax!=='undefined'?dwAjax.nonce:'');
-  fd.append('name',name.trim());
-  fd.append('email',email);
-  fd.append('phone',phone);
-  fd.append('day',day);
-  fd.append('time',time);
-  fd.append('reason','Video consultation (post-payment) — '+notes);
-  var url=typeof dwAjax!=='undefined'?dwAjax.url:'/wp-admin/admin-ajax.php';
-  fetch(url,{method:'POST',body:fd}).catch(function(){});
-
-  var em=email||'your email';
-  document.getElementById('confirmEmail').textContent=em;
-  step=10;
-  showStep(10);
-}
-
-// Skip booking — now requires confirmation
-function showSkipConfirm(){
-  document.getElementById('skip-confirm-overlay').style.display='block';
-}
-function hideSkipConfirm(){
-  document.getElementById('skip-confirm-overlay').style.display='none';
-}
-function confirmSkipBooking(){
-  document.getElementById('skip-confirm-overlay').style.display='none';
-  const em=document.getElementById('email').value||'your email';
-  document.getElementById('confirmEmail').textContent=em;
-  step=10;
-  showStep(10);
-}
-// Legacy alias
-function skipBooking(){ showSkipConfirm(); }
+// (processPayment, submitVideoRequest, skip-booking helpers removed —
+//  Semble iframe on step 8 handles both booking and payment.)
 
 // Dose data
 const doseData={

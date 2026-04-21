@@ -23,7 +23,6 @@
     <li><a href="/blog/" <?php if(is_page('blog') || is_singular('post')) echo 'class="active"'; ?>>Blog</a></li>
   </ul>
   <div class="nav-r">
-    <a href="https://app.dontweight.co.uk" class="nav-login">Log in</a>
     <a href="/contact/" class="nav-cta">Contact</a>
     <button class="burger" onclick="toggleMobileMenu()" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -37,6 +36,5 @@
   <a href="/health-checks/">Health Checks</a>
   <a href="/about/">About Us</a>
   <a href="/blog/">Blog</a>
-  <a href="https://app.dontweight.co.uk">Log in</a>
   <a href="/contact/">Contact</a>
 </div>

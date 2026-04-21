@@ -142,7 +142,7 @@
 <!-- HERO -->
 <section class="ab-hero">
   <div class="label" style="color:var(--sky);text-align:center">Private Medical Weight Loss Clinic</div>
-  <h1>Medication and monitoring. <span>Together.</span></h1>
+  <h1>Medication and<br><span>monitoring.</span></h1>
   <p class="ab-hero-sub">A CQC-registered weight management clinic combining clinician-prescribed treatment with full medical assessment, blood tests, and structured health monitoring. Part of London Private Ultrasound Group.</p>
   <div class="ab-stats" style="display:flex;justify-content:center;gap:clamp(10px,2vw,16px);flex-wrap:wrap;margin-top:20px">
     <span style="font-size:11px;color:var(--slate);border:1px solid var(--stone);padding:6px 14px;border-radius:20px">CQC Regulated</span>

@@ -430,7 +430,60 @@ function dontweight_submit_application() {
     if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'dw_submit_app')) {
         wp_send_json_error('Security check failed.', 403);
     }
-    
+
+    $stage = isset($_POST['stage']) ? sanitize_text_field($_POST['stage']) : 'eligibility';
+
+    // ─── GDPR: ELIGIBILITY STAGE ─────────────────────────────────
+    // For eligibility form, only store: first_name, last_name, email, phone.
+    // Medical data (BMI, conditions etc.) is used client-side for eligibility
+    // check only and is NOT persisted server-side — no lawful basis at this
+    // stage (patient has not yet entered clinical care contract).
+    if ($stage === 'eligibility') {
+        $data = array(
+            'first_name' => isset($_POST['first_name']) ? sanitize_text_field($_POST['first_name']) : '',
+            'last_name'  => isset($_POST['last_name'])  ? sanitize_text_field($_POST['last_name'])  : '',
+            'email'      => isset($_POST['email'])      ? sanitize_email($_POST['email'])           : '',
+            'phone'      => isset($_POST['phone'])      ? sanitize_text_field($_POST['phone'])      : '',
+        );
+        $name = trim($data['first_name'] . ' ' . $data['last_name']);
+        if (!$name) $name = 'Unknown';
+
+        $content  = "=== Eligibility Lead ===\n\n";
+        $content .= "Name: {$name}\n";
+        $content .= "Email: {$data['email']}\n";
+        $content .= "Phone: {$data['phone']}\n";
+
+        $post_id = wp_insert_post(array(
+            'post_type'    => 'dw_application',
+            'post_title'   => $name . ' — ' . $data['email'] . ' (' . date('j M Y H:i') . ') [eligibility]',
+            'post_content' => $content,
+            'post_status'  => 'publish',
+        ));
+        if ($post_id) {
+            update_post_meta($post_id, '_dw_first_name', $data['first_name']);
+            update_post_meta($post_id, '_dw_last_name',  $data['last_name']);
+            update_post_meta($post_id, '_dw_email',      $data['email']);
+            update_post_meta($post_id, '_dw_phone',      $data['phone']);
+            update_post_meta($post_id, '_dw_stage',      'eligibility');
+            update_post_meta($post_id, '_dw_submitted',  current_time('mysql'));
+        }
+
+        // Brief admin notification (no medical data)
+        $to = 'hello@dontweight.co.uk';
+        $subject = "[Don't Weight] New eligibility lead — {$name}";
+        $email_body  = "New eligibility lead:\n\n";
+        $email_body .= "Name: {$name}\n";
+        $email_body .= "Email: {$data['email']}\n";
+        $email_body .= "Phone: {$data['phone']}\n";
+        $email_body .= "\nView in WordPress: " . admin_url("post.php?post={$post_id}&action=edit");
+        $headers = array('Content-Type: text/plain; charset=UTF-8');
+        wp_mail($to, $subject, $email_body, $headers);
+
+        wp_send_json_success(array('message' => 'Eligibility lead captured.', 'id' => $post_id));
+        return;
+    }
+
+    // ─── CONSULTATION STAGE (full medical data — GDPR Art 9(2)(h) healthcare) ──
     $data = array();
     $fields = array('first_name','last_name','email','phone','weight_kg','height_cm','bmi','dob','gender',
                      'conditions','medications','allergies','surgeries','family_history',
@@ -447,7 +500,6 @@ function dontweight_submit_application() {
         }
     }
 
-    $stage = $data['stage'] ?: 'eligibility';
     $name = trim($data['first_name'] . ' ' . $data['last_name']);
     if (!$name) $name = 'Unknown';
 
@@ -857,14 +909,14 @@ function dontweight_create_checkout_session() {
 add_action('wp_ajax_dw_stripe_checkout', 'dontweight_create_checkout_session');
 add_action('wp_ajax_nopriv_dw_stripe_checkout', 'dontweight_create_checkout_session');
 
-// Output Stripe nonce for consultation and health check pages
+// Output Stripe nonce — DISABLED (Stripe removed from consultation flow; using Semble iframe)
 function dontweight_stripe_vars() {
     if (is_page('consultation') || is_page('dw360')) {
         $pk = get_option('dontweight_stripe_pk', '');
         echo '<script>var dwStripe={pk:"' . esc_js($pk) . '",ajaxUrl:"' . admin_url('admin-ajax.php') . '",nonce:"' . wp_create_nonce('dw_stripe_checkout') . '"};</script>';
     }
 }
-add_action('wp_head', 'dontweight_stripe_vars');
+// add_action('wp_head', 'dontweight_stripe_vars'); // disabled
 
 // ═══════════════════════════════════════════
 // STRIPE WEBHOOK
@@ -1483,20 +1535,18 @@ function dontweight_create_start_page() {
 add_action('after_switch_theme', 'dontweight_create_start_page');
 add_action('init', 'dontweight_create_start_page');
 
-// ── AI Chatbot Widget ──
-function dontweight_chatbot_widget() {
-    // Don't load on admin pages or wp-login
-    if (is_admin()) return;
-
-    wp_enqueue_script(
-        'dw-chatbot-widget',
-        'https://app.dontweight.co.uk/chatbot-widget.js',
-        array(),
-        '1.0.0',
-        true // Load in footer
-    );
-}
-add_action('wp_enqueue_scripts', 'dontweight_chatbot_widget');
+// ── AI Chatbot Widget ── DISABLED (portal disconnected)
+// function dontweight_chatbot_widget() {
+//     if (is_admin()) return;
+//     wp_enqueue_script(
+//         'dw-chatbot-widget',
+//         'https://app.dontweight.co.uk/chatbot-widget.js',
+//         array(),
+//         '1.0.0',
+//         true
+//     );
+// }
+// add_action('wp_enqueue_scripts', 'dontweight_chatbot_widget');
 
 // Block chatbot page-fixes (DOM manipulation causes flicker).
 // All fixes are now baked into templates. Chat widget still loads fine.

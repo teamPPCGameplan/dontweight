@@ -481,8 +481,8 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
   </div>
 </section>
 
-<!-- BOOKING MODAL -->
-<div class="bk-overlay" id="bkOverlay">
+<!-- BOOKING MODAL (hidden — replaced by inline Semble iframes above) -->
+<div class="bk-overlay" id="bkOverlay" style="display:none!important">
   <div class="bk-modal">
     <button class="bk-close" onclick="closeBooking()">&times;</button>
     
@@ -608,11 +608,24 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open');document.querySelector('.burger').classList.toggle('open');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':''}
 function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.querySelector('.burger').classList.remove('open');document.body.style.overflow=''}
 
-// Open booking modal for selected health check plan
+// Show correct Semble iframe for selected plan, hide the others, scroll into view
 function bookHC(productId){
-  if(typeof openBooking==='function'){ openBooking(productId); return; }
-  var pricing=document.getElementById('pricing');
-  if(pricing) pricing.scrollIntoView({behavior:'smooth',block:'end'});
+  // productId: 'hc-baseline' | 'hc-standard' | 'hc-premium'
+  var wrap = document.getElementById('hc-booking-wrap');
+  var help = document.getElementById('hc-booking-help');
+  var areas = {
+    'hc-baseline': document.getElementById('hc-baseline-area'),
+    'hc-standard': document.getElementById('hc-standard-area'),
+    'hc-premium':  document.getElementById('hc-premium-area')
+  };
+  // Reveal wrap-up + help, hide all iframe slots, then show only selected one
+  if(wrap) wrap.style.display = 'block';
+  if(help) help.style.display = 'block';
+  Object.keys(areas).forEach(function(k){
+    if(areas[k]) areas[k].style.display = (k === productId) ? 'block' : 'none';
+  });
+  var target = document.getElementById('hc-booking');
+  if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 // Booking form

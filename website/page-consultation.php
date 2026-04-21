@@ -514,8 +514,9 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
       <!-- SEMBLE BOOKING IFRAME — shown based on selected treatment -->
       <!-- MOUNJARO iframe slot -->
       <div id="semble-mounjaro-area" style="display:none;margin-top:8px">
-        <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
-          <strong style="color:var(--ink)">Selected treatment:</strong> Mounjaro (Tirzepatide) &mdash; starter dose
+        <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <img src="/wp-content/uploads/2026/04/Mounjaro.jpeg" alt="Mounjaro pens" loading="lazy" style="height:56px;width:auto;max-width:120px;object-fit:contain;flex-shrink:0">
+          <div style="font-size:13px;color:var(--charcoal);line-height:1.4"><strong style="color:var(--ink)">Selected treatment:</strong> Mounjaro (Tirzepatide) &mdash; starter dose</div>
         </div>
         <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
           <iframe src="https://online-booking.semble.io/?token=b0e756507669c936e11ff974f808546cc2f85482" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="border:none;border-radius:12px;display:block;width:100%"></iframe>
@@ -524,8 +525,9 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
 
       <!-- WEGOVY iframe slot -->
       <div id="semble-wegovy-area" style="display:none;margin-top:8px">
-        <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
-          <strong style="color:var(--ink)">Selected treatment:</strong> Wegovy (Semaglutide) &mdash; starter dose
+        <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <img src="/wp-content/uploads/2026/04/wegovy.jpeg" alt="Wegovy pens" loading="lazy" style="height:56px;width:auto;max-width:120px;object-fit:contain;flex-shrink:0">
+          <div style="font-size:13px;color:var(--charcoal);line-height:1.4"><strong style="color:var(--ink)">Selected treatment:</strong> Wegovy (Semaglutide) &mdash; starter dose</div>
         </div>
         <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
           <iframe src="https://online-booking.semble.io/?token=d17e08266e35433bb6d733213b4728b61c3641c3" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="border:none;border-radius:12px;display:block;width:100%"></iframe>

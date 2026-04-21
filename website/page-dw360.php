@@ -240,9 +240,9 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
       <p style="font-size:12px;color:var(--charcoal);line-height:1.6;margin:0">Ultrasound, echocardiogram and reporting delivered by London Private Ultrasound Group. CQC-registered. GMC clinicians. NHS-trained sonographers.</p>
     </div>
     <div style="background:var(--sky-wash);border:1px solid var(--sky-pale);border-radius:14px;padding:20px 22px">
-      <div style="width:36px;height:36px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><polyline points="12 7 12 12 15 14"/></svg></div>
-      <h3 style="font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink)">Open to patients on other GLP-1 providers</h3>
-      <p style="font-size:12px;color:var(--charcoal);line-height:1.6;margin:0">Already on Mounjaro or Wegovy elsewhere? Bring your current prescription &mdash; these packages are designed as a standalone safety layer.</p>
+      <div style="width:36px;height:36px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></div>
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink)">Everything under one clinical roof</h3>
+      <p style="font-size:12px;color:var(--charcoal);line-height:1.6;margin:0">Bloods, ultrasound, echocardiogram and both clinician reviews &mdash; one appointment, one continuous medical record. No referrals, no chasing results between clinics.</p>
     </div>
   </div>
 
@@ -290,11 +290,11 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
     <strong style="color:var(--ink)">A note on medication cost.</strong> The package price covers your full clinical screening, imaging and two clinician reviews. GLP-1 weight loss medication (Mounjaro or Wegovy) is priced separately and confirmed with your prescribing pharmacist during your initial consultation &mdash; dose-dependent and fully transparent.
   </div>
 
-  <!-- Sales USP reinforcement -->
+  <!-- Sales reinforcement -->
   <div style="max-width:920px;margin:32px auto;background:var(--ink);color:#fff;border-radius:20px;padding:clamp(28px,4vw,40px);text-align:center">
-    <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(56,189,248,.9);font-weight:700;margin-bottom:10px">Already on GLP-1 with another provider?</div>
-    <h3 style="font-family:var(--display);font-size:clamp(20px,2.6vw,26px);font-weight:700;letter-spacing:-.5px;margin-bottom:10px;color:#fff">Use our Health Check as your safety layer.</h3>
-    <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,.75);max-width:620px;margin:0 auto">If your current clinic only sells you the jab and nothing else, bring that prescription to us. All three packages are designed to work as a standalone clinical safety check &mdash; so you can stay on your current medication while getting the medical oversight you actually deserve. Many of our health-check-only patients choose to move their full treatment to us afterwards.</p>
+    <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(56,189,248,.9);font-weight:700;margin-bottom:10px">The way GLP-1 should be done</div>
+    <h3 style="font-family:var(--display);font-size:clamp(20px,2.6vw,26px);font-weight:700;letter-spacing:-.5px;margin-bottom:10px;color:#fff">Weight loss medication deserves proper clinical care.</h3>
+    <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,.75);max-width:620px;margin:0 auto">Our health checks sit alongside every Don&rsquo;t Weight treatment plan &mdash; but they are also available on their own to anyone taking GLP-1 medication who wants proper medical oversight alongside their prescription. The focus is simple: real clinicians, real imaging, real baselines.</p>
   </div>
 
   <p style="text-align:center;font-size:11px;color:var(--slate);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto">Full refund if not clinically eligible. Cancel before your appointment at any time.</p>

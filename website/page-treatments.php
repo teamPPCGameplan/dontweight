@@ -152,6 +152,9 @@
     <div class="tx-card featured">
       <div class="tx-badge">Recommended</div>
       <div style="text-align:center;margin-bottom:24px">
+        <div style="background:var(--sky-wash);border-radius:14px;padding:18px 12px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;min-height:130px">
+          <img src="/wp-content/uploads/2026/04/Mounjaro.jpeg" alt="Mounjaro injection pens &mdash; all dose strengths" loading="lazy" style="max-width:100%;max-height:110px;width:auto;height:auto;display:block;object-fit:contain">
+        </div>
         <div class="tx-pct">23%</div>
         <h3 style="font-family:var(--display);font-size:24px;font-weight:700;margin-bottom:4px">Mounjaro</h3>
         <div style="font-size:12px;font-weight:600;color:var(--sky-deep);margin-bottom:8px">Most effective &mdash; Tirzepatide</div>
@@ -180,6 +183,9 @@
     <!-- WEGOVY -->
     <div class="tx-card">
       <div style="text-align:center;margin-bottom:24px;margin-top:12px">
+        <div style="background:var(--sky-wash);border-radius:14px;padding:18px 12px;margin-bottom:14px;display:flex;align-items:center;justify-content:center;min-height:130px">
+          <img src="/wp-content/uploads/2026/04/wegovy.jpeg" alt="Wegovy injection pens &mdash; all dose strengths" loading="lazy" style="max-width:100%;max-height:110px;width:auto;height:auto;display:block;object-fit:contain">
+        </div>
         <div class="tx-pct">15%</div>
         <h3 style="font-family:var(--display);font-size:24px;font-weight:700;margin-bottom:4px">Wegovy</h3>
         <div style="font-size:12px;font-weight:600;color:var(--sky-deep);margin-bottom:8px">Proven &amp; trusted &mdash; Semaglutide (Ozempic)</div>
@@ -272,7 +278,7 @@
       </div>
     </div>
 
-    <p style="font-size:12px;color:var(--slate);margin-top:20px">Already on GLP-1 with another provider? Our health checks are available as a standalone safety layer. <a href="<?php echo home_url('/health-checks/#pricing'); ?>" style="color:var(--sky-deep);font-weight:600">Learn more &rarr;</a></p>
+    <p style="font-size:12px;color:var(--slate);margin-top:20px">Health checks are also available on their own &mdash; for anyone on weight loss medication who wants proper clinical oversight. <a href="<?php echo home_url('/health-checks/#pricing'); ?>" style="color:var(--sky-deep);font-weight:600">Learn more &rarr;</a></p>
   </div>
 </section>
 

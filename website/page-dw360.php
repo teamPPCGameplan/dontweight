@@ -300,86 +300,46 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
   <p style="text-align:center;font-size:11px;color:var(--slate);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto">Full refund if not clinically eligible. Cancel before your appointment at any time.</p>
 
   <!-- ══════════════════════════════════════════════════════════ -->
-  <!-- SEMBLE BOOKING AREA — one iframe visible at a time         -->
+  <!-- SEMBLE HEALTH CHECK BOOKING                                 -->
   <!-- ══════════════════════════════════════════════════════════ -->
-  <div id="hc-booking" style="max-width:980px;margin:48px auto 0;scroll-margin-top:80px">
-
-    <!-- Wrap-up / how-it-works -->
-    <div id="hc-booking-wrap" style="display:none;background:var(--sky-wash);border:1px solid var(--sky-pale);border-radius:14px;padding:20px 22px;margin-bottom:18px">
-      <p style="font-size:14px;font-weight:700;color:var(--ink);margin:0 0 10px;letter-spacing:-.2px">To book your health check &mdash; choose a date below</p>
-      <ul style="margin:0;padding:0;list-style:none;font-size:13px;color:var(--charcoal);line-height:1.65">
-        <li style="display:flex;gap:10px;margin-bottom:8px">
-          <span style="color:var(--sky-deep);font-weight:700;flex-shrink:0">&#10003;</span>
-          <span>Pick a date and time that suits you. Bloods, imaging and clinician reviews are all arranged into a single appointment window.</span>
-        </li>
-        <li style="display:flex;gap:10px;margin-bottom:8px">
-          <span style="color:var(--sky-deep);font-weight:700;flex-shrink:0">&#10003;</span>
-          <span>You pay for the screening package only. If you are a Don&rsquo;t Weight treatment patient, your medication cost is billed separately by your prescribing pharmacist.</span>
-        </li>
-        <li style="display:flex;gap:10px;margin-bottom:0">
-          <span style="color:var(--sky-deep);font-weight:700;flex-shrink:0">&#10003;</span>
-          <span><strong>Full refund</strong> if we find you are not clinically suitable or if you cancel before your appointment.</span>
-        </li>
-      </ul>
+  <div id="hc-booking" style="max-width:980px;margin:56px auto 0;scroll-margin-top:80px;background:linear-gradient(180deg,#FAFBFC 0%,#F0F9FF 100%);border-radius:22px;padding:clamp(32px,5vw,56px) clamp(20px,3vw,40px)">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="display:inline-block;background:#E0F2FE;color:#0284C7;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 16px;border-radius:20px;margin-bottom:14px">Book Online</div>
+      <h2 style="font-family:var(--display);font-size:clamp(24px,3.5vw,32px);font-weight:700;letter-spacing:-.8px;color:var(--ink);margin:0 0 10px">Book your health check</h2>
+      <p style="font-size:15px;color:var(--slate);max-width:600px;margin:0 auto 6px;line-height:1.65">Select your preferred location and health check package below.</p>
+      <p style="font-size:13px;color:var(--slate);max-width:560px;margin:0 auto;line-height:1.6">Results within 24 hours. All reports reviewed by a qualified clinician.</p>
     </div>
 
-    <!-- BASELINE iframe slot -->
-    <div id="hc-baseline-area" style="display:none;margin-top:8px">
-      <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
-        <strong style="color:var(--ink)">Selected package:</strong> Baseline Health Check &mdash; &pound;279 <span style="color:var(--slate);font-size:12px">(+ medication cost if on treatment)</span>
-      </div>
-      <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
-        <!-- ════════════════════════════════════════════════════════ -->
-        <!-- PASTE BASELINE SEMBLE IFRAME CODE BELOW THIS LINE ONLY   -->
-        <!-- ════════════════════════════════════════════════════════ -->
-
-        <!-- SEMBLE_BASELINE_IFRAME_HERE -->
-
-        <!-- ════════════════════════════════════════════════════════ -->
-        <!-- END BASELINE SEMBLE IFRAME                               -->
-        <!-- ════════════════════════════════════════════════════════ -->
-      </div>
+    <!-- Semble booking iframe -->
+    <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.06);border:1px solid #E2E8F0;overflow:hidden;max-width:900px;margin:0 auto">
+      <iframe src="https://online-booking.semble.io/?token=1154525539a981e026728e5e0f7a40f52e212da5" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="display:block;border:none;width:100%"></iframe>
     </div>
 
-    <!-- 360 iframe slot -->
-    <div id="hc-standard-area" style="display:none;margin-top:8px">
-      <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
-        <strong style="color:var(--ink)">Selected package:</strong> 360 Health Check &mdash; &pound;699 <span style="color:var(--slate);font-size:12px">(+ medication cost if on treatment)</span>
-      </div>
-      <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
-        <!-- ════════════════════════════════════════════════════════ -->
-        <!-- PASTE 360 SEMBLE IFRAME CODE BELOW THIS LINE ONLY         -->
-        <!-- ════════════════════════════════════════════════════════ -->
-
-        <!-- SEMBLE_STANDARD_IFRAME_HERE -->
-
-        <!-- ════════════════════════════════════════════════════════ -->
-        <!-- END 360 SEMBLE IFRAME                                    -->
-        <!-- ════════════════════════════════════════════════════════ -->
-      </div>
+    <!-- Clinic addresses -->
+    <div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:24px;max-width:720px;margin-left:auto;margin-right:auto">
+      <a href="https://www.google.com/maps/search/?api=1&query=27+Welbeck+Street+London+W1G+8EN" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:16px 20px;text-decoration:none;flex:1;min-width:240px;text-align:left;transition:all .2s">
+        <div style="width:36px;height:36px;border-radius:10px;background:#E0F2FE;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:2px">Central London</div>
+          <div style="font-size:12px;color:#475569;line-height:1.5">27 Welbeck Street<br>London W1G 8EN</div>
+          <div style="font-size:11px;color:#0284C7;font-weight:600;margin-top:4px">View on Google Maps &rarr;</div>
+        </div>
+      </a>
+      <a href="https://www.google.com/maps/search/?api=1&query=54-56+Victoria+Street+St+Albans+AL1+3HZ" target="_blank" rel="noopener" style="display:flex;align-items:flex-start;gap:12px;background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:16px 20px;text-decoration:none;flex:1;min-width:240px;text-align:left;transition:all .2s">
+        <div style="width:36px;height:36px;border-radius:10px;background:#E0F2FE;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#0F172A;margin-bottom:2px">St Albans</div>
+          <div style="font-size:12px;color:#475569;line-height:1.5">54&ndash;56 Victoria Street<br>St Albans AL1 3HZ</div>
+          <div style="font-size:11px;color:#0284C7;font-weight:600;margin-top:4px">View on Google Maps &rarr;</div>
+        </div>
+      </a>
     </div>
 
-    <!-- PREMIUM iframe slot -->
-    <div id="hc-premium-area" style="display:none;margin-top:8px">
-      <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
-        <strong style="color:var(--ink)">Selected package:</strong> Premium Health Check &mdash; &pound;979 <span style="color:var(--slate);font-size:12px">(+ medication cost if on treatment)</span>
-      </div>
-      <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
-        <!-- ════════════════════════════════════════════════════════ -->
-        <!-- PASTE PREMIUM SEMBLE IFRAME CODE BELOW THIS LINE ONLY    -->
-        <!-- ════════════════════════════════════════════════════════ -->
-
-        <!-- SEMBLE_PREMIUM_IFRAME_HERE -->
-
-        <!-- ════════════════════════════════════════════════════════ -->
-        <!-- END PREMIUM SEMBLE IFRAME                                -->
-        <!-- ════════════════════════════════════════════════════════ -->
-      </div>
-    </div>
-
-    <div style="text-align:center;margin-top:16px;padding:14px 20px;background:var(--cream);border-radius:12px;display:none" id="hc-booking-help">
+    <div style="text-align:center;margin-top:20px;padding:12px 18px;background:var(--cream);border-radius:12px;max-width:680px;margin-left:auto;margin-right:auto">
       <p style="font-size:13px;color:var(--charcoal);line-height:1.6;margin:0">Need help booking? Call us on <a href="tel:+442071013377" style="color:var(--sky-deep);font-weight:700;text-decoration:none">+44 20 7101 3377</a> or email <a href="mailto:hello@dontweight.co.uk" style="color:var(--sky-deep);font-weight:700;text-decoration:none">hello@dontweight.co.uk</a></p>
     </div>
+
+    <p style="text-align:center;font-size:11px;color:var(--slate);margin-top:16px">Powered by London Private Ultrasound Group &middot; CQC Registered</p>
   </div>
 </section>
 
@@ -608,22 +568,8 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open');document.querySelector('.burger').classList.toggle('open');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':''}
 function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.querySelector('.burger').classList.remove('open');document.body.style.overflow=''}
 
-// Show correct Semble iframe for selected plan, hide the others, scroll into view
+// Scroll to the Semble booking iframe (users pick their package inside Semble)
 function bookHC(productId){
-  // productId: 'hc-baseline' | 'hc-standard' | 'hc-premium'
-  var wrap = document.getElementById('hc-booking-wrap');
-  var help = document.getElementById('hc-booking-help');
-  var areas = {
-    'hc-baseline': document.getElementById('hc-baseline-area'),
-    'hc-standard': document.getElementById('hc-standard-area'),
-    'hc-premium':  document.getElementById('hc-premium-area')
-  };
-  // Reveal wrap-up + help, hide all iframe slots, then show only selected one
-  if(wrap) wrap.style.display = 'block';
-  if(help) help.style.display = 'block';
-  Object.keys(areas).forEach(function(k){
-    if(areas[k]) areas[k].style.display = (k === productId) ? 'block' : 'none';
-  });
   var target = document.getElementById('hc-booking');
   if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
 }

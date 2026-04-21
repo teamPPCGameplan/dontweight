@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title>Weight Loss Health Check — Clinical Screening | Don't Weight</title>
-<meta name="description" content="The UK's most thorough weight loss health check — designed for patients on GLP-1 medication. Blood panel, liver and gallbladder ultrasound, echocardiogram, prescribing pharmacist and doctor reviews. From £279. CQC-registered London clinic. Also open to patients on GLP-1 with other providers.">
+<meta name="description" content="A thorough weight loss health check designed for patients on GLP-1 medication. Blood panel, liver and gallbladder ultrasound, echocardiogram, prescribing pharmacist and doctor reviews. From £279. CQC-registered London private clinic. Open to all GLP-1 patients.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,7 +148,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 <header class="hc-hero">
   <div class="hc-badge">★ Medical-grade GLP-1 monitoring &mdash; the Don't Weight standard</div>
   <h1>The Weight Loss <em>Health Check</em></h1>
-  <p class="hc-sub">Most providers just sell the jab. We do what a responsible clinic should &mdash; a proper baseline of your body before you start, and structured monitoring throughout. Blood panels, ultrasound, cardiology. All reviewed by a prescribing pharmacist and a doctor.</p>
+  <p class="hc-sub">Weight loss medication deserves proper clinical care. Our health checks give you a clear baseline of your body before you start, and structured monitoring as it changes &mdash; blood panels, ultrasound, cardiology. Every result is reviewed by a prescribing pharmacist and a doctor.</p>
   <a href="#pricing" class="hc-cta">Choose your health check &darr;</a>
   <div class="hc-price"><strong>&pound;279</strong> Baseline &middot; <strong>&pound;699</strong> 360 &middot; <strong>&pound;979</strong> Premium <span style="display:block;font-size:11px;font-weight:400;opacity:.7;margin-top:4px">Medication cost separate &mdash; your clinician will discuss this with you during your consultation</span></div>
 </header>
@@ -298,6 +298,137 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
   </div>
 
   <p style="text-align:center;font-size:11px;color:var(--slate);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto">Full refund if not clinically eligible. Cancel before your appointment at any time.</p>
+
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <!-- SEMBLE BOOKING AREA — one iframe visible at a time         -->
+  <!-- ══════════════════════════════════════════════════════════ -->
+  <div id="hc-booking" style="max-width:980px;margin:48px auto 0;scroll-margin-top:80px">
+
+    <!-- Wrap-up / how-it-works -->
+    <div id="hc-booking-wrap" style="display:none;background:var(--sky-wash);border:1px solid var(--sky-pale);border-radius:14px;padding:20px 22px;margin-bottom:18px">
+      <p style="font-size:14px;font-weight:700;color:var(--ink);margin:0 0 10px;letter-spacing:-.2px">To book your health check &mdash; choose a date below</p>
+      <ul style="margin:0;padding:0;list-style:none;font-size:13px;color:var(--charcoal);line-height:1.65">
+        <li style="display:flex;gap:10px;margin-bottom:8px">
+          <span style="color:var(--sky-deep);font-weight:700;flex-shrink:0">&#10003;</span>
+          <span>Pick a date and time that suits you. Bloods, imaging and clinician reviews are all arranged into a single appointment window.</span>
+        </li>
+        <li style="display:flex;gap:10px;margin-bottom:8px">
+          <span style="color:var(--sky-deep);font-weight:700;flex-shrink:0">&#10003;</span>
+          <span>You pay for the screening package only. If you are a Don&rsquo;t Weight treatment patient, your medication cost is billed separately by your prescribing pharmacist.</span>
+        </li>
+        <li style="display:flex;gap:10px;margin-bottom:0">
+          <span style="color:var(--sky-deep);font-weight:700;flex-shrink:0">&#10003;</span>
+          <span><strong>Full refund</strong> if we find you are not clinically suitable or if you cancel before your appointment.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- BASELINE iframe slot -->
+    <div id="hc-baseline-area" style="display:none;margin-top:8px">
+      <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
+        <strong style="color:var(--ink)">Selected package:</strong> Baseline Health Check &mdash; &pound;279 <span style="color:var(--slate);font-size:12px">(+ medication cost if on treatment)</span>
+      </div>
+      <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
+        <!-- ════════════════════════════════════════════════════════ -->
+        <!-- PASTE BASELINE SEMBLE IFRAME CODE BELOW THIS LINE ONLY   -->
+        <!-- ════════════════════════════════════════════════════════ -->
+
+        <!-- SEMBLE_BASELINE_IFRAME_HERE -->
+
+        <!-- ════════════════════════════════════════════════════════ -->
+        <!-- END BASELINE SEMBLE IFRAME                               -->
+        <!-- ════════════════════════════════════════════════════════ -->
+      </div>
+    </div>
+
+    <!-- 360 iframe slot -->
+    <div id="hc-standard-area" style="display:none;margin-top:8px">
+      <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
+        <strong style="color:var(--ink)">Selected package:</strong> 360 Health Check &mdash; &pound;699 <span style="color:var(--slate);font-size:12px">(+ medication cost if on treatment)</span>
+      </div>
+      <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
+        <!-- ════════════════════════════════════════════════════════ -->
+        <!-- PASTE 360 SEMBLE IFRAME CODE BELOW THIS LINE ONLY         -->
+        <!-- ════════════════════════════════════════════════════════ -->
+
+        <!-- SEMBLE_STANDARD_IFRAME_HERE -->
+
+        <!-- ════════════════════════════════════════════════════════ -->
+        <!-- END 360 SEMBLE IFRAME                                    -->
+        <!-- ════════════════════════════════════════════════════════ -->
+      </div>
+    </div>
+
+    <!-- PREMIUM iframe slot -->
+    <div id="hc-premium-area" style="display:none;margin-top:8px">
+      <div style="background:var(--cream);border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:var(--charcoal)">
+        <strong style="color:var(--ink)">Selected package:</strong> Premium Health Check &mdash; &pound;979 <span style="color:var(--slate);font-size:12px">(+ medication cost if on treatment)</span>
+      </div>
+      <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
+        <!-- ════════════════════════════════════════════════════════ -->
+        <!-- PASTE PREMIUM SEMBLE IFRAME CODE BELOW THIS LINE ONLY    -->
+        <!-- ════════════════════════════════════════════════════════ -->
+
+        <!-- SEMBLE_PREMIUM_IFRAME_HERE -->
+
+        <!-- ════════════════════════════════════════════════════════ -->
+        <!-- END PREMIUM SEMBLE IFRAME                                -->
+        <!-- ════════════════════════════════════════════════════════ -->
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:16px;padding:14px 20px;background:var(--cream);border-radius:12px;display:none" id="hc-booking-help">
+      <p style="font-size:13px;color:var(--charcoal);line-height:1.6;margin:0">Need help booking? Call us on <a href="tel:+442071013377" style="color:var(--sky-deep);font-weight:700;text-decoration:none">+44 20 7101 3377</a> or email <a href="mailto:hello@dontweight.co.uk" style="color:var(--sky-deep);font-weight:700;text-decoration:none">hello@dontweight.co.uk</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PREMIUM ANNUAL CONCIERGE PROGRAMME -->
+<section style="padding:clamp(48px,6vw,80px) clamp(20px,5vw,56px);background:linear-gradient(160deg, #0C0A09 0%, #1C1917 100%);color:#fff">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <div style="display:inline-block;background:rgba(56,189,248,.15);border:1px solid rgba(56,189,248,.35);color:#7DD3FC;padding:6px 18px;border-radius:100px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px">Annual Concierge Programme</div>
+    <h2 style="font-family:var(--display);font-size:clamp(28px,4vw,42px);font-weight:700;letter-spacing:-1.2px;line-height:1.1;margin-bottom:16px;color:#fff">Two checks a year.<br>One dedicated clinical team.</h2>
+    <p style="font-size:clamp(14px,1.3vw,16px);color:rgba(255,255,255,.72);line-height:1.7;max-width:620px;margin:0 auto 32px">The annual programme gives you <strong style="color:#fff">two full health checks every 12 months</strong> &mdash; your baseline at the start of treatment, and a progress review six months later &mdash; coordinated end-to-end by a dedicated medical concierge. Bloods, imaging, clinician reviews and follow-up: all arranged for you.</p>
+
+    <!-- Three tiers with new prices -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:780px;margin:0 auto 36px" class="hc-pkg-pair">
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 16px;text-align:left">
+        <div style="font-size:11px;font-weight:700;color:rgba(56,189,248,.9);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Baseline Annual</div>
+        <div style="font-family:var(--display);font-size:26px;font-weight:700;color:#fff;margin-bottom:2px">&pound;499<span style="font-size:13px;font-weight:400;color:rgba(255,255,255,.5)">/year</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);margin-bottom:6px">2 &times; Baseline Health Check</div>
+        <div style="font-size:11px;color:#7DD3FC;font-weight:600">You save &pound;59 vs single-check</div>
+      </div>
+      <div style="background:rgba(56,189,248,.08);border:1.5px solid rgba(56,189,248,.5);border-radius:14px;padding:20px 16px;text-align:left;position:relative">
+        <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:#38BDF8;color:#0C0A09;font-size:9px;font-weight:700;padding:2px 10px;border-radius:12px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap">Most popular</div>
+        <div style="font-size:11px;font-weight:700;color:#38BDF8;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">360 Annual</div>
+        <div style="font-family:var(--display);font-size:26px;font-weight:700;color:#fff;margin-bottom:2px">&pound;1,199<span style="font-size:13px;font-weight:400;color:rgba(255,255,255,.5)">/year</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);margin-bottom:6px">2 &times; 360 Health Check</div>
+        <div style="font-size:11px;color:#7DD3FC;font-weight:600">You save &pound;199 vs single-check</div>
+      </div>
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:20px 16px;text-align:left">
+        <div style="font-size:11px;font-weight:700;color:rgba(56,189,248,.9);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Premium Annual</div>
+        <div style="font-family:var(--display);font-size:26px;font-weight:700;color:#fff;margin-bottom:2px">&pound;1,759<span style="font-size:13px;font-weight:400;color:rgba(255,255,255,.5)">/year</span></div>
+        <div style="font-size:11px;color:rgba(255,255,255,.55);margin-bottom:6px">2 &times; Premium Health Check</div>
+        <div style="font-size:11px;color:#7DD3FC;font-weight:600">You save &pound;199 vs single-check</div>
+      </div>
+    </div>
+
+    <!-- Concierge — contact us to arrange -->
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:clamp(24px,3vw,32px);max-width:680px;margin:0 auto">
+      <p style="font-size:14px;color:rgba(255,255,255,.72);line-height:1.7;margin:0 0 20px">The Annual Programme is arranged individually with our medical concierge team &mdash; we match you to the right package, schedule both visits, and coordinate all results. <strong style="color:#fff">Please contact us to join the programme</strong>; bookings are not automated for our annual patients.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a href="tel:+442071013377" style="display:inline-flex;align-items:center;gap:10px;background:#38BDF8;color:#0C0A09;border-radius:100px;padding:14px 26px;font-family:var(--body);font-size:14px;font-weight:700;text-decoration:none;transition:all .2s">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          +44 20 7101 3377
+        </a>
+        <a href="mailto:hello@dontweight.co.uk?subject=Annual%20Health%20Check%20Programme" style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);border-radius:100px;padding:14px 26px;font-family:var(--body);font-size:14px;font-weight:600;text-decoration:none;transition:all .2s">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          hello@dontweight.co.uk
+        </a>
+      </div>
+      <p style="font-size:11px;color:rgba(255,255,255,.45);margin-top:20px;line-height:1.6">Our concierge will reply within one working day to arrange your first appointment, discuss your preferred dates, and answer any questions. No forms, no waiting rooms, no hold music.</p>
+    </div>
+  </div>
 </section>
 
 <!-- BIANNUAL TRACKING -->

@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri(); ?>/favicon.svg">
 <title>Weight Loss Health Check — Clinical Screening | Don't Weight</title>
-<meta name="description" content="DW360 health screening for weight loss patients. Ultrasound, blood tests, and body composition analysis. From £149. CQC-registered London clinic.">
+<meta name="description" content="The UK's most thorough weight loss health check — designed for patients on GLP-1 medication. Blood panel, liver and gallbladder ultrasound, echocardiogram, prescribing pharmacist and doctor reviews. From £279. CQC-registered London clinic. Also open to patients on GLP-1 with other providers.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -146,11 +146,11 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 
 <!-- HERO -->
 <header class="hc-hero">
-  <div class="hc-badge">★ UK First — Exclusive to Don't Weight</div>
+  <div class="hc-badge">★ Medical-grade GLP-1 monitoring &mdash; the Don't Weight standard</div>
   <h1>The Weight Loss <em>Health Check</em></h1>
-  <p class="hc-sub">The UK's first comprehensive health screening designed specifically for patients on GLP-1 weight loss medication. Ultrasound. Bloods. Body composition. All in one appointment.</p>
+  <p class="hc-sub">Most providers just sell the jab. We do what a responsible clinic should &mdash; a proper baseline of your body before you start, and structured monitoring throughout. Blood panels, ultrasound, cardiology. All reviewed by a prescribing pharmacist and a doctor.</p>
   <a href="#pricing" class="hc-cta">Choose your health check &darr;</a>
-  <div class="hc-price">From <strong>&pound;149</strong> (Baseline) &middot; <strong>&pound;599</strong> (360) &middot; <strong>&pound;999</strong> (Premium)</div>
+  <div class="hc-price"><strong>&pound;279</strong> Baseline &middot; <strong>&pound;699</strong> 360 &middot; <strong>&pound;979</strong> Premium <span style="display:block;font-size:11px;font-weight:400;opacity:.7;margin-top:4px">Medication cost separate &mdash; your clinician will discuss this with you during your consultation</span></div>
 </header>
 
 <!-- LPUG BADGE -->
@@ -223,127 +223,98 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 
 <!-- PRICING -->
 <section class="hc-pricing" id="pricing">
-  <div class="hc-section-label">Pricing</div>
-  <h2 class="hc-section-title" style="margin-bottom:8px">Choose your <em>health check</em></h2>
-  <p class="hc-section-desc">Available to all don&rsquo;t weight patients and anyone on GLP-1 medication. 100% refund if you change your mind before your appointment.</p>
+  <div class="hc-section-label">Packages &amp; Pricing</div>
+  <h2 class="hc-section-title" style="margin-bottom:8px">The complete <em>GLP-1 medical standard</em></h2>
+  <p class="hc-section-desc" style="margin-bottom:12px">Three levels of screening, each built around what a prescribing pharmacist and doctor actually need to see before and during GLP-1 treatment. Every package includes full clinical oversight &mdash; no automated forms, no chatbots.</p>
+
+  <!-- SALES WRAP: Why this is different -->
+  <div style="max-width:1000px;margin:0 auto 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="hc-pkg-pair">
+    <div style="background:var(--sky-wash);border:1px solid var(--sky-pale);border-radius:14px;padding:20px 22px">
+      <div style="width:36px;height:36px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink)">Every package includes two clinicians</h3>
+      <p style="font-size:12px;color:var(--charcoal);line-height:1.6;margin:0">An initial 1-to-1 with a prescribing pharmacist, then a final strategic review with a doctor. No shortcuts, no AI triage.</p>
+    </div>
+    <div style="background:var(--sky-wash);border:1px solid var(--sky-pale);border-radius:14px;padding:20px 22px">
+      <div style="width:36px;height:36px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div>
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink)">Built on NHS-trained clinical infrastructure</h3>
+      <p style="font-size:12px;color:var(--charcoal);line-height:1.6;margin:0">Ultrasound, echocardiogram and reporting delivered by London Private Ultrasound Group. CQC-registered. GMC clinicians. NHS-trained sonographers.</p>
+    </div>
+    <div style="background:var(--sky-wash);border:1px solid var(--sky-pale);border-radius:14px;padding:20px 22px">
+      <div style="width:36px;height:36px;border-radius:10px;background:var(--sky);display:flex;align-items:center;justify-content:center;margin-bottom:12px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/><polyline points="12 7 12 12 15 14"/></svg></div>
+      <h3 style="font-size:14px;font-weight:700;margin-bottom:4px;color:var(--ink)">Open to patients on other GLP-1 providers</h3>
+      <p style="font-size:12px;color:var(--charcoal);line-height:1.6;margin:0">Already on Mounjaro or Wegovy elsewhere? Bring your current prescription &mdash; these packages are designed as a standalone safety layer.</p>
+    </div>
+  </div>
 
   <!-- SINGLE 3-COLUMN COMPARISON TABLE -->
-  <div style="max-width:1000px;margin:0 auto 48px;overflow-x:auto;-webkit-overflow-scrolling:touch">
+  <div style="max-width:1000px;margin:0 auto 28px;overflow-x:auto;-webkit-overflow-scrolling:touch">
     <table style="width:100%;border-collapse:collapse;font-size:13px;min-width:580px">
       <thead><tr>
-        <th style="text-align:left;padding:14px 16px;background:var(--ink);color:white;border-radius:12px 0 0 0;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;width:34%">What&rsquo;s included</th>
-        <th style="text-align:center;padding:14px 12px;background:var(--ink);color:rgba(255,255,255,.6);font-size:12px;font-weight:700;width:22%"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" style="display:block;margin:0 auto 4px"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8m8 4H8m2-8H8"/></svg>Baseline<br><span style="font-size:20px;color:white">&pound;149</span><br><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.4)">In-clinic</span></th>
-        <th style="text-align:center;padding:14px 12px;background:var(--ink);color:rgba(255,255,255,.6);font-size:12px;font-weight:700;width:22%"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" style="display:block;margin:0 auto 4px"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span style="position:relative;display:inline-block">360<span style="position:absolute;top:-22px;left:50%;transform:translateX(-50%);background:#38BDF8;color:#fff;font-size:9px;font-weight:700;padding:2px 10px;border-radius:12px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;">RECOMMENDED</span></span><br><span style="font-size:20px;color:white">&pound;599</span><br><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.4)">In-clinic</span></th>
-        <th style="text-align:center;padding:14px 12px;background:var(--sky);color:white;border-radius:0 12px 0 0;font-size:12px;font-weight:700;width:22%"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="2" stroke-linecap="round" style="display:block;margin:0 auto 4px"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>Premium<br><span style="font-size:20px">&pound;999</span><br><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.65)">In-clinic</span></th>
+        <th style="text-align:left;padding:18px 16px;background:var(--ink);color:white;border-radius:12px 0 0 0;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;width:34%">What&rsquo;s included</th>
+        <th style="text-align:center;padding:18px 12px 14px;background:var(--ink);color:rgba(255,255,255,.85);font-size:12px;font-weight:700;width:22%">Baseline<br><span style="font-size:22px;color:white;display:block;margin-top:4px">&pound;279</span><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.5);display:block;margin-top:2px">+ medication cost</span></th>
+        <th style="text-align:center;padding:18px 12px 14px;background:var(--ink);color:rgba(255,255,255,.85);font-size:12px;font-weight:700;width:22%;position:relative"><span style="position:absolute;top:-2px;left:50%;transform:translateX(-50%);background:#38BDF8;color:#fff;font-size:9px;font-weight:700;padding:2px 12px;border-radius:0 0 10px 10px;letter-spacing:1px;text-transform:uppercase">Recommended</span>360<br><span style="font-size:22px;color:white;display:block;margin-top:4px">&pound;699</span><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.5);display:block;margin-top:2px">+ medication cost</span></th>
+        <th style="text-align:center;padding:18px 12px 14px;background:var(--sky);color:white;border-radius:0 12px 0 0;font-size:12px;font-weight:700;width:22%">Premium<br><span style="font-size:22px;display:block;margin-top:4px">&pound;979</span><span style="font-size:9px;font-weight:400;color:rgba(255,255,255,.75);display:block;margin-top:2px">+ medication cost</span></th>
       </tr></thead>
       <tbody>
+        <!-- Blood panel -->
         <tr><td style="padding:10px 16px;border-bottom:1px solid var(--warm);font-weight:700;color:var(--sky-dark);font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--sky-wash);border-left:3px solid var(--sky)" colspan="4">Blood panel</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">HbA1c, FBC, Liver, Kidney</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Thyroid (TSH/fT4)</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Full lipid panel (LDL/HDL/ApoB)</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Inflammation (CRP, ESR)</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Nutritional (B12, Ferritin, Vitamin D)</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Liver panel &mdash; ALT, AST, ALP, GGT, Bilirubin, Albumin, Globulin</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Glycaemic control &mdash; HbA1c and fasting glucose</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Advanced lipid panel &mdash; Triglycerides, Cholesterol, HDL, LDL</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Systemic markers &mdash; Kidney function, Haematology, CRP</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
 
-        <tr><td style="padding:10px 16px;border-bottom:1px solid var(--warm);font-weight:700;color:#0EA5E9;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:#E0F2FE;border-left:3px solid #0EA5E9" colspan="4">Ultrasound</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Liver, Gallbladder, Pancreas, Thyroid</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Abdominal aorta</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
+        <!-- Ultrasound imaging -->
+        <tr><td style="padding:10px 16px;border-bottom:1px solid var(--warm);font-weight:700;color:#0EA5E9;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:#E0F2FE;border-left:3px solid #0EA5E9" colspan="4">Ultrasound imaging</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Advanced liver scan &mdash; full explanation and quantified liver health</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">&mdash;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Gallbladder scan</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">&mdash;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Echocardiogram &mdash; detailed ultrasound of heart structure and function</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">&mdash;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">&mdash;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
 
-        <tr><td style="padding:10px 16px;border-bottom:1px solid var(--warm);font-weight:700;color:#0284C7;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:#E0F2FE;border-left:3px solid #0284C7" colspan="4">Cardiovascular</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Resting 12-lead ECG</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
-
-        <tr><td style="padding:10px 16px;border-bottom:1px solid var(--warm);font-weight:700;color:#0EA5E9;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:#E0F2FE;border-left:3px solid #0EA5E9" colspan="4">Consultation, reporting</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">GP consultation</td><td style="text-align:center;border-bottom:1px solid var(--warm);font-size:11px;color:var(--sky-deep);font-weight:600">Written report</td><td style="text-align:center;border-bottom:1px solid var(--warm);font-size:11px;color:var(--sky-deep);font-weight:600">In-person or video</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);font-size:11px;color:var(--sky-deep);font-weight:600">In-person or video</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Results turnaround</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">48h</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">48h</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">48h</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Body composition analysis</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">GP follow-up call</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">,</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
-
-        <tr><td style="padding:10px 16px;border-bottom:1px solid var(--warm);font-weight:700;color:var(--slate);font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--warm);border-left:3px solid var(--slate)" colspan="4">How it works</td></tr>
-        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Location</td><td style="text-align:center;border-bottom:1px solid var(--warm);font-size:11px">Home blood kit</td><td style="text-align:center;border-bottom:1px solid var(--warm);font-size:11px">London clinic</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);font-size:11px">London clinic</td></tr>
+        <!-- Consultations -->
+        <tr><td style="padding:10px 16px;border-bottom:1px solid var(--warm);font-weight:700;color:#0284C7;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:#E0F2FE;border-left:3px solid #0284C7" colspan="4">Consultations &amp; clinical review</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Initial 1-to-1 with prescribing pharmacist &mdash; establish starting point, tailor scans and package</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Strategic final review &mdash; Doctor consultation, notes, metabolic optimisation and treatment plan</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--sky-deep);font-weight:700">&#10003;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
+        <tr><td style="padding:9px 16px;border-bottom:1px solid var(--warm)">Cardiologist appointment</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">&mdash;</td><td style="text-align:center;border-bottom:1px solid var(--warm);color:var(--stone)">&mdash;</td><td style="text-align:center;border-bottom:1px solid var(--warm);background:var(--sky-wash);color:var(--sky-deep);font-weight:700">&#10003;</td></tr>
 
         <tr>
           <td style="padding:16px;background:var(--cream);border-radius:0 0 0 12px;font-weight:700">Book now</td>
-          <td style="text-align:center;padding:12px 8px;background:var(--cream)"><button onclick="bookHC('hc-baseline')" style="background:var(--ink);color:#fff;border:none;border-radius:100px;padding:12px 16px;font-family:var(--body);font-size:12px;font-weight:700;cursor:pointer;width:100%">&pound;149 &rarr;</button></td>
-          <td style="text-align:center;padding:12px 8px;background:var(--cream)"><button onclick="bookHC('hc-standard')" style="background:var(--ink);color:#fff;border:none;border-radius:100px;padding:12px 16px;font-family:var(--body);font-size:12px;font-weight:700;cursor:pointer;width:100%">&pound;599 &rarr;</button></td>
-          <td style="text-align:center;padding:12px 8px;background:var(--sky-wash);border-radius:0 0 12px 0"><button onclick="bookHC('hc-premium')" style="background:var(--sky);color:#fff;border:none;border-radius:100px;padding:12px 16px;font-family:var(--body);font-size:12px;font-weight:700;cursor:pointer;width:100%">&pound;999 &rarr;</button></td>
+          <td style="text-align:center;padding:12px 8px;background:var(--cream)"><button onclick="bookHC('hc-baseline')" style="background:var(--ink);color:#fff;border:none;border-radius:100px;padding:12px 16px;font-family:var(--body);font-size:12px;font-weight:700;cursor:pointer;width:100%">&pound;279 &rarr;</button></td>
+          <td style="text-align:center;padding:12px 8px;background:var(--cream)"><button onclick="bookHC('hc-standard')" style="background:var(--ink);color:#fff;border:none;border-radius:100px;padding:12px 16px;font-family:var(--body);font-size:12px;font-weight:700;cursor:pointer;width:100%">&pound;699 &rarr;</button></td>
+          <td style="text-align:center;padding:12px 8px;background:var(--sky-wash);border-radius:0 0 12px 0"><button onclick="bookHC('hc-premium')" style="background:var(--sky);color:#fff;border:none;border-radius:100px;padding:12px 16px;font-family:var(--body);font-size:12px;font-weight:700;cursor:pointer;width:100%">&pound;979 &rarr;</button></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <!-- Semble booking forms injected by chatbot widget -->
-
-  <!-- ANNUAL PROGRAMMES — prominent 3-column -->
-  <div style="max-width:900px;margin:0 auto;text-align:center;padding:clamp(32px,5vw,56px) 0 0">
-    <div style="display:inline-block;background:var(--ink);color:#fff;padding:6px 20px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px">Save with Annual</div>
-    <h3 style="font-family:var(--display);font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.5px;margin-bottom:8px">Two checks per year. Track your progress.</h3>
-    <p style="font-size:14px;color:var(--slate);margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto">Book your first health check at the single-visit rates above. Upgrade to annual at the clinic — we'll only charge the difference. Your medical concierge arranges your second check 6 months later.</p>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="hc-pkg-pair">
-      <!-- Baseline Annual -->
-      <div class="hc-price-card" style="padding:28px">
-        <h3>Baseline Annual</h3>
-        <div class="hc-pc-price" style="font-size:32px">&pound;249<span>/year</span></div>
-        <div class="hc-pc-per">2 &times; Baseline Check</div>
-        <div style="background:var(--sky-wash);border-radius:8px;padding:8px 12px;margin:12px 0;font-size:12px;color:var(--sky-dark);font-weight:600">You save &pound;49 <span style="font-weight:400;color:var(--slate)">(vs &pound;298 separately)</span></div>
-        <button class="hc-pc-btn hc-pc-btn-outline" style="margin-top:12px" onclick="bookHC('hc-baseline-annual')">Start Annual &rarr;</button>
-      </div>
-      <!-- 360 Annual -->
-      <div class="hc-price-card" style="padding:28px">
-        <h3>360 Annual</h3>
-        <div class="hc-pc-price" style="font-size:32px">&pound;1,000<span>/year</span></div>
-        <div class="hc-pc-per">2 &times; 360 Check</div>
-        <div style="background:var(--sky-wash);border-radius:8px;padding:8px 12px;margin:12px 0;font-size:12px;color:var(--sky-dark);font-weight:600">You save &pound;198 <span style="font-weight:400;color:var(--slate)">(vs &pound;1,198 separately)</span></div>
-        <button class="hc-pc-btn hc-pc-btn-outline" style="margin-top:12px" onclick="bookHC('hc-standard-annual')">Start Annual &rarr;</button>
-      </div>
-      <!-- Premium Annual -->
-      <div class="hc-price-card featured" style="padding:28px">
-        <div class="hc-pc-badge">Best Value</div>
-        <h3>Premium Annual</h3>
-        <div class="hc-pc-price" style="font-size:32px">&pound;1,800<span>/year</span></div>
-        <div class="hc-pc-per">2 &times; Premium Check</div>
-        <div style="background:var(--sky-wash);border-radius:8px;padding:8px 12px;margin:12px 0;font-size:12px;color:var(--sky-dark);font-weight:600">You save &pound;198 <span style="font-weight:400;color:var(--slate)">(vs &pound;1,998 separately)</span></div>
-        <button class="hc-pc-btn hc-pc-btn-primary" style="margin-top:12px" onclick="bookHC('hc-premium-annual')">Start Annual &rarr;</button>
-      </div>
-    </div>
+  <!-- Post-table medication cost note -->
+  <div style="max-width:1000px;margin:0 auto 32px;padding:16px 22px;background:var(--cream);border-radius:14px;font-size:12px;color:var(--charcoal);line-height:1.65;text-align:center">
+    <strong style="color:var(--ink)">A note on medication cost.</strong> The package price covers your full clinical screening, imaging and two clinician reviews. GLP-1 weight loss medication (Mounjaro or Wegovy) is priced separately and confirmed with your prescribing pharmacist during your initial consultation &mdash; dose-dependent and fully transparent.
   </div>
 
-  <!-- How annual works note -->
-  <div style="max-width:760px;margin:28px auto 0;background:var(--sky-wash);border:1px solid rgba(14,165,233,.15);border-radius:16px;padding:24px 28px">
-    <p style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:12px">How annual plans work</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px" class="hc-pkg-pair">
-      <div style="display:flex;align-items:flex-start;gap:10px">
-        <span style="width:24px;height:24px;border-radius:50%;background:var(--sky-dark);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</span>
-        <span style="font-size:12px;color:var(--slate);line-height:1.5">Choose the time and location of your first health check and <strong style="color:var(--ink)">book it at the single-visit rates above</strong></span>
-      </div>
-      <div style="display:flex;align-items:flex-start;gap:10px">
-        <span style="width:24px;height:24px;border-radius:50%;background:var(--sky-dark);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</span>
-        <span style="font-size:12px;color:var(--slate);line-height:1.5">At the clinic, <strong style="color:var(--ink)">we'll charge you only the difference</strong> to upgrade to the annual plan</span>
-      </div>
-      <div style="display:flex;align-items:flex-start;gap:10px">
-        <span style="width:24px;height:24px;border-radius:50%;background:var(--sky-dark);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</span>
-        <span style="font-size:12px;color:var(--slate);line-height:1.5">Your <strong style="color:var(--ink)">medical concierge will organise</strong> the date of your second health check — 6 months later</span>
-      </div>
-    </div>
+  <!-- Sales USP reinforcement -->
+  <div style="max-width:920px;margin:32px auto;background:var(--ink);color:#fff;border-radius:20px;padding:clamp(28px,4vw,40px);text-align:center">
+    <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(56,189,248,.9);font-weight:700;margin-bottom:10px">Already on GLP-1 with another provider?</div>
+    <h3 style="font-family:var(--display);font-size:clamp(20px,2.6vw,26px);font-weight:700;letter-spacing:-.5px;margin-bottom:10px;color:#fff">Use our Health Check as your safety layer.</h3>
+    <p style="font-size:14px;line-height:1.7;color:rgba(255,255,255,.75);max-width:620px;margin:0 auto">If your current clinic only sells you the jab and nothing else, bring that prescription to us. All three packages are designed to work as a standalone clinical safety check &mdash; so you can stay on your current medication while getting the medical oversight you actually deserve. Many of our health-check-only patients choose to move their full treatment to us afterwards.</p>
   </div>
 
-  <p style="text-align:center;font-size:11px;color:var(--slate);margin-top:24px;max-width:500px;margin-left:auto;margin-right:auto">Full refund if not clinically eligible. Cancel before your appointment at any time.</p>
+  <p style="text-align:center;font-size:11px;color:var(--slate);margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto">Full refund if not clinically eligible. Cancel before your appointment at any time.</p>
 </section>
 
-<!-- BIANNUAL PROGRAMME -->
+<!-- BIANNUAL TRACKING -->
 <section class="hc-quarterly">
-  <h2>Your body changes on treatment.<br>Track it twice a year.</h2>
-  <p>The Annual Programme gives you two structured health checks — at the start of treatment and at 6 months. Compare what's changed, catch problems early, and give your clinician the data they need.</p>
-  
+  <h2>Your body changes on treatment.<br>We track it properly.</h2>
+  <p>A single health check gives you a baseline. Repeating it 6 months in is how you prove the medication is actually helping &mdash; and catch anything it isn't. Most of our patients return for a second check as part of long-term, responsible GLP-1 care.</p>
+
   <div class="hc-timeline">
     <div class="hc-quarter featured">
-      <div class="hc-q-label">Check 1</div>
-      <h4>Baseline</h4>
-      <p>Before or within the first month of treatment. Full screening establishes your personal benchmarks across all markers.</p>
+      <div class="hc-q-label">Check 1 &mdash; Baseline</div>
+      <h4>Before or at the start of treatment</h4>
+      <p>A full clinical snapshot of your liver, metabolism, lipids, glycaemic control and (Premium) heart. Your prescribing pharmacist uses this to tailor your starting dose and treatment plan.</p>
     </div>
     <div class="hc-quarter">
-      <div class="hc-q-label">Check 2 &mdash; Month 6</div>
-      <h4>Progress Review</h4>
-      <p>Liver fat regression tracked. Gallbladder and thyroid compared to baseline. Cardiovascular markers, ECG and bloods reviewed against your starting point.</p>
+      <div class="hc-q-label">Check 2 &mdash; 6 months in</div>
+      <h4>Track what&rsquo;s changed</h4>
+      <p>Liver fat regression quantified. Lipids and HbA1c compared to baseline. Gallbladder, thyroid, cardiovascular markers reviewed against your starting point &mdash; so your doctor has the data to keep optimising your plan.</p>
     </div>
   </div>
 </section>
@@ -388,7 +359,7 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
     <div class="bk-step active" id="bkStep1">
       <div style="text-align:center;margin-bottom:24px">
         <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--sky-deep);font-weight:700;margin-bottom:6px">Health Check</div>
-        <h3 style="font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:4px" id="bkTitle">Single Check — &pound;499</h3>
+        <h3 style="font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink);margin-bottom:4px" id="bkTitle">Health Check &mdash; &pound;699</h3>
         <p style="font-size:12px;color:var(--slate)">Step 1 of 2 — Your details</p>
       </div>
       <input class="bk-input" type="text" id="bkFname" placeholder="First name">
@@ -430,16 +401,16 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
       
       <div style="background:var(--sky-wash);border-radius:12px;padding:16px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center">
         <div>
-          <div style="font-size:14px;font-weight:700;color:var(--ink)" id="bkSummaryTitle">360 Check</div>
-          <div style="font-size:11px;color:var(--slate)">London clinic &middot; 45 min appointment</div>
+          <div style="font-size:14px;font-weight:700;color:var(--ink)" id="bkSummaryTitle">360 Health Check</div>
+          <div style="font-size:11px;color:var(--slate)">London clinic &middot; full screening, two clinician reviews</div>
         </div>
-        <div style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--ink)" id="bkSummaryPrice">&pound;499</div>
+        <div style="font-family:var(--display);font-size:24px;font-weight:700;color:var(--ink)" id="bkSummaryPrice">&pound;699</div>
       </div>
       
       <div id="bkStripeContainer">
         <!-- STRIPE CHECKOUT BUTTON — replace with real Stripe when keys added -->
         <button class="bk-submit" id="bkPayBtn" onclick="processBookingPayment()" style="background:var(--ink)">
-          Pay securely &mdash; <span id="bkPayAmount">&pound;599</span>
+          Pay securely &mdash; <span id="bkPayAmount">&pound;699</span>
         </button>
       </div>
       
@@ -506,16 +477,11 @@ body{background:var(--white);color:var(--ink);font-family:var(--body);font-size:
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('open');document.querySelector('.burger').classList.toggle('open');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':''}
 function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.querySelector('.burger').classList.remove('open');document.body.style.overflow=''}
 
-// Scroll to Semble booking form (injected by chatbot widget)
+// Open booking modal for selected health check plan
 function bookHC(productId){
-  var semble=document.querySelector('iframe[src*="semble"]');
-  if(semble){
-    semble.scrollIntoView({behavior:'smooth',block:'center'});
-  } else {
-    // Fallback: scroll to bottom of pricing section
-    var pricing=document.getElementById('pricing');
-    if(pricing) pricing.scrollIntoView({behavior:'smooth',block:'end'});
-  }
+  if(typeof openBooking==='function'){ openBooking(productId); return; }
+  var pricing=document.getElementById('pricing');
+  if(pricing) pricing.scrollIntoView({behavior:'smooth',block:'end'});
 }
 
 // Booking form
@@ -536,24 +502,17 @@ function selTime(el){
 }
 
 function openBooking(plan){
-  var planLabels={'standard-single':'360 Check','premium-single':'Premium Check','standard-annual':'360 Annual (×2)','premium-annual':'Premium Annual (×2)'};
-  var planPrices={'standard-single':'£599','premium-single':'£999','standard-annual':'£1,000','premium-annual':'£1,800'};
+  var planLabels={'hc-baseline':'Baseline Health Check','hc-standard':'360 Health Check','hc-premium':'Premium Health Check'};
+  var planPrices={'hc-baseline':'£279','hc-standard':'£699','hc-premium':'£979'};
   bookingPlan=plan;
   document.getElementById('bkOverlay').classList.add('open');
   document.body.style.overflow='hidden';
-  // Set title/price
-  if(plan==='premium-annual'||plan==='standard-annual'){
-    var lbl=planLabels[plan];var pr=planPrices[plan];
-    document.getElementById('bkTitle').innerHTML=lbl+' &mdash; &pound;'+pr.replace('£','');
-    document.getElementById('bkSummaryTitle').textContent=lbl;
-    document.getElementById('bkSummaryPrice').innerHTML='&pound;1,396';
-    document.getElementById('bkPayAmount').innerHTML='&pound;1,396';
-  } else {
-    document.getElementById('bkTitle').innerHTML='Single Check &mdash; &pound;499';
-    document.getElementById('bkSummaryTitle').textContent=lbl;
-    document.getElementById('bkSummaryPrice').innerHTML=pr;
-    document.getElementById('bkPayAmount').innerHTML=pr;
-  }
+  var lbl=planLabels[plan]||'Health Check';
+  var pr=planPrices[plan]||'£699';
+  document.getElementById('bkTitle').innerHTML=lbl+' &mdash; '+pr;
+  document.getElementById('bkSummaryTitle').textContent=lbl;
+  document.getElementById('bkSummaryPrice').innerHTML=pr;
+  document.getElementById('bkPayAmount').innerHTML=pr;
   // Reset
   document.querySelectorAll('.bk-step').forEach(s=>s.classList.remove('active'));
   document.getElementById('bkStep1').classList.add('active');

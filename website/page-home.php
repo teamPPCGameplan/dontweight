@@ -828,36 +828,38 @@ body.quiz-open #dw-chat-bubble,body.quiz-open #dw-chat-toast,body.quiz-open #dw-
           <div style="margin-bottom:20px">
             <div style="font-size:9px;font-weight:700;color:var(--slate);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Standard includes</div>
             <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px">
-              <div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:18px;border-radius:5px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--sky-deep)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:12px;color:var(--ink)">Ultrasound: liver, gallbladder, pancreas, thyroid</span></div>
-              <div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:18px;border-radius:5px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--sky-deep)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:12px;color:var(--ink)">Resting 12-lead ECG</span></div>
-              <div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:18px;border-radius:5px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--sky-deep)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:12px;color:var(--ink)">Core bloods + body composition + GP consultation</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:18px;border-radius:5px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--sky-deep)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:12px;color:var(--ink)">Full blood panel &mdash; liver, glycaemic, lipids, systemic</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:18px;border-radius:5px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--sky-deep)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:12px;color:var(--ink)">Liver + gallbladder ultrasound (360 and Premium)</span></div>
+              <div style="display:flex;align-items:center;gap:8px"><div style="width:18px;height:18px;border-radius:5px;background:var(--sky-pale);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="var(--sky-deep)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:12px;color:var(--ink)">Initial pharmacist consultation + Doctor final review</span></div>
             </div>
             <div style="background:var(--sky-wash);border:1px solid rgba(56,189,248,.2);border-radius:10px;padding:10px 12px">
               <div style="font-size:9px;font-weight:700;color:var(--sky-dark);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px">Premium also adds</div>
               <div style="display:flex;flex-direction:column;gap:5px">
-                <div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:16px;border-radius:4px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:11px;color:var(--sky-dark);font-weight:500">Aorta ultrasound + full lipid panel (LDL/HDL/ApoB)</span></div>
-                <div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:16px;border-radius:4px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:11px;color:var(--sky-dark);font-weight:500">Inflammation (CRP/ESR) + B12, Ferritin, Vitamin D</span></div>
-                <div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:16px;border-radius:4px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:11px;color:var(--sky-dark);font-weight:500">GP follow-up call + priority booking</span></div>
+                <div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:16px;border-radius:4px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:11px;color:var(--sky-dark);font-weight:500">Echocardiogram &mdash; detailed ultrasound of the heart</span></div>
+                <div style="display:flex;align-items:center;gap:8px"><div style="width:16px;height:16px;border-radius:4px;background:var(--sky);display:flex;align-items:center;justify-content:center;flex-shrink:0"><svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span style="font-size:11px;color:var(--sky-dark);font-weight:500">Cardiologist appointment</span></div>
               </div>
             </div>
           </div>
-          
+
           <!-- PRICING TIERS -->
           <div style="margin-bottom:16px">
-            <div style="font-size:9px;color:var(--slate);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Choose your package</div>
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <div style="flex:1;min-width:130px;background:var(--cream);border:1.5px solid var(--stone);border-radius:12px;padding:14px 12px;text-align:center">
-                <div style="font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:2px">&pound;599</div>
-                <div style="font-size:10px;color:var(--sky-dark);font-weight:700;margin-bottom:4px">Standard</div>
-                <div style="font-size:9px;color:var(--slate)">Ultrasound + ECG + Core bloods</div>
-                <div style="font-size:9px;color:var(--sky-dark);font-weight:600;margin-top:6px;padding-top:6px;border-top:1px solid var(--stone)">&pound;1,000/year &middot; 2&times; every 6 months</div>
+            <div style="font-size:9px;color:var(--slate);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px">Choose your package &middot; + medication cost</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <div style="flex:1;min-width:95px;background:var(--cream);border:1.5px solid var(--stone);border-radius:12px;padding:12px 10px;text-align:center">
+                <div style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:2px">&pound;279</div>
+                <div style="font-size:10px;color:var(--sky-dark);font-weight:700;margin-bottom:4px">Baseline</div>
+                <div style="font-size:9px;color:var(--slate);line-height:1.4">Bloods + two clinician reviews</div>
               </div>
-              <div style="flex:1;min-width:130px;background:var(--sky-wash);border:2px solid var(--sky);border-radius:12px;padding:14px 12px;text-align:center;position:relative">
-                <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:var(--sky);color:#fff;padding:2px 10px;border-radius:100px;font-size:8px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap">Most complete</div>
-                <div style="font-family:var(--display);font-size:22px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:2px">&pound;999</div>
-                <div style="font-size:10px;color:var(--sky-dark);font-weight:700;margin-bottom:4px">Premium</div>
-                <div style="font-size:9px;color:var(--slate)">+ Lipids, CRP, B12, Vit D, GP call</div>
-                <div style="font-size:9px;color:var(--sky-dark);font-weight:600;margin-top:6px;padding-top:6px;border-top:1px solid rgba(56,189,248,.2)">&pound;1,800/year &middot; 2&times; every 6 months</div>
+              <div style="flex:1;min-width:95px;background:var(--sky-wash);border:2px solid var(--sky);border-radius:12px;padding:12px 10px;text-align:center;position:relative">
+                <div style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);background:var(--sky);color:#fff;padding:2px 10px;border-radius:100px;font-size:8px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap">Recommended</div>
+                <div style="font-family:var(--display);font-size:20px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:2px">&pound;699</div>
+                <div style="font-size:10px;color:var(--sky-dark);font-weight:700;margin-bottom:4px">360</div>
+                <div style="font-size:9px;color:var(--slate);line-height:1.4">+ Liver &amp; gallbladder ultrasound</div>
+              </div>
+              <div style="flex:1;min-width:95px;background:var(--ink);border:1.5px solid var(--ink);border-radius:12px;padding:12px 10px;text-align:center">
+                <div style="font-family:var(--display);font-size:20px;font-weight:700;color:#fff;line-height:1;margin-bottom:2px">&pound;979</div>
+                <div style="font-size:10px;color:var(--sky);font-weight:700;margin-bottom:4px">Premium</div>
+                <div style="font-size:9px;color:rgba(255,255,255,.65);line-height:1.4">+ Echocardiogram + Cardiologist</div>
               </div>
             </div>
           </div>

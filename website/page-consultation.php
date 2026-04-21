@@ -518,7 +518,7 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
           <strong style="color:var(--ink)">Selected treatment:</strong> Mounjaro (Tirzepatide) &mdash; starter dose
         </div>
         <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
-          <iframe src="https://online-booking.semble.io/?token=d17e08266e35433bb6d733213b4728b61c3641c3" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="border:none;border-radius:12px;display:block;width:100%"></iframe>
+          <iframe src="https://online-booking.semble.io/?token=b0e756507669c936e11ff974f808546cc2f85482" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="border:none;border-radius:12px;display:block;width:100%"></iframe>
         </div>
       </div>
 
@@ -528,7 +528,7 @@ body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:
           <strong style="color:var(--ink)">Selected treatment:</strong> Wegovy (Semaglutide) &mdash; starter dose
         </div>
         <div style="background:var(--white);border:2px solid var(--sky);border-radius:16px;padding:4px;min-height:650px;box-shadow:0 4px 24px rgba(56,189,248,.12)">
-          <iframe src="https://online-booking.semble.io/?token=b0e756507669c936e11ff974f808546cc2f85482" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="border:none;border-radius:12px;display:block;width:100%"></iframe>
+          <iframe src="https://online-booking.semble.io/?token=d17e08266e35433bb6d733213b4728b61c3641c3" width="100%" height="800" frameborder="0" scrolling="auto" allow="payment *" style="border:none;border-radius:12px;display:block;width:100%"></iframe>
         </div>
       </div>
 
